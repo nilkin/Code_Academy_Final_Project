@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AGCA,OAAO,CAAC,iKAAI",
+    "sources": [
+        "style.scss",
+        "common/_variables.scss",
+        "common/_buttons.scss",
+        "common/_font.scss",
+        "common/_reset.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
