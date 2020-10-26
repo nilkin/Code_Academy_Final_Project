@@ -1,0 +1,78 @@
+body {
+  font-family: $mainFont;
+  font-size: 15px;
+  color: $dark;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.ul,
+li {
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.img {
+  max-width: 100%;
+}
+
+a,
+button {
+  padding: 0;
+  margin: 0;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+
+a:focus,
+a:hover,
+.btn:focus,
+.btn:hover,
+button:focus,
+button:hover {
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $mainFont;
+  color: $dark;
+  margin-top: 0px;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: normal;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+p{
+    color: $color-gray;
+    line-height: 28px;
+    margin: 0 0 15px;
+    text-transform: none;
+    font-weight: 400;
+}
+
+@each $tag, $size in $title-sizes {
+  #{$tag} {
+    font-size: #{$size}px;
+  }
+}
