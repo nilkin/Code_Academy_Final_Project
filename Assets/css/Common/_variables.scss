@@ -2,6 +2,7 @@
 
 //font family
 $mainFont: "Poppins", sans-serif;
+$secondFont: "Nunito", sans-serif;
 $gilroyLight: "Gilroy-Light";
 $gilroyRegular: "Gilroy-Regular";
 $gilroyMedium: "Gilroy-Medium";
@@ -39,3 +40,8 @@ $title-sizes: (
   "h5": 18,
   "h6": 16,
 );
+
+//text classes
+.text-uppercase {
+  text-transform: uppercase!important;
+}

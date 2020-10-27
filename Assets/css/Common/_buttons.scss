@@ -1,0 +1,51 @@
+.primary-btn {
+  background-color: $white;
+  padding: 18px 44px;
+  display: inline-block;
+  font-family: $secondFont;
+  font-weight: 800;
+  line-height: 25px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: $dark;
+  border: 2px solid $dark;
+  border-radius: 0;
+}
+
+.lrg-btn {
+  padding: 22px 55px;
+}
+
+.btn-theme1:hover {
+  color: $white;
+  background: $dark;
+}
+
+.btn-text {
+  text-transform: uppercase;
+}
+
+.btn-theme2:hover {
+  color: $white;
+  background: $main-color;
+  border-color: $main-color;
+}
+
+.secondary-btn{
+  background-color: $white;
+  padding: 16px 40px;
+  display: inline-block;
+  font-family: $mainFont;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  color: $dark;
+  border: 1px solid $dark;
+  border-radius: 0;
+}
+.third-btn{
+  color: $white;
+  background:$dark;
+  border-radius: 0;
+}

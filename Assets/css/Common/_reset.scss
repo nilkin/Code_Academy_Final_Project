@@ -20,6 +20,7 @@ li {
 
 a,
 button {
+  border-radius: 0;
   padding: 0;
   margin: 0;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -38,6 +39,7 @@ button:hover {
   text-decoration: none;
   outline: none;
   box-shadow: none;
+  border-radius: 0;
 }
 
 h1,
@@ -64,7 +66,7 @@ h6 a {
 }
 
 p{
-    color: $color-gray;
+    color: $grey;
     line-height: 28px;
     margin: 0 0 15px;
     text-transform: none;
