@@ -10,6 +10,14 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  />
     <script
       src="https://kit.fontawesome.com/ea4ac9830e.js"
       crossorigin="anonymous"
@@ -19,82 +27,93 @@
   </head>
   <body>
     <header>
+
+
       <!-- head-nav-->
-      <section id="head-nav">
-        <div class="container">
-          <div class="row align-items-center"> 
-            <div class="col-6 col-lg-2 col-xl-3">
-              <nav class="navbar navbar-light bg-light"></nav>
-              <a class="navbar-brand">
-                <img src="/Assets/img/logo-dark.jpg" />
-              </a>
-            </nav>
-            </div>
-            <div class="col-sm-6 col-lg-7 col-xl-6 d-lg-block mt-3">
-              <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="collapse navbar-collapse">
-                  <ul class="navbar-nav">
-                    <li class="nav-item mr-2">
-                      <a class="nav-link" href="#">Features <i class="fas fa-angle-down"></i></a>
-                    </li>
-                    <li class="nav-item mr-2">
-                      <a class="nav-link" href="#">Features <i class="fas fa-angle-down"></i></a>
-                    </li>                                      
-                    <li class="nav-item mr-2">
-                      <a class="nav-link" href="#">Features <i class="fas fa-angle-down"></i></a>
-                    </li>                            
-                    <li class="nav-item mr-2">
-                      <a class="nav-link" href="#">Features <i class="fas fa-angle-down"></i></a>
-                    </li>                          
-                    <li class="nav-item mr-2">
-                      <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
+        <section id="head-nav-zon">
+          <div class="container">
+            <div class="row align-items-center"> 
+              <div class="col-6 col-lg-2 col-xl-3">
+                <nav class="navbar nav-zon"></nav>
+                <a class="navbar-brand logo-zon ml-2">
+                  <img src="/Assets/img/logo-dark.jpg" />
+                </a>
               </nav>
-            </div>
-            <div class="col-6 col-lg-3 col-xl-3">
-              <div class="d-flex align-items-center justify-content-end">
-                <div class="cart-block-links theme1">
-                    <ul class="d-flex align-items-center">
-                        <li>
-                            <a href="#" class="">
-                              <i class="fas fa-search"></i>
-                            </a>
-                        </li>
-                        <li class="position-relative d-none d-sm-block">
-                            <a href="#" class="">
-                              <i class="fas fa-random"></i>
-                                <span class="badge cbdg1">3</span>
-                            </a>
-                        </li>
-                        <li class="position-relative d-none d-sm-block">
-                            <a href="#" class="">
-                              <i class="far fa-heart"></i>
-                                <span class="badge cbdg1">4</span>
-                            </a>
-                        </li>
-                        <li class="cart-block position-relative d-none d-sm-block">
-                            <a href="#" class="">
-                              <i class="fas fa-suitcase"></i>
-                                <span class="badge cbdg1">5</span>
-                            </a>
-                        </li>
-                        <li class="mr-0 cart-block">
-                            <a href="#" class="">
-                              <i class="fas fa-cog"></i>
-                            </a>
-                        </li>
-                        <!-- cart block end -->
+              </div>
+              <div class="col-sm-6 col-lg-7 col-xl-6 d-none d-lg-block mt-3">
+                <nav class="navbar navbar-expand-lg ">
+                  <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                      <li class="nav-item ">
+                        <a class="nav-link active" href="#">Home <i class="fas fa-angle-down"></i></a>
+                      </li>
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="#">Shop <i class="fas fa-angle-down"></i></a>
+                      </li>                                      
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="#">Pages <i class="fas fa-angle-down"></i></a>
+                      </li>                            
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="#">Blog <i class="fas fa-angle-down"></i></a>
+                      </li>                          
+                      <li class="nav-item  ">
+                        <a class="nav-link" href="#">Contact Us</a>
+                      </li>
                     </ul>
-                </div>
-            </div>
+                  </div>
+                </nav>
+              </div>
+              <div class="col-6 col-lg-3 col-xl-3">
+                <div class="d-flex align-items-end icon-group">
+                  <div class="my-cart cart-block-links mt-2">
+                      <ul class="d-flex mt-4">
+                          <li>
+                              <a href="#"  class="icons">
+                                <i class="fas fa-search"></i>
+                              </a>
+                          </li>
+                          <li class="position-relative d-none d-sm-block">
+                              <a href="#"  class="icons">
+                                <i class="fas fa-random"></i>
+                                  <span class="badge ">3</span>
+                              </a>
+                          </li>
+                          <li class="position-relative d-none d-sm-block">
+                              <a href="#"  class="icons">
+                                <i class="far fa-heart"></i>
+                                  <span class="badge ">4</span>
+                              </a>
+                          </li>
+                          <li class="cart-block position-relative d-none d-sm-block">
+                              <a href="#"  class="icons">
+                                <i class="fas fa-suitcase"></i>
+                                  <span class="badge ">5</span>
+                              </a>
+                          </li>
+                          <li class="mr-0 cart-block">
+                              <a href="#"  class="icons">
+                                <i class="fas fa-cog"></i>
+                              </a>
+                          </li>
+                          <!-- cart block end -->
+                      </ul>
+                  </div>
+              </div>
+              </div>
             </div>
           </div>
-
-        </div>
-      </section>
+        </section> 
       <!-- head-nav-end-->
+      <!-- main-slider-->
+        <section id="main-slider">
+            <div class="owl-carousel home-carousel owl-theme">
+              <div class="slider"><a class="slider-one" href="#"></a></div>  
+              <div class="slider"><a class="slider-two" href="#"></a></div>         
+            </div>
+        </section>
+      <!-- main-slider-end-->
+
+
     </header>
     <main></main>
     <footer></footer>
@@ -109,4 +128,6 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"
   ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="/Assets/js/main.js"></script>
 </html>

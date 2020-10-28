@@ -1,11 +1,16 @@
+.container{
+  max-width: 1230px;
+}
+
+
 body {
   font-family: $mainFont;
   font-size: 15px;
-  color: $dark;
+  color: $dark !important;
   font-style: normal;
   padding: 0;
   margin: 0;
-}
+  }
 
 .ul,
 li {

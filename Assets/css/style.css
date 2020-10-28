@@ -92,10 +92,14 @@
   font-style: normal;
 }
 
+.container {
+  max-width: 1230px;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  color: #292929;
+  color: #292929 !important;
   font-style: normal;
   padding: 0;
   margin: 0;
@@ -187,5 +191,101 @@ h5 {
 
 h6 {
   font-size: 16px;
+}
+
+#head-nav-zon {
+  background-color: #f4f4f4;
+  padding-top: 2rem;
+  position: relative;
+}
+
+#head-nav-zon .navbar-nav {
+  position: absolute;
+  top: -8px;
+  right: 127px;
+}
+
+#head-nav-zon .navbar-nav .nav-item .active {
+  color: #2caf4e;
+}
+
+#head-nav-zon .navbar-nav .nav-item a {
+  display: block;
+  font-weight: 600;
+  padding: 10px 18px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #707070;
+  white-space: nowrap;
+}
+
+#head-nav-zon .navbar-nav .nav-item a:hover {
+  color: #2caf4e;
+}
+
+#head-nav-zon .navbar-nav .nav-item i {
+  margin-left: 9px;
+  font-size: small;
+}
+
+#head-nav-zon .icon-group {
+  position: absolute;
+  top: -44px;
+  left: 5px;
+}
+
+#head-nav-zon .icon-group .my-cart a span {
+  position: absolute;
+  top: 3px;
+  left: 27px;
+  color: #2caf4e;
+}
+
+#head-nav-zon .icon-group .my-cart a.icons {
+  font-size: 15px;
+  white-space: nowrap;
+  color: #292929;
+}
+
+#head-nav-zon .icon-group .my-cart a.icons i {
+  padding: 13px 13px;
+  font-size: 15px;
+  margin-left: 4px;
+  border-radius: 50%;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+
+#head-nav-zon .icon-group .my-cart a.icons i:hover {
+  font-size: 15px;
+  background: #292929;
+  padding: 13px 13px;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+#main-slider {
+  z-index: 99;
+  max-width: 1520px;
+  margin: 0 auto;
+  display: block;
+}
+
+#main-slider .slider a {
+  margin-top: -6rem;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  width: 100%;
+  padding-top: 56%;
+  /** HEIGHT : WIDTH x 100 **/
+}
+
+#main-slider .slider-one {
+  background-image: url("/Assets/img/slide1.jpg");
+}
+
+#main-slider .slider-two {
+  background-image: url("/Assets/img/slide2.jpg");
 }
 /*# sourceMappingURL=style.css.map */
