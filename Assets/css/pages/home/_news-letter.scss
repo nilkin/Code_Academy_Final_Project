@@ -13,7 +13,7 @@
         h4{
             font-weight: 500;
             font-size: 24px !important;
-            color: #292929;
+            color: $dark;
             line-height: 1;
         
         }
@@ -36,13 +36,9 @@
         }
       }
     }
-    h2 {
-      color: #243c4f;
-      margin-bottom: 40px;
-    }
     .form-control {
       height: 50px;
-      border-color: #ffffff;
+      border-color: $white;
       border-radius: 0;
       border: 2px solid $second-color;
       font-size: 13px;

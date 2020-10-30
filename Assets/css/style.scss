@@ -5,6 +5,7 @@
  @import 'common/font';
  @import 'common/reset';
  @import 'common/classes';
+ @import 'common/test';
 
  // pages
  @import 'pages/head-nav-zon';
@@ -12,3 +13,5 @@
  @import 'pages/home/main-slider';
  @import 'pages/home/banner';
  @import 'pages/home/news-letter';
+ @import 'pages/home/blog-section';
+ @import 'pages/home/product-tab';

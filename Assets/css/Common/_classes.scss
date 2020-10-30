@@ -1,12 +1,16 @@
 .text-capitalize {
   text-transform: capitalize;
 }
-.text-uppercase{
-    text-transform: uppercase;
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 .bg-lighter {
   background: $grey;
+}
+
+.bg-white {
+  background-color: $white;
 }
 
 .title {
@@ -17,13 +21,13 @@
   margin-bottom: 2rem;
 }
 
-.padding-foot {
-  padding: 4rem 0;
+.padding-head-foot {
+  padding: 2rem 0;
 }
 
 .overflow-hidden {
-  overflow: hidden;
-  width: 97%;
+  overflow: hidden !important;
+  width: 100%;
 }
 
 .position-relative {
@@ -36,10 +40,29 @@
   }
   img {
     transition: all 0.3s linear;
+    width: 100%;
   }
 }
 
+.theme-color {
+  color: $main-color;
+}
 
-.theme-color{
-    color: $main-color;
+.head-title {
+  margin-bottom: 29px;
+  h2 {
+    &.title {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+  }
+  p {
+    &.text {
+      font-weight: 400;
+    color: $body-color;
+    font-size: 12px;
+    line-height: 1.5;
+    }
+  }
 }

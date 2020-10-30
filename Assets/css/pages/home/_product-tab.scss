@@ -1,0 +1,64 @@
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+* {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+	&:before {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+	&:after {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+}
+body {
+	font-family: sans-serif;
+	color: $black;
+	font-size: 18px;
+}
+.container {
+	padding: 15px;
+}
+.filter__tabs {
+	text-align: center;
+}
+.portfolio-container {
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 5% auto;
+}
+.portfolio__item {
+	width: 33.33333%;
+	margin-bottom: 3%;
+}
+.filter__btn {
+	padding: 12px 20px;
+	line-height: 22px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: $black;
+	cursor: pointer;
+	background: $white;
+	outline: none;
+	border: 2.0px solid $main-color;
+	margin-right: 2%;
+	transition: box-shadow .2s;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-right: 1rem;
+	&:active {
+		transform: scale(1.02);
+		-webkit-transform: scale(1.02);
+		-moz-transform: scale(1.02);
+		-ms-transform: scale(1.02);
+		-o-transform: scale(1.02);
+	}
+}
+.filter__btn.is-active {
+	background-color:$main-color;
+	color: $white;
+}

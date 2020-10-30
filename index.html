@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="assets/css/animated.css">
   </head>
   <body>
-    <header>
+    <header class="bg-lighter">
   <!-- head-nav-->
-        <section id="head-nav-zon">
-          <div class="container">
+        <section id="head-nav-zon" >
+          <div class="container ">
             <div class="row align-items-center"> 
               <div class="col-6 col-lg-2 col-xl-3">
                 <nav class="navbar nav-zon"></nav>
@@ -157,7 +157,7 @@
   <!-- main-slider-->
 <section id="main-slider">
   <!-- slick-progress -->
-  <div class="slick-progress">
+  <div class="slick-progress ">
     <span class="active" style="transition-duration: 6s;"></span>
 </div>
   <!-- slick-progress-end -->
@@ -194,16 +194,16 @@
                           </div>
                         </div>
                     </div>    
-          </div>
+    </div>
 </section>
   <!-- main-slider-end-->
   <!-- common banner  start -->
-<div class="common-banner">
-  <div class="container">
-      <div class="row d-flex justify-content-between">
+<div class="common-banner padding-head-foot ">
+  <div class="container bg-clr">
+      <div class="row">
           <div class="col-md-6">
               <div class="position-relative zoom-in overflow-hidden">
-                  <div class="banner-thumb">
+                  <div class="banner-thumb img-fluid">
                       <img src="/Assets/img/banner1.jpg" alt="banner-thumb-naile">
                   </div>
                   <div class="banner-content">
@@ -234,9 +234,62 @@
   </div>
 </div>
 <!-- common banner  end -->
+<!-- product tab start -->
+<section class="product-tab padding-head-foot">
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-12">
+      <div class="head-title text-center">
+          <h2 class="title text-dark text-capitalize">Best Sellers</h2>
+          <p class="text">Browse the collection of our new products.</p>
+      </div>
+  </div>
+    <div class="col-12">    
+        <div class="filter__tabs">
+            <button class="filter__btn btn-theme2 is-active" data-filter="design">Hot Categories</button>
+            <button class="filter__btn btn-theme2" data-filter="ux">Tops & Sets</button>
+            <button class="filter__btn btn-theme2" data-filter="mockup">Accessories</button>
+        </div>      
+        <div class="portfolio-container">
+                <div class="portfolio__item" data-category="ux">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/866/300/300.jpg" alt="portfolio">
+                  </div>
+                </div>
+                <div class="portfolio__item" data-category="design">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/867/300/300.jpg" alt="portfolio">
+                  </div>
+                </div>
+                <div class="portfolio__item" data-category="design">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/868/300/300.jpg" alt="portfolio">
+                  </div>
+                </div>
+                <div class="portfolio__item" data-category="mockup">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/869/300/300.jpg" alt="portfolio">
+                  </div>
+                </div>
+                <div class="portfolio__item" data-category="mockup">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/870/300/300.jpg" alt="portfolio">						
+                  </div>
+                </div>
+                <div class="portfolio__item" data-category="design">
+                  <div class="portfolio__card">
+                    <img class="portfolio__image" src="https://i.picsum.photos/id/871/300/300.jpg" alt="portfolio">					
+                  </div>
+                </div>
+          </div>       
+    </div>
+  </div>
+</div>
+</section>
+<!-- product tab end -->
   <!-- common banner single large start -->
-  <div class="common-banner padding-foot">
-    <div class="container bg-lighter">
+  <div class="common-banner padding-head-foot ">
+    <div class="container ">
         <div class="row">
             <div class="col-md-12">
                 <div class="position-relative zoom-in overflow-hidden">
@@ -256,9 +309,134 @@
         </div>
     </div>
   </div>
+  <!-- common banner single large end -->
+  <!-- blog-section start -->
+  <section class="blog-section padding-head-foot ">  
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-12">
+            <div class="head-title text-center mb-30">
+                <h2 class="title text-dark text-capitalize">Latest Blogs</h2>
+                <p class="text mt-20">Present posts in a best way to highlight interesting moments of your blog.
+                </p>
+            </div>
+        </div>
+    </div>
+      <div class="new-blog-carousel bg-white" >
+
+        <div class="slider">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-12">
+              <div class="blog-card">
+                <div class="blog-card__image zoom-in overflow-hidden">
+                  <img src="/Assets/img/blog-post1.jpg">
+                </div>
+                <div class="blog-card__title">
+                  <p> Web Design Trends for 2016 </p>
+                </div>
+                <h5 class="sub-title mb-30 text-capitalize"> Posted by 
+                  <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                    HasTech</a>
+                  Oct 4TH, 2020
+                   <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                    Fashion</a>
+                </h5>
+                <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
+              </div> 
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="slider">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="blog-card">
+                  <div class="blog-card__image zoom-in overflow-hidden">
+                    <img src="/Assets/img/blog-post2.jpg">
+                  </div>
+                  <div class="blog-card__title">
+                    <p> Web Design Trends for 2016 </p>
+                  </div>
+                  <h5 class="sub-title mb-30 text-capitalize"> Posted by 
+                    <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                      HasTech</a>
+                    Oct 4TH, 2020
+                     <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                      Fashion</a>
+                  </h5>
+                  <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
+                </div> 
+              </div>
+            </div>
+          </div>
+          </div>
+        <div class="slider">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="blog-card">
+                    <div class="blog-card__image zoom-in overflow-hidden">
+                      <img src="/Assets/img/blog-post3.jpg">
+                    </div>
+                    <div class="blog-card__title">
+                      <p> Web Design Trends for 2016 </p>
+                    </div>
+                    <h5 class="sub-title mb-30 text-capitalize"> Posted by 
+                      <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                        HasTech</a>
+                      Oct 4TH, 2020
+                       <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                        Fashion</a>
+                    </h5>
+                    <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            </div>
+        <div class="slider">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="blog-card">
+                      <div class="blog-card__image zoom-in overflow-hidden">
+                        <img src="/Assets/img/blog-post4.jpg">
+                      </div>
+                      <div class="blog-card__title">
+                        <p> Web Design Trends for 2016 </p>
+                      </div>
+                      <h5 class="sub-title mb-30 text-capitalize"> Posted by 
+                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                          HasTech</a>
+                        Oct 4TH, 2020
+                         <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                          Fashion</a>
+                      </h5>
+                      <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+              </div>        
+   
+      </div> 
+      <div class="arrow-control ">
+        <ul class="arrows">
+          <li>  <i class="fas fa-angle-right next"></i></li>
+          <li><i class="fas fa-angle-left prev"></i></li>
+        </ul> 
+      </div>
+    </div>
+
+
+
+  </section>
+  <!-- blog-section end -->
   <!-- common banner news-letter end -->
-    <!-- common banner single large start -->
-    <section class="newsletter">
+  <section class="newsletter">
       <div class="container">
       <div class="row">
       <div class="col-12">
@@ -286,7 +464,7 @@
     </main>
     <footer class="bg-lighter">
       <!-- footer bottom start -->
-      <div class="footer-bottom padding-foot">
+      <div class="footer-bottom padding-head-foot">
           <div class="container">
               <div class="row">
                   <div class="col-12 col-sm-6 col-lg-6 ">
