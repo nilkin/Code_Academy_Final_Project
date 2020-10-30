@@ -1,0 +1,110 @@
+.footer-bottom {
+  .container {
+    .footer-widget {
+      .footer-logo {
+        margin-bottom: 2rem;
+      }
+      .text {
+        font-size: 12px;
+      }
+      .social-network {
+        ul {
+          margin-left: -60px;
+          margin-top: 1.5rem;
+          li {
+            a {
+              &.icons {
+                font-size: 15px;
+                white-space: nowrap;
+                color: $dark;
+                i {
+                  background: $second-color;
+                  color: $placeholder-color;
+                  padding: 13px 13px;
+                  font-size: 15px;
+                  margin-left: 20px;
+                  border-radius: 50%;
+                  transition: all 0.35s ease-in-out;
+                  &:hover {
+                    font-size: 15px;
+                    background: $dark;
+                    padding: 13px 13px;
+                    border-radius: 50%;
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      address {
+        span {
+          line-height: 26px;
+          display: block;
+          text-transform: capitalize;
+          font-size: 12px;
+          margin-bottom: 10px;
+          &:nth-child(4) {
+            color: #292929;
+            margin-top: 46px;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .footer-menu {
+        padding-left: 0;
+        li {
+          a {
+            line-height: 26px;
+            display: inline-block;
+            text-transform: capitalize;
+            font-size: 12px;
+            margin-bottom: 3px;
+            color: $dark;
+            &:hover {
+              color: $main-color;
+              padding-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.copy-right {
+  .border-top {
+    .text-center {
+      p {
+        line-height: 26px;
+        color: $dark;
+        font-size: 12px;
+        a {
+          color: $main-color;
+          &:hover {
+            text-decoration: underline;
+            color: $main-color;
+          }
+        }
+      }
+    }
+    .footer-menu {
+      li {
+        margin-right: 19px;
+        a {
+          line-height: 26px;
+          display: inline-block;
+          text-transform: capitalize;
+          font-size: 12px;
+          margin-bottom: 3px;
+          color: $dark;
+          &:hover {
+            text-decoration: underline;
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}

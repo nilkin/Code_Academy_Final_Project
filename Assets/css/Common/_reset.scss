@@ -76,6 +76,7 @@ p{
     margin: 0 0 15px;
     text-transform: none;
     font-weight: 400;
+    color: $body-color;
 }
 
 @each $tag, $size in $title-sizes {

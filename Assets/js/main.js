@@ -1,11 +1,11 @@
 $(document).ready(function () {
     // dropdown
     $('.nav-item').mouseenter(function(){
-        $(this).find('.dropdown-menu').addClass("show");
+        $(this).find('.dropdown-menu').addClass("show").addClass("animated fadeIn");
       });
-      
+
       $('.nav-item').mouseleave(function(){
-        $(this).find('.dropdown-menu').removeClass("show");
+        $(this).find('.dropdown-menu').removeClass(" animated fadeIn").removeClass("show");
       });
     // main-slider
     var $timer = 6000;
