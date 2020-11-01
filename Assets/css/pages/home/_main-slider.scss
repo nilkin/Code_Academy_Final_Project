@@ -1,4 +1,11 @@
 #main-slider {
+  .home-carousel{
+    .slick-list{
+      .slick-track{
+        background-color:$head !important;
+      }
+    }
+  }
   position: relative;
   top: -6rem;
   max-width: 1520px;

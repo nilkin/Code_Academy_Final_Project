@@ -12,7 +12,9 @@
 .bg-white {
   background-color: $white;
 }
-
+.bg-main {
+  background-color: $head !important;
+}
 .title {
   font-size: 16px;
   line-height: 1;

@@ -1,0 +1,83 @@
+.testimonial-init {
+    background-color: #f6f6f6;
+    padding: 65px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .testimonial-init {
+      padding: 30px;
+    }
+  }
+  
+  .testimonial-init .testimonial-content {
+    max-width: 80%;
+    margin: auto;
+    cursor: grab;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .testimonial-init .testimonial-content {
+      max-width: 100%;
+    }
+  }
+  
+  .testimonial-init .testimonial-content img {
+    width: 70px;
+  }
+  
+  .testimonial-init .testimonial-content p {
+    font-size: 12px;
+  }
+  
+  .testimonial-init .testimonial-content span {
+    font-size: 21px;
+    color: #cecece;
+  }
+  
+  .testimonial-init .testimonial-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #292929;
+  }
+  
+  .testimonial-init .testimonial-content a {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    color: #929292;
+  }
+  
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .testimonial-init .slick-dots{
+    position: relative;
+    margin-top: 1rem;
+    left: 42.5%;
+    display: flex;
+    & li button {
+      height: 14px;
+      width: 14px;
+      background-color: $second-color;
+      border-radius: 50%;
+      display: inline-block;
+      font-size: 0;
+      margin-right: 9px;
+      border: 1px solid white;
+      &:hover{
+        background-color: $main-color;
+      }
+    }
+  }
+  
+  .testimonial-init .slick-dots li.slick-active button{
+    background-color: $main-color;
+  }
+  
+  

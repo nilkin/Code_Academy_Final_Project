@@ -1,117 +1,103 @@
 .blog-card {
 
-    h5{
-        font-size: 12px;
-        color: #929292;
-        a{
-            font-size: 12px;
-            line-height: 24px;
-            color: #2caf4e;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
-    .primary-btn {
-        font-size: 12px;
-        margin-top: 3rem;
+  h5{
+      font-size: 12px;
+      color: #929292;
+      a{
+          font-size: 12px;
+          line-height: 24px;
+          color: #2caf4e;
+          &:hover{
+              text-decoration: underline;
+          }
       }
-
-  &:focus {
-    border: 1px solid transparent;
   }
-  height: 400px;
-  background: #fff;
-  display: inline-block;
-  margin: 4px 2px;
-  vertical-align: top;
-  cursor: pointer;
-  &__image {
+  .primary-btn {
+      font-size: 12px;
+      margin-top: 3rem;
+    }
+
+&:focus {
+  border: 1px solid transparent;
+}
+height: 400px;
+background: #fff;
+display: inline-block;
+margin: 4px 2px;
+vertical-align: top;
+cursor: pointer;
+&__image {
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  img {
     width: 100%;
     height: 200px;
-    margin: 0;
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      opacity: 0.8;
-    }
-  }
-
-  &__title {
-    width: 100%;
-    height: 40px;
-    p {
-        transition: all .3s;
-        font-size: 12px;
-        &:hover{
-            color: $main-color;
-        }
-    }
-  }
-  hr {
-    width: 95%;
-    border-top: 1px solid #ededed;
-    margin-top: 20px;
-  }
-  &__details {
-    width: 100%;
-    height: 40px;
-    position: relative;
-    margin-top: 12px;
-    bottom: 0;
-    padding: 0 5px;
-    display: block;
-    &--time {
-      float: left;
-      font-size: 0.75em;
-      margin-top: 11px;
-      color: #c0c0c0;
-    }
-    &--view {
-      @extend .blog-card__details--time;
-      float: right;
-    }
-    &--like {
-      @extend .blog-card__details--time;
-      float: right;
-      margin-left: 9px;
-      i:hover {
-        color: #1382c1;
-      }
-    }
+    object-fit: cover;
+    opacity: 0.8;
   }
 }
 
-.container {
-  &:hover .arrows {
-    opacity: 1;
-    visibility: visible;
-  }
-  .arrows {
-    opacity: 0;
-    visibility: hidden;
-    .next,
-    .prev {
-      position: absolute;
-      top: 40%;
-      z-index: 2;
-      font-size: 25px;
-      color: $focus-color;
-      left: 15px;
-      cursor: pointer;
-      background-color: $white;
-      padding: 7px 14px;
-      border-radius: 50%;
-      transition: all 0.6s;
-      &:hover {
-        color: $white;
-        background-color: $main-color;
+&__title {
+  width: 100%;
+  height: 40px;
+  p {
+      transition: all .3s;
+      font-size: 12px;
+      &:hover{
+          color: $main-color;
       }
-    }
-    .next {
-      left: initial;
-      right: 15px;
+  }
+}
+hr {
+  width: 95%;
+  border-top: 1px solid #ededed;
+  margin-top: 20px;
+}
+&__details {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-top: 12px;
+  bottom: 0;
+  padding: 0 5px;
+  display: block;
+  &--time {
+    float: left;
+    font-size: 0.75em;
+    margin-top: 11px;
+    color: #c0c0c0;
+  }
+  &--view {
+    @extend .blog-card__details--time;
+    float: right;
+  }
+  &--like {
+    @extend .blog-card__details--time;
+    float: right;
+    margin-left: 9px;
+    i:hover {
+      color: #1382c1;
     }
   }
+}
+}
+
+.new-blog-carousel
+{
+ .arrows{
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 30%;
+    left: 15px;
+  }
+  .next {
+    left: initial;
+    right: 15px;
+  }
+ }
+
+
 }

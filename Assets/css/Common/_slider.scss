@@ -1,0 +1,38 @@
+.new-products,.feature-slider,.new-blog-carousel
+{
+ &:hover .arrows {
+   opacity: 1;
+   visibility: visible;
+ }
+ background: $white;
+ .arrows{
+   opacity: 0;
+   visibility: hidden;
+   .prev,
+   .next {
+     position: absolute;
+     top: 50%;
+     z-index: 2;
+     font-size: 14px;
+     color: #707070;
+     left: -4px;
+     cursor: pointer;
+     background-color: #ffffff;
+     padding: 7px 14px;
+     border-radius: 50%;
+     -webkit-transition: all 0.6s;
+     transition: all 0.6s;
+     border: 1px solid $head;
+     &:hover {
+       color: $white;
+       background-color: $main-color;
+     }
+   }
+   .next {
+     left: initial;
+     right: -4px;
+   }
+ }
+
+
+}
