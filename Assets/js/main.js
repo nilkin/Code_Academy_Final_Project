@@ -1,4 +1,13 @@
 $(document).ready(function () {
+
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 100){
+        $('#head-nav-zon').addClass('sticky')
+    } else{
+        $('#head-nav-zon').removeClass('sticky')
+    }
+});
+
   // dropdown
   $('.nav-item').mouseenter(function () {
     $(this).find('.dropdown-menu').addClass("show").addClass("animated fadeIn");
@@ -242,4 +251,64 @@ $(document).ready(function () {
       // instead of a settings object
     ],
   });
+ 
+
+  // Searching overlay
+  var searchToggle = $(".search-toggle"),
+    closeA = $(".scale"),
+    closeB = $(".searching button"),
+    cBody = $("body"),
+    closeScale = closeA.add(closeB);
+  if (searchToggle.length > 0) {
+    searchToggle.on("click", function () {
+      cBody.toggleClass("open");
+      return false;
+    });
+  }
+  if (closeScale.length > 0) {
+    closeScale.on("click", function () {
+      cBody.removeClass("open");
+      return false;
+    });
+  }
+
+  $(".close").on("click", function () {
+    $("body").removeClass("open");
   });
+// /////////////////////////////////////////////////////////////////////
+
+// /////////////wish/////////////////
+$(".wish-trigger").on("click", function () {
+  $("body").addClass("nav-open");
+});
+
+$(".offcanvas-close").on("click", function () {
+  $("body").removeClass("nav-open");
+});
+$(".overlays").on("click", function () {
+  $("body").removeClass("nav-open");
+});
+///////////////////card//////////////////////////////
+$(".card-trigger").on("click", function () {
+  $("body").addClass("nav-open-second");
+});
+
+$(".offcanvas-close").on("click", function () {
+  $("body").removeClass("nav-open-second");
+});
+$(".overlays").on("click", function () {
+  $("body").removeClass("nav-open-second");
+});
+/////////////////setting////////////////////////////
+
+$(".setting-trigger").on("click", function () {
+  $("body").addClass("nav-open-third");
+});
+
+$(".offcanvas-close").on("click", function () {
+  $("body").removeClass("nav-open-third");
+});
+$(".overlays").on("click", function () {
+  $("body").removeClass("nav-open-third");
+});
+});

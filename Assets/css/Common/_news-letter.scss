@@ -1,0 +1,50 @@
+.newsletter {
+    margin-bottom: 3rem;
+    .content {
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        padding-top: 4rem;
+        .form-title {
+            p {
+                font-size: 13px;
+            }
+            h4 {
+                font-weight: 500;
+                font-size: 24px !important;
+                color: $dark;
+                line-height: 1;
+            }
+        }
+        .input-group {
+            margin-top: 2rem;
+            margin-bottom: -1rem;
+            .btn {
+                border-left: 2px solid $second-color;
+                height: 40px;
+                position: absolute;
+                right: 30px;
+                top: 5px;
+                z-index: 3;
+                font-size: 12px;
+                padding-left: 30px;
+                font-weight: 600;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+        .form-control {
+            height: 50px;
+            border-color: $white;
+            border-radius: 0;
+            border: 2px solid $second-color;
+            font-size: 13px;
+            &:focus {
+                box-shadow: none;
+                border: 2px solid $second-color;
+            }
+        }
+    }
+}

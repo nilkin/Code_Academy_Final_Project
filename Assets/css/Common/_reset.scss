@@ -1,38 +1,44 @@
-.container{
-  max-width: 1230px;
+*::selection {
+    background-color: $main-color;
+    color: $white;
 }
 
+.container {
+    max-width: 1230px;
+}
 
 body {
-  font-family: $mainFont;
-  font-size: 15px;
-  color: $dark !important;
-  font-style: normal;
-  padding: 0;
-  margin: 0;
-  }
+    overflow-x: hidden;
+    font-family: $mainFont;
+    font-size: 15px;
+    color: $dark !important;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
 
 .ul,
 li {
-  list-style: none !important;
-  padding: 0;
-  margin: 0;
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
 }
 
 .img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 a,
-button {
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0.3s ease-out 0s;
-  -ms-transition: all 0.3s ease-out 0s;
-  -o-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
+button,
+tr {
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
 }
 
 a:focus,
@@ -41,10 +47,10 @@ a:hover,
 .btn:hover,
 button:focus,
 button:hover {
-  text-decoration: none;
-  outline: none;
-  box-shadow: none;
-  border-radius: 0;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 h1,
@@ -53,12 +59,12 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $mainFont;
-  color: $dark;
-  margin-top: 0px;
-  font-style: normal;
-  font-weight: 500;
-  text-transform: normal;
+    font-family: $mainFont;
+    color: $dark;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: normal;
 }
 
 h1 a,
@@ -67,11 +73,11 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: inherit;
+    color: inherit;
 }
 
-p{
-  color: inherit;
+p {
+    color: inherit;
     line-height: 28px;
     margin: 0 0 15px;
     text-transform: none;
@@ -79,8 +85,9 @@ p{
     color: $body-color;
 }
 
-@each $tag, $size in $title-sizes {
-  #{$tag} {
-    font-size: #{$size}px;
-  }
+@each $tag,
+$size in $title-sizes {
+    #{$tag} {
+        font-size: #{$size}px;
+    }
 }

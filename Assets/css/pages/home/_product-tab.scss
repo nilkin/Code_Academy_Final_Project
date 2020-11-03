@@ -1,91 +1,88 @@
-
 .product-tab {
-  background: $white;
-  .container {
-    .tab-content {
-      .tab-pane {
-        .product-tab-slider
-         {
-          &:hover .arrows {
-            opacity: 1;
-            visibility: visible;
-          }
-          background: $white;
-          .arrows{
-            opacity: 0;
-            visibility: hidden;
-            .prev,
-            .next {
-              position: absolute;
-              top: 50%;
-              z-index: 2;
-              font-size: 14px;
-              color: #707070;
-              left: -4px;
-              cursor: pointer;
-              background-color: #ffffff;
-              padding: 7px 14px;
-              border-radius: 50%;
-              -webkit-transition: all 0.6s;
-              transition: all 0.6s;
-              border: 1px solid $head;
-              &:hover {
-                color: $white;
-                background-color: $main-color;
-              }
+    background: $white;
+    .container {
+        .tab-content {
+            .tab-pane {
+                .product-tab-slider {
+                    &:hover .arrows {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    background: $white;
+                    .arrows {
+                        opacity: 0;
+                        visibility: hidden;
+                        .prev,
+                        .next {
+                            position: absolute;
+                            top: 50%;
+                            z-index: 2;
+                            font-size: 14px;
+                            color: #707070;
+                            left: -4px;
+                            cursor: pointer;
+                            background-color: #ffffff;
+                            padding: 7px 14px;
+                            border-radius: 50%;
+                            -webkit-transition: all 0.6s;
+                            transition: all 0.6s;
+                            border: 1px solid $head;
+                            &:hover {
+                                color: $white;
+                                background-color: $main-color;
+                            }
+                        }
+                        .next {
+                            left: initial;
+                            right: -4px;
+                        }
+                    }
+                }
             }
-            .next {
-              left: initial;
-              right: -4px;
-            }
-          }
-       
-
         }
-      }
     }
-  }
 }
 
 .slick-slider .slick-slide {
-	padding: 0 15px;
-  }
+    padding: 0 15px;
+}
 
-
-  .product-tab-menu {
+.product-tab-menu {
     .nav-item {
-      margin: 0 5px;
-      .nav-link {
-        font-weight: 500;
-        line-height: 1;
-        font-size: 14px;
-        text-transform: capitalize;
-        padding: 15px 20px;
-        color: #292929;
-        border: 1px solid #888;
-        border-radius: 0px;
-      }
+        margin: 0 5px;
+        .nav-link {
+            font-weight: 500;
+            line-height: 1;
+            font-size: 14px;
+            text-transform: capitalize;
+            padding: 15px 20px;
+            color: $dark;
+            border: 1px solid #888;
+            border-radius: 0px;
+            font-family: $mainFont;
+        }
     }
-  }
-  .styling {
+}
+
+.styling {
     .nav-link.active {
-      color: #ffffff;
-      background: #2caf4e;
-      border-color: #2caf4e;
-    }
-    .nav-link {
-      &:hover {
         color: #ffffff;
         background: #2caf4e;
         border-color: #2caf4e;
-      }
     }
-  }
-  @media screen and (max-width: 560px) {
+    .nav-link {
+        &:hover {
+            color: #ffffff;
+            background: #2caf4e;
+            border-color: #2caf4e;
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
     .product-tab-menu {
-      .nav-item {
-        margin: 0 5px 10px;
-      }
+        .nav-item {
+            margin: 0 5px 10px;
+        }
     }
-  }
-  
+}
