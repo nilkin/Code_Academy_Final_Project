@@ -18,10 +18,10 @@
                             top: 50%;
                             z-index: 2;
                             font-size: 14px;
-                            color: #707070;
+                            color: $body-color;
                             left: -4px;
                             cursor: pointer;
-                            background-color: #ffffff;
+                            background-color: $white;
                             padding: 7px 14px;
                             border-radius: 50%;
                             -webkit-transition: all 0.6s;
@@ -57,7 +57,7 @@
             text-transform: capitalize;
             padding: 15px 20px;
             color: $dark;
-            border: 1px solid #888;
+            border: 1px solid $body-color;
             border-radius: 0px;
             font-family: $mainFont;
         }
@@ -66,15 +66,15 @@
 
 .styling {
     .nav-link.active {
-        color: #ffffff;
-        background: #2caf4e;
-        border-color: #2caf4e;
+        color: $white;
+        background: $main-color;
+        border-color: $main-color;
     }
     .nav-link {
         &:hover {
-            color: #ffffff;
-            background: #2caf4e;
-            border-color: #2caf4e;
+            color: $white;
+            background: $main-color;
+            border-color: $main-color;
         }
     }
 }

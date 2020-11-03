@@ -77,8 +77,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 25px 0;
-    z-index: 333;
+    padding-bottom: 16px;
+    z-index: 333 !important;
     transition: all 0.3s;
     animation: fadeInDown 0.5s ease-in-out;
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4) !important;
