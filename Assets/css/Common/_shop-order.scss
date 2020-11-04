@@ -1,157 +1,159 @@
-@media screen and (max-width: 991px) and (min-width: 768px) {
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+        .shop-order {
+            .table {
+                min-width: 900px;
+            }
+        }
+    }
+    
     .shop-order {
-        .table {
-            min-width: 900px;
-        }
-    }
-}
-
-.shop-order {
-    @media screen and (min-width: 1200px) {
-        .grid-wraper {
-            background: $white;
-            margin-top: -80px;
-            padding-top: 30px;
-            position: relative;
-            max-width: 1230px;
-            padding-left: 30px;
-            padding-right: 30px;
-            padding-bottom: 2rem;
-        }
-    }
-    @media screen and (max-width: 1199px) {
-        .grid-wraper {
-            padding-top: 70px;
-        }
-    }
-    .title {
-        font-weight: 500;
-        color: $dark;
-        font-size: 20px;
-        border-bottom: 1px solid transparent;
-    }
-    .table {
-        .thead-light {
-            th {
-                background-color: $dark;
-                border-color: transparent;
-                text-transform: capitalize;
-                font-weight: 500;
-                color: $white;
-                font-size: 15px;
+        @media screen and (min-width: 1200px) {
+            .grid-wraper {
+                background: $white;
+                margin-top: -80px;
+                padding-top: 30px;
+                position: relative;
+                max-width: 1230px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 2rem;
             }
         }
-        td {
-            vertical-align: middle;
+        @media screen and (max-width: 1199px) {
+            .grid-wraper {
+                padding-top: 70px;
+            }
+        }
+        .title {
+            font-weight: 500;
+            color: $dark;
+            font-size: 20px;
             border-bottom: 1px solid transparent;
-            a {
-                color: $dark;
-                &:hover {
-                    color: $main-color;
-                }
-            }
-            .btn {
-                color: $white;
-                &:hover {
-                    color: $white;
-                }
-            }
-            .my-badge {
-                color: $white;
-                background: $main-color;
-                border-color: $main-color;
-                padding: 9px 9px;
-                border-radius: 0;
-                font-weight: 300;
-            }
         }
-        th {
-            vertical-align: middle;
-            border-bottom: 1px solid transparent;
-            max-width: 150px;
-            padding-left: 0px;
-            img {
-                margin-top: 15px;
-            }
-        }
-    }
-}
-
-.whish-title {
-    color: $dark;
-    font-size: 15px;
-}
-
-.shop-order-price {
-    color: $dark;
-    font-size: 15px;
-}
-
-select.form-control {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-@media screen and (max-width: 767px) {
-    .shop-order {
         .table {
             .thead-light {
                 th {
-                    display: none;
+                    background-color: $dark;
+                    border-color: transparent;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    color: $white;
+                    font-size: 15px;
                 }
             }
             td {
-                width: 100%;
-                display: block;
+                vertical-align: middle;
+                border-bottom: 1px solid transparent;
+                a {
+                    color: $dark;
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+                .btn {
+                    color: $white;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+                .my-badge {
+                    color: $white;
+                    background: $main-color;
+                    border-color: $main-color;
+                    padding: 9px 9px;
+                    border-radius: 0;
+                    font-weight: 300;
+                }
             }
             th {
-                width: 100%;
-                display: block;
-                max-width: 100%;
+                vertical-align: middle;
+                border-bottom: 1px solid transparent;
+                max-width: 150px;
+                padding-left: 0px;
+                img {
+                    margin-top: 15px;
+                }
             }
         }
     }
-}
-
-.product-count.style {
-    input {
+    
+    .whish-title {
         color: $dark;
-        background-color: $white;
-        height: 54px;
-        padding: 10px 30px 10px 10px;
-        width: 100px;
-        border: 1px solid $white;
-        display: block;
-        text-align: center;
-        appearance: textfield;
+        font-size: 15px;
     }
-    .count-btn {
-        background-color: transparent;
-        border: 0px;
-        border-left: 1px solid #ebebeb;
-        display: block;
-        width: 20px;
-        height: 27px;
-        padding: 0px;
-        text-align: center;
+    
+    .shop-order-price {
         color: $dark;
-        font-size: 10px;
-        transform: translateX(-100%);
-        user-select: none;
+        font-size: 15px;
     }
-    .increment {
-        border-bottom: 1px solid #ebebeb;
-    }
-}
-
-input[type="number"] {
-    &::-webkit-inner-spin-button {
+    
+    select.form-control {
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
-        margin: 0;
     }
-    &::-webkit-outer-spin-button {
-        appearance: none;
-        margin: 0;
+    
+    @media screen and (max-width: 767px) {
+        .shop-order {
+            .table {
+                .thead-light {
+                    th {
+                        display: none;
+                    }
+                }
+                td {
+                    width: 100%;
+                    display: block;
+                }
+                th {
+                    width: 100%;
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+        }
     }
-}
+    
+    .product-count.style {
+        input {
+            color: $dark;
+            background-color: $white;
+            height: 54px;
+            padding: 10px 30px 10px 10px;
+            width: 100px;
+            border: 1px solid $del;
+            display: block;
+            text-align: center;
+            appearance: textfield;
+        }
+        .count-btn {
+            background-color: transparent;
+            border: 0px;
+            border-left: 1px solid #ebebeb;
+            display: block;
+            width: 20px;
+            height: 27px;
+            padding: 0px;
+            text-align: center;
+            color: $dark;
+            font-size: 10px;
+            transform: translateX(-100%);
+            user-select: none;
+        }
+        .increment {
+            border-bottom: 1px solid #ebebeb;
+        }
+    }
+    
+    input[type="number"] {
+        border: 1px solid $del;
+        outline-color: $del;
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+        &::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
