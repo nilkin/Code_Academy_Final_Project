@@ -1,14 +1,14 @@
 // Variables
-
 //font family
-$mainFont: "Poppins", sans-serif;
-$secondFont: "Nunito", sans-serif;
+$mainFont: "Poppins",
+sans-serif;
+$secondFont: "Nunito",
+sans-serif;
 $gilroyLight: "Gilroy-Light";
 $gilroyRegular: "Gilroy-Regular";
 $gilroyMedium: "Gilroy-Medium";
 $gilroyBold: "Gilroy-Bold";
 $gilroyHeavy: "Gilroy-Heavy";
-
 //line height
 $line-height: 24px;
 // theme colors
@@ -33,18 +33,9 @@ $placeholder-color: #999;
 $instock: #777;
 $feature: #f1f1f1;
 $camel: #c19a6b;
-
 // font sizes
-$title-sizes: (
-  "h1": 40,
-  "h2": 35,
-  "h3": 28,
-  "h4": 22,
-  "h5": 18,
-  "h6": 16,
-);
-
+$title-sizes: ( "h1": 40, "h2": 35, "h3": 28, "h4": 22, "h5": 18, "h6": 16, );
 //text classes
 .text-uppercase {
-  text-transform: uppercase!important;
+    text-transform: uppercase!important;
 }
