@@ -30,11 +30,8 @@ $(document).ready(function() {
         arrows: false,
         responsive: [{
             breakpoint: 767,
-            settings: {
-                dots: false,
-                arrows: false
-            }
-        }]
+            settings: { dots: false, arrows: false }
+        }, ],
 
     }).slickAnimation();
 
@@ -305,6 +302,18 @@ $(document).ready(function() {
     $(".overlays").on("click", function() {
         $("body").removeClass("nav-open-third");
     });
+    /////////////////mobile////////////////////////////
+
+    $(".mobile-trigger").on("click", function() {
+        $("body").addClass("nav-open-fifth");
+    });
+
+    $(".offcanvas-close").on("click", function() {
+        $("body").removeClass("nav-open-fifth");
+    });
+    $(".overlays").on("click", function() {
+        $("body").removeClass("nav-open-fifth");
+    });
     //////////////////////////////////////////////////////////////
     $(".product-sync-init").slick({
         slidesToShow: 1,
@@ -361,6 +370,8 @@ $(document).ready(function() {
     });
 
     // ///////////////////////////////////////////////////////////////////
+    // priceprogress
+
     var lowerSlider = document.querySelector('#lower');
     var upperSlider = document.querySelector('#upper');
 
@@ -394,4 +405,10 @@ $(document).ready(function() {
         }
         document.querySelector('#one').value = this.value
     };
+    // ////////////////////////////////////////////////////////////////////////////////
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+
 });

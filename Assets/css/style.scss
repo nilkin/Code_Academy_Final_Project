@@ -8,7 +8,8 @@
   @import 'common/products';
   @import 'common/news-letter';
   @import 'common/shop-order';
-  @import 'common/test';
+  @import 'common/blog-section';
+  @import 'common/responsive';
   // pages
   @import 'pages/head-nav-zon';
   @import 'pages/footer';
@@ -16,13 +17,14 @@
   @import 'pages/overlay-search';
   @import 'pages/home/main-slider';
   @import 'pages/home/banner';
-  @import 'pages/home/blog-section';
   @import 'pages/home/product-tab';
   @import 'pages/home/testimonial';
   @import 'pages/aboutUs/breadcrumb';
   @import 'pages/aboutUs/aboutUs';
   @import 'pages/account/login';
+  @import 'pages/account/register';
   @import 'pages/compare/compare';
-  @import 'pages/contactUs/contactUs.scss';
+  @import 'pages/contactUs/contactUs';
   @import 'pages/product/product-detail';
   @import 'pages/category/category-grid';
+  @import 'pages/account/chekout';

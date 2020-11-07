@@ -1,0 +1,231 @@
+.check-out-section {
+    .grid-wraper {
+        #accordion {
+            .card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                word-wrap: break-word;
+                background-color: $white;
+                background-clip: border-box;
+                border: 1px solid rgba(0, 0, 0, .125);
+                border-radius: .25rem;
+                margin-bottom: 1rem;
+                .card-header {
+                    background-color: $white;
+                    h5 {
+                        .btn-link {
+                            font-size: 20px !important;
+                            text-decoration: underline;
+                            color: $black;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .card-body {
+                    .personal-information {
+                        .order-asguest {
+                            .separator {
+                                border: 1px solid;
+                                /* padding: 0px 0px; */
+                                /* margin-right: 6px; */
+                                margin: 0px 4px;
+                            }
+                            a {
+                                color: #292929;
+                                font-weight: 500;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                        input:focus {
+                            border: 1px solid $placeholder-color;
+                        }
+                        .form-group {
+                            .radio {
+                                position: relative;
+                                cursor: pointer;
+                                line-height: 20px;
+                                font-size: 12px;
+                                margin: 15px;
+                            }
+                            .radio .label {
+                                position: relative;
+                                display: block;
+                                float: left;
+                                margin-right: 10px;
+                                width: 15px;
+                                height: 15px;
+                                border: 2px solid #c8ccd4;
+                                border-radius: 100%;
+                                -webkit-tap-highlight-color: transparent;
+                            }
+                            .radio .label:after {
+                                content: '';
+                                position: absolute;
+                                top: 0.58px;
+                                left: 0.6px;
+                                width: 10px;
+                                height: 10px;
+                                border-radius: 100%;
+                                background: $main-color;
+                                transform: scale(0);
+                                transition: all 0.2s ease;
+                                opacity: 0.08;
+                                pointer-events: none;
+                            }
+                            .radio:hover .label:after {
+                                transform: scale(3.6);
+                            }
+                            input[type="radio"]:checked+.label {
+                                border-color: $main-color;
+                            }
+                            input[type="radio"]:checked+.label:after {
+                                transform: scale(1);
+                                transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+                                opacity: 1;
+                            }
+                            .hidden {
+                                display: none;
+                            }
+                        }
+                    }
+                    .filter-check-box {
+                        & input[type="checkbox"]+label {
+                            position: relative;
+                            padding-top: 3px;
+                            cursor: pointer;
+                            text-transform: capitalize;
+                            user-select: none;
+                            font-size: 13px;
+                            line-height: 22px;
+                        }
+                    }
+                    input:focus {
+                        border: 1px solid $placeholder-color;
+                    }
+                    input[type="checkbox"]+label {
+                        display: block;
+                        margin: 0.4em;
+                        cursor: pointer;
+                        padding: 0.4em;
+                    }
+                    input[type="checkbox"] {
+                        display: none;
+                    }
+                    input[type="checkbox"]+label:before {
+                        content: "\2714";
+                        border: 1px solid $second-color;
+                        border-radius: 0.2em;
+                        display: inline-block;
+                        width: 17px;
+                        height: 18px;
+                        padding-bottom: 0.3em;
+                        margin-right: 0.2em;
+                        vertical-align: bottom;
+                        color: transparent;
+                        transition: 0.2s;
+                        margin-bottom: 4px;
+                        margin-right: 10px;
+                        line-height: 15px;
+                    }
+                    input[type="checkbox"]+label:active:before {
+                        transform: scale(0);
+                    }
+                    input[type="checkbox"]:checked+label:before {
+                        background-color: $white;
+                        border-color: $white;
+                        color: $main-color;
+                        margin-bottom: 4px;
+                        margin-right: 10px;
+                        font-size: 19px;
+                    }
+                }
+                .custom {
+                    .card-body {
+                        .radio {
+                            position: relative;
+                            cursor: pointer;
+                            line-height: 20px;
+                            font-size: 12px;
+                            margin: 15px;
+                        }
+                        .radio .label {
+                            position: relative;
+                            display: block;
+                            float: left;
+                            margin-right: 10px;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid #c8ccd4;
+                            border-radius: 100%;
+                            -webkit-tap-highlight-color: transparent;
+                        }
+                        .radio .label:after {
+                            content: '';
+                            position: absolute;
+                            top: 0.6px;
+                            left: 0.6px;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 100%;
+                            background: $main-color;
+                            transform: scale(0);
+                            transition: all 0.2s ease;
+                            opacity: 0.08;
+                            pointer-events: none;
+                        }
+                        .radio:hover .label:after {
+                            transform: scale(3.6);
+                        }
+                        input[type="radio"]:checked+.label {
+                            border-color: $main-color;
+                        }
+                        input[type="radio"]:checked+.label:after {
+                            transform: scale(1);
+                            transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+                            opacity: 1;
+                        }
+                        .hidden {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .cart-summary {
+            margin-bottom: 2rem;
+            .list-group-item {
+                li {
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #292929;
+                }
+            }
+            .amount {
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+        .third-btn {
+            font-size: 14px;
+        }
+    }
+    .delivery-info {
+        padding-top: 1rem;
+        border-top: 1px solid $del;
+        li {
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: #292929;
+            line-height: 24px;
+            margin-bottom: 25px;
+            i {
+                margin-right: 1rem;
+                font-size: 23px;
+            }
+        }
+    }
+}

@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
@@ -237,72 +239,310 @@
             </div>
         </nav>
         <!-- breadcrumb-section end -->
-        <!-- map start -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.62360556707!2d49.784748173306504!3d40.394571267708066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2z0JHQsNC60YMsINCQ0LfQtdGA0LHQsNC50LTQttCw0L0!5e0!3m2!1sru!2s!4v1604437597412!5m2!1sru!2s"
-            width="1520" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        <!-- map end -->
-        <!-- contac us start -->
-        <section class="contact-section head-top">
+        <!-- about section start -->
+        <section class="check-out-section wrapper-top">
             <div class="container grid-wraper">
                 <div class="row">
-                    <div class="col-lg-6 col-12 mb-30">
-                        <div class="contact-page-side-content">
-                            <h3 class="contact-page-title">Contact Us</h3>
-                            <p class="contact-page-message mb-30">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
-                            <div class="single-contact-block">
-                                <h4><i class="fa fa-fax"></i> Address</h4>
-                                <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                    <div class="col-lg-8 mb-30">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            1 Personal Information
+                          </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <form class="personal-information">
+                                            <div class="order-asguest mt-2 mb-4">
+                                                <a href="#">Order as a guest</a>
+                                                <span class="separator"></span>
+                                                <a class="text-muted" href="login.html">Sign in</a>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-md-3 col-form-label">
+                                Social title
+                              </label>
+                                                <div class="col-md-6">
+                                                    <div class="d-flex flex-wrap">
+                                                        <div class="custom-radio">
+                                                            <label for="opt3" class="radio">
+                                                                <input type="radio" name="rdo" id="opt3" class="hidden"/>
+                                                                <span class="label"></span>Mr
+                                                              </label>
+                                                        </div>
+                                                        <div class="custom-radio">
+                                                            <label for="opt4" class="radio">
+                                                                <input type="radio" name="rdo" id="opt4" class="hidden"/>
+                                                                <span class="label"></span>Mrs
+                                                              </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="firstname" class="col-md-3 col-form-label">First
+                                name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="firstname" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="lastname" class="col-md-3 col-form-label">last name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="lastname" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="email" class="col-md-3 col-form-label">Email</label>
+                                                <div class="col-md-6">
+                                                    <input type="email" id="email" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="Password" class="col-md-3 col-form-label">Password</label>
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-2 mr-sm-2">
+                                                        <input type="password" class="form-control" id="Password">
+                                                        <div class="input-group-prepend">
+                                                            <button type="button" class="input-group-text third-btn btn-theme2">show</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3"><label><span class="optional text-muted">
+                                    Optional
+                                  </span></label></div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="birthdate" class="col-md-3 col-form-label">Birthdate</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="birthdate" placeholder="MM/DD/YYYY">
+                                                </div>
+                                                <div class="col-md-3"><label><span class="optional text-muted">
+                                    Optional
+                                  </span></label></div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-3"></div>
+                                                <div class="col-md-6">
+                                                    <div class="check-box-inner pt-0">
+                                                        <div class="filter-check-box">
+                                                            <input type="checkbox" id="20821">
+                                                            <label for="20821">Sign up for our newsletter</label>
+                                                            <p class="pl-25">Be the First to Know. Sign up for newsletter today !</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="sign-btn text-right">
+                                                        <a href="#" class="btn third-btn btn-theme2">Continue</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="single-contact-block">
-                                <h4><i class="fa fa-phone"></i> Phone</h4>
-                                <p>
-                                    <a href="tel:123456789">Mobile: (08) 123 456 789</a>
-                                </p>
-                                <p><a href="tel:1009678456">Hotline: 1009 678 456</a></p>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            2 Addresses
+                          </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="checkout-inner border-0">
+                                            <div class="checkout-address p-0">
+                                                <p>
+                                                    The selected address will be used both as your personal address (for invoice) and as your delivery address.
+                                                </p>
+                                            </div>
+                                            <div class="check-out-content">
+                                                <form id="contact-form" class="p-0" action="assets/php/mail.php" method="post">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3" for="city">City</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" id="city" name="city" type="text" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3" for="address1">Address</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" id="address1" name="address1" type="text" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row mb-0">
+                                                        <div class="col-12 text-right">
+                                                            <button type="submit" class="btn third-btn btn-theme2">Continue</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="single-contact-block">
-                                <h4><i class="fas fa-envelope"></i> Email</h4>
-                                <p>
-                                    <a href="mailto:yourmail@domain.com">yourmail@domain.com</a>
-                                </p>
-                                <p> <a href="mailto:support@hastech.company">support@hastech.company</a></p>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span>3</span> Shipping Method
+                          </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse custom" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="delivery-options-list">
+                                            <form>
+                                                <div class="delivery-option">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row align-items-center ">
+                                                                <div class="col-sm-1">
+                                                                    <div class="custom-radio">
+                                                                        <label for="opt10" class="radio">
+                                                                            <input type="radio" name="rdo" id="opt10" class="hidden"/>
+                                                                            <span class="label"></span>
+                                                                          </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-11 delivery-option-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-sm-5 col-12">
+                                                                            <div class="row align-items-center">
+                                                                                <div class="col-3">
+                                                                                    <i class="fas fa-truck"></i>
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <span class="carrier-name">My
+                                                  carrier</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 col-12">
+                                                                            <span class="carrier-delay">Delivery next
+                                              day!</span>
+                                                                        </div>
+                                                                        <div class="col-sm-3 col-12">
+                                                                            <span class="carrier-price">$7.00 tax excl.</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="order-options">
+                                                    <div id="delivery" class="text-right">
+                                                        <label class="text-left d-block">If you would like to add a comment
+                                    about your order, please write it in the field
+                                    below.</label>
+                                                        <textarea class="form-control mt-2 mb-4"></textarea>
+                                                        <button type="submit" class="btn third-btn btn-theme2">
+                                    Continue
+                                  </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                      <span>4</span> Payment
+                                    </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse custom" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="card-body pt-0">
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt9" class="radio">
+                                                <input type="radio" name="rdo" id="opt9" class="hidden"/>
+                                                <span class="label"></span>Pay by Check
+                                              </label>
+
+                                        </div>
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt6" class="radio">
+                                                <input type="radio" name="rdo" id="opt6" class="hidden"/>
+                                                <span class="label"></span>Pay by bank wire
+                                              </label>
+                                        </div>
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt7" class="radio">
+                                                <input type="radio" name="rdo" id="opt7" class="hidden"/>
+                                                <span class="label"></span>Pay by Cash on Delivery
+                                              </label>
+                                        </div>
+                                        <div class="filter-check-box mb-4">
+                                            <input type="checkbox" id="20828" required="">
+                                            <label class="checkout" for="20828">I agree to the terms and Conditions</label>
+                                        </div>
+
+                                        <button class="btn third-btn btn-theme2">
+                                      order now
+                                    </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 mb-30">
-                        <div class="contact-form-content">
-                            <h3 class="contact-page-title">Tell Us Your Message</h3>
-                            <div class="contact-form">
-                                <form id="contact-form" action="assets/php/mail.php" method="post">
-                                    <div class="form-group">
-                                        <label>Your Name <span class="required">*</span></label>
-                                        <input type="text" name="customerName" id="customername" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Your Email <span class="required">*</span></label>
-                                        <input type="email" name="customerEmail" id="customerEmail" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Subject</label>
-                                        <input type="text" name="contactSubject" id="contactSubject" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Your Message</label>
-                                        <textarea name="contactMessage" class="pb-10" id="contactMessage" required=""></textarea>
-                                    </div>
-                                    <div class="form-group mb-0">
-                                        <button type="submit" value="submit" id="submit" class="btn third-btn btn-theme2" name="submit">submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <p class="form-messegemt-10"></p>
+                    <div class="col-lg-4 mb-30">
+                        <ul class="list-group cart-summary">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <ul class="items">
+                                    <li>1 item</li>
+                                    <li>Shipping</li>
+                                </ul>
+                                <ul class="amount">
+                                    <li>$11.90</li>
+                                    <li>$7.00</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <ul class="items">
+                                    <li>Total (tax excl.)</li>
+                                    <li>Taxes</li>
+                                </ul>
+                                <ul class="amount">
+                                    <li>$18.90</li>
+                                    <li>$0</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item text-center">
+                                <button class="btn third-btn btn-theme2">Proceed to checkout</button>
+                            </li>
+                        </ul>
+
+                        <div class="delivery-info">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-shield-alt"></i> Security policy (edit with Customer reassurance module)
+                                </li>
+                                <li>
+                                    <i class="fas fa-truck"></i> Delivery policy (edit with Customer reassurance module)
+                                </li>
+                                <li class="mb-0">
+                                    <i class="fas fa-exchange-alt"></i> Return policy (edit with Customer reassurance module)
+                                </li>
+                            </ul>
                         </div>
-                        <!-- End of contact -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- contact us end -->
+        <!-- about section end -->
         <!-- common banner news-letter end -->
         <section class="newsletter padding-head-foot">
             <div class="container border-top">
@@ -328,12 +568,13 @@
                 </div>
             </div>
         </section>
+
         <!-- common banner news-letter end -->
     </main>
     <footer class="bg-lighter">
         <!-- footer bottom start -->
-        <div class="footer-bottom padding-head-foot ">
-            <div class="container ">
+        <div class="footer-bottom padding-head-foot">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-6 col-lg-6 ">
                         <div class="footer-widget">
