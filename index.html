@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/ea4ac9830e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/animated.css">
+
 </head>
 
 <body>
@@ -144,6 +145,7 @@
         </section>
         <!-- head-nav-end-->
     </header>
+
     <!-- wish-nav-->
     <section class="wish">
         <nav class="nav-container">
@@ -181,11 +183,15 @@
                         <a href="single-product.html" class="image"><img src="/Assets/img/prod1.jpg" alt="Cart product Image"></a>
                         <div class="content">
                             <a href="single-product.html" class="title">Walnut Cutting Board</a>
-                            <span class="quantity-price">1 x <span class="amount">$100.00</span></span>
+                            <span class="quantity-price">1 x <span class="amount ">$100.00</span></span>
                             <a href="#" class="remove">×</a>
                         </div>
                     </li>
                 </ul>
+                <div class="mt-5 sub-total d-flex flex-wrap justify-content-between">
+                    <strong>Subtotal :</strong>
+                    <span class="amount text-success font-weight-bold">$144.00</span>
+                </div>
                 <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">view
                 cart</a>
                 <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">checkout</a>
@@ -247,6 +253,8 @@
         </nav>
         <div class="overlays"></div>
     </section>
+    <!-- Back to top button -->
+    <a id="button"></a>
     <main>
         <!-- main-slider-->
         <section id="main-slider">
@@ -318,6 +326,7 @@
                                 <p class="text text-capitalize text-dark mb-10">Cyber Monday</p>
                                 <h4 class="title text-capitalize text-dark">Big Sale 50% Off</h4>
                                 <a class="view-link text-capitalize mt-20" href="#">View
+                                    
                         collection
                         <span class="fas fa-chevron-circle-right theme-color"></span></a>
                             </div>
@@ -1336,7 +1345,6 @@
                             <div class="testimonial-content text-center">
                                 <img class="mb-30 mx-auto" src="/Assets/img/profile1.png" alt="user">
                                 <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril </p>
-                                <i class="fas fa-quote-left"></i>
                                 <span class="fas fa-quote-left"></span>
                                 <h4 class="text-uppercase mb-15">John Doe</h4>
                                 <a class="text-capitalize" href="mailto:demo@hasthemes.com" tabindex="0">demo@hasthemes.com</a>
@@ -1360,8 +1368,7 @@
                     </div>
                 </div>
         </section>
-
-        <!-- Testimonial-slider start -->
+        <!-- Testimonial-slider end -->
         <!-- New Productss start -->
         <section class="new-product  panel-default padding-head-foot">
             <div class="container">
@@ -1958,5 +1965,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/slick-animation.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
 
 </html>

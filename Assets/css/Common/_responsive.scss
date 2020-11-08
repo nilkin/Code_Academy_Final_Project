@@ -1,9 +1,83 @@
     @media (max-width: 991.98px) {
+        body,
+        header,
+        main,
+        footer {
+            overflow-x: hidden !important;
+        }
         #head-nav-zon .icon-group .my-cart a.mobile-trigger {
             display: block !important;
         }
+        #head-nav-zon .icon-group .my-cart a.icons i {
+            margin-right: 4px !important;
+        }
         .offcanvas-close {
             cursor: pointer;
-            right: 5rem;
+        }
+        #main-slider .home-carousel {
+            margin-top: 3.3rem !important;
+        }
+        #main-slider .slider .slider-one,
+        #main-slider .slider .slider-two {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            display: block;
+            width: 100%;
+            padding-top: 25% !important;
+        }
+        #main-slider .slider .slider-one .slider-context,
+        #main-slider .slider .slider-two .slider-context {
+            position: absolute;
+            left: 2rem;
+            display: contents;
+            h2,
+            h4 {
+                font-size: 21px !important;
+            }
+            p {
+                font-size: 14px !important;
+            }
+            .btn {
+                text-transform: uppercase;
+                margin-top: 2rem;
+                font-size: 13px;
+                padding: 5px 9px;
+                position: relative;
+                bottom: 1.5rem;
+            }
+        }
+        .product-tab {
+            .product-tab-menu .nav {
+                display: grid;
+            }
+            .nav-item .nav-link {
+                text-align: center;
+            }
+        }
+        .testimonial-init .slick-dots {
+            position: relative;
+            left: 23.5% !important;
+        }
+        .grid-wraper,
+        .about-wrapper {
+            top: 0rem !important;
+        }
+        iframe {
+            width: 100%;
+        }
+        .blog-section {
+            .blog-card {
+                .btn {
+                    margin-top: 1rem;
+                }
+            }
+        }
+        .grid-wraper .prod-div .product-sync-init .single-product .product-thumb img {
+            width: 20rem !important;
+        }
+        .grid-wraper .prod-div .product-sync-nav .single-product .product-thumb .img-fill {
+            width: 70px !important;
+            height: 98px !important;
         }
     }

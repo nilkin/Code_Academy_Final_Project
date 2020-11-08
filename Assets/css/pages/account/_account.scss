@@ -1,0 +1,200 @@
+.my-account .title,
+.register .title {
+    color: #292929;
+    font-weight: 500;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.my-account .grid-wraper {
+    border: 1px solid $white !important;
+}
+
+.myaccount-tab-menu {
+    background-color: $white;
+    a {
+        border: 1px solid #ebebeb;
+        border-bottom: 0;
+        color: #292929;
+        font-weight: 500;
+        display: block;
+        padding: 20px 15px;
+        line-height: 1;
+        font-size: 15px;
+        text-transform: uppercase;
+        &:last-child {
+            border-bottom: 1px solid #ebebeb !important;
+        }
+        &:hover,
+        &.active {
+            background-color: $main-color;
+            color: $white;
+        }
+        i {
+            font-size: 16px;
+            text-align: center;
+            width: 25px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .myaccount-tab-menu {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .myaccount-tab-menu a {
+        border: 0;
+        padding: 10px 10px;
+        font-size: 15px;
+        margin: 2px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .myaccount-tab-menu a i {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .myaccount-tab-menu a:last-child {
+        border: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .myaccount-tab-menu a {
+        &:hover,
+        &.active {
+            background-color: $white;
+            color: $main-color;
+        }
+    }
+}
+
+.myaccount-content {
+    background-color: $white;
+    font-size: 14px;
+    border: 1px solid #ebebeb;
+    padding: 30px;
+    h3 {
+        color: #292929;
+        border-bottom: 1px solid #ebebeb;
+        font-weight: 500;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        font-size: 25px;
+    }
+    .welcome {
+        a {
+            color: #292929;
+            &:hover {
+                color: $main-color;
+            }
+        }
+        strong {
+            font-weight: 600;
+        }
+    }
+    a.edit-address-btn {
+        border-color: #333;
+        i {
+            padding-right: 5px;
+        }
+        &:hover {
+            color: $main-color;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .myaccount-content {
+        padding: 20px 15px;
+    }
+}
+
+.myaccount-table {
+    white-space: nowrap;
+    font-size: 15px;
+    table th,
+    .table th {
+        padding: 10px;
+        font-weight: 600;
+    }
+    table td,
+    .table td {
+        padding: 20px 10px;
+        vertical-align: middle;
+    }
+    table td a:hover,
+    .table td a:hover {
+        color: $white;
+    }
+}
+
+.saved-message {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 20px;
+}
+
+.myaccount-content h3 {
+    color: #292929;
+    border-bottom: 1px solid #ebebeb;
+    font-weight: 500;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.account-details-form h4 {
+    text-transform: capitalize;
+    margin: 0;
+    color: #292929;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.table .thead-light th {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.account-details-form input[type=email],
+.account-details-form input[type=number],
+.account-details-form input[type=password],
+.account-details-form input[type=search],
+.account-details-form input[type=tel],
+.account-details-form input[type=text],
+.account-details-form input[type=url] {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    font-size: 14px;
+    color: #707070;
+    padding: .8rem 1.6rem;
+    height: 38px;
+    line-height: 1.25;
+    border-radius: 0;
+}
+
+.myaccount-table td a {
+    color: $dark;
+    &:hover {
+        color: $main-color !important;
+    }
+}
+
+.account-details-form input:focus {
+    outline: none !important;
+    border: 1px solid transparent;
+    box-shadow: 0 0 10px #2caf4f75;
+}

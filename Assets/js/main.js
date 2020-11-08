@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+    // /////////////// back to top
+    var btn = $('#button');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, '300');
+    });
+
+
+    // sticy menu
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('#head-nav-zon').addClass('sticky')
@@ -64,22 +82,23 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 2,
+                    dots: false
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    dots: false
                 }
             }
         ]
@@ -314,7 +333,7 @@ $(document).ready(function() {
     $(".overlays").on("click", function() {
         $("body").removeClass("nav-open-fifth");
     });
-    //////////////////////////////////////////////////////////////
+    /////////////////////////single Product/////////////////////////////////////
     $(".product-sync-init").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -357,7 +376,7 @@ $(document).ready(function() {
             item.find((e) => e.classList.contains("active")).classList.remove("active");
         });
     };
-    ////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////categories-grid///////////////////////////////////////////////////////////////
 
     $(".collapser").on("click", function() {
         $(this).toggleClass("collapsed open");
@@ -369,46 +388,71 @@ $(document).ready(function() {
         }
     });
 
-    // ///////////////////////////////////////////////////////////////////
+
     // priceprogress
 
-    var lowerSlider = document.querySelector('#lower');
-    var upperSlider = document.querySelector('#upper');
+    // var lowerSlider = document.querySelector('#lower');
+    // var upperSlider = document.querySelector('#upper');
 
-    document.querySelector('#two').value = upperSlider.value;
-    document.querySelector('#one').value = lowerSlider.value;
+    // document.querySelector('#two').value = upperSlider.value;
+    // document.querySelector('#one').value = lowerSlider.value;
 
-    var lowerVal = parseInt(lowerSlider.value);
-    var upperVal = parseInt(upperSlider.value);
+    // var lowerVal = parseInt(lowerSlider.value);
+    // var upperVal = parseInt(upperSlider.value);
 
-    upperSlider.oninput = function() {
-        lowerVal = parseInt(lowerSlider.value);
-        upperVal = parseInt(upperSlider.value);
+    // upperSlider.oninput = function() {
+    //     lowerVal = parseInt(lowerSlider.value);
+    //     upperVal = parseInt(upperSlider.value);
 
-        if (upperVal < lowerVal + 4) {
-            lowerSlider.value = upperVal - 4;
-            if (lowerVal == lowerSlider.min) {
-                upperSlider.value = 4;
-            }
-        }
-        document.querySelector('#two').value = this.value
-    };
+    //     if (upperVal < lowerVal + 4) {
+    //         lowerSlider.value = upperVal - 4;
+    //         if (lowerVal == lowerSlider.min) {
+    //             upperSlider.value = 4;
+    //         }
+    //     }
+    //     document.querySelector('#two').value = this.value
+    // };
 
-    lowerSlider.oninput = function() {
-        lowerVal = parseInt(lowerSlider.value);
-        upperVal = parseInt(upperSlider.value);
-        if (lowerVal > upperVal - 4) {
-            upperSlider.value = lowerVal + 4;
-            if (upperVal == upperSlider.max) {
-                lowerSlider.value = parseInt(upperSlider.max) - 4;
-            }
-        }
-        document.querySelector('#one').value = this.value
-    };
-    // ////////////////////////////////////////////////////////////////////////////////
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+    // lowerSlider.oninput = function() {
+    //     lowerVal = parseInt(lowerSlider.value);
+    //     upperVal = parseInt(upperSlider.value);
+    //     if (lowerVal > upperVal - 4) {
+    //         upperSlider.value = lowerVal + 4;
+    //         if (upperVal == upperSlider.max) {
+    //             lowerSlider.value = parseInt(upperSlider.max) - 4;
+    //         }
+    //     }
+    //     document.querySelector('#one').value = this.value
+    // };
+    // ////////////////////////////tooltip////////////////////////////////////////////////////
+    $('[data-toggle="tooltip"]').tooltip();
+    /////error page
+    var parallax = function(e) {
+            var windowWidth = $(window).width();
+            if (windowWidth < 768) return;
+            var halfFieldWidth = $(".parallax").width() / 2,
+                halfFieldHeight = $(".parallax").height() / 2,
+                fieldPos = $(".parallax").offset(),
+                x = e.pageX,
+                y = e.pageY - fieldPos.top,
+                newX = (x - halfFieldWidth) / 30,
+                newY = (y - halfFieldHeight) / 30;
+            $('.parallax [class*="wave"]').each(function(index) {
+                $(this).css({
+                    transition: "",
+                    transform: "translate3d(" + index * newX + "px," + index * newY + "px,0px)"
+                });
+            });
+        },
+        stopParallax = function() {
+            $('.parallax [class*="wave"]').css({
+                transform: "translate(0px,0px)",
+                transition: "all .7s"
+            });
 
-
+        };
+    $(document).ready(function() {
+        $(".not-found").on("mousemove", parallax);
+        $(".not-found").on("mouseleave", stopParallax);
+    });
 });
