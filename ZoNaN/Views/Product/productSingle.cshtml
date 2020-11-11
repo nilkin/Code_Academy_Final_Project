@@ -242,7 +242,7 @@
                             <div class="comment-list">
                                 <div class="details text-uppercase"></div>
 
-                                <div class="eventDetails ">
+                                <div class="eventDetails mt-5">
                                     <h4 class="sub-title">Ilkin Nazarli</h4>
                                     <span>14 oct, 2020 </span>
                                     <p>
@@ -883,7 +883,7 @@
             $('a.toggleLink').click(function (e) {
                 e.preventDefault();
                 var is_visible = $(this).closest('.details').next('.eventDetails').is(':visible');
-                $(this).html(is_visible ? showText : hideText).parent().next('.eventDetails').slideToggle()('fast');
+                $(this).html(is_visible ? showText : hideText).parent().next('.eventDetails').slideToggle('slow');
             });
         });
     </script>

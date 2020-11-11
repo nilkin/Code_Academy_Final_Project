@@ -19,8 +19,15 @@ using ZoNaN;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ZoNaN.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fc8087b71df1d511f2dd6c141323f70b46fa5c06", @"/Views/Account/register.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f5e18367f17d3dd6ad5c416cc9255c599fd92365", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b73c9f79cb25d3dd5da8ec79ffcadf797d0e69d3", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_register : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_breadcrumbs", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -53,7 +60,7 @@ using ZoNaN;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<main>\r\n    <!-- breadcrumb-section start -->\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fc8087b71df1d511f2dd6c141323f70b46fa5c064221", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fc8087b71df1d511f2dd6c141323f70b46fa5c064414", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -77,7 +84,7 @@ using ZoNaN;
                     <h3 class=""title text-capitalize"">Create an account</h3>
                     <div class=""log-in-form"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc8087b71df1d511f2dd6c141323f70b46fa5c065724", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc8087b71df1d511f2dd6c141323f70b46fa5c065917", async() => {
                 WriteLiteral(@"
                             <div class=""order-asguest"">
                                 <span>Already have an account?</span>
@@ -187,7 +194,7 @@ using ZoNaN;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- registr-section end -->\r\n    <!-- common banner news-letter end -->\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fc8087b71df1d511f2dd6c141323f70b46fa5c0613143", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fc8087b71df1d511f2dd6c141323f70b46fa5c0613336", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

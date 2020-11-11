@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     // /////////////// back to top
     var btn = $('#button');
 
