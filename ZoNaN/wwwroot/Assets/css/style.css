@@ -427,26 +427,30 @@ h6 {
         position: relative;
     }
 
-        .prod-box .img-holder span.badge-danger {
-            top: 14px;
+        .prod-box .img-holder span.badge-dangers {
+            top: 35px;
             left: 14px;
             position: absolute;
             width: 3rem;
             height: 3rem;
-            font-size: 1rem !important;
-            line-height: 38px !important;
+            font-size: 14px !important;
+            line-height: 40px !important;
             border-radius: 50% !important;
             background-color: #2caf4e !important;
+            color: #ffffff !important;
         }
 
-        .prod-box .img-holder span.badge-dark {
-            top: 14px;
+        .prod-box .img-holder span.badge-darks {
+            top: 35px;
             left: 14px;
             position: absolute;
             width: 3rem !important;
             height: 3rem !important;
-            font-size: 1rem !important;
-            line-height: 38px !important;
+            font-size: 14px !important;
+            line-height: 40px !important;
+            border-radius: 50% !important;
+            background-color: #292929 !important;
+            color: #ffffff !important;
         }
 
         .prod-box .img-holder a {
@@ -3177,9 +3181,13 @@ span.required {
         top: 20px;
         z-index: 1;
         left: 1.5rem;
-        padding: 20px 13px;
-        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
         background-color: #2caf4e;
+        border-radius: 50%;
+        color: #ffffff;
+        line-height: 40px;
+        font-size: 1rem;
     }
 
     .grid-wraper .prod-div .product-sync-init {
@@ -3291,7 +3299,7 @@ span.required {
         border-radius: 5px;
         text-transform: capitalize;
         margin-left: 14px;
-        margin-bottom: auto;
+        margin-top: 6px;
     }
 
     .grid-wraper .single-product-info .product-body .font-size {

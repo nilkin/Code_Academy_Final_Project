@@ -2,8 +2,8 @@
     height: 100%;
     min-height: 1%;
     .img-holder {
-        span.badge-danger {
-            top: 14px;
+        span.badge-dangers {
+            top: 35px;
             left: 14px;
             position: absolute;
             width: 3rem;
@@ -12,9 +12,10 @@
             line-height: 40px !important;
             border-radius: 50% !important;
             background-color: $main-color !important;
+            color: $white !important;
         }
-        span.badge-dark {
-            top: 14px;
+        span.badge-darks {
+            top: 35px;
             left: 14px;
             position: absolute;
             width: 3rem !important;
@@ -22,6 +23,8 @@
             font-size: 14px !important;
             line-height: 40px !important;
             border-radius: 50% !important;
+            background-color: $dark !important;
+            color: $white !important;
         }
         a {
             transition: all 0.6s !important;
