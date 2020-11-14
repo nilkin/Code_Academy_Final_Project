@@ -25,8 +25,7 @@ namespace ZoNaN.Data.Configuration
                 .IsRequired();
             builder
                 .Property(m => m.Discount)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.IsBestSel)
                 .HasDefaultValue(false);
@@ -38,24 +37,20 @@ namespace ZoNaN.Data.Configuration
                 .HasDefaultValue(false);
             builder
                 .Property(m => m.Star)
-                .HasMaxLength(10)
-                .IsRequired();
+                .HasDefaultValue(1)
+                .HasMaxLength(10);
             builder
                 .Property(m => m.Description)
-                .HasMaxLength(300)
-                .IsRequired();
+                .HasMaxLength(300);
             builder
                 .Property(m => m.Color)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.Dimension)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.Size)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .HasOne(m => m.Stock)
                 .WithOne(m => m.Product)

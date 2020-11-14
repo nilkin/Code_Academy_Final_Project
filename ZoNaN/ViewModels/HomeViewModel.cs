@@ -7,6 +7,7 @@ namespace ZoNaN.ViewModels
     {
         public List<Banner> MainBanners { get; set; }
         public List<Banner> PromoBanners { get; set; }
+        public List<Category> Categories { get; set; }
         public List<Product> BestSelProducts { get; set; }
         public List<Product> FeaturedProducts { get; set; }
         public List<Testimonial> Testimonials { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZoNaN.Data;
 
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    partial class ZonanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201114125351_updateProdProperty")]
+    partial class updateProdProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -339,9 +341,7 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("Date")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 14, 18, 2, 58, 323, DateTimeKind.Local).AddTicks(85));
+                        .HasColumnType("Date");
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -363,11 +363,8 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Text")
+                        .IsRequired()
                         .HasColumnType("ntext");
-
-                    b.Property<string>("Theme")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 

@@ -71,13 +71,13 @@
                     <nav class="product-tab-menu styling padding-head-foot">
                         <ul class="nav nav nav-pills justify-content-center" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> Hot Categories</a>
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">@Model.Categories.ElementAt(0).Name</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tops & Sets</a>
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">@Model.Categories.ElementAt(1).Name</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Accessories</a>
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">@Model.Categories.ElementAt(2).Name</a>
                             </li>
                         </ul>
                     </nav>
@@ -93,7 +93,7 @@
                                     <figure class="prod-box">
                                         <div class="img-holder position-relative">
                                             <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
+                                            <span class="badge badge-dark ">@item.Discount %</span>
                                             <a href="#">
                                                 <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
                                                 <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
@@ -138,271 +138,118 @@
                                         </div>
                                     </figure>
                                 }
-
-                                @*<figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>
-                                    <figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>
-                                    <figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>
-                                    <figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>
-                                    <figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-danger ">New</span>
-                                            <span class="badge badge-dark ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>*@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="product-tab-slider">
-                                <partial name="_product" />
+                                @foreach (var item in Model.BestSelProducts)
+                                {
+
+                                    <figure class="prod-box">
+                                        <div class="img-holder position-relative">
+                                            <span class="badge badge-danger ">New</span>
+                                            <span class="badge badge-dark ">@item.Discount %</span>
+                                            <a href="#">
+                                                <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                                <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                            </a>
+                                            <div class="blok-hover">
+                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                    <p class="text-uppercase ">Add to card</p>
+                                                    <ul class="d-flex justify-content-center">
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="wishlist.html" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="anons">
+                                            <div class="star-rating">
+                                                @for (int i = 0; i < item.Star; i++)
+                                                {
+                                                    <i class="fas fa-star"></i>
+                                                }
+                                            </div>
+                                            <a class="info" href="shop-grid-4-column.html">
+                                                @item.Name
+                                            </a>
+                                            <h5 class="product-price">
+                                                <del class="del">$23.90</del>
+                                                <span class="onsale">$@item.Stock.Price.ToString("#.##")</span>
+                                            </h5>
+                                        </div>
+                                    </figure>
+                                }
                             </div>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="product-tab-slider">
-                                <partial name="_product" />
+                                @foreach (var item in Model.BestSelProducts)
+                                {
+
+                                    <figure class="prod-box">
+                                        <div class="img-holder position-relative">
+                                            <span class="badge badge-danger ">New</span>
+                                            <span class="badge badge-dark ">@item.Discount %</span>
+                                            <a href="#">
+                                                <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                                <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                            </a>
+                                            <div class="blok-hover">
+                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                    <p class="text-uppercase ">Add to card</p>
+                                                    <ul class="d-flex justify-content-center">
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="wishlist.html" tabindex="0">
+                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="anons">
+                                            <div class="star-rating">
+                                                @for (int i = 0; i < item.Star; i++)
+                                                {
+                                                    <i class="fas fa-star"></i>
+                                                }
+                                            </div>
+                                            <a class="info" href="shop-grid-4-column.html">
+                                                @item.Name
+                                            </a>
+                                            <h5 class="product-price">
+                                                <del class="del">$23.90</del>
+                                                <span class="onsale">$@item.Stock.Price.ToString("#.##")</span>
+                                            </h5>
+                                        </div>
+                                    </figure>
+                                }
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -427,7 +274,57 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="feature-slider bg-white">
-                            <partial name="_product" />
+                            @foreach (var item in Model.FeaturedProducts)
+                            {
+
+                                <figure class="prod-box">
+                                    <div class="img-holder position-relative">
+                                        <span class="badge badge-danger ">New</span>
+                                        <span class="badge badge-dark ">@item.Discount %</span>
+                                        <a href="#">
+                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                        </a>
+                                        <div class="blok-hover">
+                                            <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                <p class="text-uppercase ">Add to card</p>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="wishlist.html" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="anons">
+                                        <div class="star-rating">
+                                            @for (int i = 0; i < item.Star; i++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                        </div>
+                                        <a class="info" href="shop-grid-4-column.html">
+                                            @item.Name
+                                        </a>
+                                        <h5 class="product-price">
+                                            <del class="del">$23.90</del>
+                                            <span class="onsale">$@item.Stock.Price.ToString("#.##")</span>
+                                        </h5>
+                                    </div>
+                                </figure>
+                            }
                         </div>
                     </div>
 
@@ -495,7 +392,57 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="new-products bg-white">
-                            <partial name="_product" />
+                            @foreach (var item in Model.NewProducts)
+                            {
+
+                                <figure class="prod-box">
+                                    <div class="img-holder position-relative">
+                                        <span class="badge badge-danger ">New</span>
+                                        <span class="badge badge-dark ">@item.Discount %</span>
+                                        <a href="#">
+                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                        </a>
+                                        <div class="blok-hover">
+                                            <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                <p class="text-uppercase ">Add to card</p>
+                                                <ul class="d-flex justify-content-center">
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="wishlist.html" tabindex="0">
+                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="anons">
+                                        <div class="star-rating">
+                                            @for (int i = 0; i < item.Star; i++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                        </div>
+                                        <a class="info" href="shop-grid-4-column.html">
+                                            @item.Name
+                                        </a>
+                                        <h5 class="product-price">
+                                            <del class="del">$23.90</del>
+                                            <span class="onsale">$@item.Stock.Price.ToString("#.##")</span>
+                                        </h5>
+                                    </div>
+                                </figure>
+                            }
                         </div>
                     </div>
 
@@ -511,14 +458,13 @@
                 <div class="col-md-12">
                     <div class="position-relative zoom-in overflow-hidden">
                         <div class="banner-thumb">
-                            <img src="/Assets/img/banner3.jpg" alt="banner-thumb-naile">
+                            <img src="/Assets/img/@Model.DiscountBanner.Photo" alt="banner-thumb-naile">
                         </div>
                         <div class="banner-content banner-context">
-                            <p class="text text-uppercase text-dark mb-10">Cyber Monday</p>
-                            <h4 class="title text-capitalize text-dark">Save Up To 50% Off</h4>
+                            <p class="text text-uppercase text-dark mb-10">@Model.DiscountBanner.Title</p>
+                            <h4 class="title text-capitalize text-dark">@Model.DiscountBanner.Content</h4>
                             <a class="view-link text-capitalize mt-20" href="#">
-                                View
-                                collection
+                                @Model.DiscountBanner.Link
                                 <span class="fas fa-chevron-circle-right theme-color"></span>
                             </a>
                         </div>
@@ -542,7 +488,8 @@
                 </div>
             </div>
             <div class="new-blog-carousel bg-white">
-
+                @foreach (var item in Model.NewBlogs)
+                {
                 <div class="slider">
                     <div class="container">
 
@@ -550,19 +497,19 @@
                             <div class="col-12">
                                 <div class="blog-card">
                                     <div class="blog-card__image zoom-in overflow-hidden">
-                                        <img src="/Assets/img/blog-post1.jpg">
+                                        <img src="/Assets/img/@item.Photo">
                                     </div>
                                     <div class="blog-card__title">
-                                        <p> Web Design Trends for 2016 </p>
+                                        <p>@item.Name</p>
                                     </div>
                                     <h5 class="sub-title mb-30 text-capitalize">
                                         Posted by
                                         <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            HasTech
-                                        </a> Oct 4TH, 2020
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            Fashion
-                                        </a>
+                                            @item.Author
+                                        </a> @item.Date
+                                    <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
+                                        @item.Subject
+                                    </a>
                                     </h5>
                                     <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
                                 </div>
@@ -570,85 +517,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="slider">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="blog-card">
-                                    <div class="blog-card__image zoom-in overflow-hidden">
-                                        <img src="/Assets/img/blog-post2.jpg">
-                                    </div>
-                                    <div class="blog-card__title">
-                                        <p> Web Design Trends for 2016 </p>
-                                    </div>
-                                    <h5 class="sub-title mb-30 text-capitalize">
-                                        Posted by
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            HasTech
-                                        </a> Oct 4TH, 2020
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            Fashion
-                                        </a>
-                                    </h5>
-                                    <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="blog-card">
-                                    <div class="blog-card__image zoom-in overflow-hidden">
-                                        <img src="/Assets/img/blog-post3.jpg">
-                                    </div>
-                                    <div class="blog-card__title">
-                                        <p> Web Design Trends for 2016 </p>
-                                    </div>
-                                    <h5 class="sub-title mb-30 text-capitalize">
-                                        Posted by
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            HasTech
-                                        </a> Oct 4TH, 2020
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            Fashion
-                                        </a>
-                                    </h5>
-                                    <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="blog-card">
-                                    <div class="blog-card__image zoom-in overflow-hidden">
-                                        <img src="/Assets/img/blog-post4.jpg">
-                                    </div>
-                                    <div class="blog-card__title">
-                                        <p> Web Design Trends for 2016 </p>
-                                    </div>
-                                    <h5 class="sub-title mb-30 text-capitalize">
-                                        Posted by
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            HasTech
-                                        </a> Oct 4TH, 2020
-                                        <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
-                                            Fashion
-                                        </a>
-                                    </h5>
-                                    <a class="btn primary-btn btn-theme1 text-capitalize" href="single-blog.html" tabindex="0">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                }
+                
             </div>
         </div>
 

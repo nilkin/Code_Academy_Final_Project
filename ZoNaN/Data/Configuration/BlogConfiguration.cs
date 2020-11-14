@@ -32,16 +32,19 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50)
                 .IsRequired();
             builder
+                .Property(m => m.Theme)
+                .HasMaxLength(50);
+            builder
                 .Property(m => m.IsNew)
                 .HasDefaultValue(false);
             builder
                 .Property(m => m.Date)
                 .HasColumnType("Date")
+                .HasDefaultValue(DateTime.Now)
                 .IsRequired();
             builder
                 .Property(m => m.Text)
-                .HasColumnType("ntext")
-                .IsRequired();
+                .HasColumnType("ntext");
             builder
                 .Property(m => m.Photo)
                 .HasMaxLength(100);
