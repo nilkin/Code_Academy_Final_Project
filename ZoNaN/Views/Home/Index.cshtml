@@ -339,34 +339,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="testimonial-init bg-main">
-                        <div class="testimonial-content text-center">
-                            <img class="mb-30 mx-auto" src="/Assets/img/profile1.png" alt="user">
-                            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril </p>
-                            <span class="fas fa-quote-left"></span>
-                            <h4 class="text-uppercase mb-15">John Doe</h4>
-                            <a class="text-capitalize" href="mailto:demo@hasthemes.com" tabindex="0">demo@hasthemes.com</a>
-                        </div>
-                        <div class="testimonial-content text-center">
-                            <img class="mb-30 mx-auto" src="/Assets/img/profile1.png" alt="user">
-                            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril </p>
-                            <span class="fas fa-quote-left"></span>
-                            <h4 class="text-uppercase mb-15">John Doe</h4>
-                            <a class="text-capitalize" href="mailto:demo@hasthemes.com" tabindex="0">demo@hasthemes.com</a>
-                        </div>
-                        <div class="testimonial-content text-center">
-                            <img class="mb-30 mx-auto" src="/Assets/img/profile1.png" alt="user">
-                            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril </p>
-                            <span class="fas fa-quote-left"></span>
-                            <h4 class="text-uppercase mb-15">John Doe</h4>
-                            <a class="text-capitalize" href="mailto:demo@hasthemes.com" tabindex="0">demo@hasthemes.com</a>
-                        </div>
-                        <div class="testimonial-content text-center">
-                            <img class="mb-30 mx-auto" src="/Assets/img/profile1.png" alt="user">
-                            <p> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril </p>
-                            <span class="fas fa-quote-left"></span>
-                            <h4 class="text-uppercase mb-15">John Doe</h4>
-                            <a class="text-capitalize" href="mailto:demo@hasthemes.com" tabindex="0">demo@hasthemes.com</a>
-                        </div>
+                        @foreach (var item in Model.Testimonials)
+                        {
+                            <div class="testimonial-content text-center">
+                                <img class="mx-auto border-radius" src="/Assets/img/@item.Photo" alt="user">
+                                <p> @item.Info </p>
+                                <span class="fas fa-quote-left"></span>
+                                <h4 class="text-uppercase mb-15">@item.Fullname</h4>
+                                <a class="text-capitalize" href="mailto: @item.Email" tabindex="0">@item.Email</a>
+                            </div>
+                        }
                     </div>
 
                 </div>

@@ -25,12 +25,10 @@ namespace ZoNaN.Data.Configuration
             builder
                 .Property(m => m.Text)
                 .HasMaxLength(700)
-                .HasColumnType("ntext")
-                .IsRequired();
+                .HasColumnType("ntext");
             builder
                 .Property(m => m.Photo)
-                .HasMaxLength(100)
-                .IsRequired();
+                .HasMaxLength(100);
             builder
                 .ToTable("AboutUs");
         }

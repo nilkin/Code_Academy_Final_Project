@@ -1,6 +1,7 @@
-﻿<main>
+﻿@model AboutUsViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" />
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
     <!-- breadcrumb-section end -->
     <!-- about section start -->
     <section class="about-section ">
@@ -8,47 +9,32 @@
             <div class="row">
                 <div class="col-lg-6 ">
                     <div class="about-content">
-                        <h2 class="title">Welcome To zonan</h2>
+                        <h2 class="title">@Model.AboutUs.Title</h2>
                         <p class="text1">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore aperiam fugit consequuntur voluptatibus ex sint iure in, distinctio sed dolorem aspernatur veritatis repellendus dolorum voluptate, animi libero officiis eveniet accusamus recusandae. Temporibus
-                            amet ducimus sapiente voluptatibus autem dolorem magnam quas, officiis eveniet accusamus animi libero officiis eveniet accusamus recusandae. Temporibus
-                        </p>
-                        <p class="text2">
-                            Sint voluptatum beatae necessitatibus quos mollitia vero, optio asperiores aut tempora iusto eum rerum, possimus, minus quidem ut saepe laboriosam. Praesentium aperiam accusantium minus repellendus accusamus neque iusto pariatur laudantium provident quod
-                        </p>
+                            @Model.AboutUs.Text
+                       </p>
                     </div>
                 </div>
                 <div class="col-lg-6 ">
                     <div class="about-left-image">
-                        <img src="/Assets/img/about-zonan.jpg" alt="img" class="img-fluid">
+                        <img src="/Assets/img/@Model.AboutUs.Photo" alt="img" class="img-fluid">
                     </div>
                 </div>
             </div>
+
             <div class="row marg-top">
-                <div class="col-md-4 ">
-                    <div class="about-info">
-                        <h4 class="title ">Our Company</h4>
-                        <p class="text1">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                        </p>
+                @foreach (var item in Model.Abouts)
+                {
+                    <div class="col-md-4 ">
+                        <div class="about-info">
+                            <h4 class="title ">@item.Title</h4>
+                            <p class="text1">
+                                @item.Text
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 ">
-                    <div class="about-info">
-                        <h4 class="title ">Our Team</h4>
-                        <p class="text1">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <div class="about-info">
-                        <h4 class="title ">Testimonial</h4>
-                        <p class="text1">
-                            Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Lorem ipsum dolor sit amet conse ctetur adipisicing elit.
-                        </p>
-                    </div>
-                </div>
+                }
+
             </div>
         </div>
     </section>

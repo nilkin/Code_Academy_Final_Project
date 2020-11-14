@@ -368,6 +368,10 @@ h6 {
   margin-top: 3rem;
 }
 
+.border-radius {
+  border-radius: 50%;
+}
+
 .new-products, .feature-slider, .new-blog-carousel {
   background: #ffffff;
 }
@@ -2361,7 +2365,7 @@ button.close:hover {
 .testimonial-init .slick-dots {
   position: relative;
   margin-top: 1rem;
-  left: 42.5%;
+  left: 40.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
