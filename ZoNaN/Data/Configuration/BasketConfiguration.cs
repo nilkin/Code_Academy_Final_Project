@@ -22,17 +22,13 @@ namespace ZoNaN.Data.Configuration
                 .IsRequired();
             builder
                 .Property(m => m.isCart)
-                .HasMaxLength(700);
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.isCompare)
-                .IsRequired();
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.isWish)
-                .IsRequired();
-            builder
-                .HasOne(m => m.Chekout)
-                .WithMany(m => m.Bascets)
-                .HasForeignKey(m => m.CheckoutId);
+                .HasDefaultValue(false);
             builder
                 .ToTable("Baskets");
         }

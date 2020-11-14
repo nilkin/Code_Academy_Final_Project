@@ -32,31 +32,44 @@ namespace ZoNaN.Data.Configuration
                 .Property(m => m.Link)
                 .HasMaxLength(50);
             builder
-                .Property(m => m.IsAboutUs);
+                .Property(m => m.IsAboutUs)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsBlog);
+                .Property(m => m.IsBlog)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsBlogSingle);
+                .Property(m => m.IsBlogSingle)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsCart);
+                .Property(m => m.IsCart)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsChekout);
+                .Property(m => m.IsChekout)
+               .HasDefaultValue(false);
             builder
-                .Property(m => m.IsCompare);
+                .Property(m => m.IsCompare)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsContact);
+                .Property(m => m.IsContact)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsLogin);
+                .Property(m => m.IsLogin)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsProduct);
+                .Property(m => m.IsProduct)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsProductSingle);
+                .Property(m => m.IsProductSingle)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsProfile);
+                .Property(m => m.IsProfile)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsRegister);
+                .Property(m => m.IsRegister)
+                .HasDefaultValue(false);
             builder
-                .Property(m => m.IsWish);
+                .Property(m => m.IsWish)
+                .HasDefaultValue(false);
 
             builder.ToTable("Breadcrumbs");
         }

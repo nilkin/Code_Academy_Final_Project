@@ -6,10 +6,10 @@ namespace ZoNaN.Models
     public class ProductPhoto
     {
         public int Id { get; set; }
-        public int ProductId { get; set; }
         public string Photo { get; set; }
         [NotMapped]
         public IFormFile Upload { get; set; }
+        public int ProductId { get; set; }
         public Product Product { get; set; }
 
     }

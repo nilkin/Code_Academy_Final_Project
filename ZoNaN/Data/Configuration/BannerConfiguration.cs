@@ -34,13 +34,13 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(100);
             builder
                 .Property(m => m.IsDiscount)
-                .HasMaxLength(700);
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.IsMain)
-                .IsRequired();
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.IsPromo)
-                .IsRequired();
+                .HasDefaultValue(false);
             builder.ToTable("Banners");
         }
     }

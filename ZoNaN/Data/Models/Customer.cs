@@ -25,10 +25,6 @@ namespace ZoNaN.Models
         public string Photo { get; set; }
         [NotMapped]
         public IFormFile Upload { get; set; }
-        public int ChekoutId { get; set; }
         public Chekout Chekout { get; set; }
-
-        //public int BascetId { get; set; }
-        //public Basket Bascet { get; set; }
     }
 }

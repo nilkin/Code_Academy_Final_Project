@@ -32,6 +32,9 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50)
                 .IsRequired();
             builder
+                .Property(m => m.IsNew)
+                .HasDefaultValue(false);
+            builder
                 .Property(m => m.Date)
                 .HasColumnType("Date")
                 .IsRequired();

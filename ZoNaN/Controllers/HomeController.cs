@@ -1,26 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-
+using ZoNaN.Data;
+using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ZonanDbContext _context;
+        public HomeController(ZonanDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            HomeViewModel model = new HomeViewModel
+            {
+
+                MainBanners = await _context.Banners.Where(c => c.IsMain).ToListAsync(),
+                PromoBanners = await _context.Banners.Where(c => c.IsPromo).ToListAsync(),
+                BestSelProducts = await _context.Products.Where(c => c.IsBestSel).Include(i=>i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                Testimonials = await _context.Testimonials.Take(5).ToListAsync(),
+                NewProducts = await _context.Products.Where(c => c.IsNew).ToListAsync(),
+                DiscountBanner = await _context.Banners.OrderByDescending(s => s.Id).FirstOrDefaultAsync(),
+                NewBlogs = await _context.Blogs.Where(c=>c.IsNew).ToListAsync()
+            };
+            return View(model);
         }
 
     }

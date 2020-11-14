@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ZoNaN.Data.Models;
 
 namespace ZoNaN.Data.Configuration
@@ -34,7 +30,7 @@ namespace ZoNaN.Data.Configuration
                 .IsRequired();
             builder
                 .Property(m => m.Message)
-                .HasMaxLength(50)
+                .HasMaxLength(500)
                 .HasColumnType("ntext");
             builder
                 .Property(m => m.Photo)

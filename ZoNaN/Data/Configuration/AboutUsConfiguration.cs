@@ -31,7 +31,8 @@ namespace ZoNaN.Data.Configuration
                 .Property(m => m.Photo)
                 .HasMaxLength(100)
                 .IsRequired();
-            builder.ToTable("AboutUs");
+            builder
+                .ToTable("AboutUs");
         }
     }
 }

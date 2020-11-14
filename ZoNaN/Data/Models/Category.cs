@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ZoNaN.Models
 {
@@ -9,6 +6,6 @@ namespace ZoNaN.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<SubCategory> Products { get; set; }
+        public ICollection<SubCategory> SubCategories { get; set; }
     }
 }

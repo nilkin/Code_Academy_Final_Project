@@ -11,7 +11,9 @@ namespace ZoNaN.Models
         public bool Payment { get; set; }
         public bool Shipping { get; set; }
         public string Message { get; set; }
-        public ICollection<Basket> Bascets { get; set; }
+        public int BasketId { get; set; }
+        public Basket Bascet { get; set; }
+        public int CustomerId { get; set; }
         public Customer Customer { get; set; }
     }
 }

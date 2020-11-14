@@ -70,15 +70,7 @@ namespace ZoNaN.Data.Configuration
                 .HasDefaultValue("avatar.jpg")
                 .HasMaxLength(100);
             builder
-                .HasOne(m => m.Chekout)
-                .WithOne(m => m.Customer)
-                .HasForeignKey<Customer>(m => m.ChekoutId);
-            //builder
-            //    .HasOne(m => m.Bascet)
-            //    .WithOne(m => m.Customer)
-            //    .HasForeignKey<Customer>(m => m.BascetId);
-
-            builder.ToTable("Customers");
+                .ToTable("Customers");
         }
     }
 }

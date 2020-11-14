@@ -1,6 +1,5 @@
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\ZoNaN.exe
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\ZoNaN.deps.json
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\ZoNaN.runtimeconfig.json
@@ -164,3 +163,4 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\scopedcss\bundle\ZoNaN.styles.css

@@ -31,8 +31,16 @@ namespace ZoNaN.Data.Configuration
             builder
                 .Property(m => m.Message)
                 .HasColumnType("ntext")
-                .HasMaxLength(400)
-                .IsRequired();
+                .HasMaxLength(500)
+                .IsRequired();  
+            builder
+                .HasOne(m => m.Customer)
+                .WithOne(m => m.Chekout)
+                .HasForeignKey<Chekout>(m => m.CustomerId);
+            builder
+                .HasOne(m => m.Bascet)
+                .WithOne(m => m.Chekout)
+                .HasForeignKey<Chekout>(m => m.BasketId);
             builder
                 .ToTable("Chekouts");
         }
