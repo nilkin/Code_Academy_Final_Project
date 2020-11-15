@@ -1,20 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using ZoNaN.Data;
+using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
 {
     public class BlogController : Controller
     {
-        public IActionResult blogGrid()
+        private readonly ZonanDbContext _context;
+        public BlogController(ZonanDbContext context)
         {
-            return View();
+            _context = context;
         }
-        public IActionResult blogSingle()
+        public async Task<IActionResult> blogGrid()
         {
-            return View();
+            BlogGridViewModel model = new BlogGridViewModel
+            {
+                Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlog == true).FirstOrDefaultAsync(),
+            };
+            return View(model);
+        }
+        public async Task<IActionResult> blogSingle()
+        {
+            BlogGridViewModel model = new BlogGridViewModel
+            {
+                Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlogSingle == true).FirstOrDefaultAsync(),
+            };
+            return View(model);
         }
     }
 }

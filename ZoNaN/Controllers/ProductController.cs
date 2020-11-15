@@ -1,24 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ZoNaN.Data;
+using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
 {
     public class ProductController : Controller
     {
-        public IActionResult productGrid()
+        private readonly ZonanDbContext _context;
+        public ProductController(ZonanDbContext context)
         {
-            return View();
+            _context = context;
         }
-        public IActionResult productSingle()
+        public async Task<IActionResult> productGrid()
         {
-            return View();
+            ProductGridViewModel model = new ProductGridViewModel
+            {
+                Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProduct == true).FirstOrDefaultAsync(),
+            };
+            return View(model);
         }
-        public IActionResult compare()
+        public async Task<IActionResult> productSingle()
         {
-            return View();
+            BlogSingleViewModel model = new BlogSingleViewModel
+            {
+                Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProductSingle == true).FirstOrDefaultAsync(),
+            };
+            return View(model);
+        }
+        public async Task<IActionResult> compare()
+        {
+            CompareViewModel model = new CompareViewModel
+            {
+                Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsCompare == true).FirstOrDefaultAsync(),
+            };
+            return View(model);
         }
     }
 }

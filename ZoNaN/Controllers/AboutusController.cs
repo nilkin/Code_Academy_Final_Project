@@ -17,17 +17,15 @@ namespace ZoNaN.Controllers
         {
             _context = context;
         }
-
         public async Task<IActionResult> AboutUs()
         {
             AboutUsViewModel model = new AboutUsViewModel
             {
-                Breadcrumb = await _context.Breadcrumbs.Where(c=>c.IsAboutUs).FirstOrDefaultAsync(),
+                Breadcrumb = await _context.Breadcrumbs.Where(c=>c.IsAboutUs==true).FirstOrDefaultAsync(),
                 AboutUs =await _context.AboutUs.FirstOrDefaultAsync(),
                 Abouts = await _context.AboutUs.Skip(1).Take(3).ToListAsync()
             };
                 return View(model);
         }
-
     }
 }
