@@ -9,5 +9,6 @@ namespace ZoNaN.ViewModels
     public class ProfileViewModel
     {
         public Breadcrumb Breadcrumb { get; set; }
+        public Subscriber Subscriber { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ZoNaN.Data.Models;
 using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
@@ -14,7 +15,7 @@ namespace ZoNaN.ViewModels
         public List<Product> NewProducts { get; set; }
         public Banner DiscountBanner { get; set; }
         public List<Blog> NewBlogs { get; set; }
-
+        public Subscriber Subscriber { get; set; }
 
     }
 }

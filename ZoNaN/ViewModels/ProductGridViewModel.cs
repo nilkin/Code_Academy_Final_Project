@@ -9,6 +9,6 @@ namespace ZoNaN.ViewModels
     public class ProductGridViewModel
     {
         public Breadcrumb Breadcrumb { get; set; }
-
+        public Subscriber Subscriber { get; set; }
     }
 }

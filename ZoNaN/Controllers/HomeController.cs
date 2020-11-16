@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Data.Models;
 using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
@@ -30,6 +31,31 @@ namespace ZoNaN.Controllers
                 NewBlogs = await _context.Blogs.Where(c=>c.IsNew).ToListAsync()
             };
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(string email)
+        {
+            if (!string.IsNullOrEmpty(email))
+            {
+                Subscriber subscriber = new Subscriber
+                {
+                    Email = email
+                };
+                await _context.Subscribers.AddAsync(subscriber);
+                await _context.SaveChangesAsync();
+
+                return Ok(new
+                {
+                    message = "Your subscription is registered"
+                });
+            }
+
+            return BadRequest(new
+            {
+                message = "Please enter your email address correctly"
+            });
+
         }
 
     }

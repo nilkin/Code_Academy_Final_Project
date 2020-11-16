@@ -9,6 +9,6 @@ namespace ZoNaN.ViewModels
     public class CompareViewModel
     {
         public Breadcrumb Breadcrumb { get; set; }
-
+        public Subscriber Subscriber { get; set; }
     }
 }

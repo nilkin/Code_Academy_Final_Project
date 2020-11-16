@@ -9,5 +9,7 @@ namespace ZoNaN.ViewModels
         public Breadcrumb Breadcrumb { get; set; }
         public AboutUs AboutUs { get; set; }
         public List<AboutUs> Abouts { get; set; }
+        public Subscriber Subscriber { get; set; } 
+
     }
 }

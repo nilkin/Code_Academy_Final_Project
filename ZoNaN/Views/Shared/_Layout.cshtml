@@ -35,7 +35,7 @@
                                         <a asp-controller="Home" asp-action="Index" class="nav-link active">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" >Shop <i class="fas fa-angle-down"></i></a>
+                                        <a class="nav-link">Shop <i class="fas fa-angle-down"></i></a>
                                         <div class="dropdown-menu">
                                             <div class="row d-flex justify-content-between lg-menu">
                                                 <div class="lg-menu-item col-4">
@@ -48,7 +48,7 @@
                                                     <a asp-controller="Account" asp-action="profile" class="dropdown-item">Profile Page</a>
                                                     <a asp-controller="Account" asp-action="chekout" class="dropdown-item">Chekout Page</a>
                                                     <a asp-controller="Account" asp-action="login" class="dropdown-item">Login & Register Page</a>
-                                                    
+
                                                 </div>
                                                 <div class="lg-menu-item col-4">
                                                     <div class="dropdown-header">Ohter</div>
@@ -82,7 +82,7 @@
                                         <a asp-controller="Blog" asp-action="blogGrid" class="nav-link">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a asp-controller="ContactUs" asp-action="Contact" class="nav-link" >Contact Us</a>
+                                        <a asp-controller="ContactUs" asp-action="Contact" class="nav-link">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -250,7 +250,7 @@
     <!-- Back to top button -->
     <a id="button"></a>
 
-        @RenderBody()
+    @RenderBody()
 
     <footer class="bg-lighter">
         <!-- footer bottom start -->
@@ -382,6 +382,7 @@
     <script src="~/Assets/js/main.js"></script>
     <script src="~/Assets/js/slick-animation.min.js"></script>
     <script src="~/Assets/js/popper.min.js"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js"></script>
     @RenderSection("Javascript", required: false)
 </body>
 

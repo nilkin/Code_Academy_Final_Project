@@ -31,6 +31,7 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new TestimonialConfiguration());
             builder.ApplyConfiguration(new StockConfiguration());
             builder.ApplyConfiguration(new ReviewConfiguration());
+            builder.ApplyConfiguration(new SubCategoryConfiguration());
         }
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Banner> Banners { get; set; }
@@ -51,5 +52,6 @@ namespace ZoNaN.Data
         public DbSet<SocialLink> SocialLinks { get; set; }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
     }
 }

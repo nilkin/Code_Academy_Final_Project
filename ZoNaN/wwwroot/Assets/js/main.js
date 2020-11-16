@@ -455,4 +455,36 @@ $(document).ready(function () {
         $(".not-found").on("mousemove", parallax);
         $(".not-found").on("mouseleave", stopParallax);
     });
+    //----------------Newsletter Subscribers input---------------
+
+    $(".subscr-form").submit(function (e) {
+        e.preventDefault();
+        let formData = {
+            email: $(this).find("input[name='Email']").val()
+        };
+
+        $.ajax({
+            url: "/home/index",
+            type: "post",
+            data: formData,
+            dataType: "json",
+            beforeSend: function () {
+                console.log("request preparing")
+            },
+            success: function (res) {
+                swal("Your subscription is registered !", "Thank you for subscription", "success");
+            },
+            error: function (err) {
+                if (err.status === 400) {
+                    swal("Notice!", "Please enter your email address correctly!");
+                }
+            },
+            complete: function () {
+                $("input[name='Email']").val("");
+            }
+        });
+    });
+
 });
+
+
