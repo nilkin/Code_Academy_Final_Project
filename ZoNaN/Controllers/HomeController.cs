@@ -23,12 +23,12 @@ namespace ZoNaN.Controllers
                 MainBanners = await _context.Banners.Where(c => c.IsMain).ToListAsync(),
                 PromoBanners = await _context.Banners.Where(c => c.IsPromo).ToListAsync(),
                 Categories = await _context.Categories.Take(3).ToListAsync(),
-                BestSelProducts = await _context.Products.Where(c => c.IsBestSel).Include(i=>i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                BestSelProducts = await _context.Products.Where(c => c.IsBestSel).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
                 FeaturedProducts = await _context.Products.Where(c => c.IsFeatured).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
                 Testimonials = await _context.Testimonials.Take(6).ToListAsync(),
                 NewProducts = await _context.Products.Where(c => c.IsNew).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
                 DiscountBanner = await _context.Banners.OrderByDescending(s => s.Id).FirstOrDefaultAsync(),
-                NewBlogs = await _context.Blogs.Where(c=>c.IsNew).ToListAsync()
+                NewBlogs = await _context.Blogs.Where(c => c.IsNew).ToListAsync()
             };
             return View(model);
         }

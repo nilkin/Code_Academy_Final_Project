@@ -23,7 +23,6 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new BlogConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new SubCategoryConfiguration());
-            builder.ApplyConfiguration(new ProductBasketConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new ProductPhotoConfiguration());
             builder.ApplyConfiguration(new SettingConfiguration());
@@ -45,7 +44,6 @@ namespace ZoNaN.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductBascet> ProductBascets { get; set; }
         public DbSet<ProductPhoto> ProductPhotos { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }

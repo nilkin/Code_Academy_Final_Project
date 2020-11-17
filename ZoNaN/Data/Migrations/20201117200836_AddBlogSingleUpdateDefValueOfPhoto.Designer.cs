@@ -10,8 +10,8 @@ using ZoNaN.Data;
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    [Migration("20201113172536_CorrectChekoutRelations")]
-    partial class CorrectChekoutRelations
+    [Migration("20201117200836_AddBlogSingleUpdateDefValueOfPhoto")]
+    partial class AddBlogSingleUpdateDefValueOfPhoto
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,43 +29,69 @@ namespace ZoNaN.Data.Migrations
                         .UseIdentityColumn();
 
                     b.Property<bool>("IsAboutUs")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsBlog")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsBlogSingle")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsCart")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsChekout")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsCompare")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsContact")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsLogin")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsProduct")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsProductSingle")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsProfile")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsRegister")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsWish")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Link")
                         .HasMaxLength(50)
@@ -98,7 +124,9 @@ namespace ZoNaN.Data.Migrations
                         .UseIdentityColumn();
 
                     b.Property<DateTime>("AddedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 361, DateTimeKind.Local).AddTicks(541));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -114,13 +142,14 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Message")
-                        .HasMaxLength(50)
+                        .HasMaxLength(500)
                         .HasColumnType("ntext");
 
                     b.Property<string>("Photo")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasDefaultValue("avatar.jpg");
 
                     b.Property<string>("Subject")
                         .IsRequired()
@@ -191,6 +220,23 @@ namespace ZoNaN.Data.Migrations
                     b.ToTable("SocialLinks");
                 });
 
+            modelBuilder.Entity("ZoNaN.Data.Models.Subscriber", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribers");
+                });
+
             modelBuilder.Entity("ZoNaN.Models.AboutUs", b =>
                 {
                     b.Property<int>("Id")
@@ -199,12 +245,10 @@ namespace ZoNaN.Data.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Photo")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Text")
-                        .IsRequired()
                         .HasMaxLength(700)
                         .HasColumnType("ntext");
 
@@ -230,14 +274,19 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("IsDiscount")
-                        .HasMaxLength(700)
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsMain")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsPromo")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Link")
                         .HasMaxLength(100)
@@ -267,9 +316,6 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasMaxLength(100)
                         .HasColumnType("int");
@@ -278,14 +324,19 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("money");
 
                     b.Property<bool>("isCart")
-                        .HasMaxLength(700)
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("isCompare")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("isWish")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.HasKey("Id");
 
@@ -305,7 +356,14 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("Date");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("Date")
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 375, DateTimeKind.Local).AddTicks(7121));
+
+                    b.Property<bool>("IsNew")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -322,8 +380,11 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Text")
-                        .IsRequired()
                         .HasColumnType("ntext");
+
+                    b.Property<string>("Theme")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -362,7 +423,7 @@ namespace ZoNaN.Data.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasMaxLength(400)
+                        .HasMaxLength(500)
                         .HasColumnType("ntext");
 
                     b.Property<bool>("Payment")
@@ -468,18 +529,18 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Color")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("Dimension")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -508,13 +569,14 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Size")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<byte>("Star")
+                        .ValueGeneratedOnAdd()
                         .HasMaxLength(10)
-                        .HasColumnType("tinyint");
+                        .HasColumnType("tinyint")
+                        .HasDefaultValue((byte)1);
 
                     b.Property<int>("StockId")
                         .HasColumnType("int");
@@ -524,30 +586,14 @@ namespace ZoNaN.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BasketId");
+
                     b.HasIndex("StockId")
                         .IsUnique();
 
                     b.HasIndex("SubCategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("ZoNaN.Models.ProductBascet", b =>
-                {
-                    b.Property<int>("BascetId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("BascetId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductBascets");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.ProductPhoto", b =>
@@ -577,6 +623,11 @@ namespace ZoNaN.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<DateTime>("AddedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 388, DateTimeKind.Local).AddTicks(796));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -647,9 +698,6 @@ namespace ZoNaN.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-
-                    b.Property<int>("PoductId")
-                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
@@ -755,6 +803,12 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
                 {
+                    b.HasOne("ZoNaN.Models.Basket", "Basket")
+                        .WithMany("Products")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ZoNaN.Models.Stock", "Stock")
                         .WithOne("Product")
                         .HasForeignKey("ZoNaN.Models.Product", "StockId")
@@ -767,28 +821,11 @@ namespace ZoNaN.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Basket");
+
                     b.Navigation("Stock");
 
                     b.Navigation("SubCategory");
-                });
-
-            modelBuilder.Entity("ZoNaN.Models.ProductBascet", b =>
-                {
-                    b.HasOne("ZoNaN.Models.Basket", "Bascet")
-                        .WithMany("ProductBascets")
-                        .HasForeignKey("BascetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ZoNaN.Models.Product", "Product")
-                        .WithMany("ProductBascets")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Bascet");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.ProductPhoto", b =>
@@ -828,7 +865,7 @@ namespace ZoNaN.Data.Migrations
                 {
                     b.Navigation("Chekout");
 
-                    b.Navigation("ProductBascets");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.Blog", b =>
@@ -848,8 +885,6 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
                 {
-                    b.Navigation("ProductBascets");
-
                     b.Navigation("ProductPhotos");
 
                     b.Navigation("Reviews");

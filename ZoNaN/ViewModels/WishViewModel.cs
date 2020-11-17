@@ -1,4 +1,6 @@
-﻿using ZoNaN.Data.Models;
+﻿using System.Collections.Generic;
+using ZoNaN.Data.Models;
+using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
 {
@@ -6,5 +8,6 @@ namespace ZoNaN.ViewModels
     {
         public Breadcrumb Breadcrumb { get; set; }
         public Subscriber Subscriber { get; set; }
+        public List<Basket> WishBaskets { get; set; }
     }
 }

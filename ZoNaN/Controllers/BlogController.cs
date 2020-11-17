@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Models;
 using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
@@ -19,14 +20,18 @@ namespace ZoNaN.Controllers
             BlogGridViewModel model = new BlogGridViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlog == true).FirstOrDefaultAsync(),
+                Blogs = await _context.Blogs.ToListAsync(),
             };
             return View(model);
         }
-        public async Task<IActionResult> blogSingle()
+        public async Task<IActionResult> blogSingle(int Id)
         {
-            BlogGridViewModel model = new BlogGridViewModel
+            Blog BlogSingle = await _context.Blogs
+       .Include("Comments").FirstOrDefaultAsync(c => c.Id == 1);
+            BlogSingleViewModel model = new BlogSingleViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlogSingle == true).FirstOrDefaultAsync(),
+                SingleBlog = BlogSingle
             };
             return View(model);
         }

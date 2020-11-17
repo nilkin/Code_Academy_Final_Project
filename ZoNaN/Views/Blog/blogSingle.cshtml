@@ -1,6 +1,7 @@
-﻿<main>
+﻿@model BlogSingleViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <section class="blog-section top-margin">
         <div class="container">
@@ -17,43 +18,40 @@
                             <div class="col-12">
                                 <div class="single-blog text-left">
                                     <a class="blog-thumb zoom-in d-block overflow-hidden" href="blog-grid-left-sidebar.html">
-                                        <img class="object-fit-none" src="~/Assets/img/blog-post3.jpg" alt="blog-thumb-naile">
+                                        <img class="object-fit-none" src="~/Assets/img/@Model.SingleBlog.Photo" alt="blog-thumb-naile">
                                     </a>
                                     <div class="blog-post-content">
                                         <h3 class="title mb-15">
-                                            <a href="single-blog.html">This is Secound Post For XipBlog</a>
+                                            <a href="single-blog.html">@Model.SingleBlog.Name</a>
                                         </h3>
                                         <h5 class="sub-title font-style-normal">
                                             Posted by
-                                            <a class="blog-link" href="https://themeforest.net/user/hastech">HasTech</a>
-                                            <span class="separator">/</span> 14 oct, 2020
+                                            <a class="blog-link" href="https://themeforest.net/user/hastech">@Model.SingleBlog.Author</a>
+                                            <span class="separator">/</span> @Model.SingleBlog.Date.ToString("MMM, dd yyyy")
                                             <span class="separator">/</span>
-                                            <a class="blog-link" href="https://themeforest.net/user/hastech">Electronics</a>
+                                            <a class="blog-link" href="https://themeforest.net/user/hastech">@Model.SingleBlog.Theme</a>
                                         </h5>
                                         <p class="text">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep
-                                            rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud
-                                            exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore
-                                            et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in rep rehenderit.
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiumod tempor incididunt ut labore et dolore magna aliqua.
+                                            @Model.SingleBlog.Text
                                         </p>
                                     </div>
                                 </div>
                                 <!-- comment-section start -->
                                 <div class="comment-section">
+                                    <a class="btn third-btn btn-theme2 title text-white show-background"></a>
+                                    <div class="comment-list content-area">
 
-                                    <div class="comment-list">
-                                        <h3 class="title">All comments</h3>
-                                        <img class="avatar" src="~/Assets/img/avatar.jpg" alt="avatar">
-                                        <h4 class="sub-title">avatar</h4>
-                                        <span>14 oct, 2020 </span>
-                                        <button class="reply">Reply</button>
-                                        <p>
-                                            Ev kullanımı için en uygun HP Orjinal Ucuz Kartuşlar artık avatar.com adresinde 7/24 aktif şipariş hattımız ile her zaman Orijinal Kartuş alabilir ve bayilik fırsatlarımız ile her zaman %50 İndirimli alabilirsiniz. Sarf Depo olarak her zaman müşteri desteğimiz
-                                            en ön plandadır.Her zaman canlı destek yada whatsapp hattımızdan yazmayı unutmayınız. www.avatar.com
-                                        </p>
+                                        @foreach (var item in Model.SingleBlog.Comments)
+                                        {
+                                            <img class="avatar" src="~/Assets/img/@item.Photo" alt="avatar">
+                                            <h4 class="sub-title">@item.Fullname</h4>
+                                            <span>@item.AddedDate.ToString("MMM, dd yyyy") </span>
+                                            <button class="reply">Reply</button>
+                                            <p>
+                                                @item.Message
+                                            </p>
+                                        }
+
                                     </div>
                                 </div>
                                 <!-- comment-section start -->
@@ -95,6 +93,23 @@
         </div>
     </section>
     <!-- common banner news-letter start -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
+@section Javascript{
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $(".show-background").click(function () {
+                    $(".content-area").animate({ opacity: 'toggle' }, 'slow');
+                });
+
+                var text = $('.show-background').text();
+                $('.show-background').text(
+                    text == "All comments" ? "Comments" : "Comments");
+            });
+        });
+    </script>
+
+}

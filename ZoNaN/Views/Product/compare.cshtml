@@ -1,6 +1,7 @@
-﻿<main>
+﻿@model CompareViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- compare start -->
     <section class="compare-section shop-order top-margin">
@@ -12,17 +13,31 @@
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">product info</th>
-                                    <th scope="col" class="text-center">
-                                        <img src="/Assets/img/prod1.jpg" alt="img">
-                                        <span class="sub-title d-block">Water and Wind Resistant</span>
+                                    <th class="text-dark" scope="col">product info</th>
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+
+                                        @foreach (var p in item.Products)
+                                        {
+                                <th scope="col" class="text-center">
+                                    <img src="/Assets/img/@p.ProductPhotos.ElementAt(0).Photo" alt="img">
+
+                                    <span class="sub-title d-block">@p.Name</span>
+                                    @if (@p.Stock.Quantity > 0)
+                                    {
                                         <a href="cart.html" class="btn third-btn btn-theme2 text-uppercase"> add to cart</a>
-                                    </th>
-                                    <th scope="col" class="text-center">
-                                        <img src="/Assets/img/prod1.jpg" alt="img">
-                                        <span class="sub-title d-block">Originals Kaval Windbreaker</span>
-                                        <a href="cart.html" class="btn third-btn btn-theme2 text-uppercase"> add to cart</a>
-                                    </th>
+                                    }
+                                    else
+                                    {
+                                        <a href="cart.html" class="btn d-none third-btn btn-theme2 text-uppercase"> add to cart</a>
+                                    }
+
+                                    <a href="cart.html" class="btn third-btn btn-theme2 text-uppercase"> Remove</a>
+                                </th>
+                                        }
+
+                                    }
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -30,60 +45,98 @@
                                     <th scope="row">
                                         Price
                                     </th>
-                                    <td class="text-center">
-                                        <span class="whish-list-price">
-                                            $38.24
-                                        </span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="whish-list-price">
-                                            $38.24
-                                        </span>
-                                    </td>
+
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+
+                                        @foreach (var p in item.Products)
+                                        {
+                                            <td class="text-center">
+                                                <span class="whish-list-price">
+                                                    @p.Stock.Price $
+                                                </span>
+                                            </td>
+                                        }
+
+                                    }
+
+
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         Description
                                     </th>
-                                    <td class="text-center">
-                                        <p>Water and Wind Resistant</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p>Originals Kaval Windbreaker</p>
-                                    </td>
+
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+
+                                        @foreach (var p in item.Products)
+                                        {
+                                            <td class="text-center">
+                                                <p>@p.Description</p>
+                                            </td>
+                                        }
+
+                                    }
+
+
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         Availability
                                     </th>
-                                    <td class="text-center">
-                                        <span class="badge badge-danger position-static my-badge">In Stock</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="badge badge-danger position-static my-badge">In Stock</span>
-                                    </td>
+
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+                                        @foreach (var p in item.Products)
+                                        {
+                                            <td class="text-center">
+                                                @if (@p.Stock.Quantity > 0)
+                                                {
+                                                    <span class="badge  position-static my-badge">In Stock</span>
+
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-danger position-static my-badge">Out Stock</span>
+                                                }
+                                            </td>
+                                        }
+                                    }
+
+
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         weight
                                     </th>
-                                    <td class="text-center">
-                                        500 ml
-                                    </td>
-                                    <td class="text-center">
-                                        750 ml
-                                    </td>
+
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+                                        @foreach (var p in item.Products)
+                                        {
+                                            <td class="text-center">
+                                                @p.Dimension
+                                            </td>
+                                        }
+                                    }
+
                                 </tr>
                                 <tr>
                                     <th scope="row">
                                         colors
                                     </th>
-                                    <td class="text-center">
-                                        pink
-                                    </td>
-                                    <td class="text-center">
-                                        black
-                                    </td>
+
+                                    @foreach (var item in Model.CompareProducts)
+                                    {
+                                        @foreach (var p in item.Products)
+                                        {
+                                            <td class="text-center">
+                                                @p.Color
+                                            </td>
+                                        }
+                                    }
+
                                 </tr>
                             </tbody>
                         </table>
@@ -94,6 +147,6 @@
     </section>
     <!-- compare end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>

@@ -882,6 +882,15 @@ img.second-img {
         font-weight: 300;
     }
 
+    .shop-order .table td .badge-danger {
+        color: white;
+        background: red;
+        border-color: red;
+        padding: 9px 9px;
+        border-radius: 0;
+        font-weight: 300;
+    }
+
 .shop-order .table th {
     vertical-align: middle;
     border-bottom: 1px solid transparent;

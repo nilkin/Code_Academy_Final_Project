@@ -19,11 +19,13 @@ namespace ZoNaN.Models
         public string Dimension { get; set; }
         public string Size { get; set; }
         public int StockId { get; set; }
+        public int BasketId { get; set; }
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public Stock Stock { get; set; }
+        public Basket Basket { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<ProductPhoto> ProductPhotos { get; set; }
-        public ICollection<ProductBascet> ProductBascets { get; set; }
+    
     }
 }

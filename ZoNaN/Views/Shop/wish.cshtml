@@ -1,6 +1,7 @@
-﻿<main>
+﻿@model WishViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- shop-order start -->
     <section class="shop-order wrapper-top">
@@ -20,46 +21,35 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th class="text-center" scope="row">
-                                        <img src="/Assets/img/prod1.1.jpg" alt="img" class="img-fluid">
-                                    </th>
-                                    <td class="text-center">
-                                        <span class="whish-title">Water and Wind Resistant</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="shop-order-price">
-                                            $38.24
-                                        </span>
-                                    </td>
+                                @foreach (var item in Model.WishBaskets)
+                                {@foreach (var prod in item.Products)
+                                    {
+                                        <tr>
+                                            <th class="text-center" scope="row">
+                                                <img src="/Assets/img/@prod.ProductPhotos.ElementAt(0).Photo" alt="img" class="img-fluid">
+                                            </th>
+                                            <td class="text-center">
+                                                <span class="whish-title">@prod.Name</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="shop-order-price">
+                                                    $@prod.Stock.Price
+                                                </span>
+                                            </td>
 
-                                    <td class="text-center">
-                                        <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn third-btn btn-theme2 text-uppercase">Add</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th class="text-center" scope="row">
-                                        <img src="/Assets/img/prod1.1.jpg" alt="img" class="img-fluid">
-                                    </th>
-                                    <td class="text-center">
-                                        <span class="whish-title">Water and Wind Resistant</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="shop-order-price">
-                                            $38.24
-                                        </span>
-                                    </td>
+                                            <td class="text-center">
+                                                <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn third-btn btn-theme2 text-uppercase">Add To Cart</a>
+                                            </td>
+                                        </tr>
+                                    }
 
-                                    <td class="text-center">
-                                        <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn third-btn btn-theme2 text-uppercase">Add</a>
-                                    </td>
-                                </tr>
+                            }
+
+
+
                             </tbody>
                         </table>
 
@@ -71,6 +61,6 @@
     </section>
     <!-- shop-order end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>

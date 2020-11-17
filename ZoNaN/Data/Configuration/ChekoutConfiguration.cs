@@ -26,13 +26,14 @@ namespace ZoNaN.Data.Configuration
                 .IsRequired();
             builder
                 .Property(m => m.Shipping)
-                .HasDefaultValue(false)
-                .IsRequired();
+                .HasDefaultValue(false);
+            builder
+                .Property(m => m.IsGuest)
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.Message)
                 .HasColumnType("ntext")
-                .HasMaxLength(500)
-                .IsRequired();  
+                .HasMaxLength(500);
             builder
                 .HasOne(m => m.Customer)
                 .WithOne(m => m.Chekout)

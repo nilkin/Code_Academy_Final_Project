@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ZoNaN.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialCreation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,8 +14,8 @@ namespace ZoNaN.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Text = table.Column<string>(type: "ntext", maxLength: 700, nullable: false),
-                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Text = table.Column<string>(type: "ntext", maxLength: 700, nullable: true),
+                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -33,13 +33,30 @@ namespace ZoNaN.Data.Migrations
                     Content = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Link = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    IsMain = table.Column<bool>(type: "bit", nullable: false),
-                    IsPromo = table.Column<bool>(type: "bit", nullable: false),
-                    IsDiscount = table.Column<bool>(type: "bit", maxLength: 700, nullable: false)
+                    IsMain = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsPromo = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsDiscount = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Banners", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Baskets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Quantity = table.Column<int>(type: "int", maxLength: 100, nullable: false),
+                    TotalPrice = table.Column<decimal>(type: "money", nullable: false),
+                    isCompare = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    isWish = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    isCart = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Baskets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -51,8 +68,10 @@ namespace ZoNaN.Data.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Author = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Subject = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Date = table.Column<DateTime>(type: "Date", nullable: false),
-                    Text = table.Column<string>(type: "ntext", nullable: false),
+                    Theme = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsNew = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Date = table.Column<DateTime>(type: "Date", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 792, DateTimeKind.Local).AddTicks(6878)),
+                    Text = table.Column<string>(type: "ntext", nullable: true),
                     Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
@@ -70,19 +89,19 @@ namespace ZoNaN.Data.Migrations
                     Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Link = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Path = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    IsProduct = table.Column<bool>(type: "bit", nullable: false),
-                    IsProductSingle = table.Column<bool>(type: "bit", nullable: false),
-                    IsAboutUs = table.Column<bool>(type: "bit", nullable: false),
-                    IsLogin = table.Column<bool>(type: "bit", nullable: false),
-                    IsProfile = table.Column<bool>(type: "bit", nullable: false),
-                    IsRegister = table.Column<bool>(type: "bit", nullable: false),
-                    IsChekout = table.Column<bool>(type: "bit", nullable: false),
-                    IsBlog = table.Column<bool>(type: "bit", nullable: false),
-                    IsBlogSingle = table.Column<bool>(type: "bit", nullable: false),
-                    IsContact = table.Column<bool>(type: "bit", nullable: false),
-                    IsCompare = table.Column<bool>(type: "bit", nullable: false),
-                    IsCart = table.Column<bool>(type: "bit", nullable: false),
-                    IsWish = table.Column<bool>(type: "bit", nullable: false)
+                    IsProduct = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsProductSingle = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsAboutUs = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsLogin = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsProfile = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsRegister = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsChekout = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsBlog = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsBlogSingle = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsContact = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsCompare = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsCart = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsWish = table.Column<bool>(type: "bit", nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
@@ -103,21 +122,6 @@ namespace ZoNaN.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Chekouts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Payment = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Shipping = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Message = table.Column<string>(type: "ntext", maxLength: 400, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Chekouts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Contacts",
                 columns: table => new
                 {
@@ -131,6 +135,31 @@ namespace ZoNaN.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contacts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Gender = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Token = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    InfoText = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    City = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Mobile = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Birth = table.Column<DateTime>(type: "Date", nullable: false),
+                    IsSubscribe = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true, defaultValue: "avatar.jpg")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -172,12 +201,24 @@ namespace ZoNaN.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Quantity = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     Status = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Price = table.Column<decimal>(type: "money", nullable: false),
-                    PoductId = table.Column<int>(type: "int", nullable: false)
+                    Price = table.Column<decimal>(type: "money", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Stock", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subscribers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subscribers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -205,10 +246,10 @@ namespace ZoNaN.Data.Migrations
                     Fullname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Subject = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Message = table.Column<string>(type: "ntext", maxLength: 50, nullable: true),
+                    Message = table.Column<string>(type: "ntext", maxLength: 500, nullable: true),
                     Website = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 752, DateTimeKind.Local).AddTicks(6194)),
                     BlogId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -243,58 +284,30 @@ namespace ZoNaN.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Baskets",
+                name: "Chekouts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Quantity = table.Column<int>(type: "int", maxLength: 100, nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "money", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    CheckoutId = table.Column<int>(type: "int", nullable: false),
-                    isCompare = table.Column<bool>(type: "bit", nullable: false),
-                    isWish = table.Column<bool>(type: "bit", nullable: false),
-                    isCart = table.Column<bool>(type: "bit", maxLength: 700, nullable: false)
+                    Payment = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Shipping = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Message = table.Column<string>(type: "ntext", maxLength: 500, nullable: false),
+                    BasketId = table.Column<int>(type: "int", nullable: false),
+                    CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Baskets", x => x.Id);
+                    table.PrimaryKey("PK_Chekouts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Baskets_Chekouts_CheckoutId",
-                        column: x => x.CheckoutId,
-                        principalTable: "Chekouts",
+                        name: "FK_Chekouts_Baskets_BasketId",
+                        column: x => x.BasketId,
+                        principalTable: "Baskets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customers",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Gender = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Token = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    InfoText = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    City = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Mobile = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Birth = table.Column<DateTime>(type: "Date", nullable: false),
-                    IsSubscribe = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true, defaultValue: "avatar.jpg"),
-                    ChekoutId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Customers_Chekouts_ChekoutId",
-                        column: x => x.ChekoutId,
-                        principalTable: "Chekouts",
+                        name: "FK_Chekouts_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -310,17 +323,24 @@ namespace ZoNaN.Data.Migrations
                     IsBestSel = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     IsFeatured = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     IsNew = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Star = table.Column<byte>(type: "tinyint", maxLength: 10, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Dimension = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Size = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Star = table.Column<byte>(type: "tinyint", maxLength: 10, nullable: false, defaultValue: (byte)1),
+                    Description = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Dimension = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Size = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     StockId = table.Column<int>(type: "int", nullable: false),
+                    BasketId = table.Column<int>(type: "int", nullable: false),
                     SubCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_Baskets_BasketId",
+                        column: x => x.BasketId,
+                        principalTable: "Baskets",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Products_Stock_StockId",
                         column: x => x.StockId,
@@ -331,31 +351,6 @@ namespace ZoNaN.Data.Migrations
                         name: "FK_Products_SubCategories_SubCategoryId",
                         column: x => x.SubCategoryId,
                         principalTable: "SubCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductBascets",
-                columns: table => new
-                {
-                    BascetId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductBascets", x => new { x.BascetId, x.ProductId });
-                    table.ForeignKey(
-                        name: "FK_ProductBascets_Baskets_BascetId",
-                        column: x => x.BascetId,
-                        principalTable: "Baskets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductBascets_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -390,7 +385,8 @@ namespace ZoNaN.Data.Migrations
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Rate = table.Column<byte>(type: "tinyint", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false)
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 828, DateTimeKind.Local).AddTicks(9027))
                 },
                 constraints: table =>
                 {
@@ -404,9 +400,16 @@ namespace ZoNaN.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Baskets_CheckoutId",
-                table: "Baskets",
-                column: "CheckoutId");
+                name: "IX_Chekouts_BasketId",
+                table: "Chekouts",
+                column: "BasketId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Chekouts_CustomerId",
+                table: "Chekouts",
+                column: "CustomerId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_BlogId",
@@ -414,20 +417,14 @@ namespace ZoNaN.Data.Migrations
                 column: "BlogId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customers_ChekoutId",
-                table: "Customers",
-                column: "ChekoutId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ProductBascets_ProductId",
-                table: "ProductBascets",
-                column: "ProductId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProductPhotos_ProductId",
                 table: "ProductPhotos",
                 column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_BasketId",
+                table: "Products",
+                column: "BasketId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_StockId",
@@ -463,16 +460,13 @@ namespace ZoNaN.Data.Migrations
                 name: "Breadcrumbs");
 
             migrationBuilder.DropTable(
+                name: "Chekouts");
+
+            migrationBuilder.DropTable(
                 name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "Contacts");
-
-            migrationBuilder.DropTable(
-                name: "Customers");
-
-            migrationBuilder.DropTable(
-                name: "ProductBascets");
 
             migrationBuilder.DropTable(
                 name: "ProductPhotos");
@@ -487,19 +481,22 @@ namespace ZoNaN.Data.Migrations
                 name: "SocialLinks");
 
             migrationBuilder.DropTable(
+                name: "Subscribers");
+
+            migrationBuilder.DropTable(
                 name: "Testimonials");
+
+            migrationBuilder.DropTable(
+                name: "Customers");
 
             migrationBuilder.DropTable(
                 name: "Blogs");
 
             migrationBuilder.DropTable(
-                name: "Baskets");
-
-            migrationBuilder.DropTable(
                 name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Chekouts");
+                name: "Baskets");
 
             migrationBuilder.DropTable(
                 name: "Stock");

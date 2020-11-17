@@ -10,6 +10,7 @@ namespace ZoNaN.Models
         public int Id { get; set; }
         public bool Payment { get; set; }
         public bool Shipping { get; set; }
+        public bool IsGuest { get; set; }
         public string Message { get; set; }
         public int BasketId { get; set; }
         public Basket Bascet { get; set; }

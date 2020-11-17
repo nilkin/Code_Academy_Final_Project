@@ -35,8 +35,8 @@ namespace ZoNaN.Data.Configuration
                 .HasColumnType("ntext");
             builder
                 .Property(m => m.Photo)
-                .HasMaxLength(100)
-                .IsRequired();
+                .HasDefaultValue("avatar.jpg")
+                .HasMaxLength(100);
             builder
                 .Property(m => m.Website)
                 .IsRequired()

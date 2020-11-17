@@ -61,6 +61,11 @@ namespace ZoNaN.Data.Configuration
                 .WithMany(m => m.Products)
                 .HasForeignKey(m => m.SubCategoryId);
 
+            builder
+                .HasOne(m => m.Basket)
+                .WithMany(m => m.Products)
+                .HasForeignKey(m => m.BasketId);
+
             builder.ToTable("Products");
 
         }
