@@ -36,25 +36,34 @@ namespace ZoNaN.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(string email)
         {
-            if (!string.IsNullOrEmpty(email))
+            if (string.IsNullOrEmpty(email))
             {
-                Subscriber subscriber = new Subscriber
-                {
-                    Email = email
-                };
-                await _context.Subscribers.AddAsync(subscriber);
-                await _context.SaveChangesAsync();
-
-                return Ok(new
-                {
-                    message = "Your subscription is registered"
-                });
-            }
-
             return BadRequest(new
             {
                 message = "Please enter your email address correctly"
             });
+            }
+
+            if (_context.Subscribers.Any(c=>c.Email==email))
+            {
+                return NotFound(new
+                {
+                    message = "You are already subscribed to our newsletter"
+                });
+            }
+
+            Subscriber subscriber = new Subscriber
+            {
+                Email = email
+            };
+            await _context.Subscribers.AddAsync(subscriber);
+            await _context.SaveChangesAsync();
+
+            return Ok(new
+            {
+                message = "Your subscription is registered"
+            });
+
 
         }
 

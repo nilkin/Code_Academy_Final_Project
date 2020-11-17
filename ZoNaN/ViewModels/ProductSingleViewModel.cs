@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ZoNaN.Data.Models;
+using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
 {
@@ -10,5 +8,8 @@ namespace ZoNaN.ViewModels
     {
         public Breadcrumb Breadcrumb { get; set; }
         public Subscriber Subscriber { get; set; }
+        public Product ProductSingle { get; set; }
+        public List<Product> LikeProducts { get; set; }
+        public List<Product> SameCategoryProducts { get; set; }
     }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZoNaN.Data;
 
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    partial class ZonanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201116204301_addDateTimeColumnToReview")]
+    partial class addDateTimeColumnToReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,7 +126,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 44, 55, 921, DateTimeKind.Local).AddTicks(307));
+                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 43, 1, 101, DateTimeKind.Local).AddTicks(8455));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -358,7 +360,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 44, 55, 933, DateTimeKind.Local).AddTicks(8665));
+                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 43, 1, 114, DateTimeKind.Local).AddTicks(8142));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -640,7 +642,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 44, 55, 950, DateTimeKind.Local).AddTicks(7112));
+                        .HasDefaultValue(new DateTime(2020, 11, 17, 0, 43, 1, 131, DateTimeKind.Local).AddTicks(6039));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -656,6 +658,9 @@ namespace ZoNaN.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("MyProperty")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");

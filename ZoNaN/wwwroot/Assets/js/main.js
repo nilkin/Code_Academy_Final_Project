@@ -469,14 +469,17 @@ $(document).ready(function () {
             data: formData,
             dataType: "json",
             beforeSend: function () {
-                console.log("request preparing")
             },
             success: function (res) {
-                swal("Your subscription is registered !", "Thank you for subscription", "success");
+                //toastr.success(`${res.message}`)
+                swal(`${res.message}`, "Thank you for subscription", "success");
             },
             error: function (err) {
-                if (err.status === 400) {
-                    swal("Notice!", "Please enter your email address correctly!");
+                if (err.status === 404) {
+                    swal("Notice!", err.responseJSON.message);
+                }
+                else if (err.status === 400) {
+                    swal("Notice!", err.responseJSON.message);
                 }
             },
             complete: function () {

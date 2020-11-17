@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
 using ZoNaN.Data.Models;
 
 namespace ZoNaN.Data.Configuration
@@ -42,7 +43,7 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50);
             builder
                 .Property(m => m.AddedDate)
-                .IsRequired();
+                .HasDefaultValue(DateTime.Now);
             builder
                 .HasOne(m => m.Blog)
                 .WithMany(m => m.Comments)

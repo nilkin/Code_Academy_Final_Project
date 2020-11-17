@@ -1,6 +1,7 @@
-﻿<main>
+﻿@model ProductGridViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <section class="categories-grid">
         <div class="container grid-wraper">
@@ -21,7 +22,7 @@
                                             <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa fa-list"></i></a>
                                         </li>
                                         <li class="nav-item-text">
-                                            <span class="total-products text-capitalize">There are 13 products.</span>
+                                            <span class="total-products text-capitalize">There are @Model.ProductsGrid.Count() products.</span>
                                         </li>
                                     </ul>
                                 </nav>
@@ -29,7 +30,7 @@
                             <div class="col-12 col-md-6 position-relative">
                                 <div class="shop-grid-button d-flex align-items-center">
                                     <span class="sort-by">Sort by:</span>
-                                    <button class="btn-dropdown d-flex justify-content-between align-items-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn-dropdown d-flex justify-content-between align-items-center selection" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Relevance <span class="fas fa-caret-down"></span>
                                     </button>
                                     <div class="dropdown-menu shop-grid-menu" aria-labelledby="dropdownMenuButton">
@@ -48,145 +49,163 @@
                         <!-- first tab-pane -->
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                             <div class="row grid-view theme1">
-                                <div class="col-sm-6 col-md-4">
-                                    <figure class="prod-box">
-                                        <div class="img-holder position-relative">
-                                            <span class="badge badge-dangers ">New</span>
-                                            <span class="badge badge-darks ">-20%</span>
-                                            <a href="#">
-                                                <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
-                                            <div class="blok-hover">
-                                                <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                    <p class="text-uppercase ">Add to card</p>
-                                                    <ul class="d-flex justify-content-center">
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="wishlist.html" tabindex="0">
-                                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                @foreach (var item in Model.ProductsGrid)
+                                {<div class="col-sm-6 col-md-4">
+                                        <figure class="prod-box">
+                                            <div class="img-holder position-relative">
+                                                @if (item.IsNew)
+                                                {
+                                                    <span class="badge badge-dangers ">New</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-darks ">-@item.Discount%</span>
+                                                }
+                                                <a href="#">
+                                                    <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                                    <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                                </a>
+                                                <div class="blok-hover">
+                                                    <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                        <p class="text-uppercase ">Add to card</p>
+                                                        <ul class="d-flex justify-content-center">
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="wishlist.html" tabindex="0">
+                                                                    <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="anons">
-                                            <div class="star-rating">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                            <div class="anons">
+                                                <div class="star-rating">
+                                                    @for (int i = 0; i < item.Star; i++)
+                                                    {
+                                                        <i class="fas fa-star"></i>
+                                                    }
+                                                </div>
+                                                <a class="info" href="shop-grid-4-column.html">
+                                                    @item.Name
+                                                </a>
+                                                <h5 class="product-price">
+                                                    @if (item.IsNew)
+                                                    {
+                                                        <span class="onsale">$@item.Stock.Price</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        double disc = Convert.ToDouble(@item.Stock.Price) + (Convert.ToDouble(@item.Stock.Price) * Convert.ToDouble(@item.Discount)) / 100;
+                                                        <del class="del"> $@disc.ToString("#.##")</del>
+                                                        <span class="onsale">$@item.Stock.Price</span>
+
+                                                    }
+                                                </h5>
                                             </div>
-                                            <a class="info" href="shop-grid-4-column.html">
-                                                Juicy
-                                                Couture
-                                                Juicy Quilted Terry Track Jacket
-                                            </a>
-                                            <h5 class="product-price">
-                                                <del class="del">$23.90</del>
-                                                <span class="onsale">$21.51</span>
-                                            </h5>
-                                        </div>
-                                    </figure>
-                                    <!-- product-list End -->
-                                </div>
+                                        </figure>       <!-- product-list End -->
+                                    </div>}
                             </div>
                         </div>
                         <!-- second tab-pane -->
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <div class="row grid-view-list theme1">
-                                <div class="col-12">
-                                    <figure class="prod-box">
-                                        <div class="row">
-                                            <div class="col-5">
-                                                <div class="img-holder position-relative">
-                                                    <span class="badge badge-dangers ">New</span>
-                                                    <span class="badge badge-darks ">-20%</span>
-                                                    <a href="#">
-                                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                                    </a>
-                                                    <div class="blok-hover">
-                                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                            <p class="text-uppercase ">Add to card</p>
-                                                            <ul class="d-flex justify-content-center">
-                                                                <li>
-                                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="wishlist.html" tabindex="0">
-                                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
+                                @foreach (var item in Model.ProductsGrid)
+                                {
+                                    <div class="col-12">
+                                        <figure class="prod-box">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <div class="img-holder position-relative">
+                                                        @if (item.IsNew)
+                                                        {
+                                                            <span class="badge badge-dangers ">New</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge badge-darks ">-@item.Discount%</span>
+                                                        }
+                                                        <a href="#">
+                                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
+                                                            <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                                        </a>
+                                                        <div class="blok-hover">
+                                                            <div class="product-links d-flex d-flex justify-content-between align-items-center">
+                                                                <p class="text-uppercase ">Add to card</p>
+                                                                <ul class="d-flex justify-content-center">
+                                                                    <li>
+                                                                        <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="wishlist.html" tabindex="0">
+                                                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
-                                            </div>
-                                            <div class="col-7">
-                                                <div class="media-body pl-sm-4 mt-30 mt-sm-0">
-                                                    <div class="product-desc">
-                                                        <h3 class="title">
-                                                            <a href="shop-grid-4-column.html">
-                                                                New Luxury
-                                                                Men's Slim Fit Shirt Short Sleeve...
-                                                            </a>
-                                                        </h3>
-                                                        <div class="star-rating mb-10 ">
-                                                            <span class="fas fa-star"></span>
-                                                            <span class="fas fa-star"></span>
-                                                            <span class="fas fa-star"></span>
-                                                            <span class="fas fa-star"></span>
-                                                            <span class="fas fa-star"></span>
+                                                </div>
+                                                <div class="col-7">
+                                                    <div class="media-body pl-sm-4 mt-30 mt-sm-0">
+                                                        <div class="product-desc">
+                                                            <h3 class="title">
+                                                                <a href="shop-grid-4-column.html">
+                                                                   @item.Name
+                                                                </a>
+                                                            </h3>
+                                                            <div class="star-rating mb-10 ">
+                                                                @for (int i = 0; i < item.Star; i++)
+                                                                {
+                                                                <span class="fas fa-star"></span>
+                                                                }
+                                                            </div>
+                                                            <h6 class="product-price">
+                                                                @if (item.IsNew)
+                                                                {
+                                                                    <span class="onsale">$@item.Stock.Price</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    double disc = Convert.ToDouble(@item.Stock.Price) + (Convert.ToDouble(@item.Stock.Price) * Convert.ToDouble(@item.Discount)) / 100;
+                                                                    <del class="del"> $@disc.ToString("#.##")</del>
+                                                                    <span class="onsale">$@item.Stock.Price</span>
+
+                                                                }
+                                                            </h6>
                                                         </div>
-                                                        <h6 class="product-price">$11.90</h6>
+                                                        <div class="availability-list pb-30 mt-20 border-bottom">
+                                                            <p>Availability: <span>@item.Stock.Quantity In Stock</span></p>
+                                                        </div>
+                                                        <ul class="product-list-des">
+                                                            <li>
+                                                               @item.Description
+                                                            </li>
+                                                        </ul>
                                                     </div>
-                                                    <div class="availability-list pb-30 mt-20 border-bottom">
-                                                        <p>Availability: <span>1200 In Stock</span></p>
-                                                    </div>
-                                                    <ul class="product-list-des">
-                                                        <li>
-                                                            Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.
-                                                        </li>
-                                                        <li>
-                                                            Part of the Kaval Collection.
-                                                        </li>
-                                                        <li>
-                                                            Regular fit is eased, but not sloppy, and perfect for any activity.
-                                                        </li>
-                                                        <li>
-                                                            Plain-woven jacket specifically constructed for freedom of movement.
-                                                        </li>
-                                                    </ul>
                                                 </div>
                                             </div>
-                                        </div>
-
-
-
-
-                                    </figure>
-                                    <!-- product-list End -->
-                                </div>
+                                        </figure>
+                                        <!-- product-list End -->
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -432,7 +451,7 @@
         </div>
     </section>
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
 
@@ -442,42 +461,48 @@
 @section Javascript{
 
     <script>
-    var lowerSlider = document.querySelector('#lower');
-    var upperSlider = document.querySelector('#upper');
+        $(".dropdown-menu a").click(function () {
 
-    document.querySelector('#two').value = upperSlider.value;
-    document.querySelector('#one').value = lowerSlider.value;
+            $(this).parents(".shop-grid-button").find('.selection').text($(this).text());
+            $(this).parents(".shop-grid-button").find('.selection').val($(this).text());
 
-    var lowerVal = parseInt(lowerSlider.value);
-    var upperVal = parseInt(upperSlider.value);
+        });
 
-    upperSlider.oninput = function() {
-    lowerVal = parseInt(lowerSlider.value);
-    upperVal = parseInt(upperSlider.value);
 
-    if (upperVal < lowerVal + 4)
-    {
-    lowerSlider.value = upperVal - 4;
-    if (lowerVal == lowerSlider.min)
-    {
-    upperSlider.value = 4;
-    }
-    }
-    document.querySelector('#two').value = this.value
-    };
 
-    lowerSlider.oninput = function() {
-    lowerVal = parseInt(lowerSlider.value);
-    upperVal = parseInt(upperSlider.value);
-    if (lowerVal > upperVal - 4)
-    {
-    upperSlider.value = lowerVal + 4;
-    if (upperVal == upperSlider.max)
-    {
-    lowerSlider.value = parseInt(upperSlider.max) - 4;
-    }
-    }
-    document.querySelector('#one').value = this.value
+
+        var lowerSlider = document.querySelector('#lower');
+        var upperSlider = document.querySelector('#upper');
+
+        document.querySelector('#two').value = upperSlider.value;
+        document.querySelector('#one').value = lowerSlider.value;
+
+        var lowerVal = parseInt(lowerSlider.value);
+        var upperVal = parseInt(upperSlider.value);
+
+        upperSlider.oninput = function () {
+            lowerVal = parseInt(lowerSlider.value);
+            upperVal = parseInt(upperSlider.value);
+
+            if (upperVal < lowerVal + 4) {
+                lowerSlider.value = upperVal - 4;
+                if (lowerVal == lowerSlider.min) {
+                    upperSlider.value = 4;
+                }
+            }
+            document.querySelector('#two').value = this.value
         };
-        </script>
+
+        lowerSlider.oninput = function () {
+            lowerVal = parseInt(lowerSlider.value);
+            upperVal = parseInt(upperSlider.value);
+            if (lowerVal > upperVal - 4) {
+                upperSlider.value = lowerVal + 4;
+                if (upperVal == upperSlider.max) {
+                    lowerSlider.value = parseInt(upperSlider.max) - 4;
+                }
+            }
+            document.querySelector('#one').value = this.value
+        };
+    </script>
 }

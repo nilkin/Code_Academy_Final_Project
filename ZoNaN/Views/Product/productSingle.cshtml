@@ -1,4 +1,5 @@
-﻿<main>
+﻿@model ProductSingleViewModel
+<main>
     <!-- breadcrumb-section start -->
     <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
     <!-- breadcrumb-section end -->
@@ -12,79 +13,43 @@
                             <span class="badge badge-dangers top-left">New</span>
                         </div>
                         <div class="product-sync-init">
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <img src="/Assets/img/prod1.jpg" alt="product-thumb">
+                            @foreach (var item in Model.ProductSingle.ProductPhotos)
+                            {
+                                <div class="single-product ">
+                                    <div class="product-thumb">
+                                        <img src="/Assets/img/@item.Photo" alt="product-thumb">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <img src="/Assets/img/prod1.1.jpg" alt="product-thumb">
-                                </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <img src="/Assets/img/prod1.jpg" alt="product-thumb">
-                                </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <img src="/Assets/img/prod1.1.jpg" alt="product-thumb">
-                                </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <img src="/Assets/img/prod1.jpg" alt="product-thumb">
-                                </div>
-                            </div>
+                            }
                         </div>
                         <div class="product-sync-nav d-flex justify-content-center">
-                            <div class="single-product">
-                                <div class="product-thumb">
-                                    <a> <img src="/Assets/img/prod1.jpg" class="img-fill" alt="product-thumb"></a>
+                            @foreach (var item in Model.ProductSingle.ProductPhotos)
+                            {
+                                <div class="single-product ">
+                                    <div class="product-thumb">
+                                        <a> <img src="/Assets/img/@item.Photo" class="img-fill" alt="product-thumb"></a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <a> <img src="/Assets/img/prod1.1.jpg" class="img-fill" alt="product-thumb"></a>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-thumb">
-                                    <a> <img src="/Assets/img/prod1.jpg" class="img-fill" alt="product-thumb"></a>
-                                </div>
-                            </div>
-                            <div class="single-product ">
-                                <div class="product-thumb">
-                                    <a> <img src="/Assets/img/prod1.1.jpg" class="img-fill" alt="product-thumb"></a>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-thumb">
-                                    <a> <img src="/Assets/img/prod1.jpg" class="img-fill" alt="product-thumb"></a>
-                                </div>
-                            </div>
+                            }
+
                         </div>
-                        <!-- <button class="slick-prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="slick-next"><i class="fas fa-chevron-right"></i></button> -->
                     </div>
                 </div>
                 <div class="col-lg-6 mt-5 mt-md-0">
                     <div class="single-product-info">
                         <div class="single-product-head">
-                            <h2 class="title ">Originals Windbreaker Winter Jacket</h2>
+                            <h2 class="title ">@Model.ProductSingle.Name</h2>
                             <div class="star-content ">
-                                <span class="star-on"><i class="fas fa-star"></i> </span>
-                                <span class="star-on"><i class="fas fa-star"></i> </span>
-                                <span class="star-on"><i class="fas fa-star"></i> </span>
-                                <span class="star-on"><i class="fas fa-star"></i> </span>
-                                <span class="star-on"><i class="fas fa-star"></i> </span>
+                                @for (int i = 0; i < Model.ProductSingle.Star; i++)
+                                {
+                                    <span class="star-on"><i class="fas fa-star"></i> </span>
+                                }
                                 <a href="#" id="write-comment">
                                     <span class="ml-2"><i class="far fa-comment-dots"></i></span>
-                                    Read reviews <span>(1)</span>
+                                    Read reviews <span>(@Model.ProductSingle.Reviews.Count())</span>
                                 </a>
-                                <a href="#">
-                                    <span class="edite"><i class="far fa-edit"></i></span> Write a
+                                <a >
+                                    <span class="edite eventDetails"><i class="far fa-edit"></i></span> Write a
                                     review
                                 </a>
                             </div>
@@ -93,22 +58,14 @@
                             <div class="d-flex align-items-center border-bottom pad-marg-b">
                                 <h6 class="product-price">
                                     <del class="del">$23.90</del>
-                                    <span class="onsale">$21.51</span>
+                                    <span class="onsale">@Model.ProductSingle.Stock.Price</span>
                                 </h6>
-                                <span class="badge my-badge position-static bg-dark">Save 10%</span>
+                                <span class="badge my-badge position-static bg-dark">Save @Model.ProductSingle.Discount%</span>
                             </div>
-                            <p class="font-size">
-                                Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.
+                            <p class="line-hight">
+                                @Model.ProductSingle.Description
                             </p>
-                            <p class="font-size">
-                                Part of the Kaval Collection.
-                            </p>
-                            <p class="font-size">
-                                Regular fit is eased, but not sloppy, and perfect for any activity.
-                            </p>
-                            <p class="font-size">
-                                Plain-woven jacket specifically constructed for freedom of movement.
-                            </p>
+                          
                         </div>
                         <div class="product-footer">
                             <div class="product-count style d-flex flex-column flex-sm-row mt-3 mb-3">
@@ -188,29 +145,7 @@
                 <div class="tabs-panel active" id="panel-1">
                     <ul>
                         <li>
-                            Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket.
-                        </li>
-                        <li>Part of the Kaval Collection.</li>
-                        <li>
-                            Regular fit is eased, but not sloppy, and perfect for any activity.
-                        </li>
-                        <li>
-                            Plain-woven jacket specifically constructed for freedom of movement.
-                        </li>
-                        <li>Soft fleece lining delivers lightweight warmth.</li>
-                        <li>Attached drawstring hood.</li>
-                        <li>Full-length zip closure.</li>
-                        <li>Long sleeves with stretch cuffs.</li>
-                        <li>Side hand pockets.</li>
-                        <li>Brand graphics at left chest and back.</li>
-                        <li>Straight hem.</li>
-                        <li>Shell: 100% nylon;<br>Lining: 100% polyester.</li>
-                        <li>Machine wash, tumble dry.</li>
-                        <li>Imported.</li>
-                        <li>
-                            <div>
-                                Product measurements were taken using size MD. Please note that measurements may vary by size.
-                            </div>
+                            @Model.ProductSingle.Description
                         </li>
                     </ul>
                 </div>
@@ -218,20 +153,37 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Compositions</th>
-                                <th scope="col">Paper Type</th>
-                                <th scope="col">Color</th>
-                                <th scope="col">Size</th>
-                                <th scope="col">Frame Size</th>
+                                @if (@Model.ProductSingle.Color != null)
+                                {
+                                    <th scope="col">Color</th>
+                                }
+                                @if (@Model.ProductSingle.Size != null)
+                                {
+                                    <th scope="col">Size</th>
+                                }
+                                @if (@Model.ProductSingle.Dimension != null)
+                                {
+                                    <th scope="col">Frame Size</th>
+                                }
+
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Cotton</td>
-                                <td>Doted</td>
-                                <td>Black</td>
-                                <td>L</td>
-                                <td>40x60cm</td>
+                                @if (@Model.ProductSingle.Color != null)
+                                {
+                                    <td> @Model.ProductSingle.Color</td>
+                                }
+                                @if (@Model.ProductSingle.Size != null)
+                                {
+                                    <td> @Model.ProductSingle.Size</td>
+                                }
+                                @if (@Model.ProductSingle.Dimension != null)
+                                {
+                                    <td> @Model.ProductSingle.Dimension</td>
+                                }
+
+
                             </tr>
                         </tbody>
                     </table>
@@ -243,16 +195,16 @@
                                 <div class="details text-uppercase"></div>
 
                                 <div class="eventDetails mt-5">
-                                    <h4 class="sub-title">Ilkin Nazarli</h4>
-                                    <span>14 oct, 2020 </span>
-                                    <p>
-                                        Ev kullanımı için en uygun HP Orjinal Ucuz Kartuşlar artık
-                                        avatar.com adresinde 7/24 aktif şipariş hattımız ile her zaman
-                                        Orijinal Kartuş alabilir ve bayilik fırsatlarımız ile her zaman
-                                        %50 İndirimli alabilirsiniz. Sarf Depo olarak her zaman müşteri
-                                        desteğimiz en ön plandadır.Her zaman canlı destek yada whatsapp
-                                        hattımızdan yazmayı unutmayınız. www.avatar.com
-                                    </p>
+                                    @foreach (var item in Model.ProductSingle.Reviews)
+                                    {
+                                        <h4 class="sub-title">@item.Fullname</h4>
+                                        <span>@item.AddedDate.Date.ToString("dd MMM , yyyy")</span>
+                                        <p>
+                                            @item.Message
+                                        </p>
+                                    }
+
+
                                 </div>
                              
                         
@@ -316,9 +268,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="head-title text-center mb-30">
-                            <h2 class="title text-dark text-capitalize">Featured Products</h2>
+                            <h2 class="title text-dark text-capitalize">You Might Also Like</h2>
                             <p class="text mt-20">
-                                Browse the collection of our featured products.
+                                Add Related products to weekly line up
                             </p>
                         </div>
                     </div>
@@ -327,256 +279,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="feature-slider bg-white">
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
+                            <partial name="_product" model="@Model.LikeProducts" />
                         </div>
                     </div>
 
@@ -592,9 +295,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="head-title text-center mb-30">
-                            <h2 class="title text-dark text-capitalize">Featured Products</h2>
+                            <h2 class="title text-dark text-capitalize">@Model.SameCategoryProducts.Count() Other Products In The Same Category</h2>
                             <p class="text mt-20">
-                                Browse the collection of our featured products.
+                                other products in the same category:
                             </p>
                         </div>
                     </div>
@@ -603,259 +306,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="feature-slider bg-white">
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
-                            <figure class="prod-box">
-                                <div class="img-holder position-relative">
-                                    <span class="badge badge-dangers ">New</span>
-                                    <span class="badge badge-darks ">-20%</span>
-                                    <a href="#">
-                                        <img src="/Assets/img/prod1.jpg" class="item-img-1 img-fluid" alt="Something">
-                                        <img src="/Assets/img/prod1.1.jpg" class="item-img-2 img-fluid" alt="Something2">
-                                    </a>
-                                    <div class="blok-hover">
-                                        <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                            <p class="text-uppercase ">Add to card</p>
-                                            <ul class="d-flex justify-content-center">
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="wishlist.html" tabindex="0">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="anons">
-                                    <div class="star-rating">
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <a class="info" href="shop-grid-4-column.html">
-                                        Juicy
-                                        Couture
-                                        Juicy Quilted Terry Track Jacket
-                                    </a>
-                                    <h5 class="product-price">
-                                        <del class="del">$23.90</del>
-                                        <span class="onsale">$21.51</span>
-                                    </h5>
-                                </div>
-                            </figure>
+                            <partial name="_product" model="@Model.SameCategoryProducts" />
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ZoNaN.Models
 {
@@ -11,5 +12,6 @@ namespace ZoNaN.Models
         public byte Rate { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
+        public DateTime AddedDate { get; set; }
     }
 }

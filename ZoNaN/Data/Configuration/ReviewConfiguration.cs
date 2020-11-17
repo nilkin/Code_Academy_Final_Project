@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ZoNaN.Models;
 
 namespace ZoNaN.Data.Configuration
@@ -33,6 +30,9 @@ namespace ZoNaN.Data.Configuration
             builder
                 .Property(m => m.Rate)
                 .IsRequired();
+            builder
+                .Property(m => m.AddedDate)
+                .HasDefaultValue(DateTime.Now);
             builder
                 .HasOne(m => m.Product)
                 .WithMany(m => m.Reviews)

@@ -5,6 +5,14 @@
     {
       "library": "sweetalert@2.1.2",
       "destination": "wwwroot/lib/sweetalert/"
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/Assets",
+      "files": [
+        "toastr.min.js",
+        "toastr.min.css"
+      ]
     }
   ]
 }
