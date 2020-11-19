@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ZoNaN.Data.Migrations
 {
-    public partial class initialCreation : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -70,7 +70,7 @@ namespace ZoNaN.Data.Migrations
                     Subject = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Theme = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     IsNew = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Date = table.Column<DateTime>(type: "Date", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 792, DateTimeKind.Local).AddTicks(6878)),
+                    Date = table.Column<DateTime>(type: "Date", nullable: false, defaultValue: new DateTime(2020, 11, 18, 22, 51, 34, 3, DateTimeKind.Local).AddTicks(8839)),
                     Text = table.Column<string>(type: "ntext", nullable: true),
                     Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
                 },
@@ -248,8 +248,8 @@ namespace ZoNaN.Data.Migrations
                     Subject = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Message = table.Column<string>(type: "ntext", maxLength: 500, nullable: true),
                     Website = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 752, DateTimeKind.Local).AddTicks(6194)),
+                    Photo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true, defaultValue: "avatar.jpg"),
+                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 18, 22, 51, 33, 991, DateTimeKind.Local).AddTicks(3280)),
                     BlogId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -291,7 +291,8 @@ namespace ZoNaN.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Payment = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     Shipping = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
-                    Message = table.Column<string>(type: "ntext", maxLength: 500, nullable: false),
+                    IsGuest = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Message = table.Column<string>(type: "ntext", maxLength: 500, nullable: true),
                     BasketId = table.Column<int>(type: "int", nullable: false),
                     CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -386,7 +387,7 @@ namespace ZoNaN.Data.Migrations
                     Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Rate = table.Column<byte>(type: "tinyint", nullable: false),
                     ProductId = table.Column<int>(type: "int", nullable: false),
-                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 17, 16, 9, 27, 828, DateTimeKind.Local).AddTicks(9027))
+                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2020, 11, 18, 22, 51, 34, 15, DateTimeKind.Local).AddTicks(2552))
                 },
                 constraints: table =>
                 {

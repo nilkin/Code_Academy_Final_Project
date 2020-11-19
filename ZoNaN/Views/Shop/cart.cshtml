@@ -1,9 +1,9 @@
 ﻿@model CartViewModel
 <main>
-    <!-- breadcrumb-section start -->
+     @*breadcrumb-section start*@ 
     <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
-    <!-- breadcrumb-section end -->
-    <!-- shop-order start -->
+     @*breadcrumb-section end*@ 
+   @*//  shop-order start*@ 
     <section class="shop-order wrapper-top">
         <div class="container grid-wraper">
             <div class="row">
@@ -25,53 +25,50 @@
                             <tbody>
                                 @foreach (var item in Model.CartBaskets)
                                 {
-                                    @foreach (var p in item.Products)
-                                    {
-                                <tr>
-                                    <th class="text-center" scope="row">
-                                        <img src="/Assets/img/@p.ProductPhotos.ElementAt(0).Photo" alt="img" class="img-fluid">
-                                    </th>
-                                    <td class="text-center">
-                                        <span class="whish-title">@p.Name</span>
-                                    </td>
-                                    <td class="text-center">
-                                        @if (@p.Stock.Quantity > 0)
-                                        {
-                                            <span class="badge  position-static my-badge">In Stock</span>
+                                                       <tr>
+                                            <th class="text-center" scope="row">
+                                                <img src="/Assets/img/@item.Product.ProductPhotos.ElementAt(0).Photo  " alt="img" class="img-fluid">
+                                            </th>
+                                            <td class="text-center">
+                                                <span class="whish-title">@item.Product.Name</span>
+                                            </td>
+                                            <td class="text-center">
+                                                @if (@item.Product.Stock.Quantity > 0)
+                                                {
+                                                    <span class="badge  position-static my-badge">In Stock</span>
 
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-danger position-static my-badge">Out Stock</span>
-                                        }
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="product-count style">
-                                            <div class="count d-flex justify-content-center">
-                                                <input type="number" min="1" max="@p.Stock.Quantity" step="1" value="1">
-                                                <div class="button-group">
-                                                    <button class="count-btn increment"><i class="fas fa-chevron-up"></i></button>
-                                                    <button class="count-btn decrement"><i class="fas fa-chevron-down"></i></button>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-danger position-static my-badge">Out Stock</span>
+                                                }
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="product-count style">
+                                                    <div class="count d-flex justify-content-center">
+                                                        <input type="number" min="1" max="@item.Product.Stock.Quantity" step="1" value="1">
+                                                        <div class="button-group">
+                                                            <button class="count-btn increment"><i class="fas fa-chevron-up"></i></button>
+                                                            <button class="count-btn decrement"><i class="fas fa-chevron-down"></i></button>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="shop-order-price">
-                                            $@p.Stock.Price
-                                        </span>
-                                    </td>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="shop-order-price">
+                                                    $@item.Product.Stock.Price
+                                                </span>
+                                            </td>
 
-                                    <td class="text-center">
-                                        <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
-                                    </td>
-                                </tr>
-                                    }
+                                            <td class="text-center">
+                                                <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
+                                            </td>
+                                        </tr>
                                 }
-                                
+
                             </tbody>
                         </table>
 
@@ -81,8 +78,8 @@
             </div>
         </div>
     </section>
-    <!-- shop-order end -->
-    <!-- common banner news-letter end -->
+     @*shop-order end*@ 
+     @*common banner news-letter end*@ 
     <partial name="_newsletters" model="@Model.Subscriber"/>
-    <!-- common banner news-letter end -->
+     @*common banner news-letter end*@ 
 </main>

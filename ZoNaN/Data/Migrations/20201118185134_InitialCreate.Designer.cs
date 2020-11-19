@@ -10,8 +10,8 @@ using ZoNaN.Data;
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    [Migration("20201117200836_AddBlogSingleUpdateDefValueOfPhoto")]
-    partial class AddBlogSingleUpdateDefValueOfPhoto
+    [Migration("20201118185134_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -126,7 +126,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 361, DateTimeKind.Local).AddTicks(541));
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 22, 51, 33, 991, DateTimeKind.Local).AddTicks(3280));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -358,7 +358,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 375, DateTimeKind.Local).AddTicks(7121));
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 22, 51, 34, 3, DateTimeKind.Local).AddTicks(8839));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -421,8 +421,12 @@ namespace ZoNaN.Data.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsGuest")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Message")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("ntext");
 
@@ -627,7 +631,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 18, 0, 8, 36, 388, DateTimeKind.Local).AddTicks(796));
+                        .HasDefaultValue(new DateTime(2020, 11, 18, 22, 51, 34, 15, DateTimeKind.Local).AddTicks(2552));
 
                     b.Property<string>("Email")
                         .IsRequired()

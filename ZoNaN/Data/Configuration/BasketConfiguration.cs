@@ -14,13 +14,6 @@ namespace ZoNaN.Data.Configuration
                 .Property(m => m.Id)
                 .ValueGeneratedOnAdd();
             builder
-                .Property(m => m.Quantity)
-                .HasMaxLength(100);
-
-            builder.Property(m => m.TotalPrice)
-                .HasColumnType("money")
-                .IsRequired();
-            builder
                 .Property(m => m.isCart)
                 .HasDefaultValue(false);
             builder
@@ -29,6 +22,10 @@ namespace ZoNaN.Data.Configuration
             builder
                 .Property(m => m.isWish)
                 .HasDefaultValue(false);
+            builder
+                .HasOne(m => m.Product)
+                .WithMany(m => m.Baskets)
+                .HasForeignKey(m => m.ProductId);
             builder
                 .ToTable("Baskets");
         }

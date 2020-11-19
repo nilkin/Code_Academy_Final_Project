@@ -1,9 +1,9 @@
 ﻿@model WishViewModel
 <main>
-    <!-- breadcrumb-section start -->
+     breadcrumb-section start 
     <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
-    <!-- breadcrumb-section end -->
-    <!-- shop-order start -->
+     breadcrumb-section end 
+     shop-order start 
     <section class="shop-order wrapper-top">
         <div class="container grid-wraper">
             <div class="row">
@@ -22,18 +22,16 @@
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.WishBaskets)
-                                {@foreach (var prod in item.Products)
-                                    {
-                                        <tr>
+                                {  <tr>
                                             <th class="text-center" scope="row">
-                                                <img src="/Assets/img/@prod.ProductPhotos.ElementAt(0).Photo" alt="img" class="img-fluid">
+                                                <img src="/Assets/img/@item.Product.ProductPhotos.ElementAt(0).Photo" alt="img" class="img-fluid">
                                             </th>
                                             <td class="text-center">
-                                                <span class="whish-title">@prod.Name</span>
+                                                <span class="whish-title">@item.Product.Name</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="shop-order-price">
-                                                    $@prod.Stock.Price
+                                                    $@item.Product.Stock.Price
                                                 </span>
                                             </td>
 
@@ -45,11 +43,6 @@
                                             </td>
                                         </tr>
                                     }
-
-                            }
-
-
-
                             </tbody>
                         </table>
 
@@ -59,8 +52,8 @@
             </div>
         </div>
     </section>
-    <!-- shop-order end -->
-    <!-- common banner news-letter end -->
+     shop-order end 
+     common banner news-letter end 
     <partial name="_newsletters" model="@Model.Subscriber" />
-    <!-- common banner news-letter end -->
+     common banner news-letter end 
 </main>

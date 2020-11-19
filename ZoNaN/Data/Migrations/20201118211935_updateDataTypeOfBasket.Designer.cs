@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZoNaN.Data;
 
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    partial class ZonanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201118211935_updateDataTypeOfBasket")]
+    partial class updateDataTypeOfBasket
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,7 +126,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 619, DateTimeKind.Local).AddTicks(477));
+                        .HasDefaultValue(new DateTime(2020, 11, 19, 1, 19, 34, 158, DateTimeKind.Local).AddTicks(6286));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -314,8 +316,11 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("money");
 
                     b.Property<bool>("isCart")
                         .ValueGeneratedOnAdd()
@@ -333,8 +338,6 @@ namespace ZoNaN.Data.Migrations
                         .HasDefaultValue(false);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Baskets");
                 });
@@ -354,7 +357,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 650, DateTimeKind.Local).AddTicks(7447));
+                        .HasDefaultValue(new DateTime(2020, 11, 19, 1, 19, 34, 198, DateTimeKind.Local).AddTicks(9550));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -529,6 +532,9 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("BasketId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Color")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -583,6 +589,8 @@ namespace ZoNaN.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BasketId");
+
                     b.HasIndex("StockId")
                         .IsUnique();
 
@@ -622,7 +630,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 686, DateTimeKind.Local).AddTicks(7431));
+                        .HasDefaultValue(new DateTime(2020, 11, 19, 1, 19, 34, 249, DateTimeKind.Local).AddTicks(833));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -777,17 +785,6 @@ namespace ZoNaN.Data.Migrations
                     b.Navigation("Blog");
                 });
 
-            modelBuilder.Entity("ZoNaN.Models.Basket", b =>
-                {
-                    b.HasOne("ZoNaN.Models.Product", "Product")
-                        .WithMany("Baskets")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("ZoNaN.Models.Chekout", b =>
                 {
                     b.HasOne("ZoNaN.Models.Basket", "Bascet")
@@ -809,6 +806,12 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
                 {
+                    b.HasOne("ZoNaN.Models.Basket", "Basket")
+                        .WithMany("Products")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ZoNaN.Models.Stock", "Stock")
                         .WithOne("Product")
                         .HasForeignKey("ZoNaN.Models.Product", "StockId")
@@ -820,6 +823,8 @@ namespace ZoNaN.Data.Migrations
                         .HasForeignKey("SubCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Basket");
 
                     b.Navigation("Stock");
 
@@ -862,6 +867,8 @@ namespace ZoNaN.Data.Migrations
             modelBuilder.Entity("ZoNaN.Models.Basket", b =>
                 {
                     b.Navigation("Chekout");
+
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.Blog", b =>
@@ -881,8 +888,6 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
                 {
-                    b.Navigation("Baskets");
-
                     b.Navigation("ProductPhotos");
 
                     b.Navigation("Reviews");

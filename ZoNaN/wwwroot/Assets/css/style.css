@@ -583,17 +583,22 @@ h6 {
         padding-left: 5px;
     }
 
-        .blok-hover .product-links p {
+        .blok-hover .product-links p a {
+            color: #707070;
             font-size: 13px;
             white-space: pre;
             margin-top: -17px;
+            position: absolute;
+            bottom: 10px;
         }
 
-            .blok-hover .product-links p:hover {
+            .blok-hover .product-links p a:hover {
                 color: #2caf4e;
                 font-size: 13px;
                 white-space: pre;
                 margin-top: -17px;
+                position: absolute;
+                bottom: 10px;
             }
 
         .blok-hover .product-links ul li a {

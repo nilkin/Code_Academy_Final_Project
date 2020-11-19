@@ -34,8 +34,8 @@ namespace ZoNaN.Controllers
             Product productSingle = await _context.Products
                 .Include("ProductPhotos")
                 .Include("Stock")
-                .Include("Reviews").FirstOrDefaultAsync(c => c.Id == 3);
-            Product productSingleCategory = await _context.Products.FindAsync(3);
+                .Include("Reviews").FirstOrDefaultAsync(c => c.Id == Id);
+            Product productSingleCategory = await _context.Products.FindAsync(Id);
             
             var rand = new Random();
             if (productSingle == null)
@@ -60,8 +60,8 @@ namespace ZoNaN.Controllers
 
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsCompare == true).FirstOrDefaultAsync(),
                 CompareProducts = await _context.Baskets.Where(c => c.isCompare == true)
-                .Include(c=>c.Products).ThenInclude(c=>c.ProductPhotos)
-                .Include(c => c.Products).ThenInclude(c => c.Stock)
+                .Include(c => c.Product).ThenInclude(c => c.ProductPhotos)
+                .Include(c => c.Product).ThenInclude(c => c.Stock)
                 .ToListAsync(),
 
             };
