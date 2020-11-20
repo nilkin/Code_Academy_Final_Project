@@ -1,9 +1,15 @@
 ﻿@model CartViewModel
+
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
 <main>
-     @*breadcrumb-section start*@ 
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
-     @*breadcrumb-section end*@ 
-   @*//  shop-order start*@ 
+    @*breadcrumb-section start*@
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
+    @*breadcrumb-section end*@
+    @*//  shop-order start*@
     <section class="shop-order wrapper-top">
         <div class="container grid-wraper">
             <div class="row">
@@ -23,50 +29,50 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.CartBaskets)
+                                @foreach (var item in Model.CartItems)
                                 {
-                                                       <tr>
-                                            <th class="text-center" scope="row">
-                                                <img src="/Assets/img/@item.Product.ProductPhotos.ElementAt(0).Photo  " alt="img" class="img-fluid">
-                                            </th>
-                                            <td class="text-center">
-                                                <span class="whish-title">@item.Product.Name</span>
-                                            </td>
-                                            <td class="text-center">
-                                                @if (@item.Product.Stock.Quantity > 0)
-                                                {
-                                                    <span class="badge  position-static my-badge">In Stock</span>
+                                    <tr>
+                                        <th class="text-center" scope="row">
+                                            <img src="/Assets/img/@item.Photo  " alt="img" class="img-fluid">
+                                        </th>
+                                        <td class="text-center">
+                                            <span class="whish-title">@item.Name</span>
+                                        </td>
+                                        <td class="text-center">
+                                            @if (@item.Quantity > 0)
+                                            {
+                                                <span class="badge  position-static my-badge">In Stock</span>
 
-                                                }
-                                                else
-                                                {
-                                                    <span class="badge badge-danger position-static my-badge">Out Stock</span>
-                                                }
-                                            </td>
-                                            <td class="text-center">
-                                                <div class="product-count style">
-                                                    <div class="count d-flex justify-content-center">
-                                                        <input type="number" min="1" max="@item.Product.Stock.Quantity" step="1" value="1">
-                                                        <div class="button-group">
-                                                            <button class="count-btn increment"><i class="fas fa-chevron-up"></i></button>
-                                                            <button class="count-btn decrement"><i class="fas fa-chevron-down"></i></button>
-                                                        </div>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-danger position-static my-badge">Out Stock</span>
+                                            }
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="product-count style">
+                                                <div class="count d-flex justify-content-center">
+                                                    <input type="number" min="1" max="@item.Quantity" step="1" value="@item.Quantity">
+                                                    <div class="button-group">
+                                                        <a  asp-action="Add" asp-route-id="@item.Id" class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
+                                                       <a  asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
                                                     </div>
                                                 </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <span class="shop-order-price">
-                                                    $@item.Product.Stock.Price
-                                                </span>
-                                            </td>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="shop-order-price">
+                                                @Model.CartItems.Where(p=>p.Id==item.Id).Sum(t=>t.Quantity * t.Price).ToString("C2")
+                                            </span>
+                                        </td>
 
-                                            <td class="text-center">
-                                                <a href="#"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
-                                            </td>
-                                        </tr>
+                                        <td class="text-center">
+                                            <a asp-action="Remove" asp-route-id="@item.Id"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
+                                        </td>
+                                    </tr>
                                 }
 
                             </tbody>
@@ -78,8 +84,8 @@
             </div>
         </div>
     </section>
-     @*shop-order end*@ 
-     @*common banner news-letter end*@ 
-    <partial name="_newsletters" model="@Model.Subscriber"/>
-     @*common banner news-letter end*@ 
+    @*shop-order end*@
+    @*common banner news-letter end*@
+    <partial name="_newsletters" model="@Model.Subscriber" />
+    @*common banner news-letter end*@
 </main>

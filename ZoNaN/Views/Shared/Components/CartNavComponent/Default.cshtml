@@ -1,0 +1,60 @@
+﻿@model CartViewModel
+
+@if (Model!=null)
+{
+<section class="cart">
+    <nav class="nav-container-second">
+        <div class="inner">
+            <div class="head d-flex flex-wrap justify-content-between">
+                <span class="title">Cart</span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            <ul class="minicart-product-list">
+                @foreach (var item in Model.CartItems)
+                {
+                    <li>
+                        <a href="single-product.html" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                        <div class="content">
+                            <a href="single-product.html" class="title">@item.Name</a>
+                            <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>
+                            <a asp-action="Remove" asp-route-id="@item.Id" class="remove">×</a>
+                        </div>
+                    </li>
+
+                    <li>Free Shipping on All Orders Over 100 ₼ !</li>
+                }
+            </ul>
+            <div class="mt-5 sub-total d-flex flex-wrap justify-content-between">
+                <strong>Subtotal :</strong>
+                <span class="amount text-success font-weight-bold">@Model.GrandTotal.ToString("C2")</span>
+
+            </div>
+            <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
+                view
+                cart
+            </a>
+            <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">checkout</a>
+
+        </div>
+    </nav>
+    <div class="overlays"></div>
+</section>
+}
+else
+{
+<section class="cart">
+    <nav class="nav-container-second">
+        <div class="inner">
+            <div class="head d-flex flex-wrap justify-content-between">
+                <span class="title">Cart</span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            <ul class="minicart-product-list">
+                <li>Your Cart Is empty</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="overlays"></div>
+</section>
+}
+

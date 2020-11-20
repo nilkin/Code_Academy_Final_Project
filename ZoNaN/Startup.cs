@@ -25,6 +25,8 @@ namespace ZoNaN
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+            services.AddSession(opt => { opt.IdleTimeout = TimeSpan.FromDays(7);});
             services.AddControllersWithViews();
             services.AddDbContext<ZonanDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -47,7 +49,7 @@ namespace ZoNaN
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

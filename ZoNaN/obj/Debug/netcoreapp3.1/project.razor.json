@@ -12422,6 +12422,23 @@
         }
       },
       {
+        "HashCode": -1376695100,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__CartNavComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:cart-nav-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__CartNavComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "CartNavComponent"
+        }
+      },
+      {
         "HashCode": 1912741130,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14457,13 +14474,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Aboutus\\AboutUs.cshtml",
       "TargetPath": "Views\\Aboutus\\AboutUs.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\cart.cshtml",
-      "TargetPath": "Views\\Shop\\cart.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\Cart.cshtml",
+      "TargetPath": "Views\\Shop\\Cart.cshtml",
       "FileKind": "mvc"
     },
     {

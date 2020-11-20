@@ -41,7 +41,7 @@ using ZoNaN.Data.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"786ef00f25795256a20f8746d0eb49a738e2282b", @"/Views/Shared/_breadcrumbs.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b964445f000651e3a7bb63622b62abc7531b3ebc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5e085038e2ec48b5d8f282d62ad12166ffa96046", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__breadcrumbs : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Breadcrumb>
     {
         #pragma warning disable 1998

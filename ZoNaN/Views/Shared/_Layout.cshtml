@@ -136,7 +136,7 @@
         </section>
         <!-- head-nav-end-->
     </header>
-
+    
     <!-- wish-nav-->
     <section class="wish">
         <nav class="nav-container">
@@ -164,36 +164,7 @@
         <div class="overlays"></div>
     </section>
     <!-- cart-nav-->
-    <section class="cart">
-        <nav class="nav-container-second">
-            <div class="inner">
-                <div class="head d-flex flex-wrap justify-content-between">
-                    <span class="title">Cart</span>
-                    <button class="offcanvas-close">×</button>
-                </div>
-                <ul class="minicart-product-list">
-                    <li>
-                        <a href="single-product.html" class="image"><img src="/Assets/img/prod1.jpg" alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Walnut Cutting Board</a>
-                            <span class="quantity-price">1 x <span class="amount ">$100.00</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="mt-5 sub-total d-flex flex-wrap justify-content-between">
-                    <strong>Subtotal :</strong>
-                    <span class="amount text-success font-weight-bold">$144.00</span>
-                </div>
-                <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
-                    view
-                    cart
-                </a>
-                <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">checkout</a>
-            </div>
-        </nav>
-        <div class="overlays"></div>
-    </section>
+    <vc:cart-nav-component></vc:cart-nav-component>
     <!-- setting -->
     <section class="setting">
         <nav class="nav-container-third">
@@ -221,6 +192,7 @@
         </nav>
         <div class="overlays"></div>
     </section>
+    <!-- mobile -->
     <section class="mobile">
         <nav class="nav-container-fifth">
             <div class="inner">

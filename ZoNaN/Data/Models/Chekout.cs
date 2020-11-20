@@ -14,7 +14,7 @@ namespace ZoNaN.Models
         public string Message { get; set; }
         public int BasketId { get; set; }
         public Basket Bascet { get; set; }
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public Customer Customer { get; set; }
     }
 }
