@@ -39,10 +39,9 @@
                                             <span class="whish-title">@item.Name</span>
                                         </td>
                                         <td class="text-center">
-                                            @if (@item.Quantity > 0)
+                                            @if (@item.ProdQuantity > 0)
                                             {
                                                 <span class="badge  position-static my-badge">In Stock</span>
-
                                             }
                                             else
                                             {
@@ -52,11 +51,22 @@
                                         <td class="text-center">
                                             <div class="product-count style">
                                                 <div class="count d-flex justify-content-center">
-                                                    <input type="number" min="1" max="@item.Quantity" step="1" value="@item.Quantity">
-                                                    <div class="button-group">
-                                                        <a  asp-action="Add" asp-route-id="@item.Id" class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
-                                                       <a  asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
-                                                    </div>
+                                                    @if (@item.ProdQuantity > 0)
+                                                    {
+                                                        <input type="number" min="@item.Quantity" max="@item.ProdQuantity" step="1" value="@item.Quantity" readonly>
+                                                        <div class="button-group">
+                                                            <a asp-action="Add" asp-route-id="@item.Id" class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
+                                                            <a asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <input class="" type="number" min="0" max="0" step="1" value="0" readonly>
+                                                        <div class="button-group">
+                                                            <a  class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
+                                                            <a  class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </td>
@@ -70,7 +80,14 @@
                                             <a asp-action="Remove" asp-route-id="@item.Id"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
                                         </td>
                                         <td class="text-center">
-                                            <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
+                                            @if (@item.ProdQuantity>0)
+                                            {
+                                                <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
+                                            }
+                                            else  
+                                            {
+                                                <a class="btn third-btn btn-theme2 text-uppercase">buy now</a>
+                                            }
                                         </td>
                                     </tr>
                                 }

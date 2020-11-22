@@ -12439,6 +12439,74 @@
         }
       },
       {
+        "HashCode": 1303580451,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__CompareIconBagdeComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:compare-icon-bagde-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__CompareIconBagdeComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "CompareIconBagdeComponent"
+        }
+      },
+      {
+        "HashCode": -882889221,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__IconBadgeComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:icon-badge-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__IconBadgeComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "IconBadgeComponent"
+        }
+      },
+      {
+        "HashCode": 1334388858,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__WishIconBadgeComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:wish-icon-badge-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__WishIconBadgeComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "WishIconBadgeComponent"
+        }
+      },
+      {
+        "HashCode": 956841006,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__WishNavComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:wish-nav-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__WishNavComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "WishNavComponent"
+        }
+      },
+      {
         "HashCode": 1912741130,
         "Kind": "Components.Bind",
         "Name": "Bind",
@@ -14429,6 +14497,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\productGrid.cshtml",
       "TargetPath": "Views\\Product\\productGrid.cshtml",
       "FileKind": "mvc"
@@ -14484,8 +14562,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\Cart.cshtml",
       "TargetPath": "Views\\Shop\\Cart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -1,0 +1,41 @@
+﻿@model CartViewModel
+
+@if (Model != null)
+{
+    <div class="inner">
+        <div class="head d-flex flex-wrap justify-content-between">
+            <span class="title">Wishlist</span>
+            <button class="offcanvas-close">×</button>
+        </div>
+        <ul class="minicart-product-list">
+            @foreach (var item in Model.WishItems)
+            {
+                <li>
+                    <a href="single-product.html" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                    <div class="content">
+                        <a href="single-product.html" class="title">@item.Name</a>
+                        <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>
+                        <a asp-controller="Shop" asp-action="RemoveFromWish" asp-route-id="@item.Id" class="remove">×</a>
+                    </div>
+                </li>
+            }
+        </ul>
+        <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
+            view
+            wishlist
+        </a>
+    </div>
+}
+else
+{
+    <div class="inner">
+        <div class="head d-flex flex-wrap justify-content-between">
+            <span class="title">Cart</span>
+            <button class="offcanvas-close">×</button>
+        </div>
+        <ul class="minicart-product-list">
+            <li>Your Wishlist is empty</li>
+        </ul>
+    </div>
+}
+

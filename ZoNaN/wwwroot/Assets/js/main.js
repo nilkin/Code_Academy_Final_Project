@@ -288,34 +288,39 @@ $(document).ready(function () {
     // /////////////////////////////////////////////////////////////////////
 
     // /////////////wish/////////////////
-    $(".wish-trigger").on("click", function () {
+    $(document).on('click','.wish-trigger', function (e) {
+        e.preventDefault();
         $("body").addClass("nav-open");
     });
 
-    $(".offcanvas-close").on("click", function () {
+    $(document).on('click', '.offcanvas-close', function (e) {
+        e.preventDefault();
         $("body").removeClass("nav-open");
     });
     $(".overlays").on("click", function () {
         $("body").removeClass("nav-open");
     });
     ///////////////////card//////////////////////////////
-    $(".card-trigger").on("click", function () {
+    $(document).on('click', '.card-trigger', function (e) {
+        e.preventDefault();
         $("body").addClass("nav-open-second");
     });
 
-    $(".offcanvas-close").on("click", function () {
+    $(document).on('click', '.offcanvas-close', function (e) {
+        e.preventDefault();
         $("body").removeClass("nav-open-second");
     });
     $(".overlays").on("click", function () {
         $("body").removeClass("nav-open-second");
     });
     /////////////////setting////////////////////////////
-
-    $(".setting-trigger").on("click", function () {
+    $(document).on('click', '.setting-trigger', function (e) {
+        e.preventDefault();
         $("body").addClass("nav-open-third");
     });
 
-    $(".offcanvas-close").on("click", function () {
+    $(document).on('click', '.offcanvas-close', function (e) {
+        e.preventDefault();
         $("body").removeClass("nav-open-third");
     });
     $(".overlays").on("click", function () {
@@ -323,11 +328,13 @@ $(document).ready(function () {
     });
     /////////////////mobile////////////////////////////
 
-    $(".mobile-trigger").on("click", function () {
+    $(document).on('click', '.mobile-trigger', function (e) {
+        e.preventDefault();
         $("body").addClass("nav-open-fifth");
     });
 
-    $(".offcanvas-close").on("click", function () {
+    $(document).on('click', '.offcanvas-close', function (e) {
+        e.preventDefault();
         $("body").removeClass("nav-open-fifth");
     });
     $(".overlays").on("click", function () {
@@ -471,7 +478,7 @@ $(document).ready(function () {
             beforeSend: function () {
             },
             success: function (res) {
-                //toastr.success(`${res.message}`)
+                
                 swal(`${res.message}`, "Thank you for subscription", "success");
             },
             error: function (err) {

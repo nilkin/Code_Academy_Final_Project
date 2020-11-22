@@ -585,20 +585,20 @@ h6 {
 
         .blok-hover .product-links p a {
             color: #707070;
-            font-size: 13px;
+            font-size: 11px;
             white-space: pre;
-            margin-top: -17px;
+            margin-top: -20px;
             position: absolute;
-            bottom: 10px;
+            bottom: 12px;
         }
 
             .blok-hover .product-links p a:hover {
                 color: #2caf4e;
-                font-size: 13px;
+                font-size: 11px;
                 white-space: pre;
-                margin-top: -17px;
+                margin-top: -20px;
                 position: absolute;
-                bottom: 10px;
+                bottom: 12px;
             }
 
         .blok-hover .product-links ul li a {
@@ -1557,7 +1557,7 @@ body.nav-open, body.nav-open-second, body.nav-open-third, body.nav-open-fifth {
 
 .overlays {
     position: fixed;
-    z-index: 2;
+    z-index: 333;
     top: 0;
     left: 0;
     width: 100%;
@@ -1645,7 +1645,7 @@ body.nav-open, body.nav-open-second, body.nav-open-third, body.nav-open-fifth {
 .nav-container-third,
 .nav-container-fifth {
     position: fixed;
-    z-index: 111;
+    z-index: 1111;
     top: 0;
     right: 0;
     height: 100%;

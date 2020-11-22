@@ -1,0 +1,12 @@
+﻿@model CompareViewModel
+
+@if (Model != null)
+{
+    <i class="fas fa-random"></i>
+    <span class="badge ">@Model.CmprItems.Count()</span>
+}
+else
+{
+    <i class="fas fa-random"></i>
+    <span class="badge"></span>
+}

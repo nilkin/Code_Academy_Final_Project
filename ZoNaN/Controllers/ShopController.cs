@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZoNaN.Data;
-using ZoNaN.Models;
 using ZoNaN.Services;
 using ZoNaN.ViewModels;
 
@@ -19,7 +17,6 @@ namespace ZoNaN.Controllers
         {
             _context = context;
         }
-
         //Cart
         public async Task<IActionResult> Cart()
         {
@@ -28,17 +25,15 @@ namespace ZoNaN.Controllers
             {       
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsCart == true).FirstOrDefaultAsync(),
                 CartItems = cart,
-                GrandTotal = cart.Sum(x=>x.Price * x.Quantity)
             };
             return View(model);
         }
-
-        public async Task<IActionResult> Add(int Id)
+        public async Task<IActionResult> Add(int id)
         {
-            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c=>c.Id==Id);
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c=>c.Id== id);
             List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
-            BasketItem basketItem = cart.Where(x=>x.Id == Id).FirstOrDefault();
-            if (basketItem==null)
+            BasketItem basketItem = cart.Where(x => x.Id == id).FirstOrDefault();
+            if (basketItem == null)
             {
                 cart.Add(new BasketItem(product));
             }
@@ -47,10 +42,27 @@ namespace ZoNaN.Controllers
                 basketItem.Quantity += 1;
             }
             HttpContext.Session.SetJson("Cart", cart);
-            if (HttpContext.Request.Headers["X-Requested-With"] != "XMLHttpRequest")
-                 return RedirectToAction("cart");
-            return ViewComponent("NavCart");
-            
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
+            return ViewComponent("IconBadgeComponent");
+        }
+        public async Task<IActionResult> AddToSideNavCart(int id)
+        {
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == id);
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
+            BasketItem basketItem = cart.Where(x => x.Id == id).FirstOrDefault();
+            if (basketItem == null)
+            {
+                cart.Add(new BasketItem(product));
+            }
+            else
+            {
+                basketItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Cart", cart);
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
+            return ViewComponent("CartNavComponent");
         }
         public IActionResult Decrease(int Id)
         {
@@ -75,7 +87,6 @@ namespace ZoNaN.Controllers
             }
             return RedirectToAction("cart");
         }
-
         public IActionResult Remove(int Id)
         {
             List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
@@ -88,19 +99,102 @@ namespace ZoNaN.Controllers
             {
                 HttpContext.Session.SetJson("Cart", cart);
             }
-            return Redirect(Request.Headers["Referer"].ToString());
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
+            return ViewComponent("IconBadgeComponent");
         }
+        //Wislist
         public async Task<IActionResult> Wish()
         {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish") ?? new List<BasketItem>();
             WishViewModel model = new WishViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsWish == true).FirstOrDefaultAsync(),
-                WishBaskets = await _context.Baskets.Where(c => c.isWish == true)
-                .Include(c => c.Product).ThenInclude(c => c.ProductPhotos)
-                .Include(c => c.Product).ThenInclude(c => c.Stock)
-                .ToListAsync(),
+                WishItems = wish,
             };
             return View(model);
         }
-    }
+        public async Task<IActionResult> AddToWish(int Id)
+        {
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish") ?? new List<BasketItem>();
+            BasketItem wishItem = wish.Where(x => x.Id == Id).FirstOrDefault();
+            if (wishItem == null)
+            {
+                wish.Add(new BasketItem(product));
+            }
+            else
+            {
+                wishItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Wish", wish);
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("wish");
+            return ViewComponent("WishIconBadgeComponent");
+        }
+        public async Task<IActionResult> AddToWishNavWish(int Id)
+        {
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish") ?? new List<BasketItem>();
+            BasketItem wishItem = wish.Where(x => x.Id == Id).FirstOrDefault();
+            if (wishItem == null)
+            {
+                wish.Add(new BasketItem(product));
+            }
+            else
+            {
+                wishItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Wish", wish);
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("wish");
+            return ViewComponent("WishNavComponent");
+        }
+        public IActionResult RemoveFromWish(int Id)
+        {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
+            wish.RemoveAll(x => x.Id == Id);
+            if (wish.Count == 0)
+            {
+                HttpContext.Session.Remove("Wish");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Wish", wish);
+            }
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
+        public async Task<IActionResult> AddFromWishToCart(int Id)
+        {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
+            wish.RemoveAll(x => x.Id == Id);
+            if (wish.Count == 0)
+            {
+                HttpContext.Session.Remove("Wish");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Wish", wish);
+            }
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
+            BasketItem basketItem = cart.Where(x => x.Id == Id).FirstOrDefault();
+            if (basketItem == null)
+            {
+                cart.Add(new BasketItem(product));
+            }
+            else
+            {
+                basketItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Cart", cart);
+            if (HttpContext.Request.Headers["X-Requested-With"] != "XMLHttpRequest")
+            {
+                return RedirectToAction("cart");
+            }
+
+            return ViewComponent("NavCart");
+
+        }
+     }
 }

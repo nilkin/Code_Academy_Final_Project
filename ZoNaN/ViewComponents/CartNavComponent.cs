@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Services;
 using ZoNaN.ViewModels;
@@ -11,7 +10,7 @@ namespace ZoNaN.ViewComponents
 {
     public class CartNavComponent : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IViewComponentResult Invoke()
         {
             List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
             CartViewModel model;

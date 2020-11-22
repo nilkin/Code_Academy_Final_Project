@@ -14,28 +14,25 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th class="text-dark" scope="col">product info</th>
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
 
-                                        @foreach (var p in item.Product.ProductPhotos)
-                                        {
                                 <th scope="col" class="text-center">
-                                    <img src="/Assets/img/@p.Photo[0]" alt="img">
+                                    <img src="/Assets/img/@item.Photo" alt="img">
 
-                                    <span class="sub-title d-block">@p.Product.Name</span>
-                                    @if (@p.Product.Stock.Quantity > 0)
+                                    <span class="sub-title d-block">@item.Name</span>
+                                    @if (@item.Quantity > 0)
                                     {
-                                        <a href="cart.html" class="btn third-btn btn-theme2 text-uppercase"> add to cart</a>
+                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" class="btn third-btn btn-theme2 text-uppercase"> add to cart</a>
                                     }
-                                    else
+                                    else 
                                     {
-                                        <a href="cart.html" class="btn d-none third-btn btn-theme2 text-uppercase"> add to cart</a>
+                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" class="btn d-none third-btn btn-theme2 text-uppercase"> add to cart</a>
                                     }
 
-                                    <a href="cart.html" class="btn third-btn btn-theme2 text-uppercase"> Remove</a>
+                                    <a asp-controller="Product" asp-action="RemoveFromCompare" asp-route-id="@item.Id" class="btn third-btn btn-theme2 text-uppercase"> Remove</a>
                                 </th>
-                                        }
-
+                                        
                                     }
 
                                 </tr>
@@ -46,13 +43,13 @@
                                         Price
                                     </th>
 
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
 
                        
                                             <td class="text-center">
                                                 <span class="whish-list-price">
-                                                    @item.Product.Stock.Price $
+                                                    @item.Price $
                                                 </span>
                                             </td>
                                         
@@ -66,10 +63,10 @@
                                         Description
                                     </th>
 
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
                                         <td class="text-center">
-                                            <p>@item.Product.Description</p>
+                                            <p>@item.Description</p>
                                         </td>
 
                                     }
@@ -81,10 +78,10 @@
                                         Availability
                                     </th>
 
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
                                         <td class="text-center">
-                                            @if (@item.Product.Stock.Quantity > 0)
+                                            @if (@item.Quantity > 0)
                                             {
                                                 <span class="badge  position-static my-badge">In Stock</span>
 
@@ -103,10 +100,10 @@
                                         weight
                                     </th>
 
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
                                         <td class="text-center">
-                                            @item.Product.Dimension
+                                            @item.Dimention
                                         </td>
           
                                     }
@@ -117,10 +114,10 @@
                                         colors
                                     </th>
 
-                                    @foreach (var item in Model.CompareProducts)
+                                    @foreach (var item in Model.CompareItems)
                                     {
                                         <td class="text-center">
-                                            @item.Product.Color
+                                            @item.Color
                                         </td>
 
                                     }

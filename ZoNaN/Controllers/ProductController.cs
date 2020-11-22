@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZoNaN.Data;
 using ZoNaN.Models;
+using ZoNaN.Services;
 using ZoNaN.ViewModels;
 
 namespace ZoNaN.Controllers
@@ -16,7 +18,7 @@ namespace ZoNaN.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> productGrid()
+        public async Task<IActionResult> ProductGrid()
         {
             ProductGridViewModel model = new ProductGridViewModel
             {
@@ -29,7 +31,7 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
-        public async Task<IActionResult> productSingle(int Id)
+        public async Task<IActionResult> ProductSingle(int Id)
         {
             Product productSingle = await _context.Products
                 .Include("ProductPhotos")
@@ -52,20 +54,71 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         } 
-        public async Task<IActionResult> compare()
+        public async Task<IActionResult> Compare()
         {
-
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare") ?? new List<CompareItem>();
             CompareViewModel model = new CompareViewModel
             {
-
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsCompare == true).FirstOrDefaultAsync(),
-                CompareProducts = await _context.Baskets.Where(c => c.isCompare == true)
-                .Include(c => c.Product).ThenInclude(c => c.ProductPhotos)
-                .Include(c => c.Product).ThenInclude(c => c.Stock)
-                .ToListAsync(),
-
+                CompareItems = Compare
             };
             return View(model);
+        }
+        public async Task<IActionResult> AddToCompare(int Id)
+        {
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare") ?? new List<CompareItem>();
+            CompareItem CompareItem = Compare.Where(x => x.Id == Id).FirstOrDefault();
+            Compare.Add(new CompareItem(product));
+            HttpContext.Session.SetJson("Compare", Compare);
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("compare");
+            return ViewComponent("CompareIconBagdeComponent");
+        }
+
+        public IActionResult RemoveFromCompare(int Id)
+        {
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
+            Compare.RemoveAll(x => x.Id == Id);
+            if (Compare.Count == 0)
+            {
+                HttpContext.Session.Remove("Compare");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Compare", Compare);
+            }
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
+
+        public async Task<IActionResult> AddFromCompareToCart(int Id)
+        {
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
+            Compare.RemoveAll(x => x.Id == Id);
+            if (Compare.Count == 0)
+            {
+                HttpContext.Session.Remove("Compare");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Compare", Compare);
+            }
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
+            BasketItem basketItem = cart.Where(x => x.Id == Id).FirstOrDefault();
+            if (basketItem == null)
+            {
+                cart.Add(new BasketItem(product));
+            }
+            else
+            {
+                basketItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Cart", cart);
+
+            return RedirectToAction("Cart", "Shop");
+
+
         }
     }
 }

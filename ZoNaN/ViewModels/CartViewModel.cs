@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
-using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
 {
@@ -12,5 +11,6 @@ namespace ZoNaN.ViewModels
         public Subscriber Subscriber { get; set; }
         public List<BasketItem> CartItems { get; set; }
         public double GrandTotal { get; set; }
+        public List<BasketItem> WishItems { get; set; }
     }
 }

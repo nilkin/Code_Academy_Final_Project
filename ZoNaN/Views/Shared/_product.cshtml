@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<Product>
-
 @foreach (var item in Model)
 {
-
     <figure class="prod-box">
         <div class="img-holder position-relative">
             @if (item.IsNew)
@@ -13,13 +11,13 @@
             {
                 <span class="badge badge-darks ">-@item.Discount%</span>
             }
-            <a asp-action="productSingle" asp-route-id="@item.Id">
+            <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id">
                 <img src="/Assets/img/@item.ProductPhotos.ElementAt(2).Photo" class="item-img-1 img-fluid" alt="Something">
                 <img src="/Assets/img/@item.ProductPhotos.ElementAt(3).Photo" class="item-img-2 img-fluid" alt="Something2">
             </a>
             <div class="blok-hover">
                 <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                    <p class="text-uppercase addToCart"> <a class="addToCart" asp-controller="Shop" asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"> Add to card</a> </p>
+                    <p class="text-uppercase"><a class="addToCart addToNavCart" asp-controller="Shop" asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"> Add to card</a> </p>
                     <ul class="d-flex justify-content-center">
                         <li>
                             <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
@@ -27,12 +25,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                            <a class="addCompare" asp-controller="Product" asp-action="AddToCompare" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                 <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="wishlist.html" tabindex="0">
+                            <a class="addToWish addToNavWish" asp-controller="Shop" asp-action="AddToWish" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                 <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
                             </a>
                         </li>
@@ -67,18 +65,3 @@
     </figure>
 }
 
-@section Javascript{
-
-    <script>
-        $(function () {
-            $("a.addToCart").click(function (e) {
-                e.preventDefault();
-
-                let id = $(this).data("id");
-                $.get('/shop/add' + id, {}, function (data){
-               $(".cart").html(data) });
-            });
-        });
-    </script>
-
-}

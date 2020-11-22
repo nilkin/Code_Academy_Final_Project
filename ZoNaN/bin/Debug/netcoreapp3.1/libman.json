@@ -13,6 +13,13 @@
         "toastr.min.js",
         "toastr.min.css"
       ]
+    },
+    {
+      "library": "jquery@3.5.1",
+      "destination": "wwwroot/Assets/js/",
+      "files": [
+        "jquery.min.js"
+      ]
     }
   ]
 }

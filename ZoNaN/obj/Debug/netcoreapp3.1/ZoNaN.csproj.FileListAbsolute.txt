@@ -333,3 +333,7 @@ C:\Users\n_ilkin\Desktop\New folder\Code_Academy_Final_Project\ZoNaN\obj\Debug\n
 C:\Users\n_ilkin\Desktop\New folder\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\ZoNaN.genruntimeconfig.cache
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Cart.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartNavComponent\Default.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\IconBadgeComponent\Default.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\WishNavComponent\Default.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\WishIconBadgeComponent\Default.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CompareIconBagdeComponent\Default.cshtml.g.cs

@@ -1,0 +1,14 @@
+﻿@model WishBadgeIconViewModel
+
+@if (Model != null)
+{
+
+    <i class="far fa-heart"></i>
+    <span class="badge ">@Model.WishItems.Count()</span>
+}
+else
+{
+    <i class="far fa-heart"></i>
+    <span class="badge "></span>
+}
+
