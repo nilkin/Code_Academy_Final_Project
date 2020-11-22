@@ -9,7 +9,7 @@
         <ul class="minicart-product-list">
             @foreach (var item in Model.CartItems)
             {
-                <li>
+                <li id="@item.Id">
                     <a href="single-product.html" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
                     <div class="content">
                         <a href="single-product.html" class="title">@item.Name</a>
@@ -44,5 +44,4 @@ else
         <li>Your Cart is empty</li>
     </ul>
 </div>
-}
-
+}  

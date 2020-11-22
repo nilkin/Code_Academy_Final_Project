@@ -1880,7 +1880,7 @@ body.nav-open, body.nav-open-second, body.nav-open-third, body.nav-open-fifth {
             font-weight: 500;
         }
 
-    .minicart-product-list li .content .remove {
+    .minicart-product-list li .content .remove, .minicart-product-list li .content .remove-wish {
         line-height: 1;
         position: absolute;
         top: 0;
@@ -1890,7 +1890,7 @@ body.nav-open, body.nav-open-second, body.nav-open-third, body.nav-open-fifth {
         font-size: 18px;
     }
 
-        .minicart-product-list li .content .remove:hover {
+        .minicart-product-list li .content .remove:hover, .minicart-product-list li .content .remove-wish:hover {
             color: #2caf4e;
         }
 

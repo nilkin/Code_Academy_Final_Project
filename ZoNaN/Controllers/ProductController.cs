@@ -90,7 +90,7 @@ namespace ZoNaN.Controllers
             }
             return Redirect(Request.Headers["Referer"].ToString());
         }
-
+         
         public async Task<IActionResult> AddFromCompareToCart(int Id)
         {
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");

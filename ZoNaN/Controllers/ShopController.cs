@@ -101,6 +101,22 @@ namespace ZoNaN.Controllers
             }
             if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
                 return RedirectToAction("Cart");
+            return ViewComponent("CartNavComponent");
+        }
+        public IActionResult RemoveIconBadgeCount(int Id)
+        {
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+            cart.RemoveAll(x => x.Id == Id);
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
             return ViewComponent("IconBadgeComponent");
         }
         //Wislist
@@ -158,11 +174,29 @@ namespace ZoNaN.Controllers
             {
                 HttpContext.Session.Remove("Wish");
             }
+            else  
+            {
+                HttpContext.Session.SetJson("Wish", wish);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return Redirect(Request.Headers["Referer"].ToString());
+            return ViewComponent("WishNavComponent");
+        }
+        public IActionResult RemoveFromWishIconBadgeCount(int Id)
+        {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
+            wish.RemoveAll(x => x.Id == Id);
+            if (wish.Count == 0)
+            {
+                HttpContext.Session.Remove("Wish");
+            }
             else
             {
                 HttpContext.Session.SetJson("Wish", wish);
             }
-            return Redirect(Request.Headers["Referer"].ToString());
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return Redirect(Request.Headers["Referer"].ToString());
+            return ViewComponent("WishIconBadgeComponent");
         }
         public async Task<IActionResult> AddFromWishToCart(int Id)
         {

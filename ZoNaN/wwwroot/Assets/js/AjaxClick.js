@@ -75,15 +75,61 @@
     //-------------------Compare Add with Ajax--------------------------------------
     $(function () {
         $(document).on('click', 'a.remove', function (e) {
-        
             e.preventDefault();
-            $(".minicart-product-list").empty();
-            $(".sub-total").empty();
-            let id = $(this).data("id");   
+            
+            let id = $(this).data("id");  
             $.get('/shop/remove/' + id, {}, function (data) {
+                
+                $("nav.nav-container-second").html(data);
+         
+            });
+            $.post('/shop/RemoveIconBadgeCount/' + id, {}, function (data) {
 
                 $("a.card-trigger").html(data);
+
             });
+        }); 
+    });
+
+    //-------------------WishNav remove with Ajax--------------------------------------
+
+    $(function () {
+        $(document).on('click', 'a.remove-wish', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            console.log(id);
+            $.get('/shop/RemoveFromWish/' + id, {}, function (data) {
+
+                $("nav.nav-container").html(data);
+
+            });
+            $.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
+
+                $("a.wish-trigger").html(data);
+
+            });
+        });
+    });
+    //-------------------Compare page remove with Ajax--------------------------------------
+    $(function () {
+        $(document).on('click', 'a.remove-compare', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            console.log(id);
+            //$.get('/shop/RemoveFromCompare/' + id, {}, function (data) {
+
+            //    $("nav.nav-container").html(data);
+
+            //});
+            //$.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
+
+            //    $("a.wish-trigger").html(data);
+
+            //});
         });
     });
 });
