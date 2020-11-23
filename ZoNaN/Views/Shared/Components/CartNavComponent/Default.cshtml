@@ -10,9 +10,9 @@
             @foreach (var item in Model.CartItems)
             {
                 <li id="@item.Id">
-                    <a href="single-product.html" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                    <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
                     <div class="content">
-                        <a href="single-product.html" class="title">@item.Name</a>
+                        <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="title">@item.Name</a>
                         <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>
                         <a data-id="@item.Id" asp-controller="Shop" asp-action="Remove" asp-route-id="@item.Id" class="remove">×</a>
                     </div>
@@ -25,12 +25,11 @@
             <span class="amount text-success font-weight-bold">@Model.GrandTotal.ToString("C2")</span>
 
         </div>
-        <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
+        <a asp-controller="Shop" asp-action="cart" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
             view
             cart
         </a>
-        <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">checkout</a>
-
+        <a asp-controller="Account" asp-action="chekout" class="btn btn-middl primary-btn btn-theme1 text-uppercase">checkout</a>
     </div>
 }
 else

@@ -23,18 +23,17 @@
                                     <span class="sub-title d-block">@item.Name</span>
                                     @if (@item.Quantity > 0)
                                     {
-                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" class="btn third-btn btn-theme2 text-uppercase"> add to cart</a>
+                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" data-id="@item.Id" class="add-from-compare-to-cart btn third-btn btn-theme2 text-uppercase"> add to cart</a>
                                     }
                                     else 
                                     {
-                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" class="btn d-none third-btn btn-theme2 text-uppercase"> add to cart</a>
+                                        <a asp-action="AddFromCompareToCart" asp-route-id="@item.Id" data-id="@item.Id" class="add-from-compare-to-cart btn d-none third-btn btn-theme2 text-uppercase"> add to cart</a>
                                     }
 
-                                    <a asp-controller="Product" asp-action="RemoveFromCompare" asp-route-id="@item.Id" id="@item.Id"  class="btn third-btn btn-theme2 text-uppercase remove-compare"> Remove</a>
+                                    <a asp-controller="Product" asp-action="RemoveFromCompare" asp-route-id="@item.Id" data-id="@item.Id"  class="btn third-btn btn-theme2 text-uppercase remove-compare"> Remove</a>
                                 </th>
-                                        
                                     }
-
+            
                                 </tr>
                             </thead>
                             <tbody>

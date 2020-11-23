@@ -102,10 +102,42 @@ namespace ZoNaN.Controllers
             if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
                 return RedirectToAction("Cart");
             return ViewComponent("CartNavComponent");
+        } 
+        public IActionResult RemoveBadgeAjax(int Id)  
+        {
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+            cart.RemoveAll(x => x.Id == Id);
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
+            return ViewComponent("IconBadgeComponent");
+        }   
+        public IActionResult RemoveAjax(int Id)
+        {
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>(); 
+            cart.RemoveAll(x => x.Id == Id);
+            if (cart.Count == 0)
+            {
+                HttpContext.Session.Remove("Cart");
+            }
+            else 
+            {
+                HttpContext.Session.SetJson("Cart", cart);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Cart");
+            return RedirectToAction("Cart");
         }
         public IActionResult RemoveIconBadgeCount(int Id)
         {
-            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
             cart.RemoveAll(x => x.Id == Id);
             if (cart.Count == 0)
             {
@@ -182,6 +214,22 @@ namespace ZoNaN.Controllers
                 return Redirect(Request.Headers["Referer"].ToString());
             return ViewComponent("WishNavComponent");
         }
+        public IActionResult RemoveFromWishAjax(int Id)
+        {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
+            wish.RemoveAll(x => x.Id == Id);
+            if (wish.Count == 0)
+            {
+                HttpContext.Session.Remove("Wish");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Wish", wish);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return Redirect(Request.Headers["Referer"].ToString());
+            return Redirect(Request.Headers["Referer"].ToString());
+        }
         public IActionResult RemoveFromWishIconBadgeCount(int Id)
         {
             List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
@@ -227,8 +275,40 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("cart");
             }
 
-            return ViewComponent("NavCart");
+            return ViewComponent("WishIconBadgeComponent");
 
         }
-     }
+        public async Task<IActionResult> AddFromWishToCartAjax(int Id)
+        {
+            List<BasketItem> wish = HttpContext.Session.GetJson<List<BasketItem>>("Wish");
+            wish.RemoveAll(x => x.Id == Id);
+            if (wish.Count == 0)
+            {
+                HttpContext.Session.Remove("Wish");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Wish", wish);
+            }
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
+            BasketItem basketItem = cart.Where(x => x.Id == Id).FirstOrDefault();
+            if (basketItem == null)
+            {
+                cart.Add(new BasketItem(product));
+            }
+            else
+            {
+                basketItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Cart", cart);
+            if (HttpContext.Request.Headers["X-Requested-With"] != "XMLHttpRequest")
+            {
+                return RedirectToAction("cart");
+            }
+
+            return RedirectToAction("Wish");
+
+        }
+    }
 }

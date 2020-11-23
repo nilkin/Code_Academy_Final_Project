@@ -36,10 +36,10 @@
                                             </td>
 
                                             <td class="text-center">
-                                                <a asp-controller="Shop" asp-action="RemoveFromWish" asp-route-id="@item.Id"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
+                                                <a asp-controller="Shop" asp-action="RemoveFromWish" asp-route-id="@item.Id" data-id="@item.Id" class="wish-trash"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
                                             </td>
                                             <td class="text-center">
-                                                <a asp-controller="Shop" asp-action="AddFromWishToCart" asp-route-id="@item.Id" class="btn third-btn btn-theme2 text-uppercase">Add To Cart</a>
+                                                <a asp-controller="Shop" asp-action="AddFromWishToCart" asp-route-id="@item.Id" data-id="@item.Id" class="add-from-wish-to-cart btn third-btn btn-theme2 text-uppercase">Add To Cart</a>
                                             </td>
                                         </tr>
                                     }

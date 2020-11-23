@@ -75,7 +75,6 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("compare");
             return ViewComponent("CompareIconBagdeComponent");
         }
-
         public IActionResult RemoveFromCompare(int Id)
         {
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
@@ -88,9 +87,26 @@ namespace ZoNaN.Controllers
             {
                 HttpContext.Session.SetJson("Compare", Compare);
             }
-            return Redirect(Request.Headers["Referer"].ToString());
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Compare");
+            return ViewComponent("CompareIconBagdeComponent"); 
         }
-         
+        public IActionResult RemoveFromCompareAjax(int Id)
+        {
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
+            Compare.RemoveAll(x => x.Id == Id);
+            if (Compare.Count == 0)
+            {
+                HttpContext.Session.Remove("Compare");
+            }
+            else 
+            {
+                HttpContext.Session.SetJson("Compare", Compare);
+            }
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Compare");
+            return RedirectToAction("Compare");
+        }
         public async Task<IActionResult> AddFromCompareToCart(int Id)
         {
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
@@ -115,10 +131,37 @@ namespace ZoNaN.Controllers
                 basketItem.Quantity += 1;
             }
             HttpContext.Session.SetJson("Cart", cart);
-
-            return RedirectToAction("Cart", "Shop");
-
-
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Compare");
+            return ViewComponent("CompareIconBagdeComponent");
+        }
+        public async Task<IActionResult> AddFromCompareToCartAjax(int Id)
+        {
+            List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare");
+            Compare.RemoveAll(x => x.Id == Id);
+            if (Compare.Count == 0)
+            {
+                HttpContext.Session.Remove("Compare");
+            }
+            else
+            {
+                HttpContext.Session.SetJson("Compare", Compare);
+            }
+            var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart") ?? new List<BasketItem>();
+            BasketItem basketItem = cart.Where(x => x.Id == Id).FirstOrDefault();
+            if (basketItem == null)
+            {
+                cart.Add(new BasketItem(product));
+            }
+            else
+            {
+                basketItem.Quantity += 1;
+            }
+            HttpContext.Session.SetJson("Cart", cart);
+            if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+                return RedirectToAction("Compare");
+            return RedirectToAction("Compare");
         }
     }
 }

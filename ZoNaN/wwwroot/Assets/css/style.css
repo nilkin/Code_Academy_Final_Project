@@ -1910,10 +1910,12 @@ body.nav-open, body.nav-open-second, body.nav-open-third, body.nav-open-fifth {
         transition: all 0.6s;
         cursor: pointer;
         color: #292929;
+        margin-bottom: 15px;
     }
 
         .minicart-product-list li .context .line-text:hover {
             color: #2caf4e;
+            margin-left:10px;
         }
 
 @media screen and (max-width: 575px) {

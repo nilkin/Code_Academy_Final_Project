@@ -119,17 +119,95 @@
 
             let id = $(this).data("id");
 
-            console.log(id);
-            //$.get('/shop/RemoveFromCompare/' + id, {}, function (data) {
+            $.post('/product/RemoveFromCompare/' + id, {}, function (data) {
 
-            //    $("nav.nav-container").html(data);
+                $("a.compare-items").html(data);
 
-            //});
-            //$.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
+            });
+            $.post('/product/RemoveFromCompareAjax/' + id, {}, function (data) {
 
-            //    $("a.wish-trigger").html(data);
+                $("body").html(data);
 
-            //});
+            });
+        });
+    });
+    //-------------------Compare page add to Cart with Ajax--------------------------------------
+    $(function () {
+        $(document).on('click', 'a.add-from-compare-to-cart', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            $.post('/product/AddFromCompareToCart/' + id, {}, function (data) {
+
+                $("a.compare-items").html(data);
+
+            });
+            $.post('/product/AddFromCompareToCartAjax/' + id, {}, function (data) {
+
+                $("body").html(data);
+
+            });
+        });
+    });
+    //-------------------Remove Cart item with Ajax--------------------------------------
+    $(function () {
+        $(document).on('click', 'a.cart-trash', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            $.post('/shop/RemoveBadgeAjax/' + id, {}, function (data) {
+
+                $("a.cart-trigger").html(data);
+
+
+            });
+            $.post('/shop/RemoveAjax/' + id, {}, function (data) {
+
+                $("body").html(data);
+
+            });
+        });
+    });
+
+    //-------------------Wish page add to Cart with Ajax--------------------------------------
+    $(function () {
+        $(document).on('click', 'a.add-from-wish-to-cart', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            $.post('/shop/AddFromWishToCart/' + id, {}, function (data) {
+
+                $("a.wish-trigger").html(data);
+
+            });
+            $.post('/shop/AddFromWishToCartAjax/' + id, {}, function (data) {
+
+                $("body").html(data);
+
+            });
+        });
+    });
+
+    //-------------------Wish Cart item delete with Ajax--------------------------------------
+    $(function () {
+        $(document).on('click', 'a.wish-trash', function (e) {
+            e.preventDefault();
+
+            let id = $(this).data("id");
+
+            $.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
+
+                $("a.compare-items").html(data);
+
+            });
+            $.post('/shop/RemoveFromWishAjax/' + id, {}, function (data) {
+
+                $("body").html(data); 
+
+            });
         });
     });
 });

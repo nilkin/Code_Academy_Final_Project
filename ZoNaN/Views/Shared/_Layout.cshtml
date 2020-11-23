@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <script src="https://kit.fontawesome.com/ea4ac9830e.js" crossorigin="anonymous"></script>
     <link href="~/Assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Assets/css/animated.css">
-    <link href="~/Assets/css/toastr.min.css" rel="stylesheet" />
-
+<link href="~/Assets/css/animated.css" rel="stylesheet" />
+<link href="~/Assets/css/toastr.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -23,7 +20,7 @@
                 <div class="row align-items-center">
                     <div class="col-6 col-lg-2 col-xl-3">
                         <nav class="navbar nav-zon">
-                            <a class="navbar-brand logo-zon">
+                            <a asp-controller="Home" asp-action="Index" class="navbar-brand logo-zon">
                                 <img src="/Assets/img/logo-dark.jpg" />
                             </a>
                         </nav>
@@ -136,7 +133,7 @@
     <!-- wish-nav-->
     <section class="wish">
         <nav class="nav-container">
-        <vc:wish-nav-component></vc:wish-nav-component>
+            <vc:wish-nav-component></vc:wish-nav-component>
         </nav>
         <div class="overlays"></div>
     </section>
@@ -159,14 +156,9 @@
                     <li>
                         <div class="content context">
                             <p class="heading">My Account</p>
-
-
-                            <a class="line-text">My account</a>
-
-
-                            <a class="line-text">Checkout</a>
-
-                            <a class="line-text">Sign in</a>
+                            <a asp-controller="Account" asp-action="profile" class="line-text">My account</a>
+                            <a asp-controller="Account" asp-action="chekout" class="line-text">Checkout</a>
+                            <a asp-controller="Account" asp-action="login" class="line-text">Sign in</a>
                         </div>
                     </li>
                 </ul>
@@ -324,24 +316,22 @@
     <!-- overlay-search-box  start -->
     <div class="overlay">
         <div class="scale"></div>
-        <form class="search-box" action="#">
+        <form  class="search-box" >
             <input type="text" name="search" placeholder="Search products.....">
             <button id="close" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <button class="close"><i class="fas fa-times"></i></button>
     </div>
     <!-- overlay-search-box end -->
-
-    <script src="~/Assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="~/Assets/js/popper.min.js"></script>
+    <script src="~/Assets/js/sweetalert.min.js"></script>
+    <script src="~/Assets/js/toastr.min.js"></script> 
     <script src="~/Assets/js/main.js"></script>
     <script src="~/Assets/js/AjaxClick.js"></script>
     <script src="~/Assets/js/slick-animation.min.js"></script>
-    <script src="~/Assets/js/popper.min.js"></script>
-    <script src="~/Assets/js/sweetalert.min.js"></script>
-    <script src="~/Assets/js/toastr.min.js"></script>
-    @RenderSection("Javascript", required: false)
+    @RenderSection("Javascript", required: false) 
 </body>
 
 </html>

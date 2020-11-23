@@ -11,16 +11,16 @@
             @foreach (var item in Model.WishItems)
             {
                 <li >
-                    <a href="single-product.html" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                    <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
                     <div class="content">
-                        <a href="single-product.html" class="title">@item.Name</a>
+                        <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="title">@item.Name</a>
                         <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>
                         <a data-id="@item.Id" asp-controller="Shop" asp-action="RemoveFromWish" asp-route-id="@item.Id" class="remove-wish">×</a>
                     </div>
                 </li>
             } 
         </ul>
-        <a href="wishlist.html" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
+        <a asp-controller="Shop" asp-action="wish" class="btn btn-middl primary-btn btn-theme1 text-uppercase">
             view
             wishlist
         </a>
