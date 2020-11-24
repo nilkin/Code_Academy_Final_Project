@@ -1,58 +1,74 @@
-﻿<main>
+﻿@model LoginViewModel
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs"  model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- login start -->
-    <div class="my-account padding-head-foot">
-        <div class="container grid-wraper">
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="title text-capitalize pb-30"> Log in to your account</h3>
-                    <form class="log-in-form">
-                        <div class="form-group row">
-                            <label for="staticEmail" class="col-md-3 col-form-label">Email</label>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" id="staticEmail">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword" class="col-md-3 col-form-label">Password</label>
-                            <div class="col-md-6">
-                                <div class="input-group mb-2 mr-sm-2">
-                                    <input type="password" class="form-control" id="inputPassword">
-                                    <div class="input-group-prepend">
-                                        <button type="button" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="form-group row pb-3 text-center">
-                            <div class="col-md-6 offset-md-3">
-                                <div class="login-form-links">
-                                    <a href="#" class="for-get">Forgot your password?</a>
-                                    <div class="sign-btn">
-                                        <a href="#" class="btn third-btn btn-theme2 text-uppercase">Sign in</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row text-center mb-0">
-                            <div class="col-12">
-                                <div class="border-top">
-                                    <a asp-controller="Account" asp-action="register" class="no-account">No account? Create one here</a>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <partial name="_customerLogin" model="@Model.Customer" />
     <!-- login end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
 
+@section Javascript{
+    <script src="~/Assets/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Assets/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('.log-in-form').submit(function (e) {
+                e.preventDefault();
+
+                let formData = $(this).serialize();
+
+                $.ajax({
+                    url: "/account/login",
+                    type: "post",
+                    data: formData,
+                    dataType: "json",
+                    beforeSend: function () {
+                    },
+                    success: function (res) {
+                        console.log("success")
+                    },
+                    error: function (err) {
+                        if (err.status === 404) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 400) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 500) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: 'Some of inputs is empty',
+                                footer:'Please enter information correctly!',
+
+                            })
+                        }
+                    },
+                    complete: function (status) {
+                        if (status.status === 200) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: status.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            })
+                            setTimeout(function () {
+                                window.location = "/Account/profile";
+                            }, 4000);
+                        }
+
+                    }
+                });
+            });
+        });
+    </script>
+}

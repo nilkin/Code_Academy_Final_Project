@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ZoNaN.Data;
 using ZoNaN.Models;
 using ZoNaN.Services;
-using ZoNaN.ViewModels;
+using ZoNaN.ViewModels; 
 
 namespace ZoNaN.Controllers
 {
@@ -16,7 +16,7 @@ namespace ZoNaN.Controllers
         private readonly ZonanDbContext _context;
         public ProductController(ZonanDbContext context)
         {
-            _context = context;
+            _context = context; 
         }
         public async Task<IActionResult> ProductGrid()
         {

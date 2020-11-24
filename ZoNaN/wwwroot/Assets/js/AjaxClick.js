@@ -1,4 +1,40 @@
 ﻿$(document).ready(function () {
+
+    //----------------Newsletter Subscribers input---------------
+
+    $(".subscr-form").submit(function (e) {
+        e.preventDefault();
+        let formData = {
+            email: $(this).find("input[name='Email']").val()
+        };
+
+        $.ajax({
+            url: "/home/index",
+            type: "post",
+            data: formData,
+            dataType: "json",
+            beforeSend: function () {
+            },
+            success: function (res) {
+
+                swal(`${res.message}`, "Thank you for subscription", "success");
+            },
+            error: function (err) {
+                if (err.status === 404) {
+                    swal("Notice!", err.responseJSON.message);
+                }
+                else if (err.status === 400) {
+                    swal("Notice!", err.responseJSON.message);
+                }
+            },
+            complete: function () {
+                $("input[name='Email']").val("");
+            }
+        });
+    });
+
+
+
     toastr.options = {
         "closeButton": false,
         "debug": false,
@@ -119,7 +155,7 @@
 
             let id = $(this).data("id");
 
-            $.post('/product/RemoveFromCompare/' + id, {}, function (data) {
+            $.get('/product/RemoveFromCompare/' + id, {}, function (data) {
 
                 $("a.compare-items").html(data);
 

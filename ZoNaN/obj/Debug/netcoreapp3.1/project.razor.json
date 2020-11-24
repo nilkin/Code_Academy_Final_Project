@@ -14492,6 +14492,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerLogin.cshtml",
+      "TargetPath": "Views\\Shared\\_customerLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14539,6 +14544,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\chekout.cshtml",
       "TargetPath": "Views\\Account\\chekout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerRegister.cshtml",
+      "TargetPath": "Views\\Shared\\_customerRegister.cshtml",
       "FileKind": "mvc"
     },
     {

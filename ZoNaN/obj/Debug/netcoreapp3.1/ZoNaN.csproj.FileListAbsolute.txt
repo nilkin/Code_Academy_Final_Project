@@ -337,3 +337,5 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\WishNavComponent\Default.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\WishIconBadgeComponent\Default.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CompareIconBagdeComponent\Default.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_customerRegister.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_customerLogin.cshtml.g.cs

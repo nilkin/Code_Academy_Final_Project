@@ -1,0 +1,51 @@
+﻿@model CustomerLoginViewModel
+
+<div class="my-account padding-head-foot">
+    <div class="container grid-wraper">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="title text-capitalize pb-30"> Log in to your account</h3>
+                <form class="log-in-form">
+                    <div class="form-group row">
+                        <label asp-for="@Model.Email" class="col-md-3 col-form-label">Email</label>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" asp-for="@Model.Email">
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="@Model.Password" class="col-md-3 col-form-label">Password</label>
+                        <div class="col-md-6">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <input type="password" class="form-control" asp-for="@Model.Password">
+                                <div class="input-group-prepend">
+                                    <button type="button" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
+                                </div>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form-group row pb-3 text-center">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="login-form-links">
+                                <a href="#" class="for-get">Forgot your password?</a>
+                                <div class="sign-btn">
+                                    <button type="submit" class="btn third-btn btn-theme2 text-uppercase">Sign in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row text-center mb-0">
+                        <div class="col-12">
+                            <div class="border-top">
+                                <a asp-controller="Account" asp-action="register" class="no-account">No account? Create one here</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

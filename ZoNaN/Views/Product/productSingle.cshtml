@@ -1,7 +1,7 @@
 ﻿@model ProductSingleViewModel
 <main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- single Product start -->
     <section class="product-single theme1 ">
@@ -48,7 +48,7 @@
                                     <span class="ml-2"><i class="far fa-comment-dots"></i></span>
                                     Read reviews <span>(@Model.ProductSingle.Reviews.Count())</span>
                                 </a>
-                                <a >
+                                <a>
                                     <span class="edite eventDetails"><i class="far fa-edit"></i></span> Write a
                                     review
                                 </a>
@@ -65,7 +65,7 @@
                             <p class="line-hight">
                                 @Model.ProductSingle.Description
                             </p>
-                          
+
                         </div>
                         <div class="product-footer">
                             <div class="product-count style d-flex flex-column flex-sm-row mt-3 mb-3">
@@ -231,7 +231,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="email1">Fullname</label>
-                                                <input type="text" class="form-control" id="email2"  placeholder="Enter Fullname">
+                                                <input type="text" class="form-control" id="email2" placeholder="Enter Fullname">
                                             </div>
                                             <div class="form-group">
                                                 <label for="email1">Email address</label>
@@ -310,13 +310,14 @@
     </section>
     <!-- Featured Products end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
 
 
 @section Javascript{
-
+    <script src="~/Assets/js/slick-animation.min.js"></script>
+    <script src="~/Assets/js/Sliders.js"></script>
     <script>
         $(':radio').change(function () {
             console.log('New star rating: ' + this.value);
@@ -335,5 +336,5 @@
             });
         });
     </script>
-   
+
 }

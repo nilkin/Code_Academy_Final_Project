@@ -69,13 +69,13 @@ namespace ZoNaN.Controllers
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Search(string email)
-        {
-           List<Product> product = await _context.Products.Where(c => c.Name.Contains(email).tol
+        //[HttpPost]
+        //public async Task<IActionResult> Search(string email)
+        //{
+        //   List<Product> product = await _context.Products.Where(c => c.Name.Contains(email).tol
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
     }
 }

@@ -1,0 +1,105 @@
+﻿@model CustomerRegisterViewModel
+
+<div class="register wrapper-top">
+    <div class="container grid-wraper">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="title text-capitalize">Create an account</h3>
+                <div class="log-in-form">
+                    <form method="post" id="register-form" class="personal-information">
+                        <div class="order-asguest">
+                            <span>Already have an account?</span>
+                            <a class="text-muted hover-color" asp-controller="Account" asp-action="login">Log in instead!</a>
+                        </div>
+                        <div class="form-group row">
+
+                            <label class="col-md-3 col-form-label">
+                                Social title
+                            </label>
+                            <div class="col-md-4">
+                                <div class="d-flex flex-wrap">
+
+                                    <div class="custom-radio">
+                                        <label for="opt1" class="radio">
+                                            <input type="radio" asp-for="Gender" id="opt1" value="Mr" class="hidden" />
+                                            <span class="label"></span>Mr
+                                        </label>
+                                    </div>
+                                    <div class="custom-radio">
+                                        <label for="opt2" class="radio">
+                                            <input type="radio" asp-for="Gender" id="opt2" value="Mrs" class="hidden" />
+                                            <span class="label"></span>Mrs
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label">
+                                First name
+                            </label>
+                            
+                            <div class="col-md-4">
+                                <input asp-for="Name" class="form-control">
+                            </div>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Lastname" class="col-md-3 col-form-label">last name</label>
+
+                            <div class="col-md-4">
+                                <input type="text" asp-for="Lastname" class="form-control">
+                            </div> 
+                            <span asp-validation-for="Lastname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Email" class="col-md-3 col-form-label">Email</label>
+                            
+                            <div class="col-md-4">
+                                <input type="email" asp-for="Email" class="form-control">
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Password" class="col-md-3 col-form-label">Password</label>
+                            
+                            <div class="col-md-4">
+                                <div class="input-group mb-2 mr-sm-2">
+                                    <input type="password" asp-for="Password" class="form-control">
+                                </div>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="Birthdate" class="col-md-3 col-form-label">Birthdate</label>
+                            
+                            <div class="col-md-4">
+                                <input asp-for="Birthdate" type="date" class="form-control" placeholder="MM/DD/YYYY">
+                            </div>
+                            <span asp-validation-for="Birthdate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-6">
+                                <div class="check-box-inner">
+                                    <div class="filter-check-box">
+                                        <input type="checkbox" asp-for="IsSubscribe">
+                                        <label asp-for="IsSubscribe">Sign up for our newsletter</label>
+                                        <p class="pl-25">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="sign-btn text-right">
+                                    <button type="submit"  class=" btn third-btn btn-theme2">save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+ 

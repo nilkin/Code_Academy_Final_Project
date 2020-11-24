@@ -124,7 +124,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 619, DateTimeKind.Local).AddTicks(477));
+                        .HasDefaultValue(new DateTime(2020, 11, 23, 11, 36, 47, 810, DateTimeKind.Local).AddTicks(7162));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -354,7 +354,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 650, DateTimeKind.Local).AddTicks(7447));
+                        .HasDefaultValue(new DateTime(2020, 11, 23, 11, 36, 47, 842, DateTimeKind.Local).AddTicks(4809));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -414,7 +414,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<int>("BasketId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsGuest")
@@ -442,7 +442,8 @@ namespace ZoNaN.Data.Migrations
                         .IsUnique();
 
                     b.HasIndex("CustomerId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[CustomerId] IS NOT NULL");
 
                     b.ToTable("Chekouts");
                 });
@@ -455,7 +456,6 @@ namespace ZoNaN.Data.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -463,7 +463,6 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("Date");
 
                     b.Property<string>("City")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -478,7 +477,6 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("InfoText")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -488,7 +486,6 @@ namespace ZoNaN.Data.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("Mobile")
-                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -622,7 +619,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 19, 3, 54, 15, 686, DateTimeKind.Local).AddTicks(7431));
+                        .HasDefaultValue(new DateTime(2020, 11, 23, 11, 36, 47, 878, DateTimeKind.Local).AddTicks(3702));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -798,9 +795,7 @@ namespace ZoNaN.Data.Migrations
 
                     b.HasOne("ZoNaN.Models.Customer", "Customer")
                         .WithOne("Chekout")
-                        .HasForeignKey("ZoNaN.Models.Chekout", "CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ZoNaN.Models.Chekout", "CustomerId");
 
                     b.Navigation("Bascet");
 

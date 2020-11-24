@@ -43,20 +43,16 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(100);
             builder
                 .Property(m => m.InfoText)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.City)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.Address)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.Mobile)
-                .HasMaxLength(50)
-                .IsRequired();
+                .HasMaxLength(50);
             builder
                 .Property(m => m.Birth)
                 .HasColumnType("Date")

@@ -20,6 +20,21 @@
       "files": [
         "jquery.min.js"
       ]
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "wwwroot/bootstrap-datepicker/",
+      "files": [
+        "js/bootstrap-datepicker.min.js"
+      ]
+    },
+    {
+      "library": "limonte-sweetalert2@10.10.1",
+      "destination": "wwwroot/Assets/js/limonte-sweetalert2/",
+      "files": [
+        "sweetalert2.min.js",
+        "sweetalert2.all.min.js"
+      ]
     }
   ]
 }
