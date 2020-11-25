@@ -25,7 +25,7 @@
                                     <th class="text-center" scope="col">Qty</th>
                                     <th class="text-center" scope="col">Price</th>
                                     <th class="text-center" scope="col">action</th>
-                                    <th class="text-center" scope="col">Checkout</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -63,8 +63,8 @@
                                                     {
                                                         <input class="" type="number" min="0" max="0" step="1" value="0" readonly>
                                                         <div class="button-group">
-                                                            <a  class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
-                                                            <a  class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
+                                                            <a class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
+                                                            <a class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
                                                         </div>
                                                     }
                                                 </div>
@@ -72,32 +72,27 @@
                                         </td>
                                         <td class="text-center">
                                             <span class="shop-order-price">
-                                                @Model.CartItems.Where(p=>p.Id==item.Id).Sum(t=>t.Quantity * t.Price).ToString("C2")
+                                                @Model.CartItems.Where(p => p.Id == item.Id).Sum(t => t.Quantity * t.Price).ToString("C2")
                                             </span>
                                         </td>
 
                                         <td class="text-center">
                                             <a asp-controller="Shop" asp-action="RemoveBadgeAjax" asp-route-id="@item.Id" data-id="@item.Id" class="cart-trash"> <span class="trash"><i class="fas fa-trash-alt"></i> </span></a>
                                         </td>
-                                        <td class="text-center">
-                                            @if (@item.ProdQuantity>0)
-                                            {
-                                                <a href="#" class="btn third-btn btn-theme2 text-uppercase">buy now</a>
-                                            }
-                                            else  
-                                            {
-                                                <a class="btn third-btn btn-theme2 text-uppercase">buy now</a>
-                                            }
-                                        </td>
+
                                     </tr>
                                 }
-                                 
+
                             </tbody>
                         </table>
-
                     </div>
-                </div>
 
+                </div>
+                @if (Model.CartItems.Count()>0)
+                {
+            <a asp-controller="Account" asp-action="Chekout" class="btn third-btn btn-theme2 text-uppercase  flex-end-button">buy now</a>
+                }
+            <a href="#" class="btn third-btn btn-theme2 text-uppercase d-none flex-end-button">buy now</a>
             </div>
         </div>
     </section>

@@ -4,6 +4,12 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow");
 
+.flex-end-button {
+    position: relative;
+    left: 67.5rem;
+    top: 5rem;
+}
+
 .primary-btn {
     background-color: #ffffff;
     padding: 10px 44px;

@@ -40,8 +40,15 @@ using ZoNaN.Data.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ReflectionIT.Mvc.Paging;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8c5d989b3ea945eec8de37e3caf3709bfd2b066a", @"/Views/Shared/_product.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5e085038e2ec48b5d8f282d62ad12166ffa96046", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a627f156a68d10cb1edf2528c0bd51fb1218a34", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__product : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -122,7 +129,7 @@ using ZoNaN.Data.Models;
 #line hidden
 #nullable disable
             WriteLiteral("            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a8204", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a8408", async() => {
                 WriteLiteral("\r\n                <img");
                 BeginWriteAttribute("src", " src=\"", 504, "\"", 560, 2);
                 WriteAttributeValue("", 510, "/Assets/img/", 510, 12, true);
@@ -177,7 +184,7 @@ WriteAttributeValue("", 647, item.ProductPhotos.ElementAt(3).Photo, 647, 38, fal
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            <div class=\"blok-hover\">\r\n                <div class=\"product-links d-flex d-flex justify-content-between align-items-center\">\r\n                    <p class=\"text-uppercase\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a11936", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a12140", async() => {
                 WriteLiteral(" Add to card");
             }
             );
@@ -228,7 +235,7 @@ WriteAttributeValue("", 647, item.ProductPhotos.ElementAt(3).Photo, 647, 38, fal
             BeginWriteAttribute("title", " title=\"", 1356, "\"", 1364, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\"fas fa-search\" data-original-title=\"Quick view\"></span>\r\n                            </a>\r\n                        </li>\r\n                        <li>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a15769", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a15973", async() => {
                 WriteLiteral("\r\n                                <span data-toggle=\"tooltip\" data-placement=\"bottom\"");
                 BeginWriteAttribute("title", " title=\"", 1767, "\"", 1775, 0);
                 EndWriteAttribute();
@@ -276,7 +283,7 @@ WriteAttributeValue("", 647, item.ProductPhotos.ElementAt(3).Photo, 647, 38, fal
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </li>\r\n                        <li>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a19440", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c5d989b3ea945eec8de37e3caf3709bfd2b066a19644", async() => {
                 WriteLiteral("\r\n                                <span data-toggle=\"tooltip\" data-placement=\"bottom\"");
                 BeginWriteAttribute("title", " title=\"", 2188, "\"", 2196, 0);
                 EndWriteAttribute();

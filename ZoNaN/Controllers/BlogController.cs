@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
@@ -15,16 +16,18 @@ namespace ZoNaN.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> blogGrid()
+        public async Task<IActionResult> BlogGrid(int page = 1, int pageSize = 3)
         {
+            var items = _context.Blogs.AsNoTracking().OrderBy(x => x.Id);
+            var pagingData = await PagingList.CreateAsync(items, pageSize, page);
             BlogGridViewModel model = new BlogGridViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlog == true).FirstOrDefaultAsync(),
-                Blogs = await _context.Blogs.ToListAsync(),
+                Blogs = pagingData
             };
             return View(model);
         }
-        public async Task<IActionResult> blogSingle(int Id)
+        public async Task<IActionResult> BlogSingle(int Id)
         {
             Blog BlogSingle = await _context.Blogs
        .Include("Comments").FirstOrDefaultAsync(c => c.Id == 1);

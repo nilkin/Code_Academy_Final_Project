@@ -19,13 +19,17 @@
                             <div class="input-group mb-2 mr-sm-2">
                                 <input type="password" class="form-control" asp-for="@Model.Password">
                                 <div class="input-group-prepend">
-                                    <button type="button" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
+                                    <button type="button" onclick="ShowHidePasswordFunction()" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <div class="input-group mb-2 mr-sm-2">
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
-
                         </div>
-
                     </div>
                     <div class="form-group row pb-3 text-center">
                         <div class="col-md-6 offset-md-3">

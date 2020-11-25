@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CryptoHelper;
@@ -9,17 +8,24 @@ using ZoNaN.Data;
 using ZoNaN.Models;
 using ZoNaN.ViewModels;
 using Microsoft.AspNetCore.Http;
+using ZoNaN.Filter;
+using ZoNaN.Services;
+using System.Collections.Generic;
+using ZoNaN.Data.Models;
 
 namespace ZoNaN.Controllers
-{
+{ [TypeFilter(typeof(ProfileInfo))]
     public class AccountController : Controller
     {
+       
         private readonly ZonanDbContext _context;
+        private Customer Users => RouteData.Values["Customer"] as Customer;
         public AccountController(ZonanDbContext context)
         {
             _context = context;
         }
-        public async Task<IActionResult> profile()
+        [TypeFilter(typeof(Auth))]
+        public async Task<IActionResult> Profile()
         {
 
             ProfileViewModel model = new ProfileViewModel
@@ -28,7 +34,7 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
-        public async Task<IActionResult> login()
+        public async Task<IActionResult> Login()
         {
 
             LoginViewModel model = new LoginViewModel
@@ -38,7 +44,7 @@ namespace ZoNaN.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> login(CustomerLoginViewModel customer)
+        public async Task<IActionResult> Login(CustomerLoginViewModel customer)
         {
 
                 Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email);
@@ -67,39 +73,8 @@ namespace ZoNaN.Controllers
                         {
                             message = "This member is not found"
                         });
-            //ModelState.AddModelError("Password", "Email or password is incorrect");
-
-
-            //return View(customer);
-            //if (customer == null)
-            //{
-            //    return BadRequest(new
-            //    {
-            //        message = "Some of inputs is empty, Please enter information correctly"
-            //    });
-            //} 
-            //Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email);
-            //if (!_context.Customers.Any(u => u.Email == customer.Email || Crypto.VerifyHashedPassword(user.Password, customer.Password)))
-            //{
-            //    return NotFound(new
-            //    {
-            //        message = "This member is not found"
-            //    });
-            //}
-
-            //Customer profile = new Customer
-            //{
-            //    Email = customer.Email,
-            //    Token = Crypto.HashPassword(customer.Token),
-            //};
-            //_context.Customers.Add(profile);
-            //_context.SaveChanges();
-            //return Ok(new
-            //{
-            //    message = "Welcome"+ user.Gender + user.Name
-            //});
         }
-        public async Task<IActionResult> register()
+        public async Task<IActionResult> Register()
         {
 
             RegisterViewModel model = new RegisterViewModel
@@ -109,7 +84,7 @@ namespace ZoNaN.Controllers
             return View(model);
         }
         [HttpPost]  
-        public IActionResult register(CustomerRegisterViewModel customer)
+        public IActionResult Register(CustomerRegisterViewModel customer)
         {
             if (customer==null)
             {
@@ -145,14 +120,72 @@ namespace ZoNaN.Controllers
                 });
         }
 
-        public async Task<IActionResult> chekout()
+        public async Task<IActionResult> Chekout()
         {
-
-            ChekoutViewModel model = new ChekoutViewModel
+            List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+            ChekoutViewModel model = new ChekoutViewModel 
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsChekout == true).FirstOrDefaultAsync(),
+
             };
             return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Chekout(ChekPayViewModel chekPay)
+        {
+            if (chekPay == null)
+            {
+                return BadRequest(new
+                {
+                    message = "Some of inputs is empty, Please enter information correctly"
+                });
+            }
+
+            //List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+            //foreach (var item in cart)
+            //{
+            //    Order orders = new Order
+            //    {
+            //        ProductId = item.Id,
+            //        Name = item.Name,
+            //        Quantity = item.Quantity,
+            //        Price = item.Price,
+            //        Total = item.Total,
+            //        Photo = item.Photo
+            //    };
+            //    await _context.Orders.AddAsync(orders);
+            //    _context.SaveChanges();
+            //}
+            //if (cart.Count == 0)
+            //{
+            //    HttpContext.Session.Remove("Cart");
+            //}
+            Chekout model = new Chekout
+            {
+                Gender = chekPay.Gender,
+                Name = chekPay.Name,
+                Surname = chekPay.Surname,
+                Email = chekPay.Email,
+                City = chekPay.City,
+                Address = chekPay.Address,
+                PaymentMethod = chekPay.PaymentMethod,
+                Payment = chekPay.Payment,
+                Shipping = chekPay.Shipping,
+                Message = chekPay.Message
+            };
+            await _context.Chekouts.AddAsync(model);
+            _context.SaveChanges();
+            return Ok(new
+            {
+                message = "Your are registered ! Please login to your account"
+            });
+        }
+        public IActionResult Logout()
+        {
+            var profile = _context.Customers.Find(Users.Id);
+            profile.Token = null;
+            _context.SaveChangesAsync();
+            return Redirect("/");
         }
     }
 }

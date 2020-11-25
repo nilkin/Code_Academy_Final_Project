@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
-
+    // ////////////////////////////tooltip////////////////////////////////////////////////////
+    $('[data-toggle="tooltip"]').tooltip();
     // main-slider
     var $timer = 6000;
     $('.home-carousel').slick({

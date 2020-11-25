@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 using ZoNaN.Data;
 using ZoNaN.Models;
 using ZoNaN.Services;
@@ -18,16 +19,19 @@ namespace ZoNaN.Controllers
         {
             _context = context; 
         }
-        public async Task<IActionResult> ProductGrid()
+        public async Task<IActionResult> ProductGrid(int page = 1, int pageSize = 3)
         {
+            var items = _context.Products
+                .Include(c => c.ProductPhotos)
+                .Include(i => i.Stock)
+                .Include(c => c.SubCategory)
+                .AsNoTracking().OrderBy(x => x.Id);
+            var pagingData = await PagingList.CreateAsync(items, pageSize, page);
             ProductGridViewModel model = new ProductGridViewModel
             {
+                ProductsCount =await _context.Products.ToListAsync(),
+                PagingList = pagingData,
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProduct == true).FirstOrDefaultAsync(),
-                ProductsGrid = await _context.Products
-                .Include(c => c.ProductPhotos)
-                .Include(c => c.SubCategory)
-                .Include(i => i.Stock)
-                .ToListAsync()
             };
             return View(model);
         }
@@ -69,7 +73,15 @@ namespace ZoNaN.Controllers
             var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == Id);
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare") ?? new List<CompareItem>();
             CompareItem CompareItem = Compare.Where(x => x.Id == Id).FirstOrDefault();
-            Compare.Add(new CompareItem(product));
+            if (CompareItem == null)
+            {
+                 Compare.Add(new CompareItem(product));
+            }
+            else
+            {
+                CompareItem.Qtity += 1;
+            }
+           
             HttpContext.Session.SetJson("Compare", Compare);
             if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
                 return RedirectToAction("compare");

@@ -61,12 +61,15 @@
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="form-group row">
-                            <label asp-for="Password" class="col-md-3 col-form-label">Password</label>
-                            
+                            <label asp-for="Password" class="col-md-3 col-form-label">Password</label> 
                             <div class="col-md-4">
                                 <div class="input-group mb-2 mr-sm-2">
                                     <input type="password" asp-for="Password" class="form-control">
+                                    <div class="input-group-prepend">
+                                        <button type="button" onclick="ShowHidePasswordFunction()" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
+                                    </div>
                                 </div>
+
                             </div>
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>

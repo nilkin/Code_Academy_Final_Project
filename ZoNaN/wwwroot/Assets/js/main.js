@@ -161,8 +161,7 @@ $(document).ready(function () {
     //     }
     //     document.querySelector('#one').value = this.value
     // };
-    // ////////////////////////////tooltip////////////////////////////////////////////////////
-    $('[data-toggle="tooltip"]').tooltip();
+
     /////error page
     var parallax = function (e) {
         var windowWidth = $(window).width();

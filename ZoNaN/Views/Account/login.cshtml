@@ -10,14 +10,20 @@
     <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
-
+ 
 @section Javascript{
     <script src="~/Assets/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/Assets/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-
     <script>
-
+        function ShowHidePasswordFunction() {
+            var x = document.getElementById("Password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
         $(document).ready(function () {
 
             $('.log-in-form').submit(function (e) {

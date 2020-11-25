@@ -16,6 +16,7 @@ namespace ZoNaN.Data
         public string Description { get; set; }
         public string Color { get; set; }
         public int Quantity { get; set; }
+        public int Qtity { get; set; }
         public CompareItem() { }
 
         public CompareItem(Product product)
@@ -27,6 +28,7 @@ namespace ZoNaN.Data
             Description = product.Description;
             Price = product.Stock.Price;
             Quantity = product.Stock.Quantity;
+            Qtity = 1;
             Photo = product.ProductPhotos.ElementAt(0).Photo;
         }
     }

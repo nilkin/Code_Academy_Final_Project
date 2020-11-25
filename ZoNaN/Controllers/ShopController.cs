@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZoNaN.Data;
+using ZoNaN.Data.Models;
+using ZoNaN.Models;
 using ZoNaN.Services;
 using ZoNaN.ViewModels;
 
@@ -46,6 +48,7 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("Cart");
             return ViewComponent("IconBadgeComponent");
         }
+
         public async Task<IActionResult> AddToSideNavCart(int id)
         {
             var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == id);
@@ -310,5 +313,8 @@ namespace ZoNaN.Controllers
             return RedirectToAction("Wish");
 
         }
+
+        //Orders
+
     }
 }

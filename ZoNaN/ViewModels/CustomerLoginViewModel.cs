@@ -13,9 +13,8 @@ namespace ZoNaN.ViewModels
         [EmailAddress]
         public string Email { get; set; }
         [Required(ErrorMessage = "Please Enter you Password")]
-        [MaxLength(100)]
         [DataType(DataType.Password)]
-        [MinLength(6)]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Password cannot be longer than 100 characters and less than 6 characters")]
         public string Password { get; set; }
         [MaxLength(100)]
         public string Token { get; set; }

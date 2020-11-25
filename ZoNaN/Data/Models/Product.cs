@@ -22,9 +22,8 @@ namespace ZoNaN.Models
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
         public Stock Stock { get; set; }
-        public ICollection<Basket> Baskets { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<ProductPhoto> ProductPhotos { get; set; }
-    
+       
     }
 }

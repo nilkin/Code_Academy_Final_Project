@@ -15,7 +15,7 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new AboutUsConfiguration());
             builder.ApplyConfiguration(new BannerConfiguration());
             builder.ApplyConfiguration(new BreadcrumbConfiguration());
-            builder.ApplyConfiguration(new BasketConfiguration());
+            builder.ApplyConfiguration(new OrderChekoutConfiguration());
             builder.ApplyConfiguration(new CommentConfiguration());
             builder.ApplyConfiguration(new ContactUsConfiguration());
             builder.ApplyConfiguration(new ChekoutConfiguration());
@@ -31,11 +31,12 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new StockConfiguration());
             builder.ApplyConfiguration(new ReviewConfiguration());
             builder.ApplyConfiguration(new SubCategoryConfiguration());
+            builder.ApplyConfiguration(new OrderConfiguration());
         }
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Breadcrumb> Breadcrumbs { get; set; }
-        public DbSet<Basket> Baskets { get; set; }
+        public DbSet<OrderChekout> ChekoutProduct { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<ContactUs> Contacts { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -51,5 +52,6 @@ namespace ZoNaN.Data
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

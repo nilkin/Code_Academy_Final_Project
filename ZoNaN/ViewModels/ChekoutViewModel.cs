@@ -10,5 +10,6 @@ namespace ZoNaN.ViewModels
     {
         public Breadcrumb Breadcrumb { get; set; }
         public Subscriber Subscriber { get; set; }
+        public ChekPayViewModel ChekPay { get; set; }
     }
 }

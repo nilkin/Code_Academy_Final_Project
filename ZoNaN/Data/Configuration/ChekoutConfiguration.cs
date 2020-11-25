@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ZoNaN.Models;
 
 namespace ZoNaN.Data.Configuration
@@ -16,19 +12,39 @@ namespace ZoNaN.Data.Configuration
 
             builder
                 .HasKey(m => m.Id);
-
             builder
                 .Property(m => m.Id)
                 .ValueGeneratedOnAdd();
+            builder
+                .Property(m => m.Gender)
+                .HasMaxLength(50);
+            builder
+                .Property(m => m.Name)
+                .HasMaxLength(50)
+                .IsRequired();
+            builder
+                .Property(m => m.Surname)
+                .HasMaxLength(50)
+                .IsRequired();
+            builder
+                .Property(m => m.Email)
+                .HasMaxLength(50)
+                .IsRequired();
             builder
                 .Property(m => m.Payment)
                 .HasDefaultValue(false)
                 .IsRequired();
             builder
-                .Property(m => m.Shipping)
-                .HasDefaultValue(false);
+                .Property(m => m.PaymentMethod)
+                .HasMaxLength(60);
             builder
-                .Property(m => m.IsGuest)
+                .Property(m => m.City)
+                .HasMaxLength(50);
+            builder
+                .Property(m => m.Address)
+                .HasMaxLength(50);
+            builder
+                .Property(m => m.Shipping)
                 .HasDefaultValue(false);
             builder
                 .Property(m => m.Message)
@@ -38,10 +54,6 @@ namespace ZoNaN.Data.Configuration
                 .HasOne(m => m.Customer)
                 .WithOne(m => m.Chekout)
                 .HasForeignKey<Chekout>(m => m.CustomerId);
-            builder
-                .HasOne(m => m.Bascet)
-                .WithOne(m => m.Chekout)
-                .HasForeignKey<Chekout>(m => m.BasketId);
             builder
                 .ToTable("Chekouts");
         }

@@ -9,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReflectionIT.Mvc.Paging;
 using ZoNaN.Data;
+using static ZoNaN.Services.FileUploader;
 
 namespace ZoNaN
 {
@@ -30,6 +32,11 @@ namespace ZoNaN
             services.AddControllersWithViews();
             services.AddDbContext<ZonanDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddPaging(options =>
+            {
+                options.ViewName = "Bootstrap4";
+            });
+            services.AddSingleton<IFileManager, FileManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +64,12 @@ namespace ZoNaN
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=ProductGrid}/{id?}");
+                endpoints.MapControllerRoute(
+name: "default",
+pattern: "{controller=Home}/{action=BlogGrid}/{id?}");
             });
         }
     }
