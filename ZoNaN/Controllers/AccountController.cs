@@ -133,6 +133,8 @@ namespace ZoNaN.Controllers
         [HttpPost]
         public async Task<IActionResult> Chekout(ChekPayViewModel chekPay)
         {
+
+
             if (chekPay == null)
             {
                 return BadRequest(new
@@ -141,25 +143,6 @@ namespace ZoNaN.Controllers
                 });
             }
 
-            //List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
-            //foreach (var item in cart)
-            //{
-            //    Order orders = new Order
-            //    {
-            //        ProductId = item.Id,
-            //        Name = item.Name,
-            //        Quantity = item.Quantity,
-            //        Price = item.Price,
-            //        Total = item.Total,
-            //        Photo = item.Photo
-            //    };
-            //    await _context.Orders.AddAsync(orders);
-            //    _context.SaveChanges();
-            //}
-            //if (cart.Count == 0)
-            //{
-            //    HttpContext.Session.Remove("Cart");
-            //}
             Chekout model = new Chekout
             {
                 Gender = chekPay.Gender,
@@ -171,13 +154,14 @@ namespace ZoNaN.Controllers
                 PaymentMethod = chekPay.PaymentMethod,
                 Payment = chekPay.Payment,
                 Shipping = chekPay.Shipping,
-                Message = chekPay.Message
+                Message = chekPay.Message,
+
             };
             await _context.Chekouts.AddAsync(model);
             _context.SaveChanges();
             return Ok(new
             {
-                message = "Your are registered ! Please login to your account"
+                message = "Chekout is done !"
             });
         }
         public IActionResult Logout()
@@ -186,6 +170,14 @@ namespace ZoNaN.Controllers
             profile.Token = null;
             _context.SaveChangesAsync();
             return Redirect("/");
+        }
+
+        public IActionResult Test()
+        {
+           
+            List<Order> ord = HttpContext.Session.GetJson<List<Order>>("Order");
+
+            return Ok(ord);
         }
     }
 }

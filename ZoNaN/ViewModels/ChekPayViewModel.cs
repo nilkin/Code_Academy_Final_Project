@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
 {
@@ -33,6 +34,6 @@ namespace ZoNaN.ViewModels
         public bool Payment { get; set; }
         public bool Shipping { get; set; }
         public string Message { get; set; }
-
+       
     }
 }

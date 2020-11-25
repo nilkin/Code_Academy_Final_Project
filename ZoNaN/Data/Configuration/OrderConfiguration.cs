@@ -27,6 +27,9 @@ namespace ZoNaN.Data.Configuration
                 .Property(m => m.Quantity)
                 .HasMaxLength(50);
             builder
+                .Property(m => m.OrderNumber)
+                .HasMaxLength(50);
+            builder
                 .Property(m => m.Price)
                 .HasColumnType("money");
             builder

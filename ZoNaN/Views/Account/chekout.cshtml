@@ -33,7 +33,7 @@
                                                 <div class="d-flex flex-wrap">
                                                     <div class="custom-radio">
                                                         <label for="opt3" class="radio">
-                                                            <input type="radio" asp-for="ChekPay.Gender" id="opt13" value="Mr" class="hidden" />
+                                                            <input type="radio" asp-for="ChekPay.Gender" id="opt3" value="Mr" class="hidden" />
                                                             <span class="label"></span>Mr
                                                         </label>
                                                     </div>
@@ -272,7 +272,7 @@
                             </ul>
                         </li>
                         <li class="list-group-item text-center">
-                            <button class=" btn third-btn btn-theme2">Proceed to checkout</button>
+                            <a type="button" asp-controller="account" asp-action="test" class="btn third-btn btn-theme2">Proceed to checkout</a>
                         </li>
                     </ul>
 
