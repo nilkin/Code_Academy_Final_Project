@@ -124,7 +124,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 1, 22, 24, 956, DateTimeKind.Local).AddTicks(2608));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 375, DateTimeKind.Local).AddTicks(7025));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -360,7 +360,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 1, 22, 24, 965, DateTimeKind.Local).AddTicks(8162));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 406, DateTimeKind.Local).AddTicks(984));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -547,14 +547,16 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.OrderChekout", b =>
                 {
-                    b.Property<int?>("ChekoutId")
+                    b.Property<int>("ChekoutId")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.HasKey("ChekoutId", "OrderId");
 
@@ -663,7 +665,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 1, 22, 24, 977, DateTimeKind.Local).AddTicks(1918));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 442, DateTimeKind.Local).AddTicks(350));
 
                     b.Property<string>("Email")
                         .IsRequired()

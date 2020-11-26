@@ -8,6 +8,12 @@ namespace ZoNaN.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<OrderChekout> builder)
         {
+
+            builder
+                .HasKey(m => m.Id);
+            builder
+                .Property(m => m.Id)
+                .ValueGeneratedOnAdd();
             builder
                 .HasKey(m => new { m.ChekoutId, m.OrderId });
             builder

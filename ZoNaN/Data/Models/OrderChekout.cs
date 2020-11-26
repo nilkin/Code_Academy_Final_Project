@@ -8,7 +8,7 @@ namespace ZoNaN.Models
         public int Id { get; set; }
         public int OrderId { get; set; }
         public Order Order { get; set; }
-        public int? ChekoutId { get; set; }
+        public int ChekoutId { get; set; }
         public Chekout Chekout { get; set; }
     }
 }

@@ -174,9 +174,7 @@ namespace ZoNaN.Controllers
 
         public IActionResult Test()
         {
-           
             List<Order> ord = HttpContext.Session.GetJson<List<Order>>("Order");
-
             return Ok(ord);
         }
     }
