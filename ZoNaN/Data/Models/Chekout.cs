@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ZoNaN.Models
 {
@@ -9,6 +6,7 @@ namespace ZoNaN.Models
     {
         public int Id { get; set; }
         public int? CustomerId { get; set; }
+        public string ChekoutNumber { get; set; }
         public string Gender { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

@@ -130,10 +130,17 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
+        public IActionResult Logout()
+        {
+            var profile = _context.Customers.Find(Users.Id);
+            profile.Token = null;
+            _context.SaveChangesAsync();
+            return Redirect("/");
+        }
         [HttpPost]
         public async Task<IActionResult> Chekout(ChekPayViewModel chekPay)
         {
-
+            string ChekoutNumber = DateTime.Now.ToString("yyyyMMddHHmmssff");
 
             if (chekPay == null)
             {
@@ -155,27 +162,46 @@ namespace ZoNaN.Controllers
                 Payment = chekPay.Payment,
                 Shipping = chekPay.Shipping,
                 Message = chekPay.Message,
-
+                ChekoutNumber = ChekoutNumber
             };
             await _context.Chekouts.AddAsync(model);
             _context.SaveChanges();
+
+            HttpContext.Session.SetJson("Chekout", model);
+  
             return Ok(new
             {
                 message = "Chekout is done !"
             });
         }
-        public IActionResult Logout()
-        {
-            var profile = _context.Customers.Find(Users.Id);
-            profile.Token = null;
-            _context.SaveChangesAsync();
-            return Redirect("/");
-        }
+       
 
         public IActionResult Test()
         {
             List<Order> ord = HttpContext.Session.GetJson<List<Order>>("Order");
-            return Ok(ord);
+            Order order = ord.FirstOrDefault();
+            string number = order.OrderNumber;
+            List<Order> orders = _context.Orders.Where(c => c.OrderNumber == number).ToList();
+
+            Chekout chk = HttpContext.Session.GetJson<Chekout>("Chekout");
+            string chknum = chk.ChekoutNumber;
+            Chekout chekoutnum = _context.Chekouts.Where(c => c.ChekoutNumber == chk.ChekoutNumber).FirstOrDefault();
+
+            foreach (var item in orders)
+            {
+            OrderChekout orderChekout = new OrderChekout
+            {
+                ChekoutId = chekoutnum.Id,
+                OrderId=item.Id
+            };
+
+           //_context.OrderChekouts.Add(orderChekout);
+                _context.SaveChanges();
+            }
+
+               
+
+            return Ok(chekoutnum);
         }
     }
 }
