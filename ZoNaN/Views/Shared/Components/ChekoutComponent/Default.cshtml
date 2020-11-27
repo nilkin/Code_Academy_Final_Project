@@ -20,16 +20,14 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <ul class="items">
-                    <li>Shipping</li>
                     <li>Total</li>
                 </ul>
                 <ul class="amount">
-                    <li>10% of Total</li>
                     <li class="amount text-success font-weight-bold">@Model.GrandTotal </li>
                 </ul>
             </li>
             <li  class="list-group-item text-center">
-                <a id="proceed" asp-controller="Account" asp-action="ProceedAsync" class="btn third-btn btn-theme2">Proceed to checkout</a>
+                <a id="proceed" asp-controller="Account" asp-action="ProceedAsync" class="btn third-btn btn-theme2 d-none">Proceed to checkout</a>
             </li>
         </ul>
 

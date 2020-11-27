@@ -27,10 +27,17 @@ namespace ZoNaN.Controllers
         [TypeFilter(typeof(Auth))]
         public async Task<IActionResult> Profile()
         {
-
             ProfileViewModel model = new ProfileViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProfile == true).FirstOrDefaultAsync(),
+                Profile = await _context.Customers
+                .Include(c => c.Chekouts).ThenInclude(c => c.Orders)
+                .Where(c => c.Id == cust.Id)
+                .FirstOrDefaultAsync(),
+                Chekouts = await _context.Chekouts
+                
+                .Where(c => c.Id == cust.Id)
+                .ToListAsync()
             };
             return View(model);
         }
@@ -200,18 +207,68 @@ namespace ZoNaN.Controllers
             {
                 message = "Some of inputs is empty, Please enter information correctly"
             });
-        } 
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChekoutWithCustomer(CustomerChekoutViewModel CustomerChekout)
+       
+        {
+            string ChekoutNumber = DateTime.Now.ToString("yyyyMMddHHmmssff");
+
+            if (CustomerChekout != null)
+            {
+                if (ModelState.IsValid)
+                {
+                Chekout model = new Chekout
+                {
+                    CustomerId = cust.Id,
+                    Gender = cust.Gender,
+                    Name = cust.Name,
+                    Surname = cust.Surname,
+                    Email = cust.Email,
+                    City = CustomerChekout.City,
+                    Address = CustomerChekout.Address,
+                    PaymentMethod = CustomerChekout.PaymentMethod,
+                    Agreement = CustomerChekout.Agreement,
+                    Shipping = CustomerChekout.Shipping,
+                    Message = CustomerChekout.Message,
+                    ChekoutNumber = ChekoutNumber
+                };
+                await _context.Chekouts.AddAsync(model);
+                _context.SaveChanges();
+
+                    return Ok(new
+                {
+                    message = "Order is done Please Proceed your Order!"
+                });
+                }
+                return BadRequest(new
+                {
+                    message = "Some of inputs is empty, Please enter information correctly"
+                });
+
+            }
+
+            else
+            {
+                return BadRequest(new
+                {
+                    message = "Some of inputs is empty, Please enter information correctly"
+                });
+            }
+        }
+        [HttpPost]
         public async Task<IActionResult> ProceedAsync()
         {  
-
-            ICollection<BasketItem> cart = HttpContext.Session.GetJson<ICollection<BasketItem>>("Cart");
-            if (cart==null)
-            {
-                return NotFound(new { message = "You Basket is empty" });
-            }
           
             string OrderNumber = DateTime.Now.ToString("yyyyMMddHHmmssff");
 
+            if (HttpContext.Session.GetJson<Chekout>("Chekout")!=null)
+            {   
+            ICollection<BasketItem> cart = HttpContext.Session.GetJson<ICollection<BasketItem>>("Cart");   
+                if (cart==null)
+            {
+                return NotFound(new { message = "You Basket is empty" });
+            }
             Chekout chk = HttpContext.Session.GetJson<Chekout>("Chekout");
             if (cart == null)
             {
@@ -219,10 +276,8 @@ namespace ZoNaN.Controllers
             }
 
             string chknum = chk.ChekoutNumber;
-            Chekout chekoutnum = _context.Chekouts.Where(c => c.ChekoutNumber == chknum).FirstOrDefault();
-
-
-            foreach (var item in cart)
+            Chekout chekoutnum = _context.Chekouts.Where(c => c.ChekoutNumber == chknum).FirstOrDefault();            
+                foreach (var item in cart)
             {
                 Order orders = new Order
                 {
@@ -244,6 +299,43 @@ namespace ZoNaN.Controllers
             {
                 message = "Chekout is done ! We send order info to your Email" 
             });
+            }
+            else 
+            {
+                var hasHeader = Request.Cookies.TryGetValue("token", out string token);
+                var customer = _context.Customers.FirstOrDefault(u => u.Token == token);
+                Chekout chekout = _context.Chekouts
+                    .OrderByDescending(c => c.Id)
+                    .FirstOrDefault(i => i.CustomerId == customer.Id);
+                ICollection<BasketItem> cart = HttpContext.Session.GetJson<ICollection<BasketItem>>("Cart");
+                if (cart == null)
+                {
+                    return NotFound(new { message = "You Basket is empty" });
+                }
+                foreach (var item in cart)
+                {
+                    Order orders = new Order
+                    {
+                        ProductId = item.Id,
+                        Name = item.Name,
+                        Quantity = item.Quantity,
+                        Price = item.Price,
+                        Total = item.Total,
+                        Photo = item.Photo,
+                        OrderNumber = OrderNumber,
+                        ChekoutId = chekout.Id
+                    };
+                    await _context.Orders.AddAsync(orders);
+                    _context.SaveChanges();
+                    HttpContext.Session.Remove("Cart");
+                }
+
+                return Ok(new
+                {
+                    message = "Chekout is done ! We send order info to your Email"
+                });
+            }
+
         }
     }
 }

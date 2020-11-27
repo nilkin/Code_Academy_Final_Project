@@ -8,30 +8,178 @@
         <div class="container grid-wraper">
             <div class="row">
                 <div class="col-lg-9 mb-30">
-                    <form id="accordion">
-                        @if (Model.TokenUser != null)
-                        {
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            1 Personal Information
-                                        </a>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <div class="personal-information">
-                                            <div class="order-asguest mt-2 mb-4">
-                                                <H1>@Model.TokenUser.Name @Model.TokenUser.Surname</H1>
+                    @if (Model.TokenUser != null)
+                    {
+                    <form id="customer-accordion">
+                        <div class="card-header" id="headingTwo">
+                            <h1 class="mb-0">
+                                @Model.TokenUser.Name @Model.TokenUser.Surname
+                            </h1>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading2">
+                                <h5 class="mb-0">
+                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Addresses
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="heading2" data-parent="#customer-accordion">
+                                <div class="card-body">
+                                    <div class="checkout-inner border-0">
+                                        <div class="checkout-address p-0">
+                                            <p>
+                                                The selected address will be used both as your personal address (for invoice) and as your delivery address.
+                                            </p>
+                                        </div>
+                                        <div class="check-out-content">
+                                            <div id="contact-form" class="p-0" action="assets/php/mail.php" method="post">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3" asp-for="CustomerChekout.City">City</label>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" asp-for="CustomerChekout.City" type="text" >
+                                                    </div>
+                                                    <span asp-validation-for="CustomerChekout.City" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-md-3" asp-for="CustomerChekout.Address">Address</label>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control" asp-for="CustomerChekout.Address" type="text" >
+                                                    </div>
+                                                    <span asp-validation-for="CustomerChekout.Address" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group row mb-0">
+                                                    <div class="col-12 text-right">
+                                                        <button data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3" class="btn third-btn btn-theme2">Continue</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        }
-                        else
-                        {
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading3">
+                                <h5 class="mb-0">
+                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                       Shipping Method
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapse3" class="collapse custom" aria-labelledby="heading3" data-parent="#customer-accordion">
+                                <div class="card-body">
+                                    <div class="delivery-options-list">
+                                        <div>
+                                            <div class="delivery-option">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row align-items-center ">
+                                                            <div class="col-sm-1">
+                                                                <div class="custom-radio">
+                                                                    <label for="opt102" class="radio">
+                                                                        <input type="radio" asp-for="CustomerChekout.Shipping" value="true" id="opt102" class="hidden" />
+                                                                        <span class="label"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-11 delivery-option-2">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-sm-5 col-12">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-3">
+                                                                                <i class="fas fa-truck"></i>
+                                                                            </div>
+                                                                            <div class="col-9">
+                                                                                <span class="carrier-name">
+                                                                                    Free shipping in one click!
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-4 col-12">
+                                                                        <span class="carrier-delay">
+                                                                            Delivery next
+                                                                            day!
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="col-sm-3 col-12">
+                                                                        <span class="carrier-price">All services are included in Total</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="order-options">
+                                                <div id="delivery" class="text-right">
+                                                    <label class="text-left d-block">
+                                                        If you would like to add a comment
+                                                        about your order, please write it in the field
+                                                        below.
+                                                    </label>
+                                                    <textarea asp-for="CustomerChekout.Message" class="form-control mt-2 mb-4"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="btn third-btn btn-theme2">
+                                            Continue
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading4">
+                                <h5 class="mb-0">
+                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                         Payment
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse custom" aria-labelledby="headingFour" data-parent="#customer-accordion">
+                                <div class="card-body pt-0" onsubmit="return validate()">
+                                    <div class="custom-radio mb-4">
+                                        <label for="opt999" class="radio">
+                                            <input type="radio" asp-for="CustomerChekout.PaymentMethod" value="Pay by Check" id="opt999" style="visibility:hidden" />
+                                            <span class="label"></span>Pay by Check
+                                        </label>
+                                    </div>
+                                    <div class="custom-radio mb-4">
+                                        <label for="opt888" class="radio">
+                                            <input type="radio" asp-for="CustomerChekout.PaymentMethod" value="Pay by bank wire" id="opt888" style="visibility:hidden" />
+                                            <span class="label"></span>Pay by bank wire
+                                        </label>
+                                    </div>
+                                    <div class="custom-radio mb-4">
+                                        <label for="opt777" class="radio">
+                                            <input type="radio" asp-for="CustomerChekout.PaymentMethod" value="Pay by Cash on Delivery" id="opt777" style="visibility:hidden" />
+                                            <span class="label"></span>Pay by Cash on Delivery
+                                        </label>
+                                    </div>
+                                    <span asp-validation-for="CustomerChekout.PaymentMethod" class="text-danger"></span>
+                                    <span name="ChekPay.PaymentMethod" class="text-danger"></span>
+                                    <div class="custom-radio mb-4">
+                                        <label for="opt666" class="radio">
+                                            <input type="radio" asp-for="CustomerChekout.Agreement" value="I agree to the terms and Conditions" id="opt666" style="visibility:hidden" />
+                                            <span class="label"></span>I agree to the terms and Conditions
+                                        </label>
+                                        <span asp-validation-for="CustomerChekout.Agreement" class="text-danger"></span>
+                                        <span name="ChekPay.Agreement" class="text-danger"></span>
+                                    </div>
+                                    <button type="submit" class="btn third-btn btn-theme2">
+                                        order now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    }
+                    else
+                    {
+                        <form id="accordion">
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h5 class="mb-0">
@@ -72,6 +220,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+
 
                                             <div class="form-group row">
                                                 <label asp-for="ChekPay.Name" class="col-md-3 col-form-label">
@@ -115,43 +264,42 @@
                                     </div>
                                 </div>
                             </div>
-                        }
-
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        2 Addresses
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="checkout-inner border-0">
-                                        <div class="checkout-address p-0">
-                                            <p>
-                                                The selected address will be used both as your personal address (for invoice) and as your delivery address.
-                                            </p>
-                                        </div>
-                                        <div class="check-out-content">
-                                            <div id="contact-form" class="p-0" action="assets/php/mail.php" method="post">
-                                                <div class="form-group row">
-                                                    <label class="col-md-3" asp-for="ChekPay.City">City</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" asp-for="ChekPay.City" type="text" required="">
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            2 Addresses
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="checkout-inner border-0">
+                                            <div class="checkout-address p-0">
+                                                <p>
+                                                    The selected address will be used both as your personal address (for invoice) and as your delivery address.
+                                                </p>
+                                            </div>
+                                            <div class="check-out-content">
+                                                <div id="contact-form" class="p-0" action="assets/php/mail.php" method="post">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3" asp-for="ChekPay.City">City</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" asp-for="ChekPay.City" type="text" required="">
+                                                        </div>
+                                                        <span asp-validation-for="ChekPay.City" class="text-danger"></span>
                                                     </div>
-                                                    <span asp-validation-for="ChekPay.City" class="text-danger"></span>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-md-3" asp-for="ChekPay.Address">Address</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" asp-for="ChekPay.Address" type="text" required="">
+                                                    <div class="form-group row">
+                                                        <label class="col-md-3" asp-for="ChekPay.Address">Address</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" asp-for="ChekPay.Address" type="text" required="">
+                                                        </div>
+                                                        <span asp-validation-for="ChekPay.Address" class="text-danger"></span>
                                                     </div>
-                                                    <span asp-validation-for="ChekPay.Address" class="text-danger"></span>
-                                                </div>
-                                                <div class="form-group row mb-0">
-                                                    <div class="col-12 text-right">
-                                                        <button type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn third-btn btn-theme2">Continue</button>
+                                                    <div class="form-group row mb-0">
+                                                        <div class="col-12 text-right">
+                                                            <button type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="btn third-btn btn-theme2">Continue</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,125 +307,126 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <span>3</span> Shipping Method
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse custom" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    <div class="delivery-options-list">
-                                        <div>
-                                            <div class="delivery-option">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="row align-items-center ">
-                                                            <div class="col-sm-1">
-                                                                <div class="custom-radio">
-                                                                    <label for="opt101" class="radio">
-                                                                        <input type="radio" asp-for="ChekPay.Shipping" value="true" id="opt101" class="hidden" />
-                                                                        <span class="label"></span>
-                                                                    </label>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <span>3</span> Shipping Method
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse custom" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="delivery-options-list">
+                                            <div>
+                                                <div class="delivery-option">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="row align-items-center ">
+                                                                <div class="col-sm-1">
+                                                                    <div class="custom-radio">
+                                                                        <label for="opt101" class="radio">
+                                                                            <input type="radio" asp-for="ChekPay.Shipping" value="true" id="opt101" class="hidden" />
+                                                                            <span class="label"></span>
+                                                                        </label>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-sm-11 delivery-option-2">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-sm-5 col-12">
-                                                                        <div class="row align-items-center">
-                                                                            <div class="col-3">
-                                                                                <i class="fas fa-truck"></i>
-                                                                            </div>
-                                                                            <div class="col-9">
-                                                                                <span class="carrier-name">
-                                                                                    My
-                                                                                    carrier
-                                                                                </span>
+                                                                <div class="col-sm-11 delivery-option-2">
+                                                                    <div class="row align-items-center">
+                                                                        <div class="col-sm-5 col-12">
+                                                                            <div class="row align-items-center">
+                                                                                <div class="col-3">
+                                                                                    <i class="fas fa-truck"></i>
+                                                                                </div>
+                                                                                <div class="col-9">
+                                                                                    <span class="carrier-name">
+                                                                                        Free shipping in one click!
+                                                                                    </span>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-4 col-12">
-                                                                        <span class="carrier-delay">
-                                                                            Delivery next
-                                                                            day!
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="col-sm-3 col-12">
-                                                                        <span class="carrier-price">10% Of Total</span>
+                                                                        <div class="col-sm-4 col-12">
+                                                                            <span class="carrier-delay">
+                                                                                Delivery next
+                                                                                day!
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="col-sm-3 col-12">
+                                                                            <span class="carrier-price">All services are included in Total</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="order-options">
-                                                <div id="delivery" class="text-right">
-                                                    <label class="text-left d-block">
-                                                        If you would like to add a comment
-                                                        about your order, please write it in the field
-                                                        below.
-                                                    </label>
-                                                    <textarea asp-for="ChekPay.Message" class="form-control mt-2 mb-4"></textarea>
+                                                <div class="order-options">
+                                                    <div id="delivery" class="text-right">
+                                                        <label class="text-left d-block">
+                                                            If you would like to add a comment
+                                                            about your order, please write it in the field
+                                                            below.
+                                                        </label>
+                                                        <textarea asp-for="ChekPay.Message" class="form-control mt-2 mb-4"></textarea>
+                                                    </div>
                                                 </div>
-                                            </div>
 
+                                            </div>
+                                            <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="btn third-btn btn-theme2">
+                                                Continue
+                                            </a>
                                         </div>
-                                        <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="btn third-btn btn-theme2">
-                                            Continue
-                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <span>4</span> Payment
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseFour" class="collapse custom" aria-labelledby="headingFour" data-parent="#accordion">
-                                <div class="card-body pt-0" onsubmit="return validate()">
-                                    <div class="custom-radio mb-4">
-                                        <label for="opt9" class="radio">
-                                            <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by Check" id="opt9" style="visibility:hidden" />
-                                            <span class="label"></span>Pay by Check
-                                        </label>
-                                    </div>
-                                    <div class="custom-radio mb-4">
-                                        <label for="opt6" class="radio">
-                                            <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by bank wire" id="opt6" style="visibility:hidden" />
-                                            <span class="label"></span>Pay by bank wire
-                                        </label>
-                                    </div>
-                                    <div class="custom-radio mb-4">
-                                        <label for="opt7" class="radio">
-                                            <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by Cash on Delivery" id="opt7" style="visibility:hidden" />
-                                            <span class="label"></span>Pay by Cash on Delivery
-                                        </label>
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <span>4</span> Payment
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse custom" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="card-body pt-0" onsubmit="return validate()">
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt9" class="radio">
+                                                <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by Check" id="opt9" style="visibility:hidden" />
+                                                <span class="label"></span>Pay by Check
+                                            </label>
+                                        </div>
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt6" class="radio">
+                                                <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by bank wire" id="opt6" style="visibility:hidden" />
+                                                <span class="label"></span>Pay by bank wire
+                                            </label>
+                                        </div>
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt7" class="radio">
+                                                <input type="radio" asp-for="ChekPay.PaymentMethod" value="Pay by Cash on Delivery" id="opt7" style="visibility:hidden" />
+                                                <span class="label"></span>Pay by Cash on Delivery
+                                            </label>
+
+                                        </div>  
                                         <span asp-validation-for="ChekPay.PaymentMethod" class="text-danger"></span>
                                         <span name="ChekPay.PaymentMethod" class="text-danger"></span>
+                                        <div class="custom-radio mb-4">
+                                            <label for="opt66" class="radio">
+                                                <input type="radio" asp-for="ChekPay.Agreement" value="I agree to the terms and Conditions" id="opt66" style="visibility:hidden" />
+                                                <span class="label"></span>I agree to the terms and Conditions
+                                            </label>
+                                            <span asp-validation-for="ChekPay.Agreement" class="text-danger"></span>
+                                            <span name="ChekPay.Agreement" class="text-danger"></span>
+                                        </div>
+                                        <button type="submit" class="btn third-btn btn-theme2">
+                                            order now
+                                        </button>
                                     </div>
-                                    <div class="custom-radio mb-4">
-                                        <label for="opt66" class="radio">
-                                            <input type="radio" asp-for="ChekPay.Agreement" value="I agree to the terms and Conditions" id="opt66" style="visibility:hidden" />
-                                            <span class="label"></span>I agree to the terms and Conditions
-                                        </label>
-                                        <span asp-validation-for="ChekPay.Agreement" class="text-danger"></span>
-                                        <span name="ChekPay.Agreement" class="text-danger"></span>
-                                    </div>
-                                    <button type="submit" class="btn third-btn btn-theme2">
-                                        order now
-                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    }
+
                 </div>
                <vc:chekout-component></vc:chekout-component>
             </div>
@@ -337,6 +486,7 @@
                                 timer: 3500
                             })
                             $("#accordion").trigger("reset");
+                            $("#proceed").removeClass("d-none");
                         }
                       
                     }
@@ -373,7 +523,7 @@
                                 title: 'ERROR',
                                 text: 'Somethink went wrong , back to Main page',
                             })
-                            window.location = 'Error/error';
+                            //window.location = 'Error/error';
                         }
                     },
                     complete: function (status) {
@@ -388,6 +538,51 @@
                             setTimeout(function () {
                                 window.location = "/Account/profile";
                             }, 4000);
+                        }
+
+                    }
+                });
+            });
+
+            //Accordion-customer Form
+            $('#customer-accordion').submit(function (e) {
+                e.preventDefault();
+                let formData = $(this).serialize();
+                $.ajax({
+                    url: "/account/ChekoutWithCustomer",
+                    type: "post",
+                    data: formData,
+                    dataType: "json",
+                    success: function (res) {
+                    },
+                    error: function (err) {
+                        if (err.status === 404) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 400) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 500) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: 'Some of inputs is empty',
+                                footer: 'Please enter information correctly!',
+
+                            })
+                        }
+                    },
+                    complete: function (status) {
+                        if (status.status === 200) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: status.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            })
+                            $("#customer-accordion").trigger("reset");
+                            $("#proceed").removeClass("d-none");
                         }
 
                     }

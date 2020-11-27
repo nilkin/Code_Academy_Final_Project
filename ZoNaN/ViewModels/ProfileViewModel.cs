@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data.Models;
+using ZoNaN.Models;
 
 namespace ZoNaN.ViewModels
 {
@@ -11,5 +12,8 @@ namespace ZoNaN.ViewModels
         public Breadcrumb Breadcrumb { get; set; }
         public Subscriber Subscriber { get; set; }
         public CustomerLoginViewModel Customer { get; set; }
+        public Customer Profile { get; set; }
+        public List<Chekout> Chekouts { get; set; }
+
     }
 }

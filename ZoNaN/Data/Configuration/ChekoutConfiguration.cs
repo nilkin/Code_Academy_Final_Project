@@ -52,8 +52,8 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(500);
             builder
                 .HasOne(m => m.Customer)
-                .WithOne(m => m.Chekout)
-                .HasForeignKey<Chekout>(m => m.CustomerId);
+                .WithMany(m => m.Chekouts)
+                .HasForeignKey(m => m.CustomerId);
             builder
                 .ToTable("Chekouts");
         }

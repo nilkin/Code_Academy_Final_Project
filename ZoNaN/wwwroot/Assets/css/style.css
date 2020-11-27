@@ -4,6 +4,9 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow");
 
+
+
+
 .chekout-images {
     max-width: 6rem;
 }
@@ -4012,7 +4015,8 @@ span.required {
         transition-duration: 0.3s;
     }
 
-.check-out-section .grid-wraper #accordion .card {
+.check-out-section .grid-wraper #accordion .card, 
+.check-out-section .grid-wraper #customer-accordion .card {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4030,35 +4034,41 @@ span.required {
     margin-bottom: 1rem;
 }
 
-    .check-out-section .grid-wraper #accordion .card .card-header {
+    .check-out-section .grid-wraper #accordion .card .card-header, 
+    .check-out-section .grid-wraper #customer-accordion .card .card-header {
         background-color: #ffffff;
     }
 
-        .check-out-section .grid-wraper #accordion .card .card-header h5 .btn-link {
+        .check-out-section .grid-wraper #accordion .card .card-header h5 .btn-link,
+        .check-out-section .grid-wraper #customer-accordion .card .card-header h5 .btn-link {
             font-size: 20px !important;
             text-decoration: underline;
             color: #000;
             font-weight: 600;
         }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .order-asguest .separator {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .order-asguest .separator,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .order-asguest .separator {
         border: 1px solid;
         /* padding: 0px 0px; */
         /* margin-right: 6px; */
         margin: 0px 4px;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .order-asguest a {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .order-asguest a,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .order-asguest a {
         color: #292929;
         font-weight: 500;
         margin-bottom: 1rem;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information input:focus {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information input:focus,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information input:focus {
         border: 1px solid #999;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group .radio {
         position: relative;
         cursor: pointer;
         line-height: 20px;
@@ -4066,7 +4076,8 @@ span.required {
         margin: 15px;
     }
 
-        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio .label {
+        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio .label,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group .radio .label {
             position: relative;
             display: block;
             float: left;
@@ -4078,33 +4089,37 @@ span.required {
             -webkit-tap-highlight-color: transparent;
         }
 
-            .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio .label:after {
-                content: '';
-                position: absolute;
-                top: 0.58px;
-                left: 0.6px;
-                width: 10px;
-                height: 10px;
-                border-radius: 100%;
-                background: #2caf4e;
-                -webkit-transform: scale(0);
-                transform: scale(0);
-                -webkit-transition: all 0.2s ease;
-                transition: all 0.2s ease;
-                opacity: 0.08;
-                pointer-events: none;
-            }
+        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio .label:after,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group .radio .label:after {
+            content: '';
+            position: absolute;
+            top: 0.58px;
+            left: 0.6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: #2caf4e;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            opacity: 0.08;
+            pointer-events: none;
+        }
 
-        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio:hover .label:after {
+        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .radio:hover .label:after,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group .radio:hover .label:after {
             -webkit-transform: scale(3.6);
             transform: scale(3.6);
         }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label {
         border-color: #2caf4e;
     }
 
-        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label:after {
+        .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label:after,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group input[type="radio"]:checked + .label:after {
             -webkit-transform: scale(1);
             transform: scale(1);
             -webkit-transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
@@ -4112,11 +4127,13 @@ span.required {
             opacity: 1;
         }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .hidden {
+    .check-out-section .grid-wraper #accordion .card .card-body .personal-information .form-group .hidden,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .personal-information .form-group .hidden {
         display: none;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body .filter-check-box input[type="checkbox"] + label {
+    .check-out-section .grid-wraper #accordion .card .card-body .filter-check-box input[type="checkbox"] + label,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body .filter-check-box input[type="checkbox"] + label {
         position: relative;
         padding-top: 3px;
         cursor: pointer;
@@ -4129,22 +4146,26 @@ span.required {
         line-height: 22px;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body input:focus {
+    .check-out-section .grid-wraper #accordion .card .card-body input:focus,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body input:focus {
         border: 1px solid #999;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label {
+    .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label,
+    .check-out-section .grid-wraper #customer-accordion .card .card-body input[type="checkbox"] + label {
         display: block;
         margin: 0.4em;
         cursor: pointer;
         padding: 0.4em;
     }
 
-    .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] {
+    .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"],
+    .check-out-section .grid-wraper #customer-accordion .card .card-body input[type="checkbox"] {
         display: none;
     }
 
-        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label:before {
+        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label:before,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body input[type="checkbox"] + label:before {
             content: "\2714";
             border: 1px solid #e7e7e7;
             border-radius: 0.2em;
@@ -4162,12 +4183,14 @@ span.required {
             line-height: 15px;
         }
 
-        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label:active:before {
+        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"] + label:active:before,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body input[type="checkbox"] + label:active:before {
             -webkit-transform: scale(0);
             transform: scale(0);
         }
 
-        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"]:checked + label:before {
+        .check-out-section .grid-wraper #accordion .card .card-body input[type="checkbox"]:checked + label:before,
+        .check-out-section .grid-wraper #customer-accordion .card .card-body input[type="checkbox"]:checked + label:before {
             background-color: #ffffff;
             border-color: #ffffff;
             color: #2caf4e;
@@ -4176,7 +4199,8 @@ span.required {
             font-size: 19px;
         }
 
-    .check-out-section .grid-wraper #accordion .card .custom .card-body .radio {
+    .check-out-section .grid-wraper #accordion .card .custom .card-body .radio,
+    .check-out-section .grid-wraper #customer-accordion .card .custom .card-body .radio {
         position: relative;
         cursor: pointer;
         line-height: 20px;
@@ -4184,7 +4208,8 @@ span.required {
         margin: 15px;
     }
 
-        .check-out-section .grid-wraper #accordion .card .custom .card-body .radio .label {
+        .check-out-section .grid-wraper #accordion .card .custom .card-body .radio .label,
+        .check-out-section .grid-wraper #customer-accordion .card .custom .card-body .radio .label {
             position: relative;
             display: block;
             float: left;
@@ -4196,7 +4221,8 @@ span.required {
             -webkit-tap-highlight-color: transparent;
         }
 
-            .check-out-section .grid-wraper #accordion .card .custom .card-body .radio .label:after {
+            .check-out-section .grid-wraper #accordion .card .custom .card-body .radio .label:after,
+            .check-out-section .grid-wraper #customer-accordion .card .custom .card-body .radio .label:after {
                 content: '';
                 position: absolute;
                 top: 0.6px;
@@ -4213,16 +4239,19 @@ span.required {
                 pointer-events: none;
             }
 
-        .check-out-section .grid-wraper #accordion .card .custom .card-body .radio:hover .label:after {
+        .check-out-section .grid-wraper #accordion .card .custom .card-body .radio:hover .label:after,
+        .check-out-section .grid-wraper #customer-accordion .card .custom .card-body .radio:hover .label:after {
             -webkit-transform: scale(3.6);
             transform: scale(3.6);
         }
 
-    .check-out-section .grid-wraper #accordion .card .custom .card-body input[type="radio"]:checked + .label {
+    .check-out-section .grid-wraper #accordion .card .custom .card-body input[type="radio"]:checked + .label,
+    .check-out-section .grid-wraper #customer-accordion .card .custom .card-body input[type="radio"]:checked + .label {
         border-color: #2caf4e;
     }
 
-        .check-out-section .grid-wraper #accordion .card .custom .card-body input[type="radio"]:checked + .label:after {
+        .check-out-section .grid-wraper #accordion .card .custom .card-body input[type="radio"]:checked + .label:after,
+        .check-out-section .grid-wraper #customer-accordion .card .custom .card-body input[type="radio"]:checked + .label:after {
             -webkit-transform: scale(1);
             transform: scale(1);
             -webkit-transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
@@ -4230,7 +4259,8 @@ span.required {
             opacity: 1;
         }
 
-    .check-out-section .grid-wraper #accordion .card .custom .card-body .hidden {
+    .check-out-section .grid-wraper #accordion .card .custom .card-body .hidden,
+    .check-out-section .grid-wraper #customer-accordion .card .custom .card-body .hidden {
         display: none;
     }
 
