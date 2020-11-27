@@ -47,8 +47,15 @@ using ReflectionIT.Mvc.Paging;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ZoNaN.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e23d17db32586265e675c13aa4416ba039ef725d", @"/Views/Shared/Components/IconBadgeComponent/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a627f156a68d10cb1edf2528c0bd51fb1218a34", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02410344cb48176cbd8230807a2ea5a36b5f03ad", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_IconBadgeComponent_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<BadgeIconViewModel>
     {
         #pragma warning disable 1998

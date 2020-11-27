@@ -7,6 +7,7 @@ using ZoNaN.Data;
 
 namespace ZoNaN.Filter
 {
+
     public class ProfileInfo : ActionFilterAttribute
     {
 

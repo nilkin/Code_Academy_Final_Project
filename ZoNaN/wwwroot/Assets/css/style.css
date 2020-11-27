@@ -4,6 +4,10 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow");
 
+.chekout-images {
+    max-width: 6rem;
+}
+
 .flex-end-button {
     position: relative;
     left: 67.5rem;

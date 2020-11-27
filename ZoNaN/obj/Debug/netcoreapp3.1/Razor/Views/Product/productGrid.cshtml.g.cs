@@ -47,8 +47,15 @@ using ReflectionIT.Mvc.Paging;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ZoNaN.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"708dfc7a5dd9931a4f3aec4c2488835bd092d96f", @"/Views/Product/productGrid.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a627f156a68d10cb1edf2528c0bd51fb1218a34", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02410344cb48176cbd8230807a2ea5a36b5f03ad", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_productGrid : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductGridViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_breadcrumbs", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -81,7 +88,7 @@ using ReflectionIT.Mvc.Paging;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<main>\r\n    <!-- breadcrumb-section start -->\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f5023", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f5224", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -732,7 +739,7 @@ WriteAttributeValue("", 10654, item.ProductPhotos.ElementAt(3).Photo, 10654, 38,
             BeginWriteAttribute("class", " class=\"", 22534, "\"", 22542, 0);
             EndWriteAttribute();
             WriteLiteral("><a href=\"#\">Bag Parts &amp; Accessories</a></li>\r\n                                </ul>\r\n                            </li>\r\n                        </ul>\r\n\r\n                        <div class=\"search-filter border-top  \">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f43651", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f43852", async() => {
                 WriteLiteral(@"
                                 <div class=""check-box-inner "">
                                     <h4 class=""title"">Filter By</h4>
@@ -905,7 +912,7 @@ WriteAttributeValue("", 10654, item.ProductPhotos.ElementAt(3).Photo, 10654, 38,
     </section>
     <!-- common banner news-letter end -->
     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f55090", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "708dfc7a5dd9931a4f3aec4c2488835bd092d96f55291", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

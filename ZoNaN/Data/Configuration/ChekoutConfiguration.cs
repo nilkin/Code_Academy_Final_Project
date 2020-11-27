@@ -31,7 +31,7 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50)
                 .IsRequired();
             builder
-                .Property(m => m.Payment)
+                .Property(m => m.Agreement)
                 .HasDefaultValue(false)
                 .IsRequired();
             builder

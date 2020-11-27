@@ -10,8 +10,8 @@ using ZoNaN.Data;
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    [Migration("20201126003720_InitialCreateNewOne")]
-    partial class InitialCreateNewOne
+    [Migration("20201126190532_changeTableColumnChekout3")]
+    partial class changeTableColumnChekout3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -126,7 +126,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 375, DateTimeKind.Local).AddTicks(7025));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 5, 32, 18, DateTimeKind.Local).AddTicks(1352));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -207,6 +207,9 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("ChekoutId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -234,6 +237,8 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("money");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ChekoutId");
 
                     b.ToTable("Orders");
                 });
@@ -362,7 +367,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 406, DateTimeKind.Local).AddTicks(984));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 5, 32, 32, DateTimeKind.Local).AddTicks(3265));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -423,6 +428,12 @@ namespace ZoNaN.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("ChekoutNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("ChekoutTotalAmount")
+                        .HasColumnType("float");
+
                     b.Property<string>("City")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -448,10 +459,11 @@ namespace ZoNaN.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("Payment")
+                    b.Property<string>("Payment")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("False");
 
                     b.Property<string>("PaymentMethod")
                         .HasMaxLength(60)
@@ -545,26 +557,6 @@ namespace ZoNaN.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("ZoNaN.Models.OrderChekout", b =>
-                {
-                    b.Property<int>("ChekoutId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.HasKey("ChekoutId", "OrderId");
-
-                    b.HasIndex("OrderId");
-
-                    b.ToTable("OderChekouts");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
@@ -667,7 +659,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 4, 37, 19, 442, DateTimeKind.Local).AddTicks(350));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 5, 32, 43, DateTimeKind.Local).AddTicks(4697));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -822,6 +814,17 @@ namespace ZoNaN.Data.Migrations
                     b.Navigation("Blog");
                 });
 
+            modelBuilder.Entity("ZoNaN.Data.Models.Order", b =>
+                {
+                    b.HasOne("ZoNaN.Models.Chekout", "Chekout")
+                        .WithMany("Orders")
+                        .HasForeignKey("ChekoutId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Chekout");
+                });
+
             modelBuilder.Entity("ZoNaN.Models.Chekout", b =>
                 {
                     b.HasOne("ZoNaN.Models.Customer", "Customer")
@@ -829,25 +832,6 @@ namespace ZoNaN.Data.Migrations
                         .HasForeignKey("ZoNaN.Models.Chekout", "CustomerId");
 
                     b.Navigation("Customer");
-                });
-
-            modelBuilder.Entity("ZoNaN.Models.OrderChekout", b =>
-                {
-                    b.HasOne("ZoNaN.Models.Chekout", "Chekout")
-                        .WithMany("OrderChekouts")
-                        .HasForeignKey("ChekoutId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ZoNaN.Data.Models.Order", "Order")
-                        .WithMany("OrderChekouts")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Chekout");
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.Product", b =>
@@ -902,11 +886,6 @@ namespace ZoNaN.Data.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("ZoNaN.Data.Models.Order", b =>
-                {
-                    b.Navigation("OrderChekouts");
-                });
-
             modelBuilder.Entity("ZoNaN.Models.Blog", b =>
                 {
                     b.Navigation("Comments");
@@ -919,7 +898,7 @@ namespace ZoNaN.Data.Migrations
 
             modelBuilder.Entity("ZoNaN.Models.Chekout", b =>
                 {
-                    b.Navigation("OrderChekouts");
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("ZoNaN.Models.Customer", b =>

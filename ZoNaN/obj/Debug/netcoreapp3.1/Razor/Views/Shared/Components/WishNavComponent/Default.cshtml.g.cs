@@ -47,8 +47,15 @@ using ReflectionIT.Mvc.Paging;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ZoNaN.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6444d541ebd1581a19973d526eacc465bff9c028", @"/Views/Shared/Components/WishNavComponent/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a627f156a68d10cb1edf2528c0bd51fb1218a34", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02410344cb48176cbd8230807a2ea5a36b5f03ad", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_WishNavComponent_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CartViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -109,7 +116,7 @@ using ReflectionIT.Mvc.Paging;
 #line hidden
 #nullable disable
             WriteLiteral("                <li >\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c0287682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c0287883", async() => {
                 WriteLiteral("<img");
                 BeginWriteAttribute("src", " src=\"", 515, "\"", 544, 2);
                 WriteAttributeValue("", 521, "/Assets/img/", 521, 12, true);
@@ -154,7 +161,7 @@ WriteAttributeValue("", 533, item.Photo, 533, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    <div class=\"content\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02810786", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02810987", async() => {
 #nullable restore
 #line 16 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\Shared\Components\WishNavComponent\Default.cshtml"
                                                                                                                  Write(item.Name);
@@ -210,7 +217,7 @@ WriteAttributeValue("", 533, item.Photo, 533, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span></span>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02814389", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02814590", async() => {
                 WriteLiteral("×");
             }
             );
@@ -262,7 +269,7 @@ WriteAttributeValue("", 533, item.Photo, 533, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("        </ul>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02817818", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6444d541ebd1581a19973d526eacc465bff9c02818019", async() => {
                 WriteLiteral("\r\n            view\r\n            wishlist\r\n        ");
             }
             );

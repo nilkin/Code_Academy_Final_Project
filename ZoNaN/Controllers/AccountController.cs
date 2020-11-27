@@ -17,7 +17,6 @@ namespace ZoNaN.Controllers
 { [TypeFilter(typeof(ProfileInfo))]
     public class AccountController : Controller
     {
-       
         private readonly ZonanDbContext _context;
         private Customer Users => RouteData.Values["Customer"] as Customer;
         public AccountController(ZonanDbContext context)
@@ -46,11 +45,17 @@ namespace ZoNaN.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(CustomerLoginViewModel customer)
         {
-
-                Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email);
-
-                if (user != null)
+            if (String.IsNullOrEmpty(customer.Email)&& String.IsNullOrEmpty(customer.Password))
+            { 
+            return BadRequest(new
                 {
+                    message = "Some of inputs is empty, Please enter information correctly"
+                });
+            }
+            else
+            {                Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email); 
+                if (user != null)
+            {
                     if (Crypto.VerifyHashedPassword(user.Password, customer.Password))
                     {
                         user.Token = Crypto.HashPassword(DateTime.Now.ToString());
@@ -64,15 +69,26 @@ namespace ZoNaN.Controllers
                         });
                     return Ok(new
                     {
-                        message = "Welcome" +"  "+ user.Gender +" "+ user.Name
+                        message = "Welcome" + "  " + user.Gender + " " + user.Name
                     });
 
                     }
-                }
-                  return NotFound(new
+                    else
+                    {
+                        return NotFound(new
                         {
                             message = "This member is not found"
                         });
+                    }
+            }
+                else
+                {
+                    return NotFound(new
+                    {
+                        message = "This member is not found"
+                    });
+                }
+            }
         }
         public async Task<IActionResult> Register()
         {
@@ -100,7 +116,7 @@ namespace ZoNaN.Controllers
                     message = "This member is already registered"
                 });
             }
-
+            if (ModelState.IsValid) {    
                 Customer user = new Customer
                 {
                     Gender = customer.Gender,
@@ -117,16 +133,20 @@ namespace ZoNaN.Controllers
                 return Ok(new
                 {
                     message = "Your are registered ! Please login to your account"
-                });
+                }); 
+            }
+            return BadRequest(new
+            {
+                message = "Some of inputs is empty, Please enter information correctly"
+            });
         }
-
         public async Task<IActionResult> Chekout()
         {
             List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
             ChekoutViewModel model = new ChekoutViewModel 
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsChekout == true).FirstOrDefaultAsync(),
-
+                TokenUser = Users
             };
             return View(model);
         }
@@ -141,7 +161,7 @@ namespace ZoNaN.Controllers
         public async Task<IActionResult> Chekout(ChekPayViewModel chekPay)
         {
             string ChekoutNumber = DateTime.Now.ToString("yyyyMMddHHmmssff");
-
+  
             if (chekPay == null)
             {
                 return BadRequest(new
@@ -149,8 +169,9 @@ namespace ZoNaN.Controllers
                     message = "Some of inputs is empty, Please enter information correctly"
                 });
             }
-
-            Chekout model = new Chekout
+            if (ModelState.IsValid)
+            {
+                Chekout model = new Chekout
             {
                 Gender = chekPay.Gender,
                 Name = chekPay.Name,
@@ -159,7 +180,7 @@ namespace ZoNaN.Controllers
                 City = chekPay.City,
                 Address = chekPay.Address,
                 PaymentMethod = chekPay.PaymentMethod,
-                Payment = chekPay.Payment,
+                Agreement = chekPay.Agreement,
                 Shipping = chekPay.Shipping,
                 Message = chekPay.Message,
                 ChekoutNumber = ChekoutNumber
@@ -168,40 +189,60 @@ namespace ZoNaN.Controllers
             _context.SaveChanges();
 
             HttpContext.Session.SetJson("Chekout", model);
-  
+
             return Ok(new
             {
-                message = "Chekout is done !"
+                message = "Order is done Please Proceed your Order!"
             });
-        }
-       
+            }
+            return BadRequest(new
+            {
+                message = "Some of inputs is empty, Please enter information correctly"
+            });
+        } 
+        public async Task<IActionResult> ProceedAsync()
+        {  
 
-        public IActionResult Test()
-        {
-            List<Order> ord = HttpContext.Session.GetJson<List<Order>>("Order");
-            Order order = ord.FirstOrDefault();
-            string number = order.OrderNumber;
-            List<Order> orders = _context.Orders.Where(c => c.OrderNumber == number).ToList();
+            ICollection<BasketItem> cart = HttpContext.Session.GetJson<ICollection<BasketItem>>("Cart");
+            if (cart==null)
+            {
+                return NotFound(new { message = "You Basket is empty" });
+            }
+          
+            string OrderNumber = DateTime.Now.ToString("yyyyMMddHHmmssff");
 
             Chekout chk = HttpContext.Session.GetJson<Chekout>("Chekout");
-            string chknum = chk.ChekoutNumber;
-            Chekout chekoutnum = _context.Chekouts.Where(c => c.ChekoutNumber == chk.ChekoutNumber).FirstOrDefault();
-
-            foreach (var item in orders)
+            if (cart == null)
             {
-            OrderChekout orderChekout = new OrderChekout
-            {
-                ChekoutId = chekoutnum.Id,
-                OrderId=item.Id
-            };
-
-           //_context.OrderChekouts.Add(orderChekout);
-                _context.SaveChanges();
+                return NotFound(new { message = "Please fill The blank before Proceed to Chekout" });
             }
 
-               
+            string chknum = chk.ChekoutNumber;
+            Chekout chekoutnum = _context.Chekouts.Where(c => c.ChekoutNumber == chknum).FirstOrDefault();
 
-            return Ok(chekoutnum);
+
+            foreach (var item in cart)
+            {
+                Order orders = new Order
+                {
+                    ProductId = item.Id,
+                    Name = item.Name,
+                    Quantity = item.Quantity,
+                    Price = item.Price,
+                    Total = item.Total,
+                    Photo = item.Photo,
+                    OrderNumber = OrderNumber,
+                    ChekoutId = chekoutnum.Id
+                };
+                await _context.Orders.AddAsync(orders);
+                _context.SaveChanges();
+                HttpContext.Session.Remove("Cart");
+            }
+
+            return Ok(new
+            {
+                message = "Chekout is done ! We send order info to your Email" 
+            });
         }
     }
 }

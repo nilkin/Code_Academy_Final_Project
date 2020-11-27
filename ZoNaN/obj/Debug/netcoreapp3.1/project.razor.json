@@ -12439,6 +12439,23 @@
         }
       },
       {
+        "HashCode": -522043475,
+        "Kind": "MVC.ViewComponent",
+        "Name": "__Generated__ChekoutComponentViewComponentTagHelper",
+        "AssemblyName": "ZoNaN",
+        "CaseSensitive": false,
+        "TagMatchingRules": [
+          {
+            "TagName": "vc:chekout-component"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "ITagHelper",
+          "Common.TypeName": "__Generated__ChekoutComponentViewComponentTagHelper",
+          "MVC.ViewComponent.Name": "ChekoutComponent"
+        }
+      },
+      {
         "HashCode": 1303580451,
         "Kind": "MVC.ViewComponent",
         "Name": "__Generated__CompareIconBagdeComponentViewComponentTagHelper",
@@ -14606,6 +14623,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
       "FileKind": "mvc"
     },
     {

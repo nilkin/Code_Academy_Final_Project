@@ -3,7 +3,7 @@
 <div class="my-account padding-head-foot">
     <div class="container grid-wraper">
         <div class="row">
-            <div class="col-12">
+            <div class="col-10">
                 <h3 class="title text-capitalize pb-30"> Log in to your account</h3>
                 <form class="log-in-form">
                     <div class="form-group row">
@@ -18,19 +18,15 @@
                         <div class="col-md-6">
                             <div class="input-group mb-2 mr-sm-2">
                                 <input type="password" class="form-control" asp-for="@Model.Password">
+
                                 <div class="input-group-prepend">
                                     <button type="button" onclick="ShowHidePasswordFunction()" class="btn third-btn btn-theme2 text-uppercase show-password">show</button>
                                 </div>
                             </div>
                         </div>
+                        <span asp-validation-for="Password" class="text-danger"></span> 
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <div class="input-group mb-2 mr-sm-2">
-                                <span asp-validation-for="Password" class="text-danger"></span>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="form-group row pb-3 text-center">
                         <div class="col-md-6 offset-md-3">
                             <div class="login-form-links">

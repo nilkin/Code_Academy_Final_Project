@@ -47,8 +47,15 @@ using ReflectionIT.Mvc.Paging;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\_ViewImports.cshtml"
+using ZoNaN.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d383d4dbc8529897adcb9ec209f9a5527a317ed8", @"/Views/Shared/Components/CartNavComponent/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a627f156a68d10cb1edf2528c0bd51fb1218a34", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"02410344cb48176cbd8230807a2ea5a36b5f03ad", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_CartNavComponent_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CartViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -114,7 +121,7 @@ WriteAttributeValue("", 392, item.Id, 392, 8, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed88641", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed88842", async() => {
                 WriteLiteral("<img");
                 BeginWriteAttribute("src", " src=\"", 522, "\"", 551, 2);
                 WriteAttributeValue("", 528, "/Assets/img/", 528, 12, true);
@@ -159,7 +166,7 @@ WriteAttributeValue("", 540, item.Photo, 540, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    <div class=\"content\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed811745", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed811946", async() => {
 #nullable restore
 #line 15 "C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\Views\Shared\Components\CartNavComponent\Default.cshtml"
                                                                                                                  Write(item.Name);
@@ -215,7 +222,7 @@ WriteAttributeValue("", 540, item.Photo, 540, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span></span>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed815348", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed815549", async() => {
                 WriteLiteral("×");
             }
             );
@@ -279,7 +286,7 @@ WriteAttributeValue("", 540, item.Photo, 540, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("</span>\r\n\r\n        </div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed819383", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed819584", async() => {
                 WriteLiteral("\r\n            view\r\n            cart\r\n        ");
             }
             );
@@ -298,7 +305,7 @@ WriteAttributeValue("", 540, item.Photo, 540, 11, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed820882", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d383d4dbc8529897adcb9ec209f9a5527a317ed821083", async() => {
                 WriteLiteral("checkout");
             }
             );

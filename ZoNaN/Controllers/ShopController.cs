@@ -314,33 +314,5 @@ namespace ZoNaN.Controllers
             return RedirectToAction("Wish");
 
         }
-
-        //Orders
-        public async Task<IActionResult> AddOrder()
-        {
-            ICollection<BasketItem> cart = HttpContext.Session.GetJson<ICollection<BasketItem>>("Cart");
-            string OrderNumber =DateTime.Now.ToString("yyyyMMddHHmmssff");
-            foreach (var item in cart)
-            {
-                Order orders = new Order
-                {
-                    ProductId = item.Id,
-                    Name = item.Name,
-                    Quantity = item.Quantity,
-                    Price = item.Price,
-                    Total = item.Total,
-                    Photo = item.Photo,
-                    OrderNumber = OrderNumber
-                };
-                await _context.Orders.AddAsync(orders);
-                _context.SaveChanges(); 
-                HttpContext.Session.Remove("Cart");
-                List<Order> ord = HttpContext.Session.GetJson<List<Order>>("Order") ?? new List<Order>();
-                ord.Add(orders);
-                HttpContext.Session.SetJson("Order", ord);
-            }
-         
-            return RedirectToAction("Chekout","account");
-        }
     }
 }

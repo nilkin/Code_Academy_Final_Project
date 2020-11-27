@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZoNaN.Data;
 
 namespace ZoNaN.Data.Migrations
 {
     [DbContext(typeof(ZonanDbContext))]
-    partial class ZonanDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201126180412_changeTableColumnChekout")]
+    partial class changeTableColumnChekout
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,7 +126,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 10, 44, 916, DateTimeKind.Local).AddTicks(3443));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 22, 4, 12, 445, DateTimeKind.Local).AddTicks(1976));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -365,7 +367,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 10, 44, 929, DateTimeKind.Local).AddTicks(556));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 22, 4, 12, 457, DateTimeKind.Local).AddTicks(5134));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -426,12 +428,6 @@ namespace ZoNaN.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Agreement")
-                        .IsRequired()
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(max)")
-                        .HasDefaultValue("False");
-
                     b.Property<string>("ChekoutNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -462,6 +458,11 @@ namespace ZoNaN.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Payment")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("PaymentMethod")
                         .HasMaxLength(60)
@@ -657,7 +658,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 26, 23, 10, 44, 940, DateTimeKind.Local).AddTicks(3159));
+                        .HasDefaultValue(new DateTime(2020, 11, 26, 22, 4, 12, 468, DateTimeKind.Local).AddTicks(7147));
 
                     b.Property<string>("Email")
                         .IsRequired()

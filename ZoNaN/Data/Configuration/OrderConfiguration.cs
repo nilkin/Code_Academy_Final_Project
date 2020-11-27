@@ -39,6 +39,10 @@ namespace ZoNaN.Data.Configuration
                 .Property(m => m.Photo)
                 .HasMaxLength(50);
             builder
+                .HasOne(m => m.Chekout)
+                .WithMany(m => m.Orders)
+                .HasForeignKey(m => m.ChekoutId);
+            builder
                 .ToTable("Orders");
         }
     }

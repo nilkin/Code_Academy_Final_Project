@@ -15,7 +15,6 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new AboutUsConfiguration());
             builder.ApplyConfiguration(new BannerConfiguration());
             builder.ApplyConfiguration(new BreadcrumbConfiguration());
-            builder.ApplyConfiguration(new OrderChekoutConfiguration());
             builder.ApplyConfiguration(new CommentConfiguration());
             builder.ApplyConfiguration(new ContactUsConfiguration());
             builder.ApplyConfiguration(new ChekoutConfiguration());
@@ -36,7 +35,6 @@ namespace ZoNaN.Data
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Breadcrumb> Breadcrumbs { get; set; }
-        public DbSet<OrderChekout> ChekoutProduct { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<ContactUs> Contacts { get; set; }
         public DbSet<Customer> Customers { get; set; }

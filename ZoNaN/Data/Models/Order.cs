@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ZoNaN.Models;
 
 namespace ZoNaN.Data.Models
@@ -17,6 +14,9 @@ namespace ZoNaN.Data.Models
         public double Price { get; set; }
         public double Total { get; set; }
         public string Photo { get; set; }
-        public ICollection<OrderChekout> OrderChekouts { get; set; }
+        public int ChekoutId { get; set; }
+        public Chekout Chekout { get; set; }
+
+
     }
 }
