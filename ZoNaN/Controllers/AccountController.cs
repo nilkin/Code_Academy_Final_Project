@@ -14,11 +14,12 @@ using System.Collections.Generic;
 using ZoNaN.Data.Models;
 
 namespace ZoNaN.Controllers
-{ [TypeFilter(typeof(ProfileInfo))]
+{
+    [TypeFilter(typeof(ProfileInfo))]
     public class AccountController : Controller
     {
         private readonly ZonanDbContext _context;
-        private Customer Users => RouteData.Values["Customer"] as Customer;
+        private Customer cust => RouteData.Values["Customer"] as Customer;
         public AccountController(ZonanDbContext context)
         {
             _context = context;
@@ -146,15 +147,15 @@ namespace ZoNaN.Controllers
             ChekoutViewModel model = new ChekoutViewModel 
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsChekout == true).FirstOrDefaultAsync(),
-                TokenUser = Users
+                TokenUser = cust
             };
             return View(model);
         }
-        public IActionResult Logout()
+        public async Task<IActionResult>  Logout()
         {
-            var profile = _context.Customers.Find(Users.Id);
+            Customer profile = _context.Customers.Find(cust.Id);
             profile.Token = null;
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return Redirect("/");
         }
         [HttpPost]

@@ -35,5 +35,6 @@ namespace ZoNaN.Filter
             context.RouteData.Values["Customer"] = customer;
 
             base.OnActionExecuting(context);
-        }    }
+        }   
+    }
 }
