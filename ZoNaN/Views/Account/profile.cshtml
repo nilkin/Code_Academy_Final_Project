@@ -1,7 +1,7 @@
 ﻿@model ProfileViewModel
 <main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs"  model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- account section start -->
     <div class="my-account wrapper-top">
@@ -90,12 +90,12 @@
                                             }
                                         </tbody>
 
-                                        </table>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                         <!-- Single Tab Content End -->
-                       <!-- Single Tab Content Start -->
+                        <!-- Single Tab Content Start -->
                         <div class="tab-pane fade" id="address-edit" role="tabpanel">
                             <div class="myaccount-content">
                                 <h3>Billing Address</h3>
@@ -112,70 +112,77 @@
                         </div>
                         <!-- Single Tab Content End -->
                         <!-- Single Tab Content Start -->
-                        <div class="tab-pane fade " id="account-info" role="tabpanel">
-                            <div class="myaccount-content">
-                                <h3>Account Details</h3>
-
-                                <div class="account-details-form">
-                                    <form action="#account-details">
-                                        <div class="row">
-                                            <div class="col-lg-6 col-12 mb-30">
-                                                <input id="first-name" placeholder="First Name" type="text">
-                                            </div>
-                                            <div class="col-lg-6 col-12 mb-30">
-                                                <input placeholder="Last Name" type="text">
-                                            </div>
-                                            <div class="col-12 mb-30">
-                                                <input placeholder="Email Address" type="email">
-                                            </div>
-                                            <div class="col-lg-6 col-12  mb-30">
-                                                <input placeholder="Mobile number" type="email">
-                                            </div>
-                                            <div class="col-lg-6 col-12  mb-30">
-                                                <input placeholder="City Address" type="email">
-                                            </div>
-                                            <div class="col-lg-6 col-12  mb-30">
-                                                <input placeholder="Destination Address" type="email">
-                                            </div>
-                                            <div class="col-lg-6 col-12  mb-30">
-                                                <input type="date" class="form-control" placeholder="MM/DD/YYYY">
-                                            </div>
-                                            <div class="col-12 mb-30">
-                                                <h4>Password change</h4>
-                                            </div>
-                                            <div class="col-12 mb-30">
-                                                <input id="current-pwd" placeholder="Current Password" type="password">
-                                            </div>
-                                            <div class="col-lg-6 col-12 mb-30">
-                                                <input id="new-pwd" placeholder="New Password" type="password">
-                                            </div>
-                                            <div class="col-lg-6 col-12 mb-30">
-                                                <input id="confirm-pwd" placeholder="Confirm Password" type="password">
-                                            </div>
-
-                                            <div class="col-12">
-                                                <button type="submit" class="btn third-btn btn-theme2">
-                                                    Save
-                                                    Changes
-                                                </button>
-                                            </div>
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Tab Content End -->
+                        <partial name="_accountDetail" model="@Model.AccountDetail" />
                     </div>
+                    <!-- My Account Tab Content End -->
                 </div>
-                <!-- My Account Tab Content End -->
             </div>
         </div>
     </div>
     <!-- account section end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
-</main> 
+</main>
+
+@section Javascript{
+    <script src="~/Assets/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Assets/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 
+    <script>
+
+        $(document).ready(function () {
+
+            $('#account-details').submit(function (e) {
+                e.preventDefault();
+                let formData = $(this).serialize();
+
+                console.log(formData);
+
+                $.ajax({
+                    url: "/account/ProfileDetail",
+                    type: "post",
+                    data: formData,
+                    dataType: "json",
+                    beforeSend: function () {
+                        console.log("request preparing")
+                    },
+                    success: function (res) {
+                        console.log("success")
+                    },
+                    error: function (err) {
+                        if (err.status === 404) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 400) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 500) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: 'Some of inputs is empty',
+                                footer: 'Please enter information correctly!',
+
+                            })
+                        }
+                    },
+                    complete: function (status) {
+                        if (status.status === 200) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: status.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            });
+                            $("#account-details").trigger("reset");
+                        }
+
+                    }
+                });
+            });
+        });
+    </script>
+}

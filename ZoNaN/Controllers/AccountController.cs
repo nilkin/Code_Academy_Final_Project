@@ -61,7 +61,8 @@ namespace ZoNaN.Controllers
                 });
             }
             else
-            {                Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email); 
+            {                
+                Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == customer.Email); 
                 if (user != null)
             {
                     if (Crypto.VerifyHashedPassword(user.Password, customer.Password))
@@ -158,7 +159,7 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
-        public async Task<IActionResult>  Logout()
+        public async Task<IActionResult> Logout()
         {
             Customer profile = _context.Customers.Find(cust.Id);
             profile.Token = null;
@@ -336,6 +337,53 @@ namespace ZoNaN.Controllers
                 });
             }
 
+        }
+        [HttpPost]
+        public async Task<IActionResult> ProfileDetail(AccountDetailViewModel accDet) 
+        {  
+            Customer user = await _context.Customers.FirstOrDefaultAsync(u => u.Email == cust.Email);
+                if (_context.Customers.Any(u => u.Email == accDet.Email)&&user.Email != accDet.Email)
+                {
+                    return NotFound(new
+                    {
+                        message = "This email address is being used by another member"
+                    });
+                }
+            if (ModelState.IsValid)
+            {             
+
+                if (Crypto.VerifyHashedPassword(user.Password, accDet.CurrentPassword))
+                {
+                    user.Name = accDet.Name;
+                    user.Surname = accDet.Surname;
+                    user.Email = accDet.Email;
+                    user.City = accDet.City;
+                    user.Address = accDet.Address;
+                    user.Password = Crypto.HashPassword(accDet.NewPassword);
+                    user.Birth = accDet.Birthdate;
+                    user.Token = Crypto.HashPassword(DateTime.Now.ToString());
+                    _context.SaveChanges();
+
+                    Response.Cookies.Append("token", user.Token, new CookieOptions
+                    {
+                        Expires = DateTime.Now.AddYears(1),
+                        HttpOnly = true
+                    });
+
+                    return Ok(new
+                      {
+                    message = "Your are update your account"
+                       });
+                }
+                return BadRequest(new
+                {
+                    message = "Please enter your Current password correctly"
+                });
+            }
+            return BadRequest(new
+            {
+                message = "Some of inputs is empty, Please enter information correctly"
+            });
         }
     }
 }

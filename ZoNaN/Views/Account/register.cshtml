@@ -30,7 +30,6 @@
 
             $('#register-form').submit(function (e) {
                 e.preventDefault();
-
                 let formData = $(this).serialize();
 
                 $.ajax({
@@ -69,6 +68,7 @@
                             setTimeout(function () {
                                 window.location = "/Account/login";
                             }, 4000);
+                            $("#register-form").trigger("reset");
                         }
                         
                     }

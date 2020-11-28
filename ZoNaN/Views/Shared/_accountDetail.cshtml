@@ -1,0 +1,63 @@
+﻿@model AccountDetailViewModel
+<div class="tab-pane fade " id="account-info" role="tabpanel">
+    <div class="myaccount-content">
+        <h3>Account Details</h3>
+
+        <div class="account-details-form">
+            <form id="account-details">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-30">
+                        <input asp-for="Name" placeholder="First Name" type="text">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-30">
+                        <input asp-for="Surname" placeholder="Last Name" type="text">
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+                    <div class="col-12 mb-30">
+                        <input asp-for="Email" placeholder="Email Address" type="email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12  mb-30">
+                        <input asp-for="Mobile" placeholder="Mobile number" type="number">
+                        <span asp-validation-for="Mobile" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12  mb-30">
+                        <input asp-for="City" placeholder="City Address" type="text">
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12  mb-30">
+                        <input asp-for="Address" placeholder="Destination Address" type="text">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12  mb-30">
+                        <input asp-for="Birthdate" type="date" class="form-control" placeholder="MM/DD/YYYY">
+                        <span asp-validation-for="Birthdate" class="text-danger"></span>
+                    </div>
+                    <div class="col-12 mb-30">
+                        <h4>Password change</h4>
+                    </div>
+                    <div class="col-12 mb-30">
+                        <input asp-for="CurrentPassword" placeholder="Current Password" type="password">
+                        <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-30">
+                        <input asp-for="NewPassword" placeholder="New Password" type="password">
+                        <span asp-validation-for="NewPassword" class="text-danger"></span>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-30">
+                        <input asp-for="PasswordConfirm" placeholder="Confirm Password" type="password">
+                        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn third-btn btn-theme2">
+                            Save
+                            Changes
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

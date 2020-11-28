@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ZoNaN.ViewModels
 {
-    public class AccountDetailViewModel
+    public class AccountDetailViewModel 
     {
 
         [Required(ErrorMessage = "Please Enter you Name")]
@@ -14,7 +11,7 @@ namespace ZoNaN.ViewModels
         public string Name { get; set; }
         [Required(ErrorMessage = "Please Enter you Lastname")]
         [MaxLength(50)]
-        public string Lastname { get; set; }
+        public string Surname { get; set; }
         [Required(ErrorMessage = "Please Enter you Email")]
         [MaxLength(50)]
         [EmailAddress]
@@ -31,15 +28,13 @@ namespace ZoNaN.ViewModels
         [Required(ErrorMessage = "Please enter you Mobile")]
         [MaxLength(50)]
         public string Mobile { get; set; }
-        [Required]
-        [MaxLength(100)]
-        [DataType(DataType.Password)]
-        [MinLength(6)]
+        [Required(ErrorMessage = "Please enter you Current Password")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Password cannot be longer than 100 characters and less than 6 characters")]
         public string CurrentPassword { get; set; }
         [StringLength(100, MinimumLength = 6, ErrorMessage = "Password cannot be longer than 100 characters and less than 6 characters")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
-        [Compare("Password")]
+        public string NewPassword { get; set; }
+        [Compare("NewPassword")]
         [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
     }

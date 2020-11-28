@@ -14,6 +14,7 @@ namespace ZoNaN.ViewModels
         public CustomerLoginViewModel Customer { get; set; }
         public Customer Profile { get; set; }
         public List<Chekout> Chekouts { get; set; }
+        public AccountDetailViewModel AccountDetail { get; set; }
 
     }
 }

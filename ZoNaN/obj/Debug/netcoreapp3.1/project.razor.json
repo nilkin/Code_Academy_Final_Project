@@ -14581,6 +14581,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_accountDetail.cshtml",
+      "TargetPath": "Views\\Shared\\_accountDetail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\profile.cshtml",
       "TargetPath": "Views\\Account\\profile.cshtml",
       "FileKind": "mvc"
