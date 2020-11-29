@@ -49,7 +49,6 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("Cart");
             return ViewComponent("IconBadgeComponent");
         }
-
         public async Task<IActionResult> AddToSideNavCart(int id)
         {
             var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == id);

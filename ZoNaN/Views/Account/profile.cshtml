@@ -146,10 +146,8 @@
                     data: formData,
                     dataType: "json",
                     beforeSend: function () {
-                        console.log("request preparing")
                     },
                     success: function (res) {
-                        console.log("success")
                     },
                     error: function (err) {
                         if (err.status === 404) {

@@ -319,9 +319,9 @@
     <!-- overlay-search-box  start -->
     <div class="overlay">
         <div class="scale"></div>
-        <form class="search-box">
-            <input type="text" name="search" placeholder="Search products.....">
-            <button id="close" type="submit"><i class="fas fa-search"></i></button>
+        <form id="zonan-search-box" class="search-box" method="post">
+            <input type="text" id="search" name="search" placeholder="Search products.....">
+            <button asp-controller="Search" asp-action="Search"  type="submit"><i class="fas fa-search"></i></button>
         </form>
         <button class="close"><i class="fas fa-times"></i></button>
     </div>

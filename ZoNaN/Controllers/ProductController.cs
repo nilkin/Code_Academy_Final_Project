@@ -46,7 +46,6 @@ namespace ZoNaN.Controllers
             var rand = new Random();
             if (productSingle == null)
             {
-
                 return NotFound();
             }
             ProductSingleViewModel model = new ProductSingleViewModel

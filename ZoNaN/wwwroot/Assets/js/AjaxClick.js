@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-
     //----------------Newsletter Subscribers input---------------
 
     $(".subscr-form").submit(function (e) {
@@ -124,6 +123,7 @@
                 $("a.card-trigger").html(data);
 
             });
+
         }); 
     });
 
@@ -146,6 +146,7 @@
                 $("a.wish-trigger").html(data);
 
             });
+
         });
     });
     //-------------------Compare page remove with Ajax--------------------------------------
