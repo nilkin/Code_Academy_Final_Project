@@ -5,7 +5,30 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow");
 
 
-
+.filter-by-category a.titles {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: justify !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    color: #707070;
+    font-weight: 400;
+    display: block;
+    text-transform: capitalize;
+    line-height: 36px;
+    font-size: 16px;
+    margin-left: -2rem;
+}
+    .filter-by-category a.titles:hover {
+        color: #2caf4e !important;
+    }
+    .filter-by-category a.titles.active {
+        color: #2caf4e !important;
+    }
+.sub-title:hover {
+    color: #2caf4e !important;
+}
 
 .chekout-images {
     max-width: 6rem;
@@ -3518,7 +3541,7 @@ span.required {
 
 .pagination-section .pagination .page-item a {
     border: 1px solid #ffffff;
-    padding: 7px 14px;
+    width: 36px;
     border-radius: 50%;
     margin-right: 9px;
     color: #292929;
@@ -3528,12 +3551,13 @@ span.required {
     .pagination-section .pagination .page-item a:hover {
         background: #2caf4e !important;
         color: #ffffff;
+        width: 36px;
     }
 
 .pagination-section .pagination .active a {
     border: 1px solid #ffffff;
     background: #2caf4e !important;
-    padding: 7px 14px;
+    width: 36px;
     border-radius: 50%;
     margin-right: 9px;
     color: #ffffff;

@@ -11,5 +11,7 @@ namespace ZoNaN.ViewModels
         public Subscriber Subscriber { get; set; }
         public List<Product> ProductsCount { get; set; }
         public PagingList<Product> PagingList { get; internal set; }
+        public List<Category> Categories { get; set; }
+        public List<SubCategory> SubCategories { get; set; }
     }
 }

@@ -19,8 +19,31 @@ namespace ZoNaN.Controllers
         {
             _context = context; 
         }
-        public async Task<IActionResult> ProductGrid(int page = 1, int pageSize = 3)
+
+        //products pages
+        public async Task<IActionResult> ProductGrid(int? Id ,int page = 1, int pageSize = 6 )
         {
+            if (Id != null)
+            {
+
+                var items = _context.Products
+                    .Include(c => c.ProductPhotos)
+                    .Include(i => i.Stock)
+                    .Include(c => c.SubCategory)
+                    .Where(x => x.SubCategoryId == Id)
+                    .AsNoTracking().OrderBy(x => x.Id);
+                var pagingData = await PagingList.CreateAsync(items, pageSize, page);
+                ProductGridViewModel model = new ProductGridViewModel
+                {
+                    ProductsCount = await _context.Products.ToListAsync(),
+                    PagingList = pagingData,
+                    Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProduct == true).FirstOrDefaultAsync(),
+                    SubCategories = _context.SubCategories.ToList(),
+                }; 
+                return View(model);
+            }
+            else
+            {
             var items = _context.Products
                 .Include(c => c.ProductPhotos)
                 .Include(i => i.Stock)
@@ -32,9 +55,19 @@ namespace ZoNaN.Controllers
                 ProductsCount =await _context.Products.ToListAsync(),
                 PagingList = pagingData,
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsProduct == true).FirstOrDefaultAsync(),
+                SubCategories = _context.SubCategories.ToList(),
             };
-            return View(model);
+                return View(model);
+            }
+
+
+
+           
+
+
         }
+
+        //single prudcts
         public async Task<IActionResult> ProductSingle(int Id)
         {
             Product productSingle = await _context.Products
@@ -57,6 +90,8 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
+
+        //product review 
         public async Task<IActionResult> ProductReview(Review review)
         {
 
@@ -85,6 +120,8 @@ namespace ZoNaN.Controllers
             });
 
         }
+
+        //product compare 
         public async Task<IActionResult> Compare()
         {
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare") ?? new List<CompareItem>();
@@ -202,5 +239,7 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("Compare");
             return RedirectToAction("Compare");
         }
+
+
     }
 }
