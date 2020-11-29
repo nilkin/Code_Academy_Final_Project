@@ -14,7 +14,7 @@ namespace ZoNaN.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ZonanDbContext _context;
+        private readonly ZonanDbContext _context; 
         public ProductController(ZonanDbContext context)
         {
             _context = context; 
@@ -56,7 +56,35 @@ namespace ZoNaN.Controllers
                 SameCategoryProducts = await _context.Products.OrderBy(emp => Guid.NewGuid()).Where(c=>c.SubCategoryId == productSingleCategory.SubCategoryId).Take(6).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync()
             };
             return View(model);
-        } 
+        }
+        public async Task<IActionResult> ProductReview(Review review)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Review message = new Review
+                {
+                    Fullname = review.Fullname,
+                    ProductId = review.ProductId,
+                    Email = review.Email,
+                    Message = review.Message,
+                    Rate = review.Rate
+                };
+                await _context.Reviews.AddAsync(message);
+                await _context.SaveChangesAsync();
+                return Ok(new
+                {
+                    message = "Your comment has been added"
+                });
+
+            }
+
+            return BadRequest(new
+            {
+                message = "Some of inputs is empty, Please enter information correctly"
+            });
+
+        }
         public async Task<IActionResult> Compare()
         {
             List<CompareItem> Compare = HttpContext.Session.GetJson<List<CompareItem>>("Compare") ?? new List<CompareItem>();

@@ -11,5 +11,7 @@ namespace ZoNaN.ViewModels
         public Product ProductSingle { get; set; }
         public List<Product> LikeProducts { get; set; }
         public List<Product> SameCategoryProducts { get; set; }
+        public Review Review { get; set; }
+
     }
 }

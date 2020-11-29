@@ -1,6 +1,8 @@
-﻿<main>
+﻿@model ContactViewModel
+
+<main>
     <!-- breadcrumb-section start -->
-    <partial name="_breadcrumbs" model="@Model.Breadcrumb"/>
+    <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <!-- map start -->
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97236.62360556707!2d49.784748173306504!3d40.394571267708066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd6211cf9%3A0x343f6b5e7ae56c6b!2z0JHQsNC60YMsINCQ0LfQtdGA0LHQsNC50LTQttCw0L0!5e0!3m2!1sru!2s!4v1604437597412!5m2!1sru!2s"
@@ -38,25 +40,31 @@
                     <div class="contact-form-content">
                         <h3 class="contact-page-title">Tell Us Your Message</h3>
                         <div class="contact-form">
-                            <form id="contact-form" action="assets/php/mail.php" method="post">
+                            <form id="contact-form">
                                 <div class="form-group">
-                                    <label>Your Name <span class="required">*</span></label>
-                                    <input type="text" name="customerName" id="customername" required="">
+                                    <label asp-for="@Model.Contact.Fullname">Your Fullname <span class="required">*</span></label>
+                                    <input type="text" asp-for="@Model.Contact.Fullname">
+                                    <span asp-validation-for="@Model.Contact.Fullname" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>Your Email <span class="required">*</span></label>
-                                    <input type="email" name="customerEmail" id="customerEmail" required="">
+                                    <label asp-for="@Model.Contact.Email">Your Email <span class="required">*</span></label>
+                                    <input type="email" asp-for="@Model.Contact.Email">
+                                    <span asp-validation-for="@Model.Contact.Email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>Subject</label>
-                                    <input type="text" name="contactSubject" id="contactSubject" required="">
+
+                                    <label asp-for="@Model.Contact.Subject">Subject</label>
+                                    <input type="text" asp-for="@Model.Contact.Subject">
+                                    <span asp-validation-for="@Model.Contact.Subject" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>Your Message</label>
-                                    <textarea name="contactMessage" class="pb-10" id="contactMessage" required=""></textarea>
+
+                                    <label asp-for="@Model.Contact.Message">Your Message </label>
+                                    <textarea asp-for="@Model.Contact.Message"></textarea>
+                                    <span asp-validation-for="@Model.Contact.Message" class="text-danger"></span>
                                 </div>
                                 <div class="form-group mb-0">
-                                    <button type="submit" value="submit" id="submit" class="btn third-btn btn-theme2" name="submit">submit</button>
+                                    <button type="submit" class="btn third-btn btn-theme2">submit</button>
                                 </div>
                             </form>
                         </div>
@@ -69,6 +77,62 @@
     </section>
     <!-- contact us end -->
     <!-- common banner news-letter end -->
-    <partial name="_newsletters" model="@Model.Subscriber"/>
+    <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
 </main>
+@section Javascript{
+
+    <script src="~/Assets/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Assets/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Assets/js/toastr.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#contact-form').submit(function (e) {
+                e.preventDefault();
+                let formData = $(this).serialize();
+
+                $.ajax({
+                    url: "/ContactUs/Message",
+                    type: "post",
+                    data: formData,
+                    dataType: "json",
+                    beforeSend: function () {
+                    },
+                    success: function (res) {
+                    },
+                    error: function (err) {
+                        if (err.status === 404) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 400) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 500) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: 'Some of inputs is empty',
+                                footer: 'Please enter information correctly!',
+
+                            })
+                        }
+                    },
+                    complete: function (status) {
+                        if (status.status === 200) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: status.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            });
+                            $("#account-details").trigger("reset");
+                        }
+
+                    }
+                });
+            });
+        });
+    </script>
+}

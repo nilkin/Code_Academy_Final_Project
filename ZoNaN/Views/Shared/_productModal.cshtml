@@ -1,0 +1,42 @@
+﻿@model Product
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" style="
+    position: absolute;
+    left: 4rem;
+    top: -2rem;
+    font-size: 3rem;
+">×</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 ">
+            <div class="about-left-image">
+                <img src="/Assets/img/@Model.ProductPhotos.ElementAt(2).Photo" alt="img" class="img-fluid" style="
+    position: relative;
+    top: 1rem;
+">
+            </div>
+        </div>
+        <div class="col-lg-8 ">
+            <div class="about-product">
+                <h2 class="title" style="
+        font-size: x-large;
+        position: relative;
+        left: 1rem;
+        top: 1rem;
+">
+                    @Model.Name
+                </h2>
+                <p class="text" style="
+    padding: 1px 16px;
+    font-size: 12px;
+">
+                    @Model.Description
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+

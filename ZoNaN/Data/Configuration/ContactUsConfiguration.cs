@@ -26,8 +26,8 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50);
             builder
                 .Property(m => m.Message)
-                .IsRequired()
-                .HasMaxLength(300);
+               .HasMaxLength(1000)
+                .HasColumnType("ntext");
             builder
                 .Property(m => m.Email)
                 .IsRequired()

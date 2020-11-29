@@ -369,3 +369,4 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\ChekoutComponent\Default.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_accountDetail.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_productModal.cshtml.g.cs

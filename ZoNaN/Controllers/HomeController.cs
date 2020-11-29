@@ -8,7 +8,7 @@ using ZoNaN.Data.Models;
 using ZoNaN.Models;
 using ZoNaN.ViewModels;
 
-namespace ZoNaN.Controllers
+namespace ZoNaN.Controllers 
 {
     public class HomeController : Controller
     {
@@ -17,7 +17,6 @@ namespace ZoNaN.Controllers
         {
             _context = context;
         }
-
         public async Task<IActionResult> Index()
         {
             HomeViewModel model = new HomeViewModel
@@ -65,17 +64,6 @@ namespace ZoNaN.Controllers
             {
                 message = "Your subscription is registered"
             });
-
-
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Search(string email)
-        //{
-        //   List<Product> product = await _context.Products.Where(c => c.Name.Contains(email).tol
-
-        //    return Ok();
-        //}
-
     }
 }

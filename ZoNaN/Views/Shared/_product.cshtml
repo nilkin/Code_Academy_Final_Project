@@ -20,7 +20,7 @@
                     <p class="text-uppercase"><a class="addToCart addToNavCart" asp-controller="Shop" asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"> Add to card</a> </p>
                     <ul class="d-flex justify-content-center">
                         <li>
-                            <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                            <a data-id="@item.Id" class="quick-open" tabindex="0">
                                 <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
                             </a>
                         </li>

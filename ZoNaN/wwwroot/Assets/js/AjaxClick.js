@@ -249,3 +249,27 @@
     });
 });
 
+$(document).ready(function () {
+
+    $(".quick-open").click(function () {
+        let id = $(this).data("id");
+     
+        $.ajax({
+            url: "/search/quickview/" + id,
+            type: "get",
+            dataType: "html",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                $('#quick-view').find(".modal-content").html(response);
+            },
+            error: function (error) {
+                console.log(error);
+            },
+            complete: function () {
+                $("#quick-view").modal('show')
+            }
+        });
+
+    });
+})

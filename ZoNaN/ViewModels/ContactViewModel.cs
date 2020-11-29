@@ -6,5 +6,7 @@ namespace ZoNaN.ViewModels
     {
         public Breadcrumb Breadcrumb { get; set; }
         public Subscriber Subscriber { get; set; }
+        public ContactUs Contact { get; set; }
+
     }
 }

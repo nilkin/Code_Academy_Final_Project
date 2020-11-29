@@ -37,7 +37,7 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(10);
             builder
                 .Property(m => m.Description)
-                .HasMaxLength(300);
+                .HasColumnType("ntext");
             builder
                 .Property(m => m.Color)
                 .HasMaxLength(50);

@@ -28,5 +28,14 @@ namespace ZoNaN.Controllers
             }
             return RedirectToAction( "productSingle","Product", new { id = model.Id });
         }
+
+        public async Task<IActionResult> QuickViewAsync(int Id)
+        {
+            Product productSingle = await _context.Products
+    .Include("ProductPhotos")
+    .Include("Stock")
+    .Include("Reviews").FirstOrDefaultAsync(c => c.Id == Id);
+            return PartialView("_productModal", productSingle);
+        }
     }
 }
