@@ -62,14 +62,17 @@ namespace ZoNaN
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=ProductGrid}/{id?}");
+                   name: "default",
+                    pattern: "{controller=Home}/{action=ProductGrid}/{id?}");
                 endpoints.MapControllerRoute(
-name: "default",
-pattern: "{controller=Home}/{action=BlogGrid}/{id?}");
+                    name: "default",
+                    pattern: "{controller=Home}/{action=BlogGrid}/{id?}");
             });
         }
     }
