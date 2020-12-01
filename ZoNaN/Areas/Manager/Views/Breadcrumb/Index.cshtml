@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Breadcrumb>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navbar navbar-light bg-light mt-1">
+    <a class="ml-5 navbar-brand">
+        <img src="~/Assets/img/logo-dark.jpg" width="110" height="25" class="d-inline-block align-top" alt="">
+        Breadcrumb
+    </a>
+    <a asp-action="Create" class="btn btn-success btn-icon-split mt-3 mr-5">
+        <span class="icon text-white-50">
+            <i class="fas fa-plus"></i>
+        </span>
+        <span class="text">Create New</span>
+    </a>
+</nav>
+<main class="">
+    <div class="container">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Photo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Link)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Path)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.IsProduct)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsProductSingle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsAboutUs)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsLogin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsProfile)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsRegister)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsChekout)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsBlog)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsBlogSingle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsContact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsCompare)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsCart)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsWish)
+                    </th>*@
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            <img width="100" src="~/uploads/@item.Photo" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Link)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Path)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.IsProduct)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsProductSingle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsAboutUs)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsLogin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsProfile)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsRegister)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsChekout)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsBlog)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsBlogSingle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsContact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsCompare)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsCart)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsWish)
+                        </td>*@
+                        <td class="d-flex justify-content-around">
+                            <span><a class="btn btn-outline-success  btn-circle" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> </span>
+                            <span class="ml-4"><a class="my-remove-item btn btn-outline-danger btn-circle" asp-area="manager" asp-controller="Breadcrumb" asp-action="Delete" asp-route-id="@item.Id" data-id="@item.Id"><i class=" fas fa-trash"></i></a></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+@section Scripts{
+    <script src="~/Assets/js/jquery.min.js"></script>
+    <script src="~/Assets/js/sweetalert.min.js"></script>
+    <script>
+
+                $(document).on('click', 'a.my-remove-item', function (e) {
+                    e.preventDefault();
+                    let id = $(this).data("id");
+                    swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this imaginary file!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                        .then((g) => {
+                            if (g) {
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                });
+                                $.post('/Manager/Breadcrumb/Delete/' + id, {}, function (data) {
+                                    $("body").html(data);
+                                });
+                            } else {
+                                swal("Your file is safe!");
+                            }
+                        });
+
+                });
+    </script>
+
+}

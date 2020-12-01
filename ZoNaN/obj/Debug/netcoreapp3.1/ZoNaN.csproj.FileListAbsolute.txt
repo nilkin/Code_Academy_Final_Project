@@ -383,3 +383,6 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\bin\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Blog\Index.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Blog\Create.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Blog\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Breadcrumb\Create.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Breadcrumb\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Breadcrumb\Index.cshtml.g.cs
