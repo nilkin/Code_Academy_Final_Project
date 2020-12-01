@@ -15,10 +15,9 @@
     <!-- Custom fonts for this template-->
     <link href="~/Assets/manager/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    @RenderSection("Head", required: false)
+     @RenderSection("css", required: false)
     <!-- Custom styles for this template-->
     <link href="~/Assets/manager/css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -30,7 +29,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a asp-area="manager" asp-controller="home" asp-action="index" class="sidebar-brand d-flex align-items-center justify-content-center">
+            <a asp-area="manager" asp-controller="admin" asp-action="index" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -108,9 +107,9 @@
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a asp-area="manager" asp-controller="AboutUs" asp-action="index" class="collapse-item">About Us</a>
-                        <a asp-area="manager" asp-controller="Blogs" asp-action="index" class="collapse-item">Blogs</a>
+                        <a asp-area="manager" asp-controller="Banner" asp-action="index" class="collapse-item">Banner</a>
+                        <a asp-area="manager" asp-controller="Blog" asp-action="index" class="collapse-item">Blogs</a>
                         <a asp-area="manager" asp-controller="breadcrumb" asp-action="index" class="collapse-item">Breadcrumbs</a>
-                        <a asp-area="manager" asp-controller="clients" asp-action="index" class="collapse-item">Clients</a>
                         <a asp-area="manager" asp-controller="comments" asp-action="index" class="collapse-item">Comments</a>
                         <a asp-area="manager" asp-controller="contactus" asp-action="index" class="collapse-item">Contact Us</a>
                         <a asp-area="manager" asp-controller="faqs" asp-action="index" class="collapse-item">Faqs</a>
@@ -125,22 +124,6 @@
                         <a asp-area="manager" asp-controller="MemberLinks" asp-action="index" class="collapse-item">MemberLinks</a>
                     </div>
                 </div>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span>
-                </a>
             </li>
 
             <!-- Divider -->
@@ -214,12 +197,8 @@
     <!-- Custom scripts for all pages-->
     <script src="~/Assets/manager/js/sb-admin-2.min.js"></script>
 
- 
-
-
     <!-- Page level custom scripts -->
-
-    <link href="~/Assets/css/toastr.min.css" rel="stylesheet" />
+    <script src="~/Assets/manager/vendor/jquery/jquery.slim.min.js"></script>
     <script src="~/Assets/js/limonte-sweetalert2/sweetalert2.min.js"></script>
     <script src="~/Assets/js/limonte-sweetalert2/sweetalert2.all.min.js"></script>
     @RenderSection("Scripts", required: false)

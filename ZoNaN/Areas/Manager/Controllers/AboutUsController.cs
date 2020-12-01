@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
@@ -29,23 +27,6 @@ namespace ZoNaN.Areas.Admin.Controllers
             return View(await _context.AboutUs.ToListAsync());
         }
 
-        // GET: Manager/AboutUs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var aboutUs = await _context.AboutUs
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (aboutUs == null)
-            {
-                return NotFound();
-            }
-
-            return View(aboutUs);
-        }
         // GET: Manager/AboutUs/Create
         public IActionResult Create()
         {
@@ -152,51 +133,28 @@ namespace ZoNaN.Areas.Admin.Controllers
             }
             return View(aboutUs);
         }
-
         // GET: Manager/AboutUs/Delete/5
-        [TypeFilter(typeof(Auth))]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var aboutUs = await _context.AboutUs
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (aboutUs == null)
-            {
-                return NotFound();
-            }
-
-            return View(aboutUs);
-        }
-
-        // POST: Manager/Blogs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        [TypeFilter(typeof(Auth))]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
         {
             var aboutUs = await _context.AboutUs.FindAsync(id);
-            try
-            {
-                _fileManager.Delete(aboutUs.Photo);
-            }
-            catch (FileNotFoundException)
-            {
-                _context.AboutUs.Remove(aboutUs);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+
+            if (aboutUs == null) return NotFound();
+
+            _fileManager.Delete(aboutUs.Photo);
+
             _context.AboutUs.Remove(aboutUs);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            await  _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+
         }
 
         private bool AboutUsExists(int id)
         {
             return _context.AboutUs.Any(e => e.Id == id);
         }
+
     }
 }

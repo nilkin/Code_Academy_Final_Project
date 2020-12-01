@@ -15,7 +15,7 @@
             @foreach (var item in Model.MainBanners)
             {
                 <div class="slider">
-                    <div class="slider-one" style="background: url('/Assets/img/@item.Photo')no-repeat center center /cover">
+                    <div class="slider-one" style="background: url('~/../../uploads/@item.Photo')no-repeat center center /cover">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
@@ -42,7 +42,7 @@
                 {<div class="col-md-6">
                         <div class="position-relative zoom-in overflow-hidden">
                             <div class="banner-thumb img-fluid">
-                                <img src="/Assets/img/@item.Photo" alt="banner-thumb-naile">
+                                <img src="~/uploads/@item.Photo" alt="banner-thumb-naile">
                             </div>
                             <div class="banner-content">
                                 <p class="text text-capitalize text-dark mb-10">@item.Title</p>
@@ -190,7 +190,7 @@
                 <div class="col-md-12">
                     <div class="position-relative zoom-in overflow-hidden">
                         <div class="banner-thumb">
-                            <img src="/Assets/img/@Model.DiscountBanner.Photo" alt="banner-thumb-naile">
+                            <img  src="~/uploads/@Model.DiscountBanner.Photo" alt="banner-thumb-naile">
                         </div>
                         <div class="banner-content banner-context">
                             <p class="text text-uppercase text-dark mb-10">@Model.DiscountBanner.Title</p>
@@ -229,7 +229,7 @@
                                 <div class="col-12">
                                     <div class="blog-card">
                                         <div class="blog-card__image zoom-in overflow-hidden">
-                                            <img src="/Assets/img/@item.Photo">
+                                            <img src="~/uploads/@item.Photo">
                                         </div>
                                         <div class="blog-card__title">
                                             <p>@item.Name</p>

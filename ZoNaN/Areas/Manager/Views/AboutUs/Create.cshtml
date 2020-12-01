@@ -4,8 +4,15 @@
     ViewData["Title"] = "Create";
     Layout = "~/Areas/Manager/Views/Shared/_Layout.cshtml";
 }
-
-<h4>AboutUs</h4>
+<nav class="navbar navbar-light bg-light mt-1">
+    <a class="ml-5 navbar-brand">
+        <img src="~/Assets/img/logo-dark.jpg" width="110" height="25" class="d-inline-block align-top" alt="">
+        AboutUs / Create
+    </a>
+    <div class="mt-3 mr-5">
+        <a asp-action="Index" class="btn btn-outline-dark mr-5">Back to List</a>
+    </div>
+</nav>
 <hr />
 <div class="container">
     <div class="row ml-5">
@@ -37,9 +44,6 @@
         </div>
     </div>
 
-    <div>
-        <a asp-action="Index" class="btn btn-outline-dark">Back to List</a>
-    </div>
 </div>
 
 
@@ -59,6 +63,8 @@
                 };
                 fileReader.readAsDataURL(file, "UTF-8");
             });
+
+
         });
     </script>
 }

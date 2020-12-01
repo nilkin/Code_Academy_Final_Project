@@ -105,7 +105,7 @@ namespace ZoNaN.Controllers
             if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
                 return RedirectToAction("Cart");
             return ViewComponent("CartNavComponent");
-        } 
+        }  
         public IActionResult RemoveBadgeAjax(int Id)  
         {
             List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
