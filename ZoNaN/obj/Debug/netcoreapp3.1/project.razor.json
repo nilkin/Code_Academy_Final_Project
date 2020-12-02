@@ -14581,6 +14581,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14588,6 +14593,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14651,8 +14661,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Error\\error.cshtml",
       "TargetPath": "Views\\Error\\error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14676,6 +14696,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_breadcrumbs.cshtml",
       "TargetPath": "Views\\Shared\\_breadcrumbs.cshtml",
       "FileKind": "mvc"
@@ -14683,6 +14708,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14753,6 +14783,16 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
