@@ -15,11 +15,9 @@ namespace ZoNaN.Areas.Manager.Controllers
     public class CategoriesController : Controller
     {
         private readonly ZonanDbContext _context;
-        private readonly IFileManager _fileManager;
-        public CategoriesController(ZonanDbContext context, IFileManager fileManager)
+        public CategoriesController(ZonanDbContext context)
         {
             _context = context;
-            _fileManager = fileManager;
         }
         // GET: CategoriesController
         public async Task<IActionResult> Index()

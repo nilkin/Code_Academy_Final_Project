@@ -14536,6 +14536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -14548,6 +14553,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Blog\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14593,6 +14603,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Create.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Banner\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14678,6 +14693,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_product.cshtml",
       "TargetPath": "Views\\Shared\\_product.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

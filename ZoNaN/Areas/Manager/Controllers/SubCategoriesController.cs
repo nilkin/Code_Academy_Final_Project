@@ -16,11 +16,9 @@ namespace ZoNaN.Areas.Manager.Controllers
     public class SubCategoriesController : Controller
     {
         private readonly ZonanDbContext _context;
-        private readonly IFileManager _fileManager;
-        public SubCategoriesController(ZonanDbContext context, IFileManager fileManager)
+        public SubCategoriesController(ZonanDbContext context)
         {
             _context = context;
-            _fileManager = fileManager;
         }
 
         // GET: SubCategoriesController
