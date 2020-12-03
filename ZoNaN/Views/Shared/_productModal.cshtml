@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-4 ">
             <div class="about-left-image">
-                <img src="/Assets/img/@Model.ProductPhotos.ElementAt(2).Photo" alt="img" class="img-fluid" style="
+                <img src="~/uploads/@Model.ProductPhotos.FirstOrDefault(c=>c.IsFirstPhoto).Photo" alt="img" class="img-fluid" style="
     position: relative;
     top: 1rem;
 ">

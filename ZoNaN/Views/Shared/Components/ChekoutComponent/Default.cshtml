@@ -8,7 +8,7 @@
                     @foreach (var item in Model.CartItems)
                     {
                         <li id="@item.Id">
-                            <a class="image"><img class="chekout-images" src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                            <a class="image"><img class="chekout-images" src="~/uploads/@item.Photo" alt="Cart product Image"></a>
                             <div class="content">
                                 <a class="title">@item.Name</a>
                                 <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>

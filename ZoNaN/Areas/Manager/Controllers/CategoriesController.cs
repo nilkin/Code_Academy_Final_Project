@@ -24,8 +24,6 @@ namespace ZoNaN.Areas.Manager.Controllers
         {
             return View(await _context.Categories.ToListAsync());
         }
-
-
         // GET: CategoriesController/Create
         public ActionResult Create()
         {

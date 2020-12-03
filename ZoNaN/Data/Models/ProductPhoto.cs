@@ -6,6 +6,8 @@ namespace ZoNaN.Models
     public class ProductPhoto
     {
         public int Id { get; set; }
+        public bool IsFirstPhoto { get; set; }
+        public bool IsSecondPhoto { get; set; }
         public string Photo { get; set; }
         [NotMapped]
         public IFormFile Upload { get; set; }

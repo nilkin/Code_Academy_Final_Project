@@ -24,7 +24,8 @@ namespace ZoNaN.Areas.Manager.Controllers
         // GET: SubCategoriesController
         public async Task<IActionResult> Index()
         {
-            var corporxDbContext = _context.SubCategories.Include(m => m.Category);
+            var corporxDbContext = _context.SubCategories
+                .Include(m => m.Category);
             return View(await corporxDbContext.ToListAsync());
         }
 

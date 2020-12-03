@@ -14551,6 +14551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Settings\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Blog\\Edit.cshtml",
       "FileKind": "mvc"
@@ -14626,6 +14631,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Reviews\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Reviews\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
       "FileKind": "mvc"
@@ -14646,8 +14656,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\register.cshtml",
       "TargetPath": "Views\\Account\\register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Settings\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14771,6 +14791,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\cart.cshtml",
       "TargetPath": "Views\\Shop\\cart.cshtml",
       "FileKind": "mvc"
@@ -14796,6 +14821,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
       "FileKind": "mvc"
@@ -14808,6 +14838,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\blogGrid.cshtml",
       "TargetPath": "Views\\Blog\\blogGrid.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Settings\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

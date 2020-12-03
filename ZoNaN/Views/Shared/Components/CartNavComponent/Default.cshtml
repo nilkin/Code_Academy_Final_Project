@@ -10,7 +10,7 @@
             @foreach (var item in Model.CartItems)
             {
                 <li id="@item.Id">
-                    <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="image"><img src="/Assets/img/@item.Photo" alt="Cart product Image"></a>
+                    <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="image"><img src="~/uploads/@item.Photo" alt="Cart product Image"></a>
                     <div class="content">
                         <a asp-controller="Product"  asp-action="productSingle" asp-route-id="@item.Id" class="title">@item.Name</a>
                         <span class="quantity-price">@item.Quantity x <span class="amount ">@item.Price.ToString("C2")</span></span>

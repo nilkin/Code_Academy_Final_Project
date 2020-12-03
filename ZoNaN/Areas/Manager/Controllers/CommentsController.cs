@@ -66,7 +66,9 @@ namespace ZoNaN.Areas.Manager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "Name", comment.BlogId);
+            ViewData["BlogId"] = 
+                new SelectList(_context.Blogs, "Id", "Name", 
+                comment.BlogId);
             return View(comment);
         }
 
@@ -83,7 +85,9 @@ namespace ZoNaN.Areas.Manager.Controllers
             {
                 return NotFound();
             }
-            ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "Name", comment.BlogId);
+            ViewData["BlogId"] =
+                new SelectList(_context.Blogs, "Id", "Name",
+                comment.BlogId);
             return View(comment);
         }
 
@@ -116,7 +120,6 @@ namespace ZoNaN.Areas.Manager.Controllers
             {
                 try
                 {
-
                     _fileManager.Delete(comment.Photo);
                     comment.Photo = _fileManager.Upload(comment.Upload);
                     _context.Update(comment).State = EntityState.Modified;
@@ -135,7 +138,8 @@ namespace ZoNaN.Areas.Manager.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "Name", comment.BlogId);
+            ViewData["BlogId"] = new SelectList(_context.Blogs, "Id",
+                "Name", comment.BlogId);
             return View(comment);
         }
 

@@ -15,10 +15,15 @@ namespace ZoNaN.Data.Configuration
         {
             builder
                 .HasKey(m => m.Id);
-
             builder
                 .Property(m => m.Id)
                 .ValueGeneratedOnAdd();
+            builder
+                .Property(m => m.IsFirstPhoto)
+                .HasDefaultValue(false);
+            builder
+                .Property(m => m.IsSecondPhoto)
+                .HasDefaultValue(false);
             builder
                 .Property(m => m.Photo)
                 .HasMaxLength(50);

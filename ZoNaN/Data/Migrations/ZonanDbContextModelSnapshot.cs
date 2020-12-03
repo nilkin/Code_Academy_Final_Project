@@ -124,7 +124,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 29, 17, 3, 46, 272, DateTimeKind.Local).AddTicks(9457));
+                        .HasDefaultValue(new DateTime(2020, 12, 3, 2, 35, 5, 504, DateTimeKind.Local).AddTicks(9872));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -364,7 +364,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 11, 29, 17, 3, 46, 283, DateTimeKind.Local).AddTicks(7096));
+                        .HasDefaultValue(new DateTime(2020, 12, 3, 2, 35, 5, 515, DateTimeKind.Local).AddTicks(358));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -629,6 +629,16 @@ namespace ZoNaN.Data.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<bool>("IsFirstPhoto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsSecondPhoto")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
                     b.Property<string>("Photo")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -653,7 +663,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 11, 29, 17, 3, 46, 297, DateTimeKind.Local).AddTicks(7992));
+                        .HasDefaultValue(new DateTime(2020, 12, 3, 2, 35, 5, 529, DateTimeKind.Local).AddTicks(6302));
 
                     b.Property<string>("Email")
                         .IsRequired()
