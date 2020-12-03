@@ -42,6 +42,9 @@
                 {
                 <tr>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Product.Name)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Quantity)
                     </td>
                     <td>
@@ -50,9 +53,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Price)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Product.Name)
-                    </td>
+
                     <td class="d-flex justify-content-around">
                         <span><a class="btn btn-outline-warning  btn-circle" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a> </span>
                         <span class="ml-4"><a class="my-remove-item btn btn-outline-danger btn-circle" asp-area="manager" asp-controller="Stocks" asp-action="Delete" asp-route-id="@item.Id" data-id="@item.Id"><i class=" fas fa-trash"></i></a></span>

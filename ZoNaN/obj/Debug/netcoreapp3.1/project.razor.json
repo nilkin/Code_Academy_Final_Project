@@ -14686,6 +14686,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Error\\error.cshtml",
       "TargetPath": "Views\\Error\\error.cshtml",
       "FileKind": "mvc"
@@ -14883,6 +14888,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
