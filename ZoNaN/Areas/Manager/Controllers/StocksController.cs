@@ -52,7 +52,7 @@ namespace ZoNaN.Areas.Manager.Controllers
                 return NotFound();
             }
 
-            var stock = await _context.Categories.FindAsync(id);
+            var stock = await _context.Stocks.FindAsync(id);
             if (stock == null)
             {
                 return NotFound();
