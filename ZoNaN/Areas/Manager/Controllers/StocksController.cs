@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
@@ -21,7 +18,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // GET: StocksController
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Stocks.Include(c=>c.Product).ToListAsync());
+            return View(await _context.Stocks.ToListAsync());
         }
 
         // GET: StocksController/Create

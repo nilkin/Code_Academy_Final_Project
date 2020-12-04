@@ -46,12 +46,11 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(50);
             builder
                 .Property(m => m.Size)
-                .HasMaxLength(50);
+                .HasMaxLength(50);            
             builder
-                .HasOne(m => m.Stock)
-                .WithOne(m => m.Product)
-                .HasForeignKey<Product>(m => m.StockId);
-            
+               .HasOne(m => m.Stock)
+               .WithMany(m => m.Products)
+               .HasForeignKey(m => m.StockId);
             builder
                 .HasOne(m => m.SubCategory)
                 .WithMany(m => m.Products)

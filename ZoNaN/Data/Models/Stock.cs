@@ -11,6 +11,6 @@ namespace ZoNaN.Models
         public int Quantity { get; set; }
         public bool Status { get; set; }
         public double Price { get; set; }
-        public Product Product  { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

@@ -414,3 +414,9 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Stocks\Index.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Stocks\Create.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Stocks\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Products\Index.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Products\Create.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Products\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Orders\Index.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Orders\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Chekouts\Index.cshtml.g.cs

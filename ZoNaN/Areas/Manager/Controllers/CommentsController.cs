@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
@@ -25,8 +22,8 @@ namespace ZoNaN.Areas.Manager.Controllers
         // GET: CommentsController
         public async Task<IActionResult> Index()
         {
-            var corporxDbContext = _context.Comments.Include(m => m.Blog);
-            return View(await corporxDbContext.ToListAsync());
+            var zonanDbContext = _context.Comments.Include(m => m.Blog);
+            return View(await zonanDbContext.ToListAsync());
         }
 
 
@@ -48,7 +45,7 @@ namespace ZoNaN.Areas.Manager.Controllers
             }
             else
             {
-                if (comment.Upload.ContentType != "image/jpeg" && comment.Upload.ContentType 
+                if (comment.Upload.ContentType != "image/jpeg" && comment.Upload.ContentType
                     != "image/png" && comment.Upload.ContentType != "image/gif")
                 {
                     ModelState.AddModelError("Upload", "You can only download png, jpg or gif file");
@@ -66,8 +63,8 @@ namespace ZoNaN.Areas.Manager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BlogId"] = 
-                new SelectList(_context.Blogs, "Id", "Name", 
+            ViewData["BlogId"] =
+                new SelectList(_context.Blogs, "Id", "Name",
                 comment.BlogId);
             return View(comment);
         }

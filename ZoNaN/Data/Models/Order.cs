@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using ZoNaN.Models;
+﻿using ZoNaN.Models;
 
 namespace ZoNaN.Data.Models
 { 
     public class Order
     {
-
         public int Id { get; set; }
         public string OrderNumber { get; set; }
         public int ProductId { get; set; }
@@ -16,7 +14,5 @@ namespace ZoNaN.Data.Models
         public string Photo { get; set; }
         public int ChekoutId { get; set; }
         public Chekout Chekout { get; set; }
-
-
     }
 }
