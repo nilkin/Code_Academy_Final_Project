@@ -425,3 +425,4 @@ C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netc
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Users\Index.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Users\Create.cshtml.g.cs
 C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Areas\Manager\Views\Users\Edit.cshtml.g.cs
+C:\Users\n_ilkin\Desktop\my Code\Code_Academy_Final_Project\ZoNaN\obj\Debug\netcoreapp3.1\Razor\Views\Blog\BlogComment.cshtml.g.cs

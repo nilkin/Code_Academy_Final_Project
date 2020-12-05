@@ -4,7 +4,7 @@
     <partial name="_breadcrumbs" model="@Model.Breadcrumb" />
     <!-- breadcrumb-section end -->
     <section class="categories-grid">
-        <div class="container grid-wraper">
+        <div class="container grid-wraper mrg-tp">
             <div class="row">
                 <div class="col-lg-9 ">
                     <div class="grid-nav-wraper">
@@ -62,26 +62,26 @@
                                                 {
                                                     <span class="badge badge-darks ">-@item.Discount%</span>
                                                 }
-                                            <a href="#">
-                                                <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsFirstPhoto).Photo" class="item-img-1 img-fluid" alt="Something">
-                                                <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsSecondPhoto).Photo" class="item-img-2 img-fluid" alt="Something2">
-                                            </a>
+                                                <a asp-controller="Product" asp-action="productSingle" asp-route-id="@item.Id">
+                                                    <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsFirstPhoto).Photo" class="item-img-1 img-fluid" alt="Something">
+                                                    <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsSecondPhoto).Photo" class="item-img-2 img-fluid" alt="Something2">
+                                                </a>
                                                 <div class="blok-hover">
                                                     <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                        <p class="text-uppercase ">Add to card</p>
+                                                        <p class="text-uppercase"><a class="addToCart addToNavCart" asp-controller="Shop" asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"> Add to card</a> </p>
                                                         <ul class="d-flex justify-content-center">
                                                             <li>
-                                                                <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                <a data-id="@item.Id" class="quick-open" tabindex="0">
                                                                     <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                <a class="addCompare" asp-controller="Product" asp-action="AddToCompare" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                                                     <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="wishlist.html" tabindex="0">
+                                                                <a class="addToWish addToNavWish" asp-controller="Shop" asp-action="AddToWish" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                                                     <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
                                                                 </a>
                                                             </li>
@@ -113,8 +113,8 @@
                                                     }
                                                 </h5>
                                             </div>
-                                        </figure>     
-                                <!-- product-list End -->
+                                        </figure>
+                                        <!-- product-list End -->
                                     </div>}
                             </div>
                         </div>
@@ -136,26 +136,26 @@
                                                         {
                                                             <span class="badge badge-darks ">-@item.Discount%</span>
                                                         }
-                                                        <a href="#">
+                                                        <a asp-controller="Product" asp-action="productSingle" asp-route-id="@item.Id">
                                                             <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsFirstPhoto).Photo" class="item-img-1 img-fluid" alt="Something">
                                                             <img src="~/uploads/@item.ProductPhotos.FirstOrDefault(c=>c.IsSecondPhoto).Photo" class="item-img-2 img-fluid" alt="Something2">
                                                         </a>
                                                         <div class="blok-hover">
                                                             <div class="product-links d-flex d-flex justify-content-between align-items-center">
-                                                                <p class="text-uppercase ">Add to card</p>
+                                                                <p class="text-uppercase"><a class="addToCart addToNavCart" asp-controller="Shop" asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"> Add to card</a> </p>
                                                                 <ul class="d-flex justify-content-center">
                                                                     <li>
-                                                                        <a href="#" data-toggle="modal" data-target="#quick-view" tabindex="0">
+                                                                        <a data-id="@item.Id" class="quick-open" tabindex="0">
                                                                             <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-search" data-original-title="Quick view"></span>
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="#" data-toggle="modal" data-target="#compare" tabindex="0">
+                                                                        <a class="addCompare" asp-controller="Product" asp-action="AddToCompare" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                                                             <span data-toggle="tooltip" data-placement="bottom" title="" class="fas fa-random" data-original-title="Add to compare"></span>
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="wishlist.html" tabindex="0">
+                                                                        <a class="addToWish addToNavWish" asp-controller="Shop" asp-action="AddToWish" asp-route-id="@item.Id" data-id="@item.Id" tabindex="0">
                                                                             <span data-toggle="tooltip" data-placement="bottom" title="" class="far fa-heart" data-original-title="add to wishlist"> </span>
                                                                         </a>
                                                                     </li>
@@ -170,13 +170,13 @@
                                                         <div class="product-desc">
                                                             <h3 class="title">
                                                                 <a href="shop-grid-4-column.html">
-                                                                   @item.Name
+                                                                    @item.Name
                                                                 </a>
                                                             </h3>
                                                             <div class="star-rating mb-10 ">
                                                                 @for (int i = 0; i < item.Star; i++)
                                                                 {
-                                                                <span class="fas fa-star"></span>
+                                                                    <span class="fas fa-star"></span>
                                                                 }
                                                             </div>
                                                             <h6 class="product-price">
@@ -198,7 +198,7 @@
                                                         </div>
                                                         <ul class="product-list-des">
                                                             <li>
-                                                               @item.Description
+                                                                @item.Description
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -229,122 +229,122 @@
                     <aside class="left-sidebar">
                         <!-- search-filter start -->
                         @*<div class="search-filter">
-                            <div class="check-box-inner">
-                                <h4 class="title">Hair Care</h4>
+                                <div class="check-box-inner">
+                                    <h4 class="title">Hair Care</h4>
+                                </div>
+
                             </div>
 
-                        </div>
+                            <ul id="offcanvas-menu" class="blog-ctry-menu">
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Hot Categories <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse collapse">
+                                        <li class="drop-body"><a href="#">Women Shoes</a></li>
+                                        <li class="drop-body"><a href="#">Men Shoes</a></li>
+                                        <li class="drop-body"><a href="#">Boots</a></li>
+                                        <li class="drop-body"><a href="#">Casual Shoes</a></li>
+                                        <li class="drop-body"><a href="#">Flip Flops</a></li>
+                                    </ul>
 
-                        <ul id="offcanvas-menu" class="blog-ctry-menu">
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Hot Categories <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse collapse">
-                                    <li class="drop-body"><a href="#">Women Shoes</a></li>
-                                    <li class="drop-body"><a href="#">Men Shoes</a></li>
-                                    <li class="drop-body"><a href="#">Boots</a></li>
-                                    <li class="drop-body"><a href="#">Casual Shoes</a></li>
-                                    <li class="drop-body"><a href="#">Flip Flops</a></li>
-                                </ul>
+                                </li>
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Outerwear &amp; Jackets <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse">
+                                        <li class="drop-body"><a href="#">Stylish Backpacks</a></li>
+                                        <li class="drop-body"><a href="#">Shoulder Bags</a></li>
+                                        <li class="drop-body"><a href="#">Crossbody Bags</a></li>
+                                        <li class="drop-body"><a href="#">Briefcases</a></li>
+                                        <li class="drop-body"><a href="#">Luggage &amp; Travel</a></li>
+                                    </ul>
+                                </li>
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Weddings &amp; Events <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse">
+                                        <li class=""><a href="#">Cosmetic Bags &amp; Cases</a></li>
+                                        <li class=""><a href="#">Wallets &amp; Card Holders</a></li>
+                                        <li class=""><a href="#">Luggage Covers</a></li>
+                                        <li class=""><a href="#">Passport Covers</a></li>
+                                        <li class=""><a href="#">Bag Parts &amp; Accessories</a></li>
+                                    </ul>
+                                </li>
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Bottoms <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse">
+                                        <li class=""><a href="#">Women Shoes</a></li>
+                                        <li class=""><a href="#">Men Shoes</a></li>
+                                        <li class=""><a href="#">Boots</a></li>
+                                        <li class=""><a href="#">Casual Shoes</a></li>
+                                        <li class=""><a href="#">Flip Flops</a></li>
+                                    </ul>
 
-                            </li>
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Outerwear &amp; Jackets <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse">
-                                    <li class="drop-body"><a href="#">Stylish Backpacks</a></li>
-                                    <li class="drop-body"><a href="#">Shoulder Bags</a></li>
-                                    <li class="drop-body"><a href="#">Crossbody Bags</a></li>
-                                    <li class="drop-body"><a href="#">Briefcases</a></li>
-                                    <li class="drop-body"><a href="#">Luggage &amp; Travel</a></li>
-                                </ul>
-                            </li>
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Weddings &amp; Events <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse">
-                                    <li class=""><a href="#">Cosmetic Bags &amp; Cases</a></li>
-                                    <li class=""><a href="#">Wallets &amp; Card Holders</a></li>
-                                    <li class=""><a href="#">Luggage Covers</a></li>
-                                    <li class=""><a href="#">Passport Covers</a></li>
-                                    <li class=""><a href="#">Bag Parts &amp; Accessories</a></li>
-                                </ul>
-                            </li>
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Bottoms <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse">
-                                    <li class=""><a href="#">Women Shoes</a></li>
-                                    <li class=""><a href="#">Men Shoes</a></li>
-                                    <li class=""><a href="#">Boots</a></li>
-                                    <li class=""><a href="#">Casual Shoes</a></li>
-                                    <li class=""><a href="#">Flip Flops</a></li>
-                                </ul>
-
-                            </li>
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Tops &amp; Sets <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse">
-                                    <li class=""><a href="#">Stylish Backpacks</a></li>
-                                    <li class=""><a href="#">Shoulder Bags</a></li>
-                                    <li class=""><a href="#">Crossbody Bags</a></li>
-                                    <li class=""><a href="#">Briefcases</a></li>
-                                    <li class=""><a href="#">Luggage &amp; Travel</a></li>
-                                </ul>
-                            </li>
-                            <li class="drop-text">
-                                <a class="head collapser" href="javascript:void(0)">Accessories <i class="fas fa-plus"></i></a>
-                                <ul class="category-sub-menu collapse">
-                                    <li class=""><a href="#">Cosmetic Bags &amp; Cases</a></li>
-                                    <li class=""><a href="#">Wallets &amp; Card Holders</a></li>
-                                    <li class=""><a href="#">Luggage Covers</a></li>
-                                    <li class=""><a href="#">Passport Covers</a></li>
-                                    <li class=""><a href="#">Bag Parts &amp; Accessories</a></li>
-                                </ul>
-                            </li>
-                        </ul>*@
+                                </li>
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Tops &amp; Sets <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse">
+                                        <li class=""><a href="#">Stylish Backpacks</a></li>
+                                        <li class=""><a href="#">Shoulder Bags</a></li>
+                                        <li class=""><a href="#">Crossbody Bags</a></li>
+                                        <li class=""><a href="#">Briefcases</a></li>
+                                        <li class=""><a href="#">Luggage &amp; Travel</a></li>
+                                    </ul>
+                                </li>
+                                <li class="drop-text">
+                                    <a class="head collapser" href="javascript:void(0)">Accessories <i class="fas fa-plus"></i></a>
+                                    <ul class="category-sub-menu collapse">
+                                        <li class=""><a href="#">Cosmetic Bags &amp; Cases</a></li>
+                                        <li class=""><a href="#">Wallets &amp; Card Holders</a></li>
+                                        <li class=""><a href="#">Luggage Covers</a></li>
+                                        <li class=""><a href="#">Passport Covers</a></li>
+                                        <li class=""><a href="#">Bag Parts &amp; Accessories</a></li>
+                                    </ul>
+                                </li>
+                            </ul>*@
 
                         <div class="filter-by-category">
-                                <h4 class="title">Filter By</h4>
-                                <h4 class=" "><a class="sub-title" asp-controller="Product" asp-action="ProductGrid" asp-route-id="">All Categories</a></h4>
-                                <ul class="category">
-                                    @foreach (var item in Model.SubCategories)
+                            <h4 class="title">Filter By</h4>
+                            <h4 class=" "><a class="sub-title" asp-controller="Product" asp-action="ProductGrid" asp-route-id="">All Categories</a></h4>
+                            <ul class="category">
+                                @foreach (var item in Model.SubCategories)
+                                {
+                                    if (Model.PagingList.FirstOrDefault().SubCategoryId == item.Id)
                                     {
-                                        if (Model.PagingList.FirstOrDefault().SubCategoryId == item.Id)
-                                        {
-                                             <li class="drop-text"><a class="titles active" asp-action="ProductGrid" asp-route-id="@item.Id">@item.Name (@item.Products.Count())</a></li>
-                                        }
-                                        else
-                                        {
-                                             <li class="drop-text"><a class="titles" asp-action="ProductGrid" asp-route-id="@item.Id">@item.Name</a></li>
-                                        }
+                                        <li class="drop-text"><a class="titles active" asp-action="ProductGrid" asp-route-id="@item.Id">@item.Name (@item.Products.Count())</a></li>
                                     }
+                                    else
+                                    {
+                                        <li class="drop-text"><a class="titles" asp-action="ProductGrid" asp-route-id="@item.Id">@item.Name</a></li>
+                                    }
+                                }
 
 
-                                </ul>
-                                <!-- check-box-inner -->
-                                <div class="check-box-inner ">
-                                    <h4 class="sub-title">Price</h4>
+                            </ul>
+                            <!-- check-box-inner -->
+                            <div class="check-box-inner ">
+                                <h4 class="sub-title">Price</h4>
 
-                                    <fieldset class="filter-price">
-                                        <div class="price-wrap">
-                                            <div class="price-container">
-                                                <div class="price-wrap-1">
+                                <fieldset class="filter-price">
+                                    <div class="price-wrap">
+                                        <div class="price-container">
+                                            <div class="price-wrap-1">
 
-                                                    <label for="one">$</label>
-                                                    <input id="one">
-                                                </div>
-                                                <div class="price-wrap_line">-</div>
-                                                <div class="price-wrap-2">
-                                                    <label for="two">$</label>
-                                                    <input id="two">
+                                                <label for="one">$</label>
+                                                <input id="one">
+                                            </div>
+                                            <div class="price-wrap_line">-</div>
+                                            <div class="price-wrap-2">
+                                                <label for="two">$</label>
+                                                <input id="two">
 
-                                                </div>
                                             </div>
                                         </div>
-                                        <div class="price-field">
-                                            <input type="range" min="100" max="500" value="135" id="lower">
-                                            <input type="range" min="100" max="500" value="500" id="upper">
-                                        </div>
+                                    </div>
+                                    <div class="price-field">
+                                        <input type="range" min="100" max="500" value="135" id="lower">
+                                        <input type="range" min="100" max="500" value="500" id="upper">
+                                    </div>
 
-                                    </fieldset>
-                                </div>
+                                </fieldset>
+                            </div>
                         </div>
                         <!--second banner start-->
                         <div class="banner border-top position-relative overflow-hidden">
@@ -361,6 +361,13 @@
     <!-- common banner news-letter end -->
     <partial name="_newsletters" model="@Model.Subscriber" />
     <!-- common banner news-letter end -->
+    <div class="modal fade theme1 style1" id="quick-view">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
 </main>
 
 
@@ -375,9 +382,6 @@
             $(this).parents(".shop-grid-button").find('.selection').val($(this).text());
 
         });
-
-
-
 
         var lowerSlider = document.querySelector('#lower');
         var upperSlider = document.querySelector('#upper');

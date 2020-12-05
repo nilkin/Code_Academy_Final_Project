@@ -40,6 +40,10 @@
     top: 5rem;
 }
 
+.modal-content {
+    padding: 0px 15px;
+}
+
 .primary-btn {
     background-color: #ffffff;
     padding: 10px 44px;
@@ -87,6 +91,21 @@
     border-radius: 0;
 }
 
+.mrg-tp
+{
+    position:relative;
+    top : -7rem !important;
+}
+.mrg-tp1 {
+    position: relative;
+    top: -11rem !important;
+}
+.mrg-tp2 {
+    margin-top: 13rem;
+}
+.mrg-tp3 {
+    margin-top: -5.75rem;
+}
 .third-btn {
     color: #ffffff;
     background: #292929;
@@ -2486,15 +2505,17 @@ button.close {
 
 @media screen and (max-width: 1200px) {
     .breadcrumb-section {
-        padding-top: 100px;
+/*        padding-top: 100px;
         padding-bottom: 100px;
+        background-color: #2caf4e;*/
     }
 }
 
 @media screen and (max-width: 767px) {
     .breadcrumb-section {
-        padding-top: 50px;
+/*        padding-top: 50px;
         padding-bottom: 50px;
+        background-color: #2caf4e;*/
     }
 }
 
@@ -2541,7 +2562,7 @@ button.close {
     position: relative;
     background: #ffffff;
     padding: 2rem 2rem;
-    top: -6rem;
+    top: -10rem;
     padding-bottom: 0px;
     margin-bottom: -40px;
 }
@@ -3235,7 +3256,7 @@ span.required {
     position: relative;
     background: #ffffff;
     padding: 2rem 2rem;
-    top: -5rem;
+    top: -10rem;
     padding-bottom: 0px;
     margin-bottom: -40px;
 }

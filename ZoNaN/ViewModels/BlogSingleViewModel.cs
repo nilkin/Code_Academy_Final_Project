@@ -8,5 +8,6 @@ namespace ZoNaN.ViewModels
         public Breadcrumb Breadcrumb { get; set; }
         public Blog SingleBlog { get; set; }
         public Subscriber Subscriber { get; set; }
+        public Comment Comment { get; set; }
     }
 }

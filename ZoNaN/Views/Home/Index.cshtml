@@ -224,12 +224,11 @@
                 {
                     <div class="slider">
                         <div class="container">
-
                             <div class="row">
                                 <div class="col-12">
                                     <div class="blog-card">
                                         <div class="blog-card__image zoom-in overflow-hidden">
-                                            <img src="~/uploads/@item.Photo">
+                                           <a asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id"><img src="~/uploads/@item.Photo"></a> 
                                         </div>
                                         <div class="blog-card__title">
                                             <p>@item.Name</p>
@@ -243,7 +242,7 @@
                                                 @item.Subject
                                             </a>
                                         </h5>
-                                        <a class="btn primary-btn btn-theme1 text-capitalize"asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" tabindex="0">Read More</a>
+                                        <a class="btn primary-btn btn-theme1 text-capitalize" asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" tabindex="0">Read More</a>
                                     </div>
                                 </div>
                             </div>

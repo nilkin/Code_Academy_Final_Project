@@ -1,20 +1,47 @@
 ﻿@model Breadcrumb
-<nav class="breadcrumb-section breadcrumb-bg1" style="background: url('~/../../uploads/@Model.Photo')no-repeat center center/cover">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumb-title text-center my-20">
-                    <h2 class="title text-dark text-capitalize">@Model.Title</h2>
+<nav class="breadcrumb-section">
+    <img src="~/uploads/@Model.Photo" class="">
+    <div style="
+    position: relative;
+    bottom: 16rem;
+">
+        <div class="breadcrumb-title text-center my-20">
+            <h2 class="title text-dark text-capitalize">@Model.Title</h2>
+        </div>
+
+        <ol class="breadcrumb bg-transparent m-0 p-0 align-items-center justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html"> @Model.Path</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <i class="fas fa-angle-right"></i> @Model.Link
+            </li>
+        </ol>
+    </div>
+  
+
+</nav>
+
+@*<nav class="breadcrumb-section ">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="">
+                    <img src="~/uploads/@Model.Photo" class="">
+                </div>
+                <div class="col-12">
+                    <div class="breadcrumb-title text-center my-20">
+                        <h2 class="title text-dark text-capitalize">@Model.Title</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <ol class="breadcrumb bg-transparent m-0 p-0 align-items-center justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html"> @Model.Path</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <i class="fas fa-angle-right"></i> @Model.Link
+                        </li>
+                    </ol>
                 </div>
             </div>
-            <div class="col-12">
-                <ol class="breadcrumb bg-transparent m-0 p-0 align-items-center justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html"> @Model.Path</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        <i class="fas fa-angle-right"></i> @Model.Link
-                    </li>
-                </ol>
-            </div>
         </div>
-    </div>
-</nav>
+
+
+    </nav>*@

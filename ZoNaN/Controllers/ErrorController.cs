@@ -12,9 +12,6 @@ namespace ZoNaN.Controllers
         {
             return View();
         }
-        public IActionResult Back()
-        {
-            return Redirect(Request.Headers["Referer"].ToString());
-        }
+
     }
 }

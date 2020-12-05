@@ -18,7 +18,7 @@
                             <div class="col-12">
                                 <div class="single-blog text-left">
                                     <a class="blog-thumb zoom-in d-block overflow-hidden" href="blog-grid-left-sidebar.html">
-                                        <img class="object-fit-none" src="~/Assets/img/@Model.SingleBlog.Photo" alt="blog-thumb-naile">
+                                        <img class="object-fit-none" src="~/uploads/@Model.SingleBlog.Photo" alt="blog-thumb-naile">
                                     </a>
                                     <div class="blog-post-content">
                                         <h3 class="title mb-15">
@@ -58,26 +58,30 @@
                                 <!-- contact-form start -->
                                 <div class="contact-form">
                                     <h3 class="title">Leave a Reply</h3>
-                                    <form>
+                                    <form id="blog-comment">
                                         <div class="form-group">
-                                            <label for="name">your name</label>
-                                            <input type="text" class="form-control" id="name" required="">
+                                            <label asp-for="@Model.Comment.Fullname" class="control-label"></label>
+                                            <input asp-for="@Model.Comment.Fullname" class="form-control" />
+                                            <span asp-validation-for="@Model.Comment.Fullname" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="email">Your Email:</label>
-                                            <input type="email" class="form-control" id="email" required="">
+                                            <label asp-for="@Model.Comment.Email" class="control-label"></label>
+                                            <input asp-for="@Model.Comment.Email" class="form-control" />
+                                            <span asp-validation-for="@Model.Comment.Email" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="url">Website Url:</label>
-                                            <input type="text" class="form-control" id="url" required="">
+                                            <label asp-for="@Model.Comment.Website" class="control-label"></label>
+                                            <input asp-for="@Model.Comment.Website" class="form-control" />
+                                            <span asp-validation-for="@Model.Comment.Website" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="subject">Subject:</label>
-                                            <input type="text" class="form-control" id="subject" required="">
+                                            <label asp-for="@Model.Comment.Subject" class="control-label"></label>
+                                            <input asp-for="@Model.Comment.Subject" class="form-control" />
+                                            <span asp-validation-for="@Model.Comment.Subject" class="text-danger"></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="comment">Comment:</label>
-                                            <textarea class="form-control mb-30" id="comment" required=""></textarea>
+                                            <label asp-for="@Model.Comment.Message">Message</label>
+                                            <textarea class="form-control" asp-for="@Model.Comment.Message"></textarea>
                                         </div>
                                         <button type="submit" class="btn third-btn btn-theme2">
                                             Submit Button
@@ -97,7 +101,8 @@
     <!-- common banner news-letter end -->
 </main>
 @section Javascript{
-
+    <script src="~/Assets/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/Assets/jquery-validation/dist/additional-methods.min.js"></script>
     <script>
         $(document).ready(function () {
             $(function () {
@@ -108,6 +113,62 @@
                 var text = $('.show-background').text();
                 $('.show-background').text(
                     text == "All comments" ? "Comments" : "Comments");
+            });
+        });
+
+        $(document).ready(function () {
+            $('#blog-comment').submit(function (e) {
+                e.preventDefault();
+
+                let formData = {
+                    fullname: $(this).find("input[name='Comment.Fullname']").val(),
+                    email: $(this).find("input[name='Comment.Email']").val(),
+                    website: $(this).find("input[name='Comment.Website']").val(),
+                    subject: $(this).find("input[name='Comment.Subject']").val(),
+                    message: $(this).find("textarea[name='Comment.Message']").val(),
+                    blogId: window.location.pathname.split('/').pop()
+                };
+                $.ajax({
+                    url: "/Blog/BlogComment",
+                    type: "post",
+                    data: formData,
+                    dataType: "json",
+                    beforeSend: function () {
+                    },
+                    success: function (res) {
+                    },
+                    error: function (err) {
+                        if (err.status === 404) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 400) {
+                            swal("Notice!", err.responseJSON.message);
+                        }
+                        else if (err.status === 500) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: 'Some of inputs is empty',
+                                footer: 'Please enter information correctly!',
+
+                            })
+                        }
+                    },
+                    complete: function (status) {
+                        if (status.status === 200) {
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: status.responseJSON.message,
+                                showConfirmButton: false,
+                                timer: 3500
+                            });
+                            $("#blog-comment").trigger("reset");
+                            window.location();
+                        }
+
+                    }
+                });
             });
         });
     </script>

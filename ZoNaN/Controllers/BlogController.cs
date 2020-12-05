@@ -4,6 +4,7 @@ using ReflectionIT.Mvc.Paging;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Data.Models;
 using ZoNaN.Models;
 using ZoNaN.ViewModels;
 
@@ -37,6 +38,35 @@ namespace ZoNaN.Controllers
                 SingleBlog = BlogSingle
             };
             return View(model);
+        }
+
+        public async Task<IActionResult> BlogComment(Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                Comment message = new Comment
+                {
+                    Fullname = comment.Fullname,
+                    Email = comment.Email,
+                    Website = comment.Website,
+                    Subject= comment.Subject,
+                    Message = comment.Message,
+                    BlogId = comment.BlogId,
+                };
+                await _context.Comments.AddAsync(message);
+                await _context.SaveChangesAsync();
+                return Ok(new
+                {
+                    message = "Your comment has been added"
+                });
+
+            }
+
+            return BadRequest(new
+            {
+                message = "Some of inputs is empty, Please enter information correctly"
+            });
+
         }
     }
 }
