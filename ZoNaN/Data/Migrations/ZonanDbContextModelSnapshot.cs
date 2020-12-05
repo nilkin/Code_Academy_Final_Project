@@ -124,7 +124,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 12, 4, 1, 8, 48, 820, DateTimeKind.Local).AddTicks(1825));
+                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 50, DateTimeKind.Local).AddTicks(3532));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -277,6 +277,51 @@ namespace ZoNaN.Data.Migrations
                     b.ToTable("Subscribers");
                 });
 
+            modelBuilder.Entity("ZoNaN.Data.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Photo")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasDefaultValue("avatar.png");
+
+                    b.Property<string>("Position")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("user");
+
+                    b.Property<string>("Token")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("ZoNaN.Models.AboutUs", b =>
                 {
                     b.Property<int>("Id")
@@ -364,7 +409,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 12, 4, 1, 8, 48, 831, DateTimeKind.Local).AddTicks(7617));
+                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 81, DateTimeKind.Local).AddTicks(2870));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -662,7 +707,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 12, 4, 1, 8, 48, 846, DateTimeKind.Local).AddTicks(1483));
+                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 120, DateTimeKind.Local).AddTicks(383));
 
                     b.Property<string>("Email")
                         .IsRequired()

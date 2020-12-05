@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -25,6 +26,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: BannerController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +35,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: BannerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(Banner banner)
         {
             if (banner.Upload == null)
@@ -60,7 +63,7 @@ namespace ZoNaN.Areas.Manager.Controllers
             }
             return View(banner);
         }
-
+        [TypeFilter(typeof(AdminAuth))]
         // GET: BannerController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -81,6 +84,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: BannerController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Banner banner)
         {
             if (id != banner.Id)
@@ -129,7 +133,8 @@ namespace ZoNaN.Areas.Manager.Controllers
             return View(banner);
         }
 
-        // GET: BannerController/Delete/5
+        // GET: BannerController/Delete/5 
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Delete(int id)
         {
             var banner = await _context.Banners.FindAsync(id);

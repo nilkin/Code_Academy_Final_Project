@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -25,6 +26,7 @@ namespace ZoNaN.Areas.Manager.Controllers
             return View(await _context.Categories.ToListAsync());
         }
         // GET: CategoriesController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +35,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: CategoriesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Create(Category category)
         {
             if (ModelState.IsValid)
@@ -44,6 +47,7 @@ namespace ZoNaN.Areas.Manager.Controllers
             return View(category);
         }
         // GET: CategoriesController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -62,6 +66,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: CategoriesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Category category)
         {
             if (id != category.Id)
@@ -98,6 +103,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // POST: CategoriesController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Delete(int id)
         {
             var cate = await _context.Categories.FindAsync(id);

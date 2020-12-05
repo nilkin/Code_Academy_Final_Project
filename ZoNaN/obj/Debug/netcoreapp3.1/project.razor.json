@@ -14541,6 +14541,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Index.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Comments\\Index.cshtml",
       "FileKind": "mvc"
@@ -14646,6 +14651,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
       "FileKind": "mvc"
@@ -14663,6 +14673,11 @@
     {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Create.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Blog\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14791,8 +14806,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Login.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Admin\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Register.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Admin\\Register.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -25,6 +26,8 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: SettingsController/Create
+        [TypeFilter(typeof(AdminAuth))]
+
         public ActionResult Create()
         {
             return View();
@@ -32,6 +35,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // POST: SettingsController/Create
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Setting set)
         {
@@ -63,8 +67,8 @@ namespace ZoNaN.Areas.Manager.Controllers
             return View(set);
         }
 
-
         // GET: SettingsController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,6 +87,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // POST: SettingsController/Edit/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Setting set)
         {
@@ -139,6 +144,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: SettingsController/Delete/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Delete(int Id)
         {
             var set = await _context.Settings.FindAsync(Id);

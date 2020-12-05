@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 
 namespace ZoNaN.Areas.Manager.Controllers
@@ -22,6 +23,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: StocksController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -30,6 +32,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: StocksController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Create(Stock stock)
         {
             if (ModelState.IsValid)
@@ -42,6 +45,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: StocksController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -61,6 +65,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: StocksController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Stock stock)
         {
             if (id != stock.Id)
@@ -97,6 +102,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // GET: StocksController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Delete(int id)
         {
             var stock = await _context.Stocks.FindAsync(id);

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -31,6 +32,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: ProductPhotosController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public IActionResult Create()
         {
             ViewData["ProductId"] =
@@ -41,6 +43,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: ProductPhotosController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(ProductPhoto image)
         {
             if (image.Upload == null)
@@ -76,6 +79,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: ProductPhotosController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -97,6 +101,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: ProductPhotosController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, ProductPhoto image)
         {
             if (id != image.Id)
@@ -156,6 +161,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: ProductPhotosController/Delete/5
+        [TypeFilter(typeof(AdminAuth))]
         [HttpPost]
         public ActionResult Delete(int Id)
         {

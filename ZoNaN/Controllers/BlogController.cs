@@ -30,7 +30,7 @@ namespace ZoNaN.Controllers
         public async Task<IActionResult> BlogSingle(int Id)
         {
             Blog BlogSingle = await _context.Blogs
-       .Include("Comments").FirstOrDefaultAsync(c => c.Id == 1);
+       .Include("Comments").FirstOrDefaultAsync(c => c.Id == Id);
             BlogSingleViewModel model = new BlogSingleViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsBlogSingle == true).FirstOrDefaultAsync(),

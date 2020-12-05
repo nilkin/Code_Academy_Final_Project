@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
+using ZoNaN.Filter;
 using static ZoNaN.Services.FileUploader;
 
 namespace ZoNaN.Areas.Manager.Controllers
@@ -28,6 +29,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
 
         // GET: CommentsController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             ViewData["BlogId"] = new SelectList(_context.Blogs, "Id", "Name");
@@ -37,6 +39,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: CommentsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(Comment comment)
         {
             if (comment.Upload == null)
@@ -70,6 +73,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: CommentsController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -91,6 +95,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: CommentsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int id, Comment comment)
         {
             if (id != comment.Id)

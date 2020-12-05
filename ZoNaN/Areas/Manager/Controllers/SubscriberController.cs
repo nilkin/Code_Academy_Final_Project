@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
+using ZoNaN.Filter;
 
 namespace ZoNaN.Areas.Manager.Controllers
 {
@@ -24,6 +25,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: SubscriberController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -42,6 +44,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: SubscriberController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Subscriber subscriber)
         {
             if (id != subscriber.Id)
@@ -78,6 +81,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // GET: SubscriberController/Delete/5 
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Delete(int id)
         {
             var subs = await _context.Subscribers.FindAsync(id);

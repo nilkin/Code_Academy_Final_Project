@@ -8,9 +8,13 @@ namespace ZoNaN.Controllers
 {
     public class ErrorController : Controller
     {
-        public IActionResult error()
+        public IActionResult Error()
         {
             return View();
+        }
+        public IActionResult Back()
+        {
+            return Redirect(Request.Headers["Referer"].ToString());
         }
     }
 }

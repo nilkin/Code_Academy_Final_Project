@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 
 namespace ZoNaN.Areas.Manager.Controllers
 {
@@ -21,6 +22,22 @@ namespace ZoNaN.Areas.Manager.Controllers
         {
             var zonanDbContext = _context.Chekouts.Include(m => m.Customer);
             return View(await zonanDbContext.ToListAsync());
+        }
+
+        // POST: CommentsController/Delete/5
+        [TypeFilter(typeof(AdminAuth))]
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            var chek = _context.Chekouts.Find(Id);
+
+            if (chek == null) return NotFound();
+
+            _context.Chekouts.Remove(chek);
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

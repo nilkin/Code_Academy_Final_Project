@@ -9,7 +9,7 @@ using static ZoNaN.Services.FileUploader;
 
 namespace ZoNaN.Areas.Admin.Controllers
 {
-
+    [TypeFilter(typeof(AdminAuth))]
     [Area("Manager")]
     public class AboutUsController : Controller
     {
@@ -28,12 +28,14 @@ namespace ZoNaN.Areas.Admin.Controllers
         }
 
         // GET: Manager/AboutUs/Create
+        [TypeFilter(typeof(AdminAuth))]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(AboutUs aboutUs)
         {
             if (aboutUs.Upload == null)
@@ -63,7 +65,7 @@ namespace ZoNaN.Areas.Admin.Controllers
             }
             return View(aboutUs);
         }
-        [TypeFilter(typeof(Auth))]
+        [TypeFilter(typeof(AdminAuth))]
         // GET: Manager/AboutUs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -85,7 +87,7 @@ namespace ZoNaN.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [TypeFilter(typeof(Auth))]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id,AboutUs aboutUs)
         {
             if (id != aboutUs.Id)
@@ -135,6 +137,7 @@ namespace ZoNaN.Areas.Admin.Controllers
         }
         // GET: Manager/AboutUs/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Delete(int id)
         {
             var aboutUs = await _context.AboutUs.FindAsync(id);

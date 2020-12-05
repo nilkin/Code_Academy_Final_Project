@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -27,6 +26,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: TestimonialsController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -34,6 +34,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // POST: TestimonialsController/Create
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(Testimonial testimonial)
         {
             if (testimonial.Upload == null)
@@ -66,6 +67,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: TestimonialsController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +87,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: TestimonialsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Testimonial testimonial)
         {
             if (id != testimonial.Id)
@@ -138,6 +141,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         // GET: TestimonialsController/Delete/5
         public async Task<IActionResult> Delete(int id)
         {

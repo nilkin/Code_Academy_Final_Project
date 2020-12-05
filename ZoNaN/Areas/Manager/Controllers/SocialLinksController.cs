@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
+using ZoNaN.Filter;
 
 namespace ZoNaN.Areas.Manager.Controllers
 {
@@ -25,6 +26,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: SocialLinksController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +35,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: SocialLinksController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Create(SocialLink link)
         {
             if (ModelState.IsValid)
@@ -63,6 +66,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: SocialLinksController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int id, SocialLink link)
         {
             if (id != link.Id)
@@ -100,6 +104,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // GET: SocialLinksController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Delete(int id)
         {
             var link = await _context.SocialLinks.FindAsync(id);

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using static ZoNaN.Services.FileUploader;
 
 namespace ZoNaN.Areas.Manager.Controllers
@@ -30,6 +31,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // ReviewsController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Delete(int Id)
         {
             var image = _context.Reviews.Find(Id);

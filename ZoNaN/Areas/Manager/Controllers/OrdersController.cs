@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
+using ZoNaN.Filter;
 
 namespace ZoNaN.Areas.Manager.Controllers
 {
@@ -24,6 +25,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: OrdersController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: OrdersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int id, Order order)
         {
             if (id != order.Id)
@@ -80,6 +83,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // GET: OrdersController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Delete(int Id)
         {
             var order = _context.Orders.Find(Id);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
 using ZoNaN.Data.Models;
+using ZoNaN.Filter;
 using static ZoNaN.Services.FileUploader;
 
 namespace ZoNaN.Areas.Manager.Controllers
@@ -25,6 +26,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: BreadcrumbController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +35,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: BreadcrumbController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Create(Breadcrumb breadcrumb)
         {
             if (breadcrumb.Upload == null)
@@ -62,6 +65,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: BreadcrumbController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,6 +85,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: BreadcrumbController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Edit(int id, Breadcrumb breadcrumb)
         {
             if (id != breadcrumb.Id)
@@ -139,6 +144,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
             // POST: BreadcrumbController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Delete(int Id)
         {
             var breadcrumb = _context.Breadcrumbs.Find(Id);

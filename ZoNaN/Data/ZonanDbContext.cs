@@ -31,6 +31,19 @@ namespace ZoNaN.Data
             builder.ApplyConfiguration(new ReviewConfiguration());
             builder.ApplyConfiguration(new SubCategoryConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
+            builder.ApplyConfiguration(new UserConfiguration());
+            //builder.Entity<User>().HasData(
+            //    new User
+            //    {
+            //        Id = 999999999,
+            //        Name = "admin",
+            //        Lastname = "admin",
+            //        Email = "admin@mail.com",
+            //        Token = "AQAAAAEAACcQAAAAEIQkMwpUcTMKwdYPY9ujciKM3zzYaDi7SAuE4niZpMamCQyZnFySZ7Dsly7s3xw93w==",
+            //        Password = "AQAAAAEAACcQAAAAEPFBEHcudvFHnRPhntVlXk/nwgnxHAf+c1oVJaoJNwOt3cNdDQPKjKX4dI+aN8BNUA==",
+            //        Position = admin
+            //    });
+
         }
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Banner> Banners { get; set; }
@@ -51,5 +64,6 @@ namespace ZoNaN.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Subscriber> Subscribers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

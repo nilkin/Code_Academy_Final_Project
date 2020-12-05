@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 
 namespace ZoNaN.Areas.Manager.Controllers
 {
@@ -23,7 +24,8 @@ namespace ZoNaN.Areas.Manager.Controllers
             return View(await _context.Contacts.ToListAsync());
         }
 
-        // GET: ContactUsController/Delete/5   
+        // GET: ContactUsController/Delete/5 
+        [TypeFilter(typeof(AdminAuth))]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {

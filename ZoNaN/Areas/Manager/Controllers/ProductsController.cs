@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZoNaN.Data;
+using ZoNaN.Filter;
 using ZoNaN.Models;
 using static ZoNaN.Services.FileUploader;
 
@@ -30,9 +31,9 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: ProductsController/Create
+        [TypeFilter(typeof(AdminAuth))]
         public ActionResult Create()
         {
-
             ViewData["StockId"] = new SelectList(_context.Stocks, "Id", "Id");
             ViewData["SubCategoryId"] = new SelectList(_context.SubCategories, "Id", "Name");
             return View();
@@ -41,6 +42,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: ProductsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Create(Product product)
         {
             if (ModelState.IsValid)
@@ -56,6 +58,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         }
 
         // GET: ProductsController/Edit/5
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,6 +79,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<IActionResult> Edit(int id, Product product)
         {
             if (id != product.Id)
@@ -115,6 +119,7 @@ namespace ZoNaN.Areas.Manager.Controllers
 
         // GET: ProductsController/Delete/5
         [HttpPost]
+        [TypeFilter(typeof(AdminAuth))]
         public async Task<ActionResult> Delete(int id)
         {
             var product = await _context.Products.FindAsync(id);
