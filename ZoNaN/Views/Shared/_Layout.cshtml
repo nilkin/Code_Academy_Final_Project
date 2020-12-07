@@ -47,7 +47,6 @@
                                                 <div class="lg-menu-item col-4">
                                                     <div class="dropdown-header">Account</div>
                                                     <a asp-controller="Account" asp-action="profile" class="dropdown-item">Profile Page</a>
-                                                    <a asp-controller="Account" asp-action="chekout" class="dropdown-item">Chekout Page</a>
                                                     <a asp-controller="Account" asp-action="login" class="dropdown-item">Login & Register Page</a>
 
                                                 </div>
@@ -70,7 +69,6 @@
                                                 <ul class="lg-menu-item">
                                                     <li><a asp-controller="Aboutus" asp-action="AboutUs" class="dropdown-item">About Us Page</a></li>
                                                     <li><a asp-controller="Shop" asp-action="cart" class="dropdown-item">Cart Page</a></li>
-                                                    <li><a asp-controller="Account" asp-action="chekout" class="dropdown-item">Chekout Page</a></li>
                                                     <li><a asp-controller="Product" asp-action="compare" class="dropdown-item">Compare Page</a></li>
                                                     <li><a asp-controller="Account" asp-action="login" class="dropdown-item">Login & Register Page</a></li>
                                                     <li><a asp-controller="Account" asp-action="profile" class="dropdown-item">Account Page</a></li>
@@ -160,7 +158,6 @@
                         <div class="content context">
                             <p class="heading">My Account</p>
                             <a asp-controller="Account" asp-action="profile" class="line-text">My account</a>
-                            <a asp-controller="Account" asp-action="chekout" class="line-text">Checkout</a>
                             <a asp-controller="Account" asp-action="login" class="line-text">Sign in</a>
                             <a asp-area="manager" asp-controller="Admin" asp-action="index" class="collapse-item">Admin</a>
                         </div>
@@ -183,14 +180,13 @@
                         <div class="content context">
                             <p class="heading">Zonan</p>
 
-
-                            <a class="line-text">About Us</a>
-                            <a class="line-text">About Us</a>
-                            <a class="line-text">About Us</a>
-                            <a class="line-text">About Us</a>
-                            <a class="line-text">Checkout</a>
-
-
+                            <a asp-controller="Home" asp-action="index" class="line-text">Home</a>
+                            <a asp-controller="Product" asp-action="productGrid" class="line-text">All Products</a>
+                            <a asp-controller="Product" asp-action="Compare" class="line-text">Compare</a>
+                            <a asp-controller="Account" asp-action="profile" class="line-text">Account</a>
+                            <a asp-controller="Shop" asp-action="cart" class="line-text">Cart</a>
+                            <a asp-controller="Shop" asp-action="Wish" class="line-text">Wish</a>
+                            <a asp-controller="Aboutus" asp-action="AboutUs" class="line-text">AboutUs</a>
                         </div>
                     </li>
                 </ul>

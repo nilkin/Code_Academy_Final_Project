@@ -25,7 +25,7 @@ namespace ZoNaN.Data
             Price = product.Stock.Price;
             ProdQuantity = product.Stock.Quantity;
             Quantity = 1;
-            Photo = product.ProductPhotos.ElementAt(0).Photo;
+            Photo = product.ProductPhotos.FirstOrDefault(c => c.IsFirstPhoto).Photo;
         }
     }
 }

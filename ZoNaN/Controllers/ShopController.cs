@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ZoNaN.Data;
-using ZoNaN.Data.Models;
-using ZoNaN.Models;
 using ZoNaN.Services;
 using ZoNaN.ViewModels;
 

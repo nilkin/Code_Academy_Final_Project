@@ -123,7 +123,11 @@
                 $("a.card-trigger").html(data);
 
             });
+            $.post('/product/RemoveAjax/' + id, {}, function (data) {
 
+                $("body").html(data);
+
+            });
         }); 
     });
 

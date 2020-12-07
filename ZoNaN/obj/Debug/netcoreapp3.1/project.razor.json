@@ -14606,6 +14606,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\BlogComment.cshtml",
+      "TargetPath": "Views\\Blog\\BlogComment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
       "FileKind": "mvc"

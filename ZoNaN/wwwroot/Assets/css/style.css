@@ -1199,6 +1199,41 @@ input[type="number"] {
 }
 
 @media (max-width: 991.98px) {
+
+     .banner-context {
+        position: absolute;
+        left: 0rem !important;
+        top: 2rem !important;
+    }
+        .banner-context p {
+            font-weight: 300;
+            font-size: 14px !important;
+        }
+
+        .banner-context h4 {
+            display: block;
+            line-height: 1;
+            font-size: 18px !important;
+            font-weight: 500;
+            word-wrap: break-word;
+            width: 246px;
+            line-height: 1px !important;
+        }
+
+         .banner-context a {
+            color: #707070;
+            font-weight: 400;
+            font-size: 14px !important;
+            display: inline-block;
+        }
+    .blok-hover .product-links p a {
+        color: #707070;
+        font-size: 9px !important;
+        white-space: pre;
+        margin-top: -20px;
+        position: absolute;
+        bottom: 12px;
+    }
     body,
     header,
     main,

@@ -66,7 +66,6 @@ namespace ZoNaN.Controllers
 
 
         }
-
         //single prudcts
         public async Task<IActionResult> ProductSingle(int Id)
         {
@@ -90,7 +89,6 @@ namespace ZoNaN.Controllers
             };
             return View(model);
         }
-
         //product review 
         public async Task<IActionResult> ProductReview(Review review)
         {
@@ -120,7 +118,6 @@ namespace ZoNaN.Controllers
             });
 
         }
-
         //product compare 
         public async Task<IActionResult> Compare()
         {
@@ -239,7 +236,5 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("Compare");
             return RedirectToAction("Compare");
         }
-
-
     }
 }

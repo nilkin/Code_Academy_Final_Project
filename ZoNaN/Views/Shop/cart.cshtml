@@ -51,7 +51,7 @@
                                         <td class="text-center">
                                             <div class="product-count style">
                                                 <div class="count d-flex justify-content-center">
-                                                    @if (@item.ProdQuantity > 0)
+                                                    @if (@item.ProdQuantity > @item.Quantity)
                                                     {
                                                         <input type="number" min="@item.Quantity" max="@item.ProdQuantity" step="1" value="@item.Quantity" readonly>
                                                         <div class="button-group">
@@ -61,10 +61,10 @@
                                                     }
                                                     else
                                                     {
-                                                        <input class="" type="number" min="0" max="0" step="1" value="0" readonly>
+                                                        <input class="" type="number" min="0" max="0" step="1" value="@item.Quantity" readonly>
                                                         <div class="button-group">
                                                             <a class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
-                                                            <a class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
+                                                            <a asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
                                                         </div>
                                                     }
                                                 </div>
