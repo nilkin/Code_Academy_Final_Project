@@ -9,7 +9,9 @@ namespace ZoNaN.ViewModels
         public List<Banner> MainBanners { get; set; }
         public List<Banner> PromoBanners { get; set; }
         public List<Category> Categories { get; set; }
-        public List<Product> BestSelProducts { get; set; }
+        public List<Product> BestSelProducts1 { get; set; }
+        public List<Product> BestSelProducts2 { get; set; }
+        public List<Product> BestSelProducts3 { get; set; }
         public List<Product> FeaturedProducts { get; set; }
         public List<Testimonial> Testimonials { get; set; }
         public List<Product> NewProducts { get; set; }

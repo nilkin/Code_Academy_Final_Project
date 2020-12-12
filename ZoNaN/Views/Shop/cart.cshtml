@@ -55,13 +55,13 @@
                                                     {
                                                         <input type="number" min="@item.Quantity" max="@item.ProdQuantity" step="1" value="@item.Quantity" readonly>
                                                         <div class="button-group">
-                                                            <a asp-action="Add" asp-route-id="@item.Id" class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
-                                                            <a asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
+                                                            <a asp-action="Add" asp-route-id="@item.Id" data-id="@item.Id"  class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
+                                                            <a asp-action="Decrease" asp-route-id="@item.Id" data-id="@item.Id"  class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
                                                         </div>
                                                     }
                                                     else
                                                     {
-                                                        <input class="" type="number" min="0" max="0" step="1" value="@item.Quantity" readonly>
+                                                        <input class="" type="number" min="0" max="0" step="1" value="@item.ProdQuantity" readonly>
                                                         <div class="button-group">
                                                             <a class="count-btn increment "><i class="fas fa-chevron-up mt-2"></i></a>
                                                             <a asp-action="Decrease" asp-route-id="@item.Id" class="count-btn decrement "><i class="fas fa-chevron-down mt-2"></i></a>
@@ -72,7 +72,7 @@
                                         </td>
                                         <td class="text-center">
                                             <span class="shop-order-price">
-                                                @Model.CartItems.Where(p => p.Id == item.Id).Sum(t => t.Quantity * t.Price).ToString("C2")
+                                                AZN @Model.CartItems.Where(p => p.Id == item.Id).Sum(t => t.Quantity * t.Price).ToString("#.##")
                                             </span>
                                         </td>
 

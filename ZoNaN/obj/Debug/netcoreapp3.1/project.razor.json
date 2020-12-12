@@ -14821,11 +14821,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Register.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Admin\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Index.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Banner\\Index.cshtml",
       "FileKind": "mvc"

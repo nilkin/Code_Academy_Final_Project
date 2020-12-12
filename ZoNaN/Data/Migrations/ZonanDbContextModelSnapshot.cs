@@ -124,7 +124,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 50, DateTimeKind.Local).AddTicks(3532));
+                        .HasDefaultValue(new DateTime(2020, 12, 9, 15, 22, 10, 919, DateTimeKind.Local).AddTicks(8742));
 
                     b.Property<int>("BlogId")
                         .HasColumnType("int");
@@ -381,6 +381,10 @@ namespace ZoNaN.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("ProductId")
+                        .HasMaxLength(100)
+                        .HasColumnType("int");
+
                     b.Property<string>("SubTitle")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -409,7 +413,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("Date")
-                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 81, DateTimeKind.Local).AddTicks(2870));
+                        .HasDefaultValue(new DateTime(2020, 12, 9, 15, 22, 10, 929, DateTimeKind.Local).AddTicks(2636));
 
                     b.Property<bool>("IsNew")
                         .ValueGeneratedOnAdd()
@@ -707,7 +711,7 @@ namespace ZoNaN.Data.Migrations
                     b.Property<DateTime>("AddedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 12, 5, 14, 2, 49, 120, DateTimeKind.Local).AddTicks(383));
+                        .HasDefaultValue(new DateTime(2020, 12, 9, 15, 22, 10, 941, DateTimeKind.Local).AddTicks(1380));
 
                     b.Property<string>("Email")
                         .IsRequired()

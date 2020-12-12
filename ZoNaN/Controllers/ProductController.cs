@@ -31,7 +31,7 @@ namespace ZoNaN.Controllers
                     .Include(i => i.Stock)
                     .Include(c => c.SubCategory)
                     .Where(x => x.SubCategoryId == Id)
-                    .AsNoTracking().OrderBy(x => x.Id);
+                    .AsNoTracking().OrderByDescending(c => c.Id).OrderBy(emp => Guid.NewGuid());
                 var pagingData = await PagingList.CreateAsync(items, pageSize, page);
                 ProductGridViewModel model = new ProductGridViewModel
                 {
@@ -48,7 +48,7 @@ namespace ZoNaN.Controllers
                 .Include(c => c.ProductPhotos)
                 .Include(i => i.Stock)
                 .Include(c => c.SubCategory)
-                .AsNoTracking().OrderBy(x => x.Id);
+                .AsNoTracking().OrderByDescending(c => c.Id).OrderBy(emp => Guid.NewGuid());
             var pagingData = await PagingList.CreateAsync(items, pageSize, page);
             ProductGridViewModel model = new ProductGridViewModel
             {

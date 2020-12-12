@@ -159,7 +159,6 @@
                             <p class="heading">My Account</p>
                             <a asp-controller="Account" asp-action="profile" class="line-text">My account</a>
                             <a asp-controller="Account" asp-action="login" class="line-text">Sign in</a>
-                            <a asp-area="manager" asp-controller="Admin" asp-action="index" class="collapse-item">Admin</a>
                         </div>
                     </li>
                 </ul>
@@ -227,12 +226,12 @@
                     <div class="col-12 col-sm-6 col-lg-2 ">
                         <div class="footer-widget">
                             <div class="section-title">
-                                <h2 class="title text-dark text-capitalize">My Account</h2>
+                                <h2 class="title text-dark text-capitalize">Opening Time</h2>
                             </div>
                             <address class="mb-0">
-                                <span>Saturday - Thurs: 9AM - 6PM</span>
-                                <span>Sat: 9AM-6PM</span>
-                                <span>Friday Closed</span>
+                                <span>Monday - Friday: 9AM - 6PM</span>
+                                <span>Sat: 9AM-2PM</span>
+                                <span>Sunday Closed</span>
                                 <span>We Work All The Holidays</span>
                             </address>
                         </div>
@@ -240,16 +239,12 @@
                     <div class="col-12 col-sm-6 col-lg-2 ">
                         <div class="footer-widget">
                             <div class="section-title">
-                                <h2 class="title text-dark text-capitalize">Opening Time</h2>
+                                <h2 class="title text-dark text-capitalize">Information</h2>
                             </div>
                             <!-- footer-menu start -->
                             <ul class="footer-menu">
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="about-us.html">About us</a></li>
-                                <li><a href="#">Secure payment</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                                <li><a href="#">Sitemap</a></li>
-                                <li><a href="#">Stores</a></li>
+                                <li><a asp-controller="Aboutus" asp-action="AboutUs">About us</a></li>
+                                <li><a asp-controller="ContactUs" asp-action="Contact">Contact us</a></li>
                             </ul>
                             <!-- footer-menu end -->
                         </div>
@@ -257,20 +252,15 @@
                     <div class="col-12 col-sm-6 col-lg-2 ">
                         <div class="footer-widget">
                             <div class="section-title mb-20">
-                                <h2 class="title text-dark text-capitalize">Information</h2>
+                                <h2 class="title text-dark text-capitalize">My Account</h2>
                             </div>
                             <!-- footer-menu start -->
                             <ul class="footer-menu ">
-                                <li><a href="#">Legal Notice</a></li>
-                                <li><a href="#">Prices drop</a></li>
+                                <li><a asp-area="manager" asp-controller="Admin" asp-action="Login" class="line-text">Admin Login</a></li>
 
-                                <li><a href="#">New products</a></li>
+                                <li><a asp-controller="Account" asp-action="Login" class="line-text">Login</a></li>
 
-                                <li><a href="#">Best sales</a></li>
-
-                                <li><a href="login.html">Login</a></li>
-
-                                <li><a href="myaccount.html">My account</a></li>
+                                <li><a asp-controller="Account" asp-action="profile" class="line-text">Account</a></li>
                             </ul>
                             <!-- footer-menu end -->
                         </div>
@@ -288,11 +278,11 @@
                             <div class="row">
                                 <div class="col-12 col-md-5 col-lg-4 col-xl-3 order-last order-md-first">
                                     <div class="text-center text-lg-left">
-                                        <p class="mb-3 mb-md-0">Copyright © <a href="https://hasthemes.com/">HasThemes</a>. All Rights Reserved</p>
+                                        <p class="mb-3 mb-md-0">Copyright © <a href="https://www.facebook.com/ilkin.nazarli/">Ilkin Nazarli</a>. All Rights Reserved</p>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-7 col-lg-8 col-xl-9">
-                                    <ul class="footer-menu copyright-menu d-flex flex-wrap justify-content-center justify-content-md-end">
+                                    @*<ul class="footer-menu copyright-menu d-flex flex-wrap justify-content-center justify-content-md-end">
                                         <li><a href="#">Legal Notice</a></li>
                                         <li><a href="#">Prices drop</a></li>
 
@@ -303,7 +293,7 @@
                                         <li><a href="login.html">Login</a></li>
 
                                         <li><a href="myaccount.html">My account</a></li>
-                                    </ul>
+                                    </ul>*@
                                 </div>
                             </div>
                         </div>

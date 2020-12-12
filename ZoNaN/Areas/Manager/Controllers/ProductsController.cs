@@ -27,7 +27,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         public async Task<IActionResult> Index()
         {
             var zonanDbContext = _context.Products.Include(m => m.Stock).Include(m => m.SubCategory);
-            return View(await zonanDbContext.ToListAsync());
+            return View(await zonanDbContext.OrderByDescending(c=>c.Id).ToListAsync());
         }
 
         // GET: ProductsController/Create

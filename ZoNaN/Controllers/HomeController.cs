@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace ZoNaN.Controllers
                 MainBanners = await _context.Banners.Where(c => c.IsMain).ToListAsync(),
                 PromoBanners = await _context.Banners.Where(c => c.IsPromo).ToListAsync(),
                 Categories = await _context.Categories.Take(3).ToListAsync(),
-                BestSelProducts = await _context.Products.Where(c => c.IsBestSel).Take(5).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
-                FeaturedProducts = await _context.Products.Where(c => c.IsFeatured).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                BestSelProducts1 = await _context.Products.Where(c => c.IsBestSel).OrderBy(emp => Guid.NewGuid()).Take(5).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                BestSelProducts2 = await _context.Products.Where(c => c.IsBestSel).OrderBy(emp => Guid.NewGuid()).Take(5).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                BestSelProducts3 = await _context.Products.Where(c => c.IsBestSel).OrderBy(emp => Guid.NewGuid()).Take(5).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                FeaturedProducts = await _context.Products.Where(c => c.IsFeatured).OrderBy(emp => Guid.NewGuid()).Take(6).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
                 Testimonials = await _context.Testimonials.Take(6).ToListAsync(),
-                NewProducts = await _context.Products.Where(c => c.IsNew).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
+                NewProducts = await _context.Products.Where(c => c.IsNew).OrderBy(emp => Guid.NewGuid()).Take(6).Include(i => i.ProductPhotos).Include(i => i.Stock).ToListAsync(),
                 DiscountBanner = await _context.Banners.Where(c => c.IsDiscount).FirstOrDefaultAsync(),
                 NewBlogs = await _context.Blogs.Where(c => c.IsNew).ToListAsync()
             };

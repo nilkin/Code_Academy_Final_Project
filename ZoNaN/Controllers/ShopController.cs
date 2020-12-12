@@ -46,6 +46,17 @@ namespace ZoNaN.Controllers
                 return RedirectToAction("Cart");
             return ViewComponent("IconBadgeComponent");
         }
+        //public async Task<IActionResult> Increase(int id)
+        //{
+        //    var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == id);
+        //    List<BasketItem> cart = HttpContext.Session.GetJson<List<BasketItem>>("Cart");
+        //    BasketItem basketItem = cart.Where(x => x.Id == id).FirstOrDefault();
+        //    basketItem.Quantity += 1;
+        //    HttpContext.Session.SetJson("Cart", cart);
+        //    if (HttpContext.Request.Headers["x-requested-with"] != "XMLHttpRequest")
+        //        return RedirectToAction("Cart");
+        //    return RedirectToAction("Cart", cart);
+        //}
         public async Task<IActionResult> AddToSideNavCart(int id)
         {
             var product = await _context.Products.Include("Stock").Include("ProductPhotos").FirstOrDefaultAsync(c => c.Id == id);

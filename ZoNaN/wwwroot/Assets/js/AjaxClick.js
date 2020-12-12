@@ -107,7 +107,7 @@
             });
         });
     });
-    //-------------------Compare Add with Ajax--------------------------------------
+    //-------------------Cart remove with Ajax--------------------------------------
     $(function () {
         $(document).on('click', 'a.remove', function (e) {
             e.preventDefault();
@@ -251,6 +251,20 @@
             });
         });
     });
+
+    //------------------- Cart item increase with Ajax--------------------------------------
+    //$(function () {
+    //    $(document).on('click', 'a.increment', function (e) {
+    //        e.preventDefault();
+         
+    //        let id = $(this).data("id");
+    //        $.post('/shop/Increase/' + id, {}, function (data) {
+    //            console.log(data);
+    //            //$("body").html(data);
+
+    //        });
+    //    });
+    //});
 });
 
 $(document).ready(function () {

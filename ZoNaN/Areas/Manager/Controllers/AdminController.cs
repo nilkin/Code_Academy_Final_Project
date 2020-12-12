@@ -69,34 +69,34 @@ namespace ZoNaN.Areas.Manager.Controllers
 
             return View(model);
         }
-        public IActionResult Register()
-        {
-            return View();
-        }
+        //public IActionResult Register()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Register(UserRegisterViewModel model)
-        {
-            if (_context.Users.Any(u => u.Email == model.Email))
-            {
-                ModelState.AddModelError("Email", "This e-mail address is already registered");
-            }
+        //[HttpPost]
+        //public IActionResult Register(UserRegisterViewModel model)
+        //{
+        //    if (_context.Users.Any(u => u.Email == model.Email))
+        //    {
+        //        ModelState.AddModelError("Email", "This e-mail address is already registered");
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                User user = new User
-                {
-                    Name = model.Name,
-                    Lastname = model.Lastname,
-                    Email = model.Email,
-                    Password = Crypto.HashPassword(model.Password),
-                };
-                _context.Users.Add(user);
-                _context.SaveChanges();
-                return RedirectToAction("login", "admin", new { area = "manager" });
-            }
-            return View(model);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        User user = new User
+        //        {
+        //            Name = model.Name,
+        //            Lastname = model.Lastname,
+        //            Email = model.Email,
+        //            Password = Crypto.HashPassword(model.Password),
+        //        };
+        //        _context.Users.Add(user);
+        //        _context.SaveChanges();
+        //        return RedirectToAction("login", "admin", new { area = "manager" });
+        //    }
+        //    return View(model);
+        //}
 
         public async Task<IActionResult> Logout()
         {

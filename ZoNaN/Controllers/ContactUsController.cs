@@ -20,6 +20,7 @@ namespace ZoNaN.Controllers
             ContactViewModel model = new ContactViewModel
             {
                 Breadcrumb = await _context.Breadcrumbs.Where(c => c.IsContact == true).FirstOrDefaultAsync(),
+                ContactWithUs = await _context.Settings.FirstOrDefaultAsync()
             };
             return View(model);
         }

@@ -24,7 +24,7 @@
 
                             </div>
                             <div class="blog-card__title">
-                                <p> @item.Name </p>
+                                <p class="text-uppercase"> @item.Name </p>
                             </div>
                             <h5 class="sub-title text-capitalize">
                                 Posted by
@@ -38,7 +38,7 @@
                             <p class="text-design">
                                 @item.Text
                             </p>
-                            <a class="btn primary-btn btn-theme1 text-capitalize" asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" tabindex="0">Read More</a>
+                            <a class="btn primary-btn btn-theme1 text-capitalize hidden-text" asp-controller="Blog" asp-action="BlogSingle" asp-route-id="@item.Id" tabindex="0">Read More</a>
                         </div>
                     </div>
                 }

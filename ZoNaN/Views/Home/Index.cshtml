@@ -23,7 +23,7 @@
                                         <p class="fadeInDown animated" data-animation-in="fadeInDown">@item.Title</p>
                                         <h2 class="animated  fadeInLeft" data-animation-in="fadeInLeft" data-delay-in="1">@item.SubTitle</h2>
                                         <h4 class="animated fadeInRight" data-animation-in="fadeInRight" data-delay-in="2">@item.Content</h4>
-                                        <button class="btn primary-btn btn-theme1 lrg-btn animated zoomIn" data-animation-in="zoomIn" data-delay-in="3">@item.Link</button>
+                                        <a asp-controller="Product" asp-action="ProductSingle" asp-route-id="@item.ProductId" class="btn primary-btn btn-theme1 lrg-btn animated zoomIn" data-animation-in="zoomIn" data-delay-in="3">@item.Link</a>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="banner-content">
                                 <p class="text text-capitalize text-dark mb-10">@item.Title</p>
                                 <h4 class="title text-capitalize text-dark">@item.Content</h4>
-                                <a class="view-link text-capitalize mt-20" href="#">
+                                <a class="view-link text-capitalize mt-20" asp-controller="Product" asp-action="ProductGrid">
                                     @item.Link
                                     <span class="fas fa-chevron-circle-right theme-color"></span>
                                 </a>
@@ -87,17 +87,17 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <div class="product-tab-slider">
-                                <partial name="_product" model="@Model.BestSelProducts" />
+                                <partial name="_product" model="@Model.BestSelProducts1" />
                             </div>
                         </div>
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="product-tab-slider">
-                                <partial name="_product" model="@Model.BestSelProducts" />
+                                <partial name="_product" model="@Model.BestSelProducts2" />
                             </div>
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="product-tab-slider">
-                                <partial name="_product" model="@Model.BestSelProducts" />
+                                <partial name="_product" model="@Model.BestSelProducts3" />
                             </div>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                         <div class="banner-content banner-context">
                             <p class="text text-uppercase text-dark mb-10">@Model.DiscountBanner.Title</p>
                             <h4 class="title text-capitalize text-dark">@Model.DiscountBanner.Content</h4>
-                            <a class="view-link text-capitalize mt-20" href="#">
+                            <a class="view-link text-capitalize mt-20" asp-controller="Product" asp-action="ProductGrid">
                                 @Model.DiscountBanner.Link
                                 <span class="fas fa-chevron-circle-right theme-color"></span>
                             </a>
@@ -237,7 +237,7 @@
                                             Posted by
                                             <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
                                                 @item.Author
-                                            </a> @item.Date
+                                            </a> @item.Date.ToString("MMM, dd yyyy")
                                             <a class="blog-link theme-color d-inline-block mx-1" href="https://themeforest.net/user/hastech" tabindex="0">
                                                 @item.Subject
                                             </a>

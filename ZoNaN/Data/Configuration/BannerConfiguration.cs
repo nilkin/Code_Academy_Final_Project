@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ZoNaN.Models;
 
 namespace ZoNaN.Data.Configuration
@@ -31,6 +27,9 @@ namespace ZoNaN.Data.Configuration
                 .HasMaxLength(100);
             builder
                 .Property(m => m.Photo)
+                .HasMaxLength(100);            
+            builder
+                .Property(m => m.ProductId)
                 .HasMaxLength(100);
             builder
                 .Property(m => m.IsDiscount)

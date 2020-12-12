@@ -28,7 +28,7 @@ namespace ZoNaN.Areas.Manager.Controllers
         {
             var corporxDbContext = _context.ProductPhotos
                 .Include(m => m.Product);
-            return View(await corporxDbContext.ToListAsync());
+            return View(await corporxDbContext.OrderByDescending(c => c.Id).ToListAsync());
         }
 
         // GET: ProductPhotosController/Create

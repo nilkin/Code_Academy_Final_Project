@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -61,6 +62,7 @@ namespace ZoNaN.Areas.Manager.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
             return View(banner);
         }
         [TypeFilter(typeof(AdminAuth))]
@@ -78,6 +80,7 @@ namespace ZoNaN.Areas.Manager.Controllers
             {
                 return NotFound();
             }
+           
             return View(banner);
         }
 
@@ -128,8 +131,10 @@ namespace ZoNaN.Areas.Manager.Controllers
                         throw;
                     }
                 }
+                ViewData["ProductId"] = new SelectList(_context.Products, "Id", "Name");
                 return RedirectToAction(nameof(Index));
             }
+
             return View(banner);
         }
 
