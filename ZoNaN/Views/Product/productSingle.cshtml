@@ -73,8 +73,8 @@
                                         double disc = Convert.ToDouble(@Model.ProductSingle.Stock.Price)
                                             + (Convert.ToDouble(@Model.ProductSingle.Stock.Price)
                                             * Convert.ToDouble(@Model.ProductSingle.Discount)) / 100;
-                                        <del class="del"> $@disc.ToString("#.##")</del>
-                                        <span class="onsale">$@Model.ProductSingle.Stock.Price</span>
+                                <del class="del"> ₼ @disc.ToString("#.##")</del>
+                                <span class="onsale">₼ @Model.ProductSingle.Stock.Price</span>
                                         <span class="badge my-badge position-static bg-dark">Save @Model.ProductSingle.Discount%</span>
                                     }
                                 </h6>
@@ -370,7 +370,7 @@
             var showText = 'View reviews',
                 hideText = 'Hide reviews';
 
-            $('.eventDetails').hide().prev('.details').append('<a href="#" class="btn third-btn btn-theme2 title text-white show-background">' + showText + '</a>');
+            $('.eventDetails').hide().prev('.details').append('<a href="#" class="btn third-btn btn-theme2 title text-white show-background toggleLink ">' + showText + '</a>');
 
             $('a.toggleLink').click(function (e) {
                 e.preventDefault();

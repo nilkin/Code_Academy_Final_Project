@@ -51,13 +51,13 @@
             <h5 class="product-price">
                 @if (item.IsNew)
                 {
-                    <span class="onsale">$@item.Stock.Price</span>
+                <span class="onsale">₼ @item.Stock.Price</span>
                 }
                 else
                 {
                     double disc = Convert.ToDouble(@item.Stock.Price) + (Convert.ToDouble(@item.Stock.Price) * Convert.ToDouble(@item.Discount)) / 100;
-                    <del class="del"> $@disc.ToString("#.##")</del>
-                    <span class="onsale">$@item.Stock.Price</span>
+            <del class="del"> ₼ @disc.ToString("#.##")</del>
+            <span class="onsale">₼ @item.Stock.Price</span>
                 }
             </h5>
         </div>

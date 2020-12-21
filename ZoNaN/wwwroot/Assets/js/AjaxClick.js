@@ -159,7 +159,18 @@
             e.preventDefault();
 
             let id = $(this).data("id");
-
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((g) => {
+                    if (g) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                            icon: "success",
+                        });
             $.get('/product/RemoveFromCompare/' + id, {}, function (data) {
 
                 $("a.compare-items").html(data);
@@ -170,6 +181,12 @@
                 $("body").html(data);
 
             });
+                    } else {
+                        swal("Your file is safe!");
+                    }
+                });
+
+
         });
     });
     //-------------------Compare page add to Cart with Ajax--------------------------------------
@@ -197,7 +214,18 @@
             e.preventDefault();
 
             let id = $(this).data("id");
-
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((g) => {
+                    if (g) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                            icon: "success",
+                        });
             $.post('/shop/RemoveBadgeAjax/' + id, {}, function (data) {
 
                 $("a.cart-trigger").html(data);
@@ -209,6 +237,11 @@
                 $("body").html(data);
 
             });
+                    } else {
+                        swal("Your file is safe!");
+                    }
+                });
+
         });
     });
 
@@ -238,17 +271,32 @@
             e.preventDefault();
 
             let id = $(this).data("id");
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((g) => {
+                    if (g) {
+                        swal("Poof! Your imaginary file has been deleted!", {
+                            icon: "success",
+                        });
+                        $.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
 
-            $.post('/shop/RemoveFromWishIconBadgeCount/' + id, {}, function (data) {
+                            $("a.compare-items").html(data);
 
-                $("a.compare-items").html(data);
+                        });
+                        $.post('/shop/RemoveFromWishAjax/' + id, {}, function (data) {
 
-            });
-            $.post('/shop/RemoveFromWishAjax/' + id, {}, function (data) {
+                            $("body").html(data);
 
-                $("body").html(data); 
-
-            });
+                        });
+                    } else {
+                        swal("Your file is safe!");
+                    }
+                });
         });
     });
 

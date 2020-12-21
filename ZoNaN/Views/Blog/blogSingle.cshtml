@@ -43,7 +43,7 @@
 
                                         @foreach (var item in Model.SingleBlog.Comments)
                                         {
-                                            <img class="avatar" src="~/Assets/img/@item.Photo" alt="avatar">
+                                            <img class="avatar" src="~/uploads/@item.Photo" alt="avatar">
                                             <h4 class="sub-title">@item.Fullname</h4>
                                             <span>@item.AddedDate.ToString("MMM, dd yyyy") </span>
                                             <button class="reply">Reply</button>
