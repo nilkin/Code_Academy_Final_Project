@@ -9240,22 +9240,25 @@
   },
   "packageFolders": {
     "C:\\Users\\n_ilkin\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
+      "projectUniqueName": "C:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
       "projectName": "ZoNaN",
-      "projectPath": "C:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
+      "projectPath": "C:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
       "packagesPath": "C:\\Users\\n_ilkin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\obj\\",
+      "outputPath": "C:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\n_ilkin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9340,7 +9343,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

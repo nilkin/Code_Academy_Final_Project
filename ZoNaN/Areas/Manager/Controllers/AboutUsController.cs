@@ -82,9 +82,7 @@ namespace ZoNaN.Areas.Admin.Controllers
             }
             return View(aboutUs);
         }
-
         // POST: Manager/AboutUs/Edit/5
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         [TypeFilter(typeof(AdminAuth))]
@@ -153,11 +151,9 @@ namespace ZoNaN.Areas.Admin.Controllers
             return RedirectToAction("Index");
 
         }
-
         private bool AboutUsExists(int id)
         {
             return _context.AboutUs.Any(e => e.Id == id);
         }
-
     }
 }

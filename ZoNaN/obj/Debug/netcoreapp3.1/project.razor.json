@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
+  "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\ZoNaN.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14526,433 +14526,433 @@
   "RootNamespace": "ZoNaN",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Orders\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Orders\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\compare.cshtml",
-      "TargetPath": "Views\\Product\\compare.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Users\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Comments\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\login.cshtml",
-      "TargetPath": "Views\\Account\\login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Settings\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Blog\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Comments\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerLogin.cshtml",
-      "TargetPath": "Views\\Shared\\_customerLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\BlogComment.cshtml",
-      "TargetPath": "Views\\Blog\\BlogComment.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\productGrid.cshtml",
-      "TargetPath": "Views\\Product\\productGrid.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Banner\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Comments\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\blogSingle.cshtml",
-      "TargetPath": "Views\\Blog\\blogSingle.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Chekouts\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Chekouts\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Reviews\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Reviews\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Users\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_productModal.cshtml",
-      "TargetPath": "Views\\Shared\\_productModal.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_newsletters.cshtml",
-      "TargetPath": "Views\\Shared\\_newsletters.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Blog\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Users\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\register.cshtml",
-      "TargetPath": "Views\\Account\\register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Settings\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Products\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_accountDetail.cshtml",
-      "TargetPath": "Views\\Shared\\_accountDetail.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\profile.cshtml",
-      "TargetPath": "Views\\Account\\profile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Error\\error.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Error\\error.cshtml",
       "TargetPath": "Views\\Error\\error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Categories\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Products\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\chekout.cshtml",
-      "TargetPath": "Views\\Account\\chekout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Orders\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Orders\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerRegister.cshtml",
-      "TargetPath": "Views\\Shared\\_customerRegister.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_breadcrumbs.cshtml",
-      "TargetPath": "Views\\Shared\\_breadcrumbs.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Edit.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Banner\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_product.cshtml",
-      "TargetPath": "Views\\Shared\\_product.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Login.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Admin\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Banner\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Aboutus\\AboutUs.cshtml",
-      "TargetPath": "Views\\Aboutus\\AboutUs.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Edit.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\cart.cshtml",
-      "TargetPath": "Views\\Shop\\cart.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\register.cshtml",
+      "TargetPath": "Views\\Account\\register.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Blog\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
-      "TargetPath": "Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\ContactUs\\contact.cshtml",
-      "TargetPath": "Views\\ContactUs\\contact.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\blogGrid.cshtml",
-      "TargetPath": "Views\\Blog\\blogGrid.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Edit.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Edit.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Settings\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Admin\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Products\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Create.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Categories\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Create.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Create.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\productSingle.cshtml",
-      "TargetPath": "Views\\Product\\productSingle.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Edit.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Categories\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Index.cshtml",
-      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Index.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Create.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Aboutus\\AboutUs.cshtml",
+      "TargetPath": "Views\\Aboutus\\AboutUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_accountDetail.cshtml",
+      "TargetPath": "Views\\Shared\\_accountDetail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\WishNavComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Create.cshtml",
       "TargetPath": "Areas\\Manager\\Views\\Stocks\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\n_ilkin\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\wish.cshtml",
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\blogGrid.cshtml",
+      "TargetPath": "Views\\Blog\\blogGrid.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerRegister.cshtml",
+      "TargetPath": "Views\\Shared\\_customerRegister.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Products\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\IconBadgeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Categories\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\productSingle.cshtml",
+      "TargetPath": "Views\\Product\\productSingle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\profile.cshtml",
+      "TargetPath": "Views\\Account\\profile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Blog\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\login.cshtml",
+      "TargetPath": "Views\\Account\\login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_newsletters.cshtml",
+      "TargetPath": "Views\\Shared\\_newsletters.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SocialLinks\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Banner\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\ChekoutComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_productModal.cshtml",
+      "TargetPath": "Views\\Shared\\_productModal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\productGrid.cshtml",
+      "TargetPath": "Views\\Product\\productGrid.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\AboutUs\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\AboutUs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\WishIconBadgeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_breadcrumbs.cshtml",
+      "TargetPath": "Views\\Shared\\_breadcrumbs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Categories\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Comments\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Comments\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_product.cshtml",
+      "TargetPath": "Views\\Shared\\_product.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Orders\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Orders\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Users\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Users\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Subscriber\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\CompareIconBagdeComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Settings\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Breadcrumb\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Breadcrumb\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Products\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Categories\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Categories\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Orders\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Orders\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\_customerLogin.cshtml",
+      "TargetPath": "Views\\Shared\\_customerLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Stocks\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Stocks\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Reviews\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Reviews\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\cart.cshtml",
+      "TargetPath": "Views\\Shop\\cart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Products\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Products\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ProductPhotos\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\BlogComment.cshtml",
+      "TargetPath": "Views\\Blog\\BlogComment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Testimonials\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Settings\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Settings\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Admin\\Login.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Admin\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Account\\chekout.cshtml",
+      "TargetPath": "Views\\Account\\chekout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Blog\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Banner\\Create.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Banner\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
+      "TargetPath": "Views\\Shared\\Components\\CartNavComponent\\Default.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\SubCategories\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\SubCategories\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Chekouts\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Chekouts\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\ContactUs\\contact.cshtml",
+      "TargetPath": "Views\\ContactUs\\contact.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\ContactUs\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Areas\\Manager\\Views\\Blog\\Edit.cshtml",
+      "TargetPath": "Areas\\Manager\\Views\\Blog\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Blog\\blogSingle.cshtml",
+      "TargetPath": "Views\\Blog\\blogSingle.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Shop\\wish.cshtml",
       "TargetPath": "Views\\Shop\\wish.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\n_ilkin\\OneDrive\\Desktop\\my Code\\Code_Academy_Final_Project\\ZoNaN\\Views\\Product\\compare.cshtml",
+      "TargetPath": "Views\\Product\\compare.cshtml",
       "FileKind": "mvc"
     }
   ],
